@@ -9,6 +9,8 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "d3": "^7.9.0",
+    "framer-motion": "^12.23.22",
     "gatsby": "^5.15.0",
     "gatsby-plugin-postcss": "^6.15.0",
     "react": "^18.3.1",

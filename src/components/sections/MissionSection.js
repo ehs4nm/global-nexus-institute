@@ -2,7 +2,7 @@ import React from 'react';
 
 export const MissionSection = () => {
   return (
-    <section id="mission" className="relative h-screen flex items-center text-gray-800 dark:text-white">
+    <section id="mission" className="relative h-[50vh] flex items-center text-gray-800 dark:text-white">
       <div className="absolute inset-0 pointer-events-none">
         <div className="mx-auto max-w-7xl h-full px-4 sm:px-6 lg:px-8">
           <div className="h-full border-t border-b border-black/10 dark:border-white/[0.06]"></div>

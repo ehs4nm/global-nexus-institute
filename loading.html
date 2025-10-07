@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal & Organic Tree Structure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a14;
+        }
+        #pulseCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+        #control-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 50;
+            background-color: rgba(30, 41, 59, 0.9); /* slate-800 */
+            padding: 16px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            max-width: 300px;
+            color: white;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        .control-group {
+            margin-bottom: 12px;
+        }
+        .control-group label {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 0.9rem;
+            color: #94a3b8; /* slate-400 */
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="pulseCanvas"></canvas>
+    
+    <div id="control-panel">
+        <h2 class="text-xl font-bold mb-4 text-emerald-400">Minimal Tree Network</h2>
+        
+        <p class="text-xs mt-4 text-gray-400">Total Nodes: <span id="total-nodes">0</span></p>
+        <p class="text-xs mt-1 mb-4 text-gray-400">Click canvas to restart the signal flow and wind.</p>
+    </div>
+
+<script>
+/*
+  Minimal & Organic Tree Network - Hardcoded Structure
+*/
+
+/* -------------------- Configuration & Globals -------------------- */
+const canvas = document.getElementById('pulseCanvas');
+const ctx = canvas.getContext('2d', { alpha: true });
+
+let nodes = [];
+let connections = [];
+let signals = [];
+let timer = null;
+
+// Wind simulation globals
+let windTime = 0;
+const WIND_STRENGTH = 100; // Max pixel sway
+const WIND_FREQUENCY = 0.0001; // Speed of sway
+
+/* -------------------- Visual Parameters -------------------- */
+const NODE_RADIUS = 8;
+const SIGNAL_RADIUS = 5;
+const LINE_WIDTH = 2;
+const SIGNAL_SPEED = 0.008; 
+const GLOW_BLUR = 15;
+const NODE_COLOR = '50, 200, 255'; 
+const ACTIVE_COLOR = '0, 255, 150'; 
+const SIGNAL_COLOR = '255, 255, 0'; 
+
+/* -------------------- Utility Functions -------------------- */
+function resize() {
+  const DPR = Math.min(window.devicePixelRatio || 1, 2);
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+  canvas.width = Math.floor(w * DPR);
+  canvas.height = Math.floor(h * DPR);
+  canvas.style.width = w + 'px';
+  canvas.style.height = h + 'px';
+  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  
+  // Restart animation on resize to adjust node positions
+  if (nodes.length > 0) {
+      restartAnimation();
+  } else {
+      loadFixedTreeStructure();
+      startAnimationLoop();
+  }
+}
+window.addEventListener('resize', resize);
+
+
+/**
+ * Converts normalized (0-1) coordinates to canvas pixels, applying a wind offset.
+ * @param {object} norm - The normalized {x, y} position of the node.
+ * @param {number} time - The current elapsed time for wind simulation.
+ * @returns {object} The canvas pixel position {x, y}.
+ */
+function toCanvas(norm, time) {
+    // Sway factor: Increases from the trunk (Y=0.90) upwards.
+    const swayFactor = (1 - norm.y) * 0.75; 
+    
+    let windOffset = 0;
+    if (time !== undefined) {
+        // Use a pseudo-unique ID based on x/y for consistent phase across nodes
+        const uniqueId = norm.x * 1000 + norm.y * 1000; 
+
+        // Combine two sine waves for a more organic, less periodic sway
+        windOffset = Math.sin(uniqueId + time * WIND_FREQUENCY) * Math.cos(uniqueId * 0.5 + time * WIND_FREQUENCY * 0.7) * WIND_STRENGTH * swayFactor;
+    }
+    
+    const x = norm.x * canvas.width / (window.devicePixelRatio || 1);
+    const y = norm.y * canvas.height / (window.devicePixelRatio || 1);
+    
+    return { 
+        x: x + windOffset, 
+        y: y
+    };
+}
+
+function distance(a, b) {
+  const dx = b.x - a.x;
+  const dy = b.y - a.y;
+  return Math.sqrt(dx * dx + dy * dy);
+}
+
+function getNodeById(id) {
+  return nodes.find(n => n.id === id);
+}
+
+/* -------------------- CORE FIXED STRUCTURE -------------------- */
+
+/**
+ * Loads the hardcoded tree structure: Trunk -> Boughs -> Tips
+ * MASSIVELY EXPANDED VERSION: 40 nodes for a very complex canopy look.
+ */
+function loadFixedTreeStructure() {
+    nodes.length = 0;
+    connections.length = 0;
+
+    // Hand-designed structure for a complex, detailed tree silhouette (40 nodes)
+    nodes = [
+        // --- Trunk Nodes (4 nodes) ---
+        { id: 0, x: 0.50, y: 0.90, active: false, activatedAt: null }, // Root
+        { id: 1, x: 0.50, y: 0.78, active: false, activatedAt: null }, // Lower Trunk
+        { id: 2, x: 0.50, y: 0.66, active: false, activatedAt: null }, // Mid Trunk
+        { id: 3, x: 0.50, y: 0.54, active: false, activatedAt: null }, // Split Point (Y-Junction)
+      
+        // --- Main Boughs (3 Primary Branches from 3) ---
+        { id: 4, x: 0.40, y: 0.48, active: false, activatedAt: null }, // Left Bough (Main)
+        { id: 5, x: 0.60, y: 0.48, active: false, activatedAt: null }, // Right Bough (Main)
+        { id: 6, x: 0.50, y: 0.42, active: false, activatedAt: null }, // Center Bough (Main)
+      
+        // --- Left Canopy (Base Layer) ---
+        { id: 7, x: 0.32, y: 0.42, active: false, activatedAt: null }, // Left Branch 1 (from 4)
+        { id: 8, x: 0.25, y: 0.38, active: false, activatedAt: null }, // Far Left Bough (from 7)
+        { id: 9, x: 0.38, y: 0.35, active: false, activatedAt: null }, // Upper Left Bough (from 7)
+        { id: 10, x: 0.15, y: 0.30, active: false, activatedAt: null }, // Outermost Left Tip 1 (from 8)
+        { id: 11, x: 0.28, y: 0.25, active: false, activatedAt: null }, // Mid Left Tip 1 (from 8)
+      
+        // --- Right Canopy (Base Layer) ---
+        { id: 12, x: 0.68, y: 0.42, active: false, activatedAt: null }, // Right Branch 1 (from 5)
+        { id: 13, x: 0.75, y: 0.38, active: false, activatedAt: null }, // Far Right Bough (from 12)
+        { id: 14, x: 0.62, y: 0.35, active: false, activatedAt: null }, // Upper Right Bough (from 12)
+        { id: 15, x: 0.85, y: 0.30, active: false, activatedAt: null }, // Outermost Right Tip 1 (from 13)
+        { id: 16, x: 0.72, y: 0.25, active: false, activatedAt: null }, // Mid Right Tip 1 (from 13)
+        
+        // --- Central Canopy (Base Layer) ---
+        { id: 17, x: 0.45, y: 0.33, active: false, activatedAt: null }, // Center Branch Left (from 6)
+        { id: 18, x: 0.55, y: 0.33, active: false, activatedAt: null }, // Center Branch Right (from 6)
+        { id: 19, x: 0.40, y: 0.22, active: false, activatedAt: null }, // Inner Left Tip 1 (from 17)
+        { id: 20, x: 0.60, y: 0.22, active: false, activatedAt: null }, // Inner Right Tip 1 (from 18)
+        { id: 21, x: 0.50, y: 0.10, active: false, activatedAt: null }, // Apex Tip (from 19, 20)
+
+        // --- Left Canopy (Second Layer - Deeper Branching) ---
+        { id: 22, x: 0.20, y: 0.28, active: false, activatedAt: null }, // Left Spur from 8
+        { id: 23, x: 0.12, y: 0.20, active: false, activatedAt: null }, // Outer-Outer Left Tip (from 22)
+        { id: 24, x: 0.08, y: 0.15, active: false, activatedAt: null }, // Absolute Left Tip (from 23)
+        { id: 25, x: 0.35, y: 0.15, active: false, activatedAt: null }, // Upper-Mid Left Tip (from 9)
+        { id: 26, x: 0.30, y: 0.10, active: false, activatedAt: null }, // High Left Tip (from 25)
+        
+        // --- Right Canopy (Second Layer - Deeper Branching) ---
+        { id: 27, x: 0.80, y: 0.28, active: false, activatedAt: null }, // Right Spur from 13
+        { id: 28, x: 0.88, y: 0.20, active: false, activatedAt: null }, // Outer-Outer Right Tip (from 27)
+        { id: 29, x: 0.92, y: 0.15, active: false, activatedAt: null }, // Absolute Right Tip (from 28)
+        { id: 30, x: 0.65, y: 0.15, active: false, activatedAt: null }, // Upper-Mid Right Tip (from 14)
+        { id: 31, x: 0.70, y: 0.10, active: false, activatedAt: null }, // High Right Tip (from 30)
+
+        // --- Inner Canopy Density (Third Layer) ---
+        { id: 32, x: 0.42, y: 0.28, active: false, activatedAt: null }, // Inner Left Spur 1 (from 17)
+        { id: 33, x: 0.58, y: 0.28, active: false, activatedAt: null }, // Inner Right Spur 1 (from 18)
+        { id: 34, x: 0.47, y: 0.20, active: false, activatedAt: null }, // Inner Center Left Tip (from 32)
+        { id: 35, x: 0.53, y: 0.20, active: false, activatedAt: null }, // Inner Center Right Tip (from 33)
+        
+        // --- Top Connections (Mid-height tips for complexity) ---
+        { id: 36, x: 0.20, y: 0.15, active: false, activatedAt: null }, // Top Left Density (from 22)
+        { id: 37, x: 0.80, y: 0.15, active: false, activatedAt: null }, // Top Right Density (from 27)
+        { id: 38, x: 0.10, y: 0.10, active: false, activatedAt: null }, // Extreme Left Apex (from 24)
+        { id: 39, x: 0.90, y: 0.10, active: false, activatedAt: null }  // Extreme Right Apex (from 29)
+    ];
+
+    connections = [
+        // --- Trunk Flow ---
+        { from: 0, to: 1 },
+        { from: 1, to: 2 },
+        { from: 2, to: 3 },
+        
+        // --- Main Split (3 primary branches from node 3) ---
+        { from: 3, to: 4 }, // To Left
+        { from: 3, to: 5 }, // To Right
+        { from: 3, to: 6 }, // To Center
+        
+        // --- Left Canopy (Layer 1) ---
+        { from: 4, to: 7 }, 
+        { from: 7, to: 8 }, 
+        { from: 7, to: 9 }, 
+        { from: 8, to: 10 }, 
+        { from: 8, to: 11 },
+        
+        // --- Right Canopy (Layer 1) ---
+        { from: 5, to: 12 },
+        { from: 12, to: 13 },
+        { from: 12, to: 14 },
+        { from: 13, to: 15 },
+        { from: 13, to: 16 },
+
+        // --- Central Canopy (Layer 1) ---
+        { from: 6, to: 17 },
+        { from: 6, to: 18 },
+        { from: 17, to: 19 }, 
+        { from: 18, to: 20 }, 
+        { from: 19, to: 21 }, 
+        { from: 20, to: 21 }, // Apex Convergence
+        
+        // --- Left Canopy (Layer 2 & 3 Expansion) ---
+        { from: 8, to: 22 },   // Spur from Far Left Bough
+        { from: 22, to: 23 },  // Deep Left Branch
+        { from: 23, to: 24 },  // Extreme Left Tip
+        { from: 24, to: 38 },  // Connect to Extreme Apex
+        { from: 9, to: 25 },   // Spur from Upper Left
+        { from: 25, to: 26 },  // High Left Tip
+        { from: 22, to: 36 },  // Top Left Density connection
+        { from: 11, to: 25 },  // Cross-connection for density
+        
+        // --- Right Canopy (Layer 2 & 3 Expansion) ---
+        { from: 13, to: 27 },  // Spur from Far Right Bough
+        { from: 27, to: 28 },  // Deep Right Branch
+        { from: 28, to: 29 },  // Extreme Right Tip
+        { from: 29, to: 39 },  // Connect to Extreme Apex
+        { from: 14, to: 30 },  // Spur from Upper Right
+        { from: 30, to: 31 },  // High Right Tip
+        { from: 27, to: 37 },  // Top Right Density connection
+        { from: 16, to: 30 },  // Cross-connection for density
+
+        // --- Inner Canopy Density (Layer 2 & 3) ---
+        { from: 17, to: 32 },
+        { from: 18, to: 33 },
+        { from: 32, to: 34 }, // Inner Center Left Tip
+        { from: 33, to: 35 }, // Inner Center Right Tip
+        { from: 34, to: 21 }, // Connect to Apex
+        { from: 35, to: 21 }, // Connect to Apex
+        
+        // Additional secondary connections for density and flow
+        { from: 7, to: 19 },
+        { from: 12, to: 20 },
+        { from: 10, to: 23 },
+        { from: 15, to: 28 }
+    ];
+    
+    // Update the UI with the fixed node count
+    document.getElementById('total-nodes').textContent = nodes.length;
+}
+
+
+/* -------------------- Drawing Functions -------------------- */
+
+/**
+ * Draws an organic, curved branch between two nodes.
+ */
+function drawLine(fromNode, toNode, opacity, time) {
+  // Get sway-affected canvas positions
+  const a = toCanvas(fromNode, time);
+  const b = toCanvas(toNode, time);
+  const DPR = (window.devicePixelRatio || 1);
+  
+  ctx.save();
+  ctx.strokeStyle = `rgba(${NODE_COLOR}, ${opacity})`;
+  ctx.lineWidth = LINE_WIDTH;
+  ctx.lineCap = 'round';
+  ctx.shadowColor = `rgba(${NODE_COLOR}, ${opacity * 0.5})`;
+  ctx.shadowBlur = GLOW_BLUR * 0.5 * DPR;
+  
+  ctx.beginPath();
+  ctx.moveTo(a.x, a.y);
+  
+  // Create a control point for the quadratic Bezier curve
+  // This point creates an upward arch, simulating organic growth.
+  const cx = (a.x + b.x) / 2;
+  const cy = a.y - Math.abs(a.y - b.y) * 0.5; // Arch point higher than both nodes for an upward curve
+
+  ctx.quadraticCurveTo(cx, cy, b.x, b.y); 
+  ctx.stroke();
+  ctx.restore();
+}
+
+/**
+ * Draws the node circle and ID, applying pulse/glow effects.
+ */
+function drawNode(node, time) {
+  const pos = toCanvas(node, time); // Use sway-affected position
+  const isActive = node.active;
+  const DPR = (window.devicePixelRatio || 1);
+  
+  let scale = 1;
+  let opacity = isActive ? 1 : 0.4;
+  
+  if (isActive && node.activatedAt !== null) {
+    const elapsed = (time - node.activatedAt) / 1000;
+    // Pulse animation using sine wave and d3 easing
+    const pulseFactor = Math.sin(elapsed * Math.PI * 3) * 0.15 + 1.15;
+    scale = typeof d3 !== 'undefined' ? d3.easeSinInOut(pulseFactor) : pulseFactor;
+    scale = Math.min(scale, 1.25); 
+  }
+  
+  const radius = NODE_RADIUS * scale;
+  const color = isActive ? ACTIVE_COLOR : NODE_COLOR;
+  
+  ctx.save();
+  
+  // Draw Node Core (Glow)
+  ctx.fillStyle = `rgba(${color}, ${opacity})`;
+  ctx.shadowColor = `rgba(${color}, ${opacity * 0.8})`;
+  ctx.shadowBlur = GLOW_BLUR * DPR;
+  ctx.beginPath();
+  ctx.arc(pos.x, pos.y, radius, 0, Math.PI * 2);
+  ctx.fill();
+  
+  // Draw ID text
+  ctx.shadowBlur = 0; 
+  ctx.fillStyle = isActive ? 'rgb(0, 0, 0)' : 'rgb(200, 200, 200)';
+  ctx.font = `bold ${NODE_RADIUS - 2}px Inter, sans-serif`;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(node.id, pos.x, pos.y);
+  
+  ctx.restore();
+}
+
+/**
+ * Draws the moving signal along a connection.
+ */
+function drawSignal(signal, time) {
+  const from = getNodeById(signal.from);
+  const to = getNodeById(signal.to);
+  const DPR = (window.devicePixelRatio || 1);
+  
+  if (!from || !to) return;
+  
+  // Apply cubic easing for smooth start/stop
+  const t = typeof d3 !== 'undefined' ? d3.easeCubicInOut(signal.progress) : signal.progress;
+  
+  // Calculate raw interpolated normalized position
+  const rawX = from.x + (to.x - from.x) * t;
+  const rawY = from.y + (to.y - from.y) * t;
+  
+  // Apply wind to the interpolated point
+  const pos = toCanvas({ x: rawX, y: rawY }, time); 
+  
+  // Draw outer glow
+  ctx.save();
+  ctx.fillStyle = `rgba(${SIGNAL_COLOR}, 0.8)`;
+  ctx.shadowColor = `rgba(${SIGNAL_COLOR}, 0.9)`;
+  ctx.shadowBlur = GLOW_BLUR * 1.5 * DPR;
+  ctx.globalCompositeOperation = 'lighter';
+  
+  ctx.beginPath();
+  ctx.arc(pos.x, pos.y, SIGNAL_RADIUS * 1.5, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+  
+  // Draw core
+  ctx.save();
+  ctx.fillStyle = 'rgba(255, 255, 255, 1)';
+  ctx.beginPath();
+  ctx.arc(pos.x, pos.y, SIGNAL_RADIUS * 0.6, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+}
+
+/* -------------------- Signal Management -------------------- */
+
+function createSignal(fromId, toId) {
+  const fromNode = getNodeById(fromId);
+  const toNode = getNodeById(toId);
+  
+  if (!fromNode || !toNode) return;
+  
+  signals.push({
+    from: fromId,
+    to: toId,
+    progress: 0,
+    distance: distance(fromNode, toNode)
+  });
+}
+
+function updateSignals(time) {
+  for (let i = signals.length - 1; i >= 0; i--) {
+    const signal = signals[i];
+    
+    // Update progress based on distance
+    signal.progress += SIGNAL_SPEED / signal.distance;
+    
+    if (signal.progress >= 1) {
+      const targetNode = getNodeById(signal.to);
+      
+      if (!targetNode) {
+        signals.splice(i, 1);
+        continue;
+      }
+      
+      if (!targetNode.active) {
+        targetNode.active = true;
+        targetNode.activatedAt = time;
+        
+        // Branching outwards: trigger signals to all children of the newly active node
+        connections.forEach(conn => {
+          if (conn.from === signal.to) {
+            const connectedNode = getNodeById(conn.to);
+            if (connectedNode) { 
+                // Small delay for staggered, organic flow
+                setTimeout(() => createSignal(conn.from, conn.to), 50);
+            }
+          }
+        });
+      }
+      
+      signals.splice(i, 1);
+    }
+  }
+}
+
+/* -------------------- Animation Loop & Control -------------------- */
+let animationStartTime = null;
+let allNodesActivated = false;
+let syncStart = null;
+
+
+function startAnimationLoop() {
+    if (timer) timer.stop();
+
+    // Reset state for the new graph
+    animationStartTime = null;
+    allNodesActivated = false;
+    syncStart = null;
+    signals.length = 0;
+    nodes.forEach(n => {
+        n.active = false;
+        n.activatedAt = null;
+    });
+
+    timer = d3.timer((elapsed) => {
+        windTime = elapsed; // Update global wind time
+
+        if (!animationStartTime) {
+            animationStartTime = elapsed;
+            
+            // Start the signal from the Root (Node ID 0)
+            const root = getNodeById(0);
+            if(root) {
+                root.active = true;
+                root.activatedAt = elapsed;
+                
+                // Trigger initial signals from the root
+                connections.forEach(conn => {
+                    if (conn.from === 0) {
+                        createSignal(conn.from, conn.to);
+                    }
+                });
+            }
+        }
+        
+        const time = elapsed;
+        
+        // Clear canvas
+        ctx.fillStyle = 'rgba(10, 10, 20, 1)';
+        ctx.fillRect(0, 0, canvas.width / (window.devicePixelRatio || 1), canvas.height / (window.devicePixelRatio || 1));
+        
+        // Update and Draw
+        updateSignals(time);
+        
+        // Draw connections (branches)
+        connections.forEach(conn => {
+            const fromNode = getNodeById(conn.from);
+            const toNode = getNodeById(conn.to);
+            if (fromNode && toNode) {
+                // Lines fade in as nodes become active
+                const opacity = (fromNode.active && toNode.active) ? 0.6 : 0.1;
+                drawLine(fromNode, toNode, opacity, time);
+            }
+        });
+        
+        // Draw nodes
+        nodes.forEach(node => drawNode(node, time));
+
+        // Draw signals
+        signals.forEach(signal => drawSignal(signal, time));
+        
+        // Stop the animation once all nodes are activated
+        if (!allNodesActivated && nodes.length > 0 && nodes.every(n => n.active)) {
+            allNodesActivated = true;
+            syncStart = time;
+        }
+        
+        if (allNodesActivated && syncStart && (time - syncStart) / 1000 > 3) {
+             // Stop the timer a few seconds after the network is fully active
+             timer.stop();
+        }
+    });
+}
+
+function restartAnimation() {
+    // Reload the fixed structure
+    loadFixedTreeStructure();
+    // Start the animation with the new graph
+    startAnimationLoop();
+}
+
+/* -------------------- Initialization -------------------- */
+
+window.onload = function() {
+    
+    // Remove the sliders from the DOM or hide them, as the structure is now fixed.
+    const controls = document.getElementById('control-panel');
+    const oldControls = controls.querySelectorAll('.control-group');
+    oldControls.forEach(group => group.remove());
+
+    canvas.addEventListener('click', restartAnimation);
+    
+    // Initial load
+    resize();
+    loadFixedTreeStructure();
+    startAnimationLoop();
+};
+</script>
+</body>
+</html>

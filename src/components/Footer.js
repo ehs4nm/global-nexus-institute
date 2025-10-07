@@ -10,7 +10,7 @@ export const Footer = () => {
           <div>
             <div className="flex items-center gap-3">
             <div className="h-8 w-8 rounded image-cover">
-                <img src="assets/favicon_io/android-chrome-512x512.png" alt="Global Nexus Institute" className="rounded" />
+                <img src="/assets/favicon_io/android-chrome-512x512.png" alt="Global Nexus Institute" className="rounded" />
             </div>
               <span className="font-display">Global Nexus Institute</span>
             </div>
