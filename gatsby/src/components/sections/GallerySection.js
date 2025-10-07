@@ -10,12 +10,12 @@ export const GallerySection = () => {
         </header>
         <div className="group flex gap-3 h-[60vh]">
           {[
-            { label: "Energy Systems", img: "assets/leader.jpg" },
-            { label: "Geopolitics", img: "assets/leader.jpg" },
-            { label: "Public Health", img: "assets/leader.jpg" },
-            { label: "Resilience", img: "assets/leader.jpg" },
+            { label: "Energy Systems", img: "assets/2.jpg", url: "/insights/energy" },
+            { label: "Geopolitics", img: "assets/3.jpg", url: "/insights/geopolitics" },
+            { label: "Public Health", img: "assets/4.jpg", url: "/insights/public-health" },
+            { label: "Resilience", img: "assets/leader.jpg", url: "/insights/resilience" },
           ].map((panel) => (
-            <a key={panel.label} href="#" className="relative flex-1 overflow-hidden rounded-xl border border-black/10 dark:border-white/10 transition-[flex] duration-500 ease-out hover:flex-[8] hover:shadow-2xl hover:shadow-accent-500/20">
+            <a key={panel.label} href={panel.url} className="relative flex-1 overflow-hidden rounded-xl border border-black/10 dark:border-white/10 transition-[flex] duration-500 ease-out hover:flex-[8] hover:shadow-2xl hover:shadow-accent-500/20">
               <img src={panel.img} alt={panel.label} className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-4 left-4 right-4 font-display text-xl text-white">{panel.label}</div>

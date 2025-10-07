@@ -11,7 +11,9 @@ export const Header = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <a href="#top" className="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-accent-500">
-            <div className="h-8 w-8 rounded bg-accent-500" />
+            <div className="h-8 w-8 rounded image-cover">
+                <img src="favicon_io/android-chrome-512x512.png" alt="Global Nexus Institute" className="rounded" />
+            </div>
             <span className="font-display text-lg tracking-wide">Global Nexus Institute</span>
           </a>
           <div className="flex items-center gap-3">
