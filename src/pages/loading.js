@@ -34,7 +34,7 @@ const LoaderTree = ({ onComplete, isAppReady, startPhase = 2 }) => {
         syncStart: null,
     });
 
-    const LOGO_HOLD_TIME = 2500;
+    const LOGO_HOLD_TIME = 700;
 
     const getFixedNodes = useCallback(() => [
         { id: 0, x: 0.50, y: 0.90, active: false, activatedAt: null }, { id: 1, x: 0.50, y: 0.78, active: false, activatedAt: null },
@@ -122,12 +122,36 @@ const IndexPage = () => {
     const [isAppReady, setIsAppReady] = useState(false);
     const [isLoaderFinished, setIsLoaderFinished] = useState(false);
 
+    // Track when the logo animation has completed (LoaderTree calls onComplete)
+    const [isLogoDone, setIsLogoDone] = useState(false);
+    // Track when the browser has finished loading all resources
+    const [hasWindowLoaded, setHasWindowLoaded] = useState(false);
+
+    // Listen for the window load event (or immediate if already complete)
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        if (document.readyState === 'complete') {
+            setHasWindowLoaded(true);
+            return;
+        }
+        const onLoad = () => setHasWindowLoaded(true);
+        window.addEventListener('load', onLoad, { once: true });
+        return () => window.removeEventListener('load', onLoad);
+    }, []);
+
+    // LoaderTree tells us its animation finished
     const handleLoadingComplete = () => {
-        setIsAppReady(true);
-        setTimeout(() => {
-            setIsLoaderFinished(true);
-        }, 1000);
+        setIsLogoDone(true);
     };
+
+    // When both the logo has shown and the window has fully loaded, reveal the app
+    useEffect(() => {
+        if (isLogoDone && hasWindowLoaded) {
+            setIsAppReady(true);
+            const t = setTimeout(() => setIsLoaderFinished(true), 1000); // match fade-out duration
+            return () => clearTimeout(t);
+        }
+    }, [isLogoDone, hasWindowLoaded]);
 
     return (
         <>
@@ -143,10 +167,10 @@ const IndexPage = () => {
                 <Layout>
                     <HeroSection />
                     <SloganSection />
+                    <GallerySection />
                     <MissionSection />
                     <ModelSection />
                     <InitiativesSection />
-                    <GallerySection />
                     <LeadershipSection />
                     <ContactSection />
                 </Layout>

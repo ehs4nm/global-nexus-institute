@@ -8,7 +8,7 @@ export const GallerySection = () => {
           <h2 className="font-display text-3xl sm:text-5xl font-extrabold leading-tight">Signals from the Nexus.</h2>
           <p className="mt-4 text-gray-700 dark:text-white/70">Hover to reveal the full frame. We expand the viewport — not the image — to show the whole picture.</p>
         </header>
-        <div className="group flex gap-3 h-[60vh]">
+        <div className="group flex gap-3 h-[70vh]">
           {[
             { label: "Energy Systems", img: "/assets/2.jpg", url: "/insights/energy" },
             { label: "Geopolitics", img: "/assets/3.jpg", url: "/insights/geopolitics" },
