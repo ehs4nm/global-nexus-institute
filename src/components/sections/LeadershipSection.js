@@ -20,8 +20,12 @@ export const LeadershipSection = () => {
               onClick={() => openPerson(p)}
               className="group text-left p-6 rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-white/[0.02] hover:border-accent-500/50 transition focus:outline-none focus:ring-2 focus:ring-accent-500"
             >
-              <div className="rounded bg-accent-500/30">
-                <img src={p.img} alt={p.name} className="rounded" />
+              <div className="rounded-xl bg-accent-500/30 aspect-square overflow-hidden">
+                <img 
+                  src={p.img} 
+                  alt={p.name} 
+                  className="w-full h-full object-cover rounded-xl"
+                />
               </div>
               <h3 className="mt-4 font-display text-xl font-semibold">{p.name}</h3>
               <p className="text-gray-600 dark:text-white/70">{p.title}</p>

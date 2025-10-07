@@ -4,5 +4,7 @@ module.exports = {
     description:
       "GNI connects energy, geopolitics, and health into one field of actionable intelligence.",
   },
-  plugins: ["gatsby-plugin-postcss"],
+  plugins: [
+    "gatsby-plugin-postcss"
+  ],
 };

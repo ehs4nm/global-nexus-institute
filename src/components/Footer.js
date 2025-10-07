@@ -9,7 +9,9 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
             <div className="flex items-center gap-3">
-              <div className="h-6 w-6 rounded bg-accent-500"></div>
+            <div className="h-8 w-8 rounded image-cover">
+                <img src="assets/favicon_io/android-chrome-512x512.png" alt="Global Nexus Institute" className="rounded" />
+            </div>
               <span className="font-display">Global Nexus Institute</span>
             </div>
             <p className="mt-3 text-sm text-gray-600 dark:text-white/60">Foresight for a connected world.</p>

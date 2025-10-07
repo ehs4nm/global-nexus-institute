@@ -13,7 +13,7 @@ export const GallerySection = () => {
             { label: "Energy Systems", img: "assets/2.jpg", url: "/insights/energy" },
             { label: "Geopolitics", img: "assets/3.jpg", url: "/insights/geopolitics" },
             { label: "Public Health", img: "assets/4.jpg", url: "/insights/public-health" },
-            { label: "Resilience", img: "assets/leader.jpg", url: "/insights/resilience" },
+            { label: "Resilience", img: "assets/8.jpg", url: "/insights/resilience" },
           ].map((panel) => (
             <a key={panel.label} href={panel.url} className="relative flex-1 overflow-hidden rounded-xl border border-black/10 dark:border-white/10 transition-[flex] duration-500 ease-out hover:flex-[8] hover:shadow-2xl hover:shadow-accent-500/20">
               <img src={panel.img} alt={panel.label} className="absolute inset-0 w-full h-full object-cover" />
