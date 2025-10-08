@@ -43,7 +43,7 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <section className="grid place-items-center hero-grid relative dark:bg-black w-[90vw] h-[90vh] mx-auto mt-16 rounded-xl overflow-hidden">
+    <section className="grid place-items-center hero-grid relative dark:bg-black w-[85vw] h-[90vh] mx-auto mt-[160px] rounded-xl overflow-hidden">
       <video
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay muted loop playsInline poster="/assets/images/1.jpg"

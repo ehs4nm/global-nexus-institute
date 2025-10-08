@@ -5,15 +5,15 @@ import { TopBar } from './TopBar';
 import { MegaMenu } from './menus/MegaMenu';
 
 const WHAT_WE_DO = [
-  { href: '/what-we-do/analysis', title: 'Analysis', image: '/assets/images/what-we-do-1.jpg' },
-  { href: '/what-we-do/advisory', title: 'Advisory', image: '/assets/images/what-we-do-2.jpg' },
-  { href: '/what-we-do/research', title: 'Research', image: '/assets/images/what-we-do-3.jpg' },
+  { href: '/what-we-do/analysis', title: 'Analysis', image: '/assets/images/1.jpg' },
+  { href: '/what-we-do/advisory', title: 'Advisory', image: '/assets/images/2.jpg' },
+  { href: '/what-we-do/research', title: 'Research', image: '/assets/images/3.jpg' },
 ];
 
 const WHO_WE_ARE = [
-  { href: '/who-we-are/team', title: 'Team', image: '/assets/images/who-we-are-1.jpg' },
-  { href: '/who-we-are/partners', title: 'Partners', image: '/assets/images/who-we-are-2.jpg' },
-  { href: '/who-we-are/careers', title: 'Careers', image: '/assets/images/who-we-are-3.jpg' },
+  { href: '/who-we-are/team', title: 'Team', image: '/assets/images/6.jpg' },
+  { href: '/who-we-are/partners', title: 'Partners', image: '/assets/images/4.jpg' },
+  { href: '/who-we-are/careers', title: 'Careers', image: '/assets/images/5.jpg' },
 ];
 
 export const Header = () => {
@@ -26,9 +26,9 @@ export const Header = () => {
       <TopBar />
 
       {/* Main header bar */}
-      <div className="bg-white/70 dark:bg-black/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-black/50 border-b border-black/5 dark:border-white/10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+      <div className="bg-white dark:bg-black backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-black/50 border-b border-black/5 dark:border-white/10">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex items-center justify-between h-24">
             <a href="#top" className="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-accent-500">
               <div className="h-8 w-8 rounded image-cover">
                   <img src="/assets/favicon_io/android-chrome-512x512.png" alt="Global Nexus Institute" className="rounded" />
@@ -50,11 +50,11 @@ export const Header = () => {
                   aria-pressed={isDark}
                   title="Toggle theme"
                   onClick={toggleTheme}
-                  className="hidden md:inline-flex items-center justify-center w-10 h-10 rounded border border-black/10 dark:border-white/15 hover:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500"
+                  className="hidden md:inline-flex items-center justify-center w-10 h-10 rounded focus:outline-none focus:ring-2 focus:ring-accent-500"
                 >
                   {/* Sun icon shown in light mode */}
                   <svg
-                    className={`w-6 h-6 ${isDark ? "hidden" : ""}`}
+                    className={`w-5 h-5 ${isDark ? "hidden" : ""}`}
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 48 48"
                   >
@@ -62,7 +62,7 @@ export const Header = () => {
                   </svg>
                   {/* Moon icon shown in dark mode */}
                   <svg
-                    className={`w-6 h-6 ${isDark ? "" : "hidden"}`}
+                    className={`w-5 h-5 ${isDark ? "" : "hidden"}`}
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="currentColor"

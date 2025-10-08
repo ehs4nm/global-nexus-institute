@@ -21,8 +21,13 @@ module.exports = {
         }
       },
       fontFamily: {
-        display: ["Inter Tight", "Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif"],
-        body: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif"]
+        // Semantic font naming for better maintainability
+        'title': ['"Playfair Display SC"', 'serif'], // For main titles
+        'title-bold': ['"Anton SC"', 'sans-serif'], // For bold/impact titles
+        'body': ['"Nixie One"', 'sans-serif'], // For paragraphs and body text
+        // Fallbacks for compatibility
+        'sans': ['"Nixie One"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'serif': ['"Playfair Display SC"', 'Georgia', 'serif']
       },
       boxShadow: {
         glow: '0 0 0 1px rgba(59,130,246,0.4), 0 0 24px rgba(59,130,246,0.35)'
