@@ -14,7 +14,7 @@ const NotFoundPage = () => {
           </p>
           <a
             href="/"
-            className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-accent-500 hover:bg-accent-600"
+            className="inline-flex items-center px-4 py-2 border ransparent text-base font-medium rounded-md text-white bg-accent-500 hover:bg-accent-600"
           >
             Go back home
           </a>

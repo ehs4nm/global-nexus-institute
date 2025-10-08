@@ -2,7 +2,7 @@ import React from 'react';
 
 export const GallerySection = () => {
   return (
-    <section id="gallery" className="h-screen border-t border-black/5 dark:border-white/10 flex items-center">
+    <section id="gallery" className="h-screen  border-black/5 dark:border-white/10 flex items-center">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
         <header className="max-w-4xl mb-8">
           <h2 className="font-display text-3xl sm:text-5xl font-extrabold leading-tight">Signals from the Nexus.</h2>

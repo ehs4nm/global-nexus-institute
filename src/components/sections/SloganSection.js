@@ -4,7 +4,7 @@ import React from 'react';
 
 export const SloganSection = () => {
   return (
-    <section id="slogan" className="h-[50vh] relative flex items-center justify-center overflow-hidden border-t border-black/5 dark:border-white/10">
+    <section id="slogan" className="h-[50vh] relative flex items-center justify-center overflow-hidden  border-black/5 dark:border-white/10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full grid grid-cols-12 gap-8 py-16 lg:flex-row lg:py-20">
         <div className="col-span-4 lg:col-span-5">
           <p className="font-display text-3xl sm:text-5xl font-extrabold leading-tight">HOW WE WORK</p>

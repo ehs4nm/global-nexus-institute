@@ -9,6 +9,8 @@ import { InitiativesSection } from '../components/sections/InitiativesSection';
 import { GallerySection } from '../components/sections/GallerySection';
 import { LeadershipSection } from '../components/sections/LeadershipSection';
 import { ContactSection } from '../components/sections/ContactSection';
+import { AboutUsSection } from '../components/sections/AboutUsSection';     
+import { ExploreSliderSection } from '../components/sections/ExploreSliderSection';
 
 // --- LoaderTree Component ---
 // I've moved this component into the same file to resolve the import error.
@@ -170,6 +172,8 @@ const IndexPage = () => {
                     <GallerySection />
                     <MissionSection />
                     <ModelSection />
+                    <AboutUsSection />
+                    <ExploreSliderSection />
                     <InitiativesSection />
                     <LeadershipSection />
                     <ContactSection />

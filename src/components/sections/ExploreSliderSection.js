@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const MissionSection = () => {
+export const ExploreSliderSection = () => {
   return (
     <section id="mission" className="relative h-[50vh] flex items-center text-gray-800 dark:text-white">
       <div className="absolute inset-0 pointer-events-none">

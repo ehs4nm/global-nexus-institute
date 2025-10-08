@@ -2,7 +2,7 @@ import React from 'react';
 
 export const InitiativesSection = () => {
   return (
-    <section id="initiatives" className="h-screen border-t border-black/5 dark:border-white/[0.06] flex items-center">
+    <section id="initiatives" className="h-screen  border-black/5 dark:border-white/[0.06] flex items-center">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <header className="max-w-3xl">
           <h2 className="font-display text-3xl sm:text-5xl font-extrabold leading-tight">Turning foresight into global impact.</h2>

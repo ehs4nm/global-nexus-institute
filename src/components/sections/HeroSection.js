@@ -43,17 +43,16 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <section className="grid place-items-center hero-grid relative dark:bg-black w-[90vw] h-[90vh] mx-auto rounded-lg">
-      <div className="h-[10vh]"></div>
+    <section className="grid place-items-center hero-grid relative dark:bg-black w-[90vw] h-[90vh] mx-auto mt-16 rounded-xl overflow-hidden">
       <video
-        className="absolute inset-0 w-full h-full object-cover rounded-lg"
+        className="absolute inset-0 w-full h-full object-cover"
         autoPlay muted loop playsInline poster="/assets/images/1.jpg"
       >
         <source src="/assets/videos/video-6.mp4" type="video/mp4" />
       </video>
 
-      {/* Improved Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70"></div>
+      {/* Overlay with rounded corners matching the video */}
+      <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-black/30 via-black/50 to-black/70"></div>
 
       <div className="relative z-10 px-6 md:px-12 max-w-5xl text-center">
         <motion.div
@@ -62,10 +61,10 @@ export const HeroSection = () => {
           initial="hidden"
           animate="visible" // Changed from 'whileInView'
         >
-          {/* The rest of the content remains exactly the same */}
+          {/* The rest of the content remains exactly the same
           <motion.div className="flex items-center justify-center gap-4 mb-6" variants={itemVariants}>
             <img src="/assets/favicon_io/android-chrome-512x512.png" alt="logo" className='w-32 h-32 rounded-xl' />
-          </motion.div>
+          </motion.div> */}
 
           <motion.h2
             className="font-display sm:text-6xl md:text-7xl font-extrabold leading-tight text-white"

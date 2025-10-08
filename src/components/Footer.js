@@ -4,7 +4,7 @@ export const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-black/10 dark:border-white/[0.06] py-10 text-gray-800 dark:text-white">
+    <footer className=" border-black/10 dark:border-white/[0.06] py-10 text-gray-300 dark:text-white dark:bg-white bg-black">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
@@ -16,7 +16,7 @@ export const Footer = () => {
             </div>
             <p className="mt-3 text-sm text-gray-600 dark:text-white/60">Foresight for a connected world.</p>
           </div>
-          <nav className="text-sm uppercase tracking-wide text-gray-700 dark:text-white/70">
+          <nav className="text-sm uppercase tracking-wide text-gray-200 dark:text-white/70">
             <a href="#mission" className="mr-4 hover:text-accent-400">Mission</a>
             <a href="#model" className="mr-4 hover:text-accent-400">Model</a>
             <a href="#initiatives" className="mr-4 hover:text-accent-400">Initiatives</a>
