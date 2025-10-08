@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
-export const useMenu = () => {
+const MenuContext = createContext(null);
+
+export const MenuProvider = ({ children }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [menuBg, setMenuBg] = useState("");
   const [person, setPerson] = useState(null);
@@ -9,8 +11,8 @@ export const useMenu = () => {
   // Lock body scroll when menu is open
   useEffect(() => {
     if (typeof document === "undefined") return;
-    document.body.classList.toggle("overflow-hidden", isMenuOpen);
-  }, [isMenuOpen]);
+    document.body.classList.toggle("overflow-hidden", isMenuOpen || isDrawerOpen);
+  }, [isMenuOpen, isDrawerOpen]);
 
   // Handle ESC key to close menu and drawer
   useEffect(() => {
@@ -29,7 +31,7 @@ export const useMenu = () => {
     setDrawerOpen(true);
   };
 
-  return {
+  const value = {
     isMenuOpen,
     setMenuOpen,
     menuBg,
@@ -37,6 +39,16 @@ export const useMenu = () => {
     person,
     isDrawerOpen,
     setDrawerOpen,
-    openPerson
+    openPerson,
   };
+
+  return <MenuContext.Provider value={value}>{children}</MenuContext.Provider>;
+};
+
+export const useMenu = () => {
+  const ctx = useContext(MenuContext);
+  if (!ctx) {
+    throw new Error('useMenu must be used within a MenuProvider');
+  }
+  return ctx;
 };

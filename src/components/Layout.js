@@ -5,20 +5,23 @@ import { FullscreenMenu } from './FullscreenMenu';
 import { PersonDrawer } from './PersonDrawer';
 import { NewsletterProvider } from '../hooks/useNewsletter';
 import { NewsletterModal } from './NewsletterModal';
+import { MenuProvider } from '../hooks/useMenu';
 
 export const Layout = ({ children }) => {
   return (
     <NewsletterProvider>
-      <div>
-        <Header />
-        <FullscreenMenu />
-        <PersonDrawer />
-        <main id="top" className="relative">
-          {children}
-        </main>
-        <Footer />
-        <NewsletterModal />
-      </div>
+      <MenuProvider>
+        <div>
+          <Header />
+          <FullscreenMenu />
+          <PersonDrawer />
+          <main id="top" className="relative">
+            {children}
+          </main>
+          <Footer />
+          <NewsletterModal />
+        </div>
+      </MenuProvider>
     </NewsletterProvider>
   );
 };

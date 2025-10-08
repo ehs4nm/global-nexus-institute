@@ -1,46 +1,71 @@
 import React from 'react';
 import { useMenu } from '../hooks/useMenu';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export const PersonDrawer = () => {
   const { person, isDrawerOpen, setDrawerOpen } = useMenu();
-
-  if (!isDrawerOpen) return null;
+  const bioFallback = person
+    ? `${person.name}${person.title ? `, ${person.title}` : ''}.`
+    : '';
 
   return (
-    <>
-      {/* Backdrop: dark in light mode, light in dark mode */}
-      <div
-        className="fixed inset-0 z-40 bg-black/50 dark:bg-white/50 backdrop-blur-sm"
-        onClick={() => setDrawerOpen(false)}
-        aria-hidden="true"
-      />
-
-      {/* Drawer */}
-      <aside
-        id="personDrawer"
-        className="fixed right-0 top-0 z-50 h-screen w-full md:w-2/3 bg-black/95 border-l border-white/10 transition-transform duration-300 ease-out translate-x-0"
-        role="dialog"
-        aria-modal="true"
-      >
-        <div className="h-full flex flex-col">
-          <div className="flex items-center justify-between p-4 border-b border-white/10">
-            <h3 id="personName" className="font-display text-xl text-white">{person?.name || ''}</h3>
-            <button
+    <AnimatePresence>
+      {isDrawerOpen && (
+        <>
+          {/* Fullscreen container */}
+          <motion.div
+            className="fixed inset-0 z-50 flex"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            {/* Left: blurred backdrop (1/3) */}
+            <div
               onClick={() => setDrawerOpen(false)}
-              className="w-10 h-10 inline-flex items-center justify-center rounded border border-white/15 hover:border-accent-500 focus:ring-2 focus:ring-accent-500"
+              className="w-1/3 bg-black/50 backdrop-blur-sm cursor-pointer transition hover:bg-black/60"
+            />
+
+            {/* Right: solid black content (2/3) */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 20, stiffness: 300 }}
+              className="w-2/3 bg-black text-white flex flex-col md:flex-row border-l border-white/10"
             >
-              <span className="sr-only">Close</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          <div className="p-6 space-y-4 overflow-y-auto">
-            <p id="personTitle" className="text-accent-400">{person?.title || ''}</p>
-            <p id="personBio" className="text-white/80 leading-relaxed">{person?.bio || ''}</p>
-          </div>
-        </div>
-      </aside>
-    </>
+              {/* Left Column (inside drawer): Image + title centered */}
+              <div className="w-1/2 flex flex-col items-center justify-center p-8 border-r border-white/10">
+                {person?.img && (
+                  <div className="rounded-2xl overflow-hidden border border-white/10 aspect-square w-72 max-w-full shadow-2xl">
+                    <img
+                      src={person.img}
+                      alt={person?.name || 'Person'}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                )}
+                <div className="mt-6 text-center">
+                  <h3 className="text-3xl font-semibold tracking-tight">
+                    {person?.name || ''}
+                  </h3>
+                  {person?.title && (
+                    <p className="text-accent-400 text-lg mt-2">
+                      {person.title}
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              {/* Right Column: Description */}
+              <div className="w-1/2 flex items-center justify-center p-10">
+                <p className="text-neutral-300 text-lg leading-relaxed whitespace-pre-line max-w-xl">
+                  {person?.bio || bioFallback}
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
   );
 };

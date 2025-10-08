@@ -79,7 +79,7 @@ export const HeroSection = () => {
         </motion.div>
         
         <div><p className='text-white text-lg font-bold'>{hero.tagline}</p></div>
-        <h1 className="font-title-bold font-display text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.05] text-white">
+        <h1 className="heading-1 font-display text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.05] text-white">
           <span 
             ref={textRef}
             className="block"
