@@ -100,9 +100,9 @@ const LoaderTree = ({ onComplete, isAppReady, startPhase = 2 }) => {
             <div className={`absolute inset-0 transition-opacity duration-500 ${loadingPhase === 1 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
                 <canvas ref={canvasRef} />
             </div>
-            <div className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-700 ${loadingPhase === 2 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} style={{ backgroundColor: '#0a0a14' }}>
+            <div className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-300 ${loadingPhase === 2 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} style={{ backgroundColor: '#0a0a14' }}>
                 <div className="text-center p-8">
-                    <h1 className="text-8xl sm:text-[10rem] font-black tracking-widest text-indigo-400 gni-glow">GNI</h1>
+                    <h1 className="title-hero text-8xl sm:text-[10rem] font-black tracking-widest text-indigo-400 gni-glow">GNI</h1>
                     <h2 className="text-lg sm:text-2xl font-light text-slate-300 mt-6 animate-fadeInUp" style={{ animationDelay: '0.5s', animationFillMode: 'forwards', opacity: 0 }}>
                         Global Nexus Institute — Foresight for a Connected World
                     </h2>
@@ -110,7 +110,7 @@ const LoaderTree = ({ onComplete, isAppReady, startPhase = 2 }) => {
             </div>
             <style>{`
                 @keyframes logoBeat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-                .gni-glow { text-shadow: 0 0 10px #818cf8, 0 0 30px #818cf8, 0 0 50px #818cf8; animation: logoBeat 2.5s ease-in-out infinite; }
+                .gni-glow { text-shadow: 0 0 10px rgb(53, 53, 53), 0 0 30px rgb(32, 35, 64), 0 0 50px rgb(148, 148, 148); animation: logoBeat 2.5s ease-in-out infinite; }
                 @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
                 .animate-fadeInUp { animation: fadeInUp 1s ease-out; }
             `}</style>

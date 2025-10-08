@@ -53,6 +53,9 @@ export const MegaMenu = ({ label, items = [] }) => {
           onMouseEnter={openMenu}
           onMouseLeave={closeMenu}
           onClick={closeMenu}
+          onKeyDown={(e) => e.key === 'Escape' && closeMenu()}
+          role="presentation"
+          tabIndex={-1}
         />
       )}
 
@@ -63,6 +66,19 @@ export const MegaMenu = ({ label, items = [] }) => {
         className="fixed left-0 right-0 top-[124px] z-50 w-screen pointer-events-none"
         onMouseEnter={openMenu}
         onMouseLeave={closeMenu}
+        onKeyDown={(e) => {
+          if (e.key === 'Escape') closeMenu();
+          if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            const menuItems = Array.from(e.currentTarget.querySelectorAll('[role="menuitem"]'));
+            const currentIndex = menuItems.indexOf(document.activeElement);
+            const nextIndex = e.key === 'ArrowDown' ? 
+              (currentIndex + 1) % menuItems.length : 
+              (currentIndex - 1 + menuItems.length) % menuItems.length;
+            menuItems[nextIndex].focus();
+          }
+        }}
+        tabIndex={open ? 0 : -1}
       >
         <div
           className={`mx-auto max-w-7xl overflow-hidden ${open ? 'opacity-100' : 'opacity-0'} transition-opacity duration-200 pointer-events-auto`}
@@ -77,12 +93,12 @@ export const MegaMenu = ({ label, items = [] }) => {
           >
             <div className="px-6 py-8 grid grid-cols-1 md:grid-cols-4 gap-8">
               <div>
-                <h4 className="text-sm uppercase tracking-wide text-black">{label}</h4>
+                <h4 className="text-xl uppercase tracking-wide text-black">{label}</h4>
                 <p className="mt-2 text-sm text-black">Explore {label.toLowerCase()} highlights</p>
               </div>
               <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {items.map((it) => (
-                  <a key={it.href} href={it.href} className="group/item block" role="menuitem" tabIndex={0}>
+                  <a key={it.href} href={it.href} className="group/item block" role="menuitem" tabIndex={open ? 0 : -1} aria-label={it.title}>
                     <div className="aspect-[4/3] w-full overflow-hidden rounded-lg bg-white/5 border border-white/10">
                       <img src={it.image} alt="" className="w-full h-full object-cover group-hover/item:scale-[1.03] transition-transform duration-300" />
                     </div>

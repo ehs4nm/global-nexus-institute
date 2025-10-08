@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
+import { useContent } from '../../hooks/useContent';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -28,6 +29,8 @@ const itemVariants = {
 
 export const HeroSection = () => {
   const textRef = useRef(null);
+  const { content } = useContent();
+  const hero = content.hero;
 
   useEffect(() => {
     const words = textRef.current.querySelectorAll('span');
@@ -46,9 +49,9 @@ export const HeroSection = () => {
     <section className="grid place-items-center hero-grid relative dark:bg-black w-[85vw] h-[90vh] mx-auto mt-[160px] rounded-xl overflow-hidden">
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        autoPlay muted loop playsInline poster="/assets/images/1.jpg"
+        autoPlay muted loop playsInline poster={hero.posterSrc}
       >
-        <source src="/assets/videos/video-6.mp4" type="video/mp4" />
+        <source src={hero.videoSrc} type="video/mp4" />
       </video>
 
       {/* Overlay with rounded corners matching the video */}
@@ -75,17 +78,17 @@ export const HeroSection = () => {
           </motion.h2>
         </motion.div>
         
-        <div><p className='text-white text-lg font-bold'>Foresight for a Connected World</p></div>
-        <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.05] text-white">
+        <div><p className='text-white text-lg font-bold'>{hero.tagline}</p></div>
+        <h1 className="font-title-bold font-display text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.05] text-white">
           <span 
             ref={textRef}
             className="block"
           >
-            {`Seeing the world's crises`.split(' ').map((word, i) => (
+            {hero.title.split(' ').map((word, i) => (
               <span key={i} className="inline-block mr-2">{word}</span>
             ))}
           </span>
-          <span className="block text-accent-500">— before they collide.</span>
+          <span className="block text-accent-500">{hero.subtitle}</span>
         </h1>
 
         {/* rest of component unchanged */}

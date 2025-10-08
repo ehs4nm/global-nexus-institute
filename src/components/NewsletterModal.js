@@ -13,8 +13,15 @@ export const NewsletterModal = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-[200]">
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={close} />
+    <div className="fixed inset-0 z-[200]" role="dialog" aria-modal="true" aria-labelledby="newsletter-title">
+      <div 
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm" 
+        onClick={close} 
+        onKeyDown={(e) => e.key === 'Escape' && close()}
+        tabIndex={-1} 
+        role="button"
+        aria-label="Close newsletter modal"
+      />
       <div className="relative z-10 flex items-center justify-center min-h-full p-8">
         <div className="w-full max-w-3xl bg-white dark:bg-zinc-900 shadow-2xl">
           <div className="px-12 pt-12 flex items-end justify-end">

@@ -17,14 +17,14 @@ body {
 }
 
 .font-title-bold {
-  font-family: "Anton SC", sans-serif;
-  font-weight: 400; /* Anton SC is naturally bold */
+  font-family: "Alan Sans", sans-serif;
+  font-weight: 600; /* Alan Sans is naturally bold */
   text-transform: uppercase;
   letter-spacing: 0.025em;
 }
 
 .font-body {
-  font-family: "Nixie One", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-feature-settings: "liga" 1, "kern" 1;
 }
 

@@ -11,7 +11,7 @@ export const ExploreSliderSection = () => {
       <div className="relative mx-auto max-w-7xl px-2 sm:px-4 lg:px-6">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div>
-            <h2 className="font-display text-3xl sm:text-5xl font-extrabold leading-tight">
+            <h2 className="heading-1 font-display text-3xl sm:text-5xl font-extrabold leading-tight">
               Crises do not stand alone.
             </h2>
             <p className="mt-6 text-xl text-gray-700 dark:text-white/80">

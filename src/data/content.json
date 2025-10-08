@@ -1,0 +1,79 @@
+{
+  "hero": {
+    "tagline": "Foresight for a Connected World",
+    "title": "Seeing the world's crises",
+    "subtitle": "— before they collide.",
+    "videoSrc": "/assets/videos/video-6.mp4",
+    "posterSrc": "/assets/images/1.jpg"
+  },
+  "mission": {
+    "title": "Crises do not stand alone.",
+    "paragraphs": [
+      "Energy shocks fuel conflict. Conflict spreads disease. Health crises destabilize economies. Yet global policy and research remain siloed.",
+      "The Global Nexus Institute (GNI) exists to break those silos — integrating energy, geopolitics, and health into a single field of foresight and action."
+    ],
+    "cards": [
+      {
+        "label": "Energy → Conflict",
+        "title": "Chain Reaction"
+      },
+      {
+        "label": "Conflict → Health",
+        "title": "Spillover"
+      },
+      {
+        "label": "Health → Economy",
+        "title": "Systemic Risk"
+      },
+      {
+        "label": "GNI",
+        "title": "Nexus"
+      }
+    ],
+    "caption": "A connected world demands connected intelligence."
+  },
+  "initiatives": {
+    "title": "Turning foresight into global impact.",
+    "subtitle": "Two examples that make our mission tangible.",
+    "projects": [
+      {
+        "icon": "🛰️",
+        "title": "Global Chokepoints Initiative",
+        "description": "Mapping critical energy, trade, and health bottlenecks — and modeling how disruptions cascade across systems.",
+        "linkText": "Discuss the project",
+        "linkHref": "#contact"
+      },
+      {
+        "icon": "🌍",
+        "title": "Energy Transition Health Index (ETHI)",
+        "description": "Ranking countries on the health impact of their energy transitions — from air quality to equity.",
+        "linkText": "Explore ETHI",
+        "linkHref": "#contact"
+      }
+    ]
+  },
+  "leadership": [
+    {
+      "name": "Favoud Ahmad",
+      "img": "/assets/leaders/foad-ahmed.jpg",
+      "title": "CEO",
+      "bio": "Favoud leads GNI with a builder's mindset, integrating industry pragmatism with systems thinking. He drives high-clarity strategy, convenes cross-sector alliances, and turns foresight into execution."
+    },
+    {
+      "name": "Dr. Saied Froghi",
+      "img": "/assets/leaders/saied-froghi.jpg",
+      "title": "Director of Global Health Policy",
+      "bio": "Dr. Froghi brings clinical insight and policy depth to the nexus of public health, crisis response, and equitable system design."
+    },
+    {
+      "name": "Advisor — TBA",
+      "img": "/assets/leaders/reza-azami.jpg",
+      "title": "Strategic Advisor",
+      "bio": "We are assembling a council of senior advisors across energy, finance, security, and public health to guide our mission and amplify global impact."
+    }
+  ],
+  "siteMetadata": {
+    "title": "Global Nexus Institute — Foresight for a Connected World",
+    "description": "GNI connects energy, geopolitics, and health into one field of actionable intelligence."
+  }
+}

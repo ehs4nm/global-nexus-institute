@@ -28,7 +28,7 @@ export const Header = () => {
       {/* Main header bar */}
       <div className="bg-white dark:bg-black backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-black/50 border-b border-black/5 dark:border-white/10">
         <div className="mx-auto max-w-7xl">
-          <div className="flex items-center justify-between h-24">
+          <div className="heading-1 flex items-center justify-between h-24">
             <a href="#top" className="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-accent-500">
               <div className="h-8 w-8 rounded image-cover">
                   <img src="/assets/favicon_io/android-chrome-512x512.png" alt="Global Nexus Institute" className="rounded" />

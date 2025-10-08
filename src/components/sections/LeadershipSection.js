@@ -1,19 +1,21 @@
 import React from 'react';
 import { useMenu } from '../../hooks/useMenu';
-import { leadershipData } from '../../data/leadership';
+import { useContent } from '../../hooks/useContent';
 
 export const LeadershipSection = () => {
   const { openPerson } = useMenu();
+  const { content } = useContent();
+  const leadershipData = content.leadership;
 
   return (
-    <section id="leadership" className="h-screen  border-black/10 dark:border-white/[0.06] flex items-center text-gray-800 dark:text-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="leadership" className="h-[70vh] border-black/10 dark:border-white/[0.06] flex items-center text-gray-800 dark:text-white">
+      <div className="mx-auto max-w-7xl">
         <header className="max-w-3xl">
-          <h2 className="font-display text-3xl sm:text-5xl font-extrabold leading-tight">Leadership</h2>
+          <h2 className="heading-1 font-display text-3xl sm:text-5xl font-extrabold leading-tight">Leadership</h2>
           <p className="mt-6 text-gray-700 dark:text-white/80">Led by global experts in health policy, energy strategy, and geopolitics — backed by advisors from leading institutions.</p>
         </header>
 
-        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {leadershipData.map((p) => (
             <button
               key={p.name}
