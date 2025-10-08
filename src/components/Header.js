@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import { useMenu } from '../hooks/useMenu';
 import { TopBar } from './TopBar';
@@ -19,6 +19,12 @@ const WHO_WE_ARE = [
 export const Header = () => {
   const { isDark, toggleTheme } = useTheme();
   const { setMenuOpen } = useMenu();
+
+  // Track which mega menu is open to ensure mutual exclusivity
+  const [activeMega, setActiveMega] = useState(null); // values: 'who-we-are' | 'what-we-do' | null
+
+  const whoWeAreId = useMemo(() => 'who-we-are', []);
+  const whatWeDoId = useMemo(() => 'what-we-do', []);
 
   return (
     <header className="fixed inset-x-0 top-0 z-40">
@@ -42,8 +48,22 @@ export const Header = () => {
                 <a href="#initiatives" className="px-3 py-2 hover:text-accent-400" onClick={() => setMenuOpen(false)}>Initiatives</a>
                 <a href="#leadership" className="px-3 py-2 hover:text-accent-400" onClick={() => setMenuOpen(false)}>Leadership</a>
                 <a href="#contact" className="px-3 py-2 hover:text-accent-400" onClick={() => setMenuOpen(false)}>Contact</a>
-                <MegaMenu label="Who We Are" items={WHO_WE_ARE} />
-                <MegaMenu label="What We Do" items={WHAT_WE_DO} />
+                <MegaMenu
+                  id={whoWeAreId}
+                  label="Who We Are"
+                  items={WHO_WE_ARE}
+                  isOpen={activeMega === whoWeAreId}
+                  onOpen={() => setActiveMega(whoWeAreId)}
+                  onClose={() => setActiveMega(null)}
+                />
+                <MegaMenu
+                  id={whatWeDoId}
+                  label="What We Do"
+                  items={WHAT_WE_DO}
+                  isOpen={activeMega === whatWeDoId}
+                  onOpen={() => setActiveMega(whatWeDoId)}
+                  onClose={() => setActiveMega(null)}
+                />
               </nav>
               <div className="flex items-center gap-2">
                 <button

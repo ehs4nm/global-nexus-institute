@@ -1,21 +1,30 @@
-import React, { useRef, useState, useCallback } from 'react';
+import React, { useRef, useState, useCallback, useMemo } from 'react';
 
-export const MegaMenu = ({ label, items = [] }) => {
-  const [open, setOpen] = useState(false);
+export const MegaMenu = ({ id, label, items = [], isOpen, onOpen, onClose }) => {
+  const isControlled = typeof isOpen === 'boolean';
+  const [uncontrolledOpen, setUncontrolledOpen] = useState(false);
+  const open = isControlled ? isOpen : uncontrolledOpen;
+
   const hoverAreaRef = useRef(null);
-  const menuId = `${label.replace(/\s+/g, '-').toLowerCase()}-megamenu`;
+  const menuId = useMemo(() => (id ? `${id}-megamenu` : `${label.replace(/\s+/g, '-').toLowerCase()}-megamenu`), [id, label]);
 
-  const openMenu = useCallback(() => setOpen(true), []);
-  const closeMenu = useCallback(() => setOpen(false), []);
+  const openMenu = useCallback(() => {
+    if (onOpen) return onOpen();
+    setUncontrolledOpen(true);
+  }, [onOpen]);
+  const closeMenu = useCallback(() => {
+    if (onClose) return onClose();
+    setUncontrolledOpen(false);
+  }, [onClose]);
 
   // Keyboard support: focus opens, Esc closes
   const onButtonKeyDown = (e) => {
     if (e.key === 'Escape') closeMenu();
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      setOpen(true);
+      openMenu();
     }
-    if (e.key === 'ArrowDown') setOpen(true);
+    if (e.key === 'ArrowDown') openMenu();
   };
 
   // Focus management: keep open while focus is within trigger/panel
@@ -39,6 +48,12 @@ export const MegaMenu = ({ label, items = [] }) => {
         onMouseEnter={openMenu}
         onFocus={openMenu}
         onKeyDown={onButtonKeyDown}
+        onMouseLeave={(e) => {
+          // If moving into the panel area, keep it open
+          const related = e.relatedTarget;
+          if (hoverAreaRef.current && related && hoverAreaRef.current.contains(related)) return;
+          closeMenu();
+        }}
       >
         {label}
         <span className="ml-1 inline-block transition-transform duration-200" aria-hidden>
