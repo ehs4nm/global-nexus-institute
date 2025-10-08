@@ -72,6 +72,96 @@
       "bio": "We are assembling a council of senior advisors across energy, finance, security, and public health to guide our mission and amplify global impact."
     }
   ],
+  "gallery": {
+    "title": "Signals from the Nexus.",
+    "subtitle": "Hover to reveal the full frame. We expand the viewport — not the image — to show the whole picture.",
+    "items": [
+      {
+        "id": "energy-systems",
+        "label": "Energy Systems",
+        "img": "/assets/images/2.jpg",
+        "slug": "energy-systems",
+        "pageContent": {
+          "title": "Energy Systems",
+          "subtitle": "Understanding global energy transitions and their cascading effects",
+          "heroImage": "/assets/images/2.jpg",
+          "sections": [
+            {
+              "heading": "Overview",
+              "content": "Energy systems form the backbone of modern civilization. Our research tracks the complex interplay between energy security, geopolitical stability, and public health outcomes."
+            },
+            {
+              "heading": "Key Focus Areas",
+              "content": "We analyze energy transition pathways, renewable energy deployment, fossil fuel dependencies, and the health implications of energy choices across different regions."
+            }
+          ]
+        }
+      },
+      {
+        "id": "geopolitics",
+        "label": "Geopolitics",
+        "img": "/assets/images/3.jpg",
+        "slug": "geopolitics",
+        "pageContent": {
+          "title": "Geopolitics",
+          "subtitle": "Mapping the intersection of power, resources, and global stability",
+          "heroImage": "/assets/images/3.jpg",
+          "sections": [
+            {
+              "heading": "Strategic Analysis",
+              "content": "Geopolitical dynamics shape access to resources, health infrastructure, and crisis response capabilities. We provide foresight on emerging hotspots and systemic risks."
+            },
+            {
+              "heading": "Regional Insights",
+              "content": "Our analysis covers energy corridors, supply chain vulnerabilities, and the geopolitical dimensions of health security and pandemic preparedness."
+            }
+          ]
+        }
+      },
+      {
+        "id": "public-health",
+        "label": "Public Health",
+        "img": "/assets/images/4.jpg",
+        "slug": "public-health",
+        "pageContent": {
+          "title": "Public Health",
+          "subtitle": "Connecting health outcomes to energy and geopolitical factors",
+          "heroImage": "/assets/images/4.jpg",
+          "sections": [
+            {
+              "heading": "Nexus Approach",
+              "content": "Public health doesn't exist in isolation. Energy transitions affect air quality. Conflicts disrupt healthcare. Economic shocks limit health investments. We connect the dots."
+            },
+            {
+              "heading": "Research Areas",
+              "content": "Our work spans climate health impacts, pandemic preparedness, health system resilience, and the social determinants shaped by energy and geopolitical forces."
+            }
+          ]
+        }
+      },
+      {
+        "id": "resilience",
+        "label": "Resilience",
+        "img": "/assets/images/8.jpg",
+        "slug": "resilience",
+        "pageContent": {
+          "title": "Resilience",
+          "subtitle": "Building adaptive capacity in an interconnected world",
+          "heroImage": "/assets/images/8.jpg",
+          "sections": [
+            {
+              "heading": "Systems Thinking",
+              "content": "Resilience requires understanding how shocks propagate across energy, political, and health systems. We identify vulnerabilities and design interventions."
+            },
+            {
+              "heading": "Practical Solutions",
+              "content": "From diversified energy portfolios to robust health infrastructure, we help decision-makers build systems that can withstand and adapt to cascading crises."
+            }
+          ]
+        }
+      }
+    ]
+  },
   "siteMetadata": {
     "title": "Global Nexus Institute — Foresight for a Connected World",
     "description": "GNI connects energy, geopolitics, and health into one field of actionable intelligence."

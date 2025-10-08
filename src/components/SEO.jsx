@@ -9,7 +9,6 @@ export const SEO = ({ title, description, image }) => {
         siteMetadata {
           title
           description
-          siteUrl
         }
       }
     }

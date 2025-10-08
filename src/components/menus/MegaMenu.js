@@ -84,7 +84,7 @@ export const MegaMenu = ({ label, items = [] }) => {
           className={`mx-auto max-w-7xl overflow-hidden ${open ? 'opacity-100' : 'opacity-0'} transition-opacity duration-200 pointer-events-auto`}
         >
           <div
-            className={`bg-white text-black shadow-2xl border-t border-black/10 overflow-hidden rounded-xl`}
+            className={`bg-white/90 dark:bg-black/90 text-black shadow-2xl border-t border-black/10 overflow-hidden rounded-xl`}
             style={{
               maxHeight: open ? '80vh' : '0px',
               transition: 'max-height 250ms ease, transform 200ms ease',

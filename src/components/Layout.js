@@ -5,13 +5,11 @@ import { FullscreenMenu } from './FullscreenMenu';
 import { PersonDrawer } from './PersonDrawer';
 import { NewsletterProvider } from '../hooks/useNewsletter';
 import { NewsletterModal } from './NewsletterModal';
-import { SEO } from './SEO';
 
-export const Layout = ({ children, title, description, image }) => {
+export const Layout = ({ children }) => {
   return (
     <NewsletterProvider>
       <div>
-        <SEO title={title} description={description} image={image} />
         <Header />
         <FullscreenMenu />
         <PersonDrawer />
