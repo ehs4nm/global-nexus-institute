@@ -47,6 +47,7 @@ export const HeroSection = () => {
 
   return (
     <section className="grid place-items-center relative  w-full min-h-[80vh] sm:min-h-[90vh] md:min-h-screen mt-[140px] overflow-hidden mx-auto max-w-[100vw] sm:max-w-[95vw]">
+      
       <video
         className="absolute inset-0 w-full h-[80vh] object-cover object-center gpu-accelerate"
         autoPlay muted loop playsInline poster={hero.posterSrc}
@@ -54,9 +55,9 @@ export const HeroSection = () => {
       >
         <source src={hero.videoSrc} type="video/mp4" />
       </video>
+      <div className="absolute inset-0 z-50"></div>
 
       {/* Strong overlay for brutalist contrast */}
-      <div className="absolute inset-0"></div>
 
       <div className="relative z-10 px-6 sm:px-8 max-w-7xl text-center w-full">
         {/* Top label */}
@@ -81,7 +82,7 @@ export const HeroSection = () => {
           <h1 className="brutalist-heading xl:text-8xl text-white dark:text-black mb-6">
             <span 
               ref={textRef}
-              className="block"
+              className="block bg-black/20 dark:bg-white/20"
             >
               {hero.title.split(' ').map((word, i) => (
                 <span key={i} className="inline-block mr-2 sm:mr-3">{word}</span>
