@@ -33,21 +33,34 @@ export const Header = () => {
 
       {/* Main header bar */}
       <div className="bg-white dark:bg-black backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-black/50 border-b border-black/5 dark:border-white/10">
-        <div className="mx-auto max-w-7xl">
-          <div className="heading-1 flex items-center justify-between h-24">
+              <div className="mx-auto max-w-7xl">
+          {/* Desktop header bar */}
+          <div className="heading-1 hidden md:flex items-center justify-between h-24">
             <a href="/" className="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-accent-500">
               <div className="h-8 w-8 rounded image-cover">
                   <img src="/assets/favicon_io/android-chrome-512x512.png" alt="Global Nexus Institute" className="rounded" />
               </div>
               <span className="font-display text-lg tracking-wide">Global Nexus Institute</span>
             </a>
-            <div className="flex items-center gap-3">
-              <nav className="hidden md:flex items-center text-sm uppercase tracking-wide">
-                <a href="#mission" className="px-3 py-2 hover:text-accent-400" onClick={() => setMenuOpen(false)}>Mission</a>
-                <a href="#model" className="px-3 py-2 hover:text-accent-400" onClick={() => setMenuOpen(false)}>Model</a>
-                <a href="#initiatives" className="px-3 py-2 hover:text-accent-400" onClick={() => setMenuOpen(false)}>Initiatives</a>
-                <a href="#leadership" className="px-3 py-2 hover:text-accent-400" onClick={() => setMenuOpen(false)}>Leadership</a>
-                <a href="#contact" className="px-3 py-2 hover:text-accent-400" onClick={() => setMenuOpen(false)}>Contact</a>
+               <nav className="hidden md:flex items-center text-sm uppercase tracking-wide">
+                {/* Desktop nav items from admin-managed menu */}
+                {(useMenu().menuItems || []).filter(it => it.showInDesktop).map((item) => {
+                  const className = 'px-3 py-2 hover:text-accent-400';
+                  if (item.type === 'hash') {
+                    return <a key={item.id} href={item.href} className={className}>{item.label}</a>;
+                  }
+                  const isExternal = item.type === 'external' || /^https?:\/\//.test(item.href || '');
+                  return (
+                    <a
+                      key={item.id}
+                      href={item.href}
+                      className={className}
+                      {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                    >
+                      {item.label}
+                    </a>
+                  );
+                })}
                 <MegaMenu
                   id={whoWeAreId}
                   label="Who We Are"
@@ -94,7 +107,7 @@ export const Header = () => {
                   aria-controls="menuPanel"
                   aria-expanded={false}
                   onClick={() => setMenuOpen(true)}
-                  className="inline-flex items-center justify-center w-10 h-10 rounded border border-black/10 dark:border-white/15 hover:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500"
+                  className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded border border-black/10 dark:border-white/15 hover:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500"
                 >
                   <span className="sr-only">Open menu</span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
@@ -104,8 +117,29 @@ export const Header = () => {
               </div>
             </div>
           </div>
+          {/* Mobile header bar */}
+          <div className="heading-1 md:hidden flex items-center justify-between h-16">
+            <a href="/" className="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-accent-500">
+              <div className="h-8 w-8 rounded image-cover">
+                  <img src="/assets/favicon_io/android-chrome-512x512.png" alt="Global Nexus Institute" className="rounded" />
+              </div>
+              <span className="font-display text-base tracking-wide">Global Nexus Institute</span>
+            </a>
+            <div className="flex items-center gap-2">
+              <button
+                aria-controls="menuPanel"
+                aria-expanded={false}
+                onClick={() => setMenuOpen(true)}
+                className="inline-flex items-center justify-center w-10 h-10 rounded border border-black/10 dark:border-white/15 hover:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500"
+              >
+                <span className="sr-only">Open menu</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                  <path fillRule="evenodd" d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm.75 4.5a.75.75 0 000 1.5h16.5a.75.75 0 000-1.5H3.75z" clipRule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
     </header>
   );
 };
