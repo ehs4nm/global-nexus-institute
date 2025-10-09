@@ -11,11 +11,11 @@ export const Layout = ({ children }) => {
   return (
     <NewsletterProvider>
       <MenuProvider>
-        <div>
+        <div className="min-h-screen overflow-x-hidden">
           <Header />
           <FullscreenMenu />
           <PersonDrawer />
-          <main id="top" className="relative">
+          <main id="top" className="relative w-full overflow-x-hidden">
             {children}
           </main>
           <Footer />
