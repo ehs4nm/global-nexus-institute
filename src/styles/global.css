@@ -3,11 +3,20 @@
 @tailwind utilities;
 
 /* Global adjustments to match original HTML */
-html { scroll-behavior: smooth; }
+html { 
+  scroll-behavior: smooth;
+  /* Improve mobile performance */
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 /* Apply base body theming/classes from original HTML */
 body {
   @apply bg-white text-gray-800 dark:bg-black dark:text-white font-body antialiased selection:bg-accent-500 selection:text-white;
+  /* Mobile optimizations */
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
 }
 
 /* Typography utilities for consistent font usage */
@@ -75,6 +84,26 @@ body {
   }
 }
 
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  /* Reduce animation complexity on mobile for better performance */
+  .animate-slide-up,
+  .animate-slide-up-delayed {
+    animation-duration: 0.2s !important;
+  }
+  
+  /* Optimize touch interactions */
+  button, a, [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  
+  /* Improve scrolling performance */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 /* Accessibility: Respect reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
@@ -94,4 +123,25 @@ body {
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 900px 900px, 64px 64px, 64px 64px;
   background-position: center, center, center;
+}
+
+/* Mobile-optimized hero grid */
+@media (max-width: 640px) {
+  .hero-grid {
+    background-size: 450px 450px, 32px 32px, 32px 32px;
+  }
+}
+
+/* Performance utilities */
+.gpu-accelerate {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
 }

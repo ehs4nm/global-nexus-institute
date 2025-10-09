@@ -16,9 +16,9 @@ const SocialIcon = ({ href, label, children }) => (
 export const TopBar = () => {
   const { open } = useNewsletter();
   return (
-    <div className="w-full bg-black text-white" style={{ height: 50 }}>
+    <div className="w-full bg-black text-white px-4" style={{ height: 50 }}>
       <div className="mx-auto max-w-7xl h-full flex items-center justify-between gap-3">
-        <div className="hidden sm:flex items-center gap-2">
+        <div className="flex items-center gap-2">
           <SocialIcon href="https://x.com/" label="X">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M16.2175 5.37134H18.4665L13.5532 10.987L19.3334 18.6287H14.8075L11.2627 13.994L7.20665 18.6287H4.95631L10.2116 12.6221L4.66669 5.37134H9.30743L12.5116 9.60756L16.2175 5.37134ZM15.4282 17.2825H16.6744L8.63028 6.64676H7.29299L15.4282 17.2825Z" fill="currentColor"></path></svg>
           </SocialIcon>

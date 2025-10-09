@@ -32,21 +32,21 @@ const LoadingScreen = ({ onComplete, isAppReady }) => {
             role="progressbar"
             aria-valuetext="Loading"
         >
-            <div className="text-center">
+            <div className="text-center gpu-accelerate">
                 <div className="overflow-hidden">
-                    <h1 className="text-7xl md:text-9xl font-black tracking-widest text-white loading-title">
+                    <h1 className="text-5xl sm:text-7xl md:text-9xl font-black tracking-widest text-white loading-title will-change-transform">
                         <span className="inline-block animate-slide-up">GNI</span>
                     </h1>
                 </div>
                 
                 <div className="overflow-hidden mt-4">
-                    <div className="loading-text text-white/80 text-sm md:text-base font-light tracking-wider animate-slide-up-delayed">
+                    <div className="loading-text text-white/80 text-sm md:text-base font-light tracking-wider animate-slide-up-delayed will-change-opacity">
                         Global Nexus Institute
                     </div>
                 </div>
                 
-                <div className="mt-8 relative h-[2px] w-48 mx-auto bg-white/20 overflow-hidden">
-                    <div className="loading-bar absolute inset-0 bg-white" />
+                <div className="mt-8 relative h-[2px] w-32 sm:w-48 mx-auto bg-white/20 overflow-hidden">
+                    <div className="loading-bar absolute inset-0 bg-white will-change-transform" />
                 </div>
             </div>
 
@@ -126,7 +126,7 @@ const IndexPage = () => {
                 />
             )}
             
-            <div className={`transition-opacity duration-1000 ${isAppReady ? 'opacity-100' : 'opacity-0'}`}>
+            <div className={`transition-opacity duration-1000 will-change-opacity ${isAppReady ? 'opacity-100' : 'opacity-0'}`}>
                 <Layout>
                     <HeroSection />
                     <SloganSection />

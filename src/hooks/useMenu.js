@@ -34,33 +34,34 @@ export const MenuProvider = ({ children }) => {
     setDrawerOpen(true);
   };
 
-  // Load menu data from an admin-provided source if available
+  // Load menu items from localStorage
   useEffect(() => {
-    // Option 1: window global injected by admin panel build/runtime
-    if (typeof window !== 'undefined' && window.__ADMIN_MENU__) {
-      setMenuItems(window.__ADMIN_MENU__);
-      return;
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('gni_menu_items');
+      if (saved) {
+        try {
+          const parsedItems = JSON.parse(saved);
+          if (Array.isArray(parsedItems)) {
+            setMenuItems(parsedItems);
+            return;
+          }
+        } catch (e) {
+          console.warn('Failed to parse saved menu items:', e);
+        }
+      }
+      // Fallback to default menu items if none saved
+      const defaultItems = [
+        { id: 'mission', label: 'Mission', type: 'hash', href: '#mission', image: '/assets/menu/mission.jpg', showInDesktop: true },
+        { id: 'model', label: 'Model', type: 'hash', href: '#model', image: '/assets/menu/model.jpg', showInDesktop: true },
+        { id: 'initiatives', label: 'Initiatives', type: 'hash', href: '#initiatives', image: '/assets/menu/initiatives.jpg', showInDesktop: true },
+        { id: 'leadership', label: 'Leadership', type: 'hash', href: '#leadership', image: '/assets/menu/leadership.jpg', showInDesktop: true },
+        { id: 'contact', label: 'Contact', type: 'hash', href: '#contact', image: '/assets/menu/contact.jpg', showInDesktop: true },
+        { id: 'who', label: 'Who We Are', type: 'route', href: '/who-we-are', image: '/assets/menu/who.jpg', showInDesktop: true },
+        { id: 'what', label: 'What We Do', type: 'route', href: '/what-we-do', image: '/assets/menu/what.jpg', showInDesktop: true },
+      ];
+      setMenuItems(defaultItems);
+      localStorage.setItem('gni_menu_items', JSON.stringify(defaultItems));
     }
-    // Option 2: try to fetch from API (adjust URL to your backend route)
-    const controller = new AbortController();
-    fetch('/api/menu', { signal: controller.signal })
-      .then((r) => (r.ok ? r.json() : null))
-      .then((data) => {
-        if (Array.isArray(data)) setMenuItems(data);
-      })
-      .catch(() => {
-        // Fallback to a static example if no backend is present
-        setMenuItems([
-          { id: 'mission', label: 'Mission', type: 'hash', href: '#mission', image: '/assets/menu/mission.jpg', showInDesktop: true },
-          { id: 'model', label: 'Model', type: 'hash', href: '#model', image: '/assets/menu/model.jpg', showInDesktop: true },
-          { id: 'initiatives', label: 'Initiatives', type: 'hash', href: '#initiatives', image: '/assets/menu/initiatives.jpg', showInDesktop: true },
-          { id: 'leadership', label: 'Leadership', type: 'hash', href: '#leadership', image: '/assets/menu/leadership.jpg', showInDesktop: true },
-          { id: 'contact', label: 'Contact', type: 'hash', href: '#contact', image: '/assets/menu/contact.jpg', showInDesktop: true },
-          { id: 'who', label: 'Who We Are', type: 'route', href: '/who-we-are', image: '/assets/menu/who.jpg', showInDesktop: true },
-          { id: 'what', label: 'What We Do', type: 'route', href: '/what-we-do', image: '/assets/menu/what.jpg', showInDesktop: true },
-        ]);
-      });
-    return () => controller.abort();
   }, []);
 
   const value = {

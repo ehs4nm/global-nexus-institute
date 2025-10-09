@@ -6,6 +6,7 @@ const TABS = [
   { id: 'initiatives', label: 'Initiatives', icon: '🚀' },
   { id: 'gallery', label: 'Gallery', icon: '🖼️' },
   { id: 'leadership', label: 'Leadership', icon: '👥' },
+  { id: 'menu', label: 'Navigation Menu', icon: '🧭' },
   { id: 'metadata', label: 'Site Info', icon: '⚙️' },
 ];
 

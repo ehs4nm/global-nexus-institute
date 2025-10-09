@@ -18,7 +18,7 @@ const WHO_WE_ARE = [
 
 export const Header = () => {
   const { isDark, toggleTheme } = useTheme();
-  const { setMenuOpen } = useMenu();
+  const { setMenuOpen, menuItems } = useMenu();
 
   // Track which mega menu is open to ensure mutual exclusivity
   const [activeMega, setActiveMega] = useState(null); // values: 'who-we-are' | 'what-we-do' | null
@@ -32,7 +32,7 @@ export const Header = () => {
       <TopBar />
 
       {/* Main header bar */}
-      <div className="bg-white dark:bg-black backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-black/50 border-b border-black/5 dark:border-white/10">
+      <div className="bg-white px-4 dark:bg-black backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-black/50 border-b border-black/5 dark:border-white/10">
               <div className="mx-auto max-w-7xl">
           {/* Desktop header bar */}
           <div className="heading-1 hidden md:flex items-center justify-between h-24">
@@ -42,9 +42,9 @@ export const Header = () => {
               </div>
               <span className="font-display text-lg tracking-wide">Global Nexus Institute</span>
             </a>
-               <nav className="hidden md:flex items-center text-sm uppercase tracking-wide">
+              <nav className="hidden md:flex items-center text-sm uppercase tracking-wide">
                 {/* Desktop nav items from admin-managed menu */}
-                {(useMenu().menuItems || []).filter(it => it.showInDesktop).map((item) => {
+                {(menuItems || []).filter(it => it.showInDesktop).map((item) => {
                   const className = 'px-3 py-2 hover:text-accent-400';
                   if (item.type === 'hash') {
                     return <a key={item.id} href={item.href} className={className}>{item.label}</a>;

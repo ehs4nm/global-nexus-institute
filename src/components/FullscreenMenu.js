@@ -19,10 +19,10 @@ export const FullscreenMenu = () => {
             />)
           : null}
         </div>
-        <div className="relative h-full w-full flex flex-col items-center justify-center px-8">
+        <div className="relative h-full w-full flex flex-col items-center justify-center px-6 sm:px-8">
           <button
             onClick={() => setMenuOpen(false)}
-            className="absolute top-4 right-4 w-10 h-10 inline-flex items-center justify-center rounded border border-white/15 text-white hover:border-accent-500 focus:ring-2 focus:ring-accent-500"
+            className="absolute top-4 right-4 w-12 h-12 inline-flex items-center justify-center rounded border border-white/15 text-white hover:border-accent-500 focus:ring-2 focus:ring-accent-500 touch-manipulation"
           >
             <span className="sr-only">Close menu</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
@@ -30,12 +30,12 @@ export const FullscreenMenu = () => {
             </svg>
           </button>
           <nav className="w-full max-w-3xl text-center text-white">
-            <ul className="space-y-6">
+            <ul className="space-y-4 sm:space-y-6">
               {(menuItems || []).map((item) => {
                 const commonProps = {
                   onMouseEnter: () => setMenuBg(item.image || ''),
                   onFocus: () => setMenuBg(item.image || ''),
-                  className: 'block text-4xl sm:text-5xl font-display hover:text-accent-400'
+                  className: 'block text-3xl sm:text-4xl md:text-5xl font-display hover:text-accent-400 transition-colors touch-manipulation py-2'
                 };
                 if (item.type === 'hash') {
                   return (

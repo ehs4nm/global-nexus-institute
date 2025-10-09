@@ -7,8 +7,10 @@ import MissionEditor from '../../components/admin/editors/MissionEditor';
 import InitiativesEditor from '../../components/admin/editors/InitiativesEditor';
 import GalleryEditor from '../../components/admin/editors/GalleryEditor';
 import LeadershipEditor from '../../components/admin/editors/LeadershipEditor';
+import MenuEditor from '../../components/admin/editors/MenuEditor';
 import MetadataEditor from '../../components/admin/editors/MetadataEditor';
 import { updateNestedState, safeJsonParse } from '../../utils/admin/helpers';
+import { MenuProvider } from '../../hooks/useMenu';
 
 const AdminPage = () => {
   const [activeTab, setActiveTab] = useState('hero');
@@ -67,41 +69,46 @@ const AdminPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      <AdminHeader
-        onSave={handleSave}
-        onExport={handleExport}
-        onReset={handleReset}
-        isSaved={isSaved}
-      />
+    <MenuProvider>
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+        <AdminHeader
+          onSave={handleSave}
+          onExport={handleExport}
+          onReset={handleReset}
+          isSaved={isSaved}
+        />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex gap-6">
-          <AdminSidebar activeTab={activeTab} onTabChange={setActiveTab} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex gap-6">
+            <AdminSidebar activeTab={activeTab} onTabChange={setActiveTab} />
 
-          <main className="flex-1 bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-            {activeTab === 'hero' && (
-              <HeroEditor content={content.hero} updateContent={updateContent} />
-            )}
-            {activeTab === 'mission' && (
-              <MissionEditor content={content.mission} updateContent={updateContent} />
-            )}
-            {activeTab === 'initiatives' && (
-              <InitiativesEditor content={content.initiatives} updateContent={updateContent} />
-            )}
-            {activeTab === 'gallery' && (
-              <GalleryEditor content={content.gallery} updateContent={updateContent} />
-            )}
-            {activeTab === 'leadership' && (
-              <LeadershipEditor content={content.leadership} updateContent={updateContent} />
-            )}
-            {activeTab === 'metadata' && (
-              <MetadataEditor content={content.siteMetadata} updateContent={updateContent} />
-            )}
-          </main>
+            <main className="flex-1 bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              {activeTab === 'hero' && (
+                <HeroEditor content={content.hero} updateContent={updateContent} />
+              )}
+              {activeTab === 'mission' && (
+                <MissionEditor content={content.mission} updateContent={updateContent} />
+              )}
+              {activeTab === 'initiatives' && (
+                <InitiativesEditor content={content.initiatives} updateContent={updateContent} />
+              )}
+              {activeTab === 'gallery' && (
+                <GalleryEditor content={content.gallery} updateContent={updateContent} />
+              )}
+              {activeTab === 'leadership' && (
+                <LeadershipEditor content={content.leadership} updateContent={updateContent} />
+              )}
+              {activeTab === 'menu' && (
+                <MenuEditor />
+              )}
+              {activeTab === 'metadata' && (
+                <MetadataEditor content={content.siteMetadata} updateContent={updateContent} />
+              )}
+            </main>
+          </div>
         </div>
       </div>
-    </div>
+    </MenuProvider>
   );
 };
 
