@@ -1,0 +1,66 @@
+================================================================================
+COPY THIS PROMPT TO ANY NEW LLM AGENT
+================================================================================
+
+Hi! I need help with my TonyTony project. Here's what you need to know:
+
+PROJECT INFO:
+- Location: /Users/ehsan/Desktop/TonyTony
+- Framework: Gatsby (React + GraphQL)
+- Styling: Tailwind CSS + Custom Brutalist Design System
+
+IMPORTANT:
+This project has a COMPLETE design system already built. Before you write any code, please:
+
+1. Read this file first:
+   cat /Users/ehsan/Desktop/TonyTony/BRUTALIST_CLASSES_CHEATSHEET.md
+
+2. Then read the onboarding guide:
+   cat /Users/ehsan/Desktop/TonyTony/LLM_AGENT_ONBOARDING.md
+
+3. Check the design system definitions:
+   cat /Users/ehsan/Desktop/TonyTony/src/styles/global.css
+
+KEY RULES:
+- ✅ USE design system classes (brutalist-section, brutalist-card, etc.)
+- ❌ DON'T write inline utility classes for common patterns
+- ✅ CHECK existing sections for patterns
+- ❌ NEVER use "font-display" (use "font-title-bold" instead)
+- ✅ ALWAYS add "group" manually in JSX (not in CSS)
+- ✅ SET explicit text colors for dark mode support
+
+AVAILABLE CLASSES (22 total):
+- Layout: brutalist-section, brutalist-section-inverted, brutalist-container
+- Cards: brutalist-card, brutalist-card-inverted, brutalist-card-minimal
+- Typography: brutalist-heading, brutalist-card-title, brutalist-subheading, brutalist-body, brutalist-label
+- Interactive: brutalist-hover-line, brutalist-accent-line, brutalist-divider, brutalist-divider-bold
+- Backgrounds: brutalist-bg-dots, brutalist-bg-radial
+- Utilities: brutalist-border-box, brutalist-number-badge, brutalist-arrow
+
+EXAMPLE COMPONENT PATTERN:
+<section className="brutalist-section text-black dark:text-white">
+  <div className="brutalist-container">
+    <h2 className="brutalist-heading">Title</h2>
+    <div className="brutalist-card group p-8">
+      <h3 className="brutalist-card-title">Card Title</h3>
+      <p className="brutalist-body">Content</p>
+    </div>
+  </div>
+</section>
+
+EXISTING SECTIONS (check these for patterns):
+- src/components/sections/ModelSection.js
+- src/components/sections/MissionSection.js
+- src/components/sections/InitiativesSection.js
+- src/components/sections/AboutUsSection.js
+- src/components/sections/LeadershipSection.js
+- src/components/sections/ContactSection.js
+- src/components/sections/GallerySection.js
+- src/components/sections/ExploreSliderSection.js
+
+MY TASK:
+[Describe what you want the LLM to do here]
+
+Please confirm you've read the design system documentation before proceeding.
+
+================================================================================

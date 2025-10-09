@@ -27,26 +27,25 @@ const LoadingScreen = ({ onComplete, isAppReady }) => {
 
     return (
         <div 
-            className={`fixed inset-0 z-[100] flex items-center justify-center transition-opacity duration-500 
+            className={`fixed inset-0 z-[100] flex items-center justify-center transition-opacity duration-500 bg-black
                 ${isAppReady ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
             style={{
-                backgroundColor: '#000',
-                backgroundImage: 'radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%)'
+                backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.015) 0, transparent 50%)'
             }}
         >
             <div className="text-center">
-                {/* GNI Title */}
-                <h1 className="text-7xl sm:text-9xl md:text-[12rem] font-extrabold text-white tracking-widest animate-fade-in-up drop-shadow-[0_0_30px_rgba(255,255,255,0.5)]">
+                {/* GNI Title - Bold brutalist typography */}
+                <h1 className="text-7xl sm:text-9xl md:text-[12rem] font-extrabold text-white tracking-tighter leading-none animate-fade-in-up">
                     GNI
                 </h1>
 
-                {/* Subtitle */}
-                <p className="mt-3 text-white/70 text-base md:text-lg tracking-widest animate-fade-in-up delay-150">
-                    Global Nexus Institute
+                {/* Subtitle - Minimal contrast */}
+                <p className="mt-4 text-neutral-400 text-base md:text-lg tracking-wider font-mono animate-fade-in-up delay-150">
+                    → Global Nexus Institute
                 </p>
 
-                {/* Loading Bar */}
-                <div className="mt-8 relative h-[3px] w-48 sm:w-64 mx-auto bg-white/20 overflow-hidden rounded-full">
+                {/* Loading Bar - Thick brutalist border style */}
+                <div className="mt-10 relative h-0.5 w-48 sm:w-64 mx-auto bg-neutral-800 overflow-hidden">
                     <div className="absolute inset-0 bg-white animate-loading-bar" />
                 </div>
             </div>

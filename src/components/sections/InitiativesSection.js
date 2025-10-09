@@ -38,7 +38,7 @@ export const InitiativesSection = () => {
               
               {/* Icon in a bordered box */}
               <div className="inline-flex items-center justify-center brutalist-border-box p-4 mb-6">
-                <span className="text-4xl sm:text-5xl">{project.icon}</span>
+                <img src={project.icon} alt={project.title} className="w-32 h-32"/>
               </div>
               
               <h3 className="brutalist-card-title mb-4 pr-12">
