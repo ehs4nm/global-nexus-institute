@@ -1,3 +1,289 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ================================================================
+ * GNI BRUTALIST DESIGN SYSTEM LAYER
+ * ================================================================
+ * 
+ * This layer encapsulates the entire Brutalist aesthetic.
+ * To switch design systems:
+ *   1. Comment out this entire @layer block
+ *   2. Create a new layer (e.g., @layer modern-system)
+ *   3. Update component classes (e.g., brutalist-card → modern-card)
+ * 
+ * ================================================================ */
+
+@layer components {
+  /* ─────────────────────────────────────────────────────────────
+   * CORE CARD PATTERNS
+   * ───────────────────────────────────────────────────────────── */
+  
+  /**
+   * Standard Brutalist Card
+   * Usage: Primary content cards with hover effects
+   * Note: Add 'group' class manually in JSX when needed
+   */
+  .brutalist-card {
+    @apply relative 
+           border-2 border-black dark:border-white 
+           bg-white dark:bg-black 
+           transition-all duration-300;
+  }
+
+  .brutalist-card:hover {
+    @apply shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] 
+           dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)];
+  }
+
+  /**
+   * Inverted Brutalist Card
+   * Usage: Accent cards that need to stand out (e.g., "Nexus" card)
+   * Note: Add 'group' class manually in JSX when needed
+   */
+  .brutalist-card-inverted {
+    @apply relative 
+           border-2 border-black dark:border-white 
+           bg-black dark:bg-white 
+           text-white dark:text-black
+           transition-all duration-300;
+  }
+
+  .brutalist-card-inverted:hover {
+    @apply shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] 
+           dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)];
+  }
+
+  /**
+   * Minimal Brutalist Card (no hover effects)
+   * Usage: Static information cards, less interactive elements
+   * Note: Add 'group' class manually in JSX when needed
+   * Note: This is designed for dark backgrounds, inherits text color
+   */
+  .brutalist-card-minimal {
+    @apply relative 
+           border-2 border-white/20 dark:border-black/20 
+           bg-black dark:bg-white
+           transition-all duration-300;
+  }
+
+  .brutalist-card-minimal:hover {
+    @apply border-white dark:border-black;
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+   * TYPOGRAPHY SYSTEM
+   * ───────────────────────────────────────────────────────────── */
+  
+  /**
+   * Display Heading (Hero/Section Titles)
+   * Usage: Main page headings, hero titles
+   */
+  .brutalist-heading {
+    @apply font-title-bold 
+           text-4xl sm:text-5xl md:text-6xl lg:text-7xl 
+           font-black 
+           leading-[0.95] 
+           tracking-tight;
+  }
+
+  /**
+   * Card Title
+   * Usage: Titles within cards and smaller sections
+   */
+  .brutalist-card-title {
+    @apply font-title 
+           text-xl sm:text-2xl md:text-3xl 
+           font-bold 
+           leading-tight;
+  }
+
+  /**
+   * Label/Tag Text
+   * Usage: Small labels, categories, metadata
+   * Note: Muted color for secondary information
+   */
+  .brutalist-label {
+    @apply font-mono 
+           uppercase 
+           tracking-widest 
+           text-xs 
+           text-gray-400 dark:text-gray-500;
+  }
+
+  /**
+   * Body Text
+   * Usage: Paragraphs, descriptions
+   * Note: Inherits text color from parent for better context adaptation
+   */
+  .brutalist-body {
+    @apply text-sm sm:text-base 
+           leading-relaxed;
+    /* Color inherits from parent section */
+  }
+
+  /**
+   * Subheading/Intro Text
+   * Usage: Section introductions, large body text
+   * Note: Uses slightly muted version of section text color
+   */
+  .brutalist-subheading {
+    @apply text-xl sm:text-2xl 
+           leading-relaxed 
+           text-gray-300 dark:text-gray-600;
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+   * SECTION LAYOUTS
+   * ───────────────────────────────────────────────────────────── */
+  
+  /**
+   * Standard Section Container
+   * Usage: Main content sections with proper spacing
+   */
+  .brutalist-section {
+    @apply relative 
+           min-h-screen 
+           py-16 sm:py-20 md:py-24 
+           bg-white dark:bg-black 
+           border-t-2 border-black dark:border-white;
+  }
+
+  /**
+   * Inverted Section (Dark on Light pages)
+   * Usage: Alternating sections for visual hierarchy
+   */
+  .brutalist-section-inverted {
+    @apply relative 
+           min-h-screen 
+           py-16 sm:py-20 md:py-24 
+           bg-black dark:bg-white 
+           text-white dark:text-black
+           border-t-2 border-white dark:border-black;
+  }
+
+  /**
+   * Section Container Width
+   * Usage: Consistent max-width across sections
+   */
+  .brutalist-container {
+    @apply mx-auto 
+           max-w-7xl 
+           px-4 sm:px-6 lg:px-8 
+           w-full;
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+   * INTERACTIVE ELEMENTS
+   * ───────────────────────────────────────────────────────────── */
+  
+  /**
+   * Animated Bottom Border (on hover)
+   * Usage: Apply to cards or links for subtle interaction feedback
+   */
+  .brutalist-hover-line {
+    @apply relative;
+  }
+
+  .brutalist-hover-line::after {
+    @apply content-[''] 
+           absolute bottom-0 left-0 
+           w-0 h-0.5 
+           bg-black dark:bg-white 
+           transition-all duration-500;
+  }
+
+  .brutalist-hover-line:hover::after {
+    @apply w-full;
+  }
+
+  /**
+   * Bottom Accent Line (always visible, expands on hover)
+   * Usage: Card footers, decorative elements
+   * Note: Color adapts to parent section context
+   */
+  .brutalist-accent-line {
+    @apply w-0 h-0.5 
+           bg-white dark:bg-black 
+           transition-all duration-500 
+           group-hover:w-full;
+  }
+
+  /**
+   * Divider Line
+   * Usage: Horizontal rules, section separators
+   */
+  .brutalist-divider {
+    @apply h-px 
+           bg-black/10 dark:bg-white/10;
+  }
+
+  /**
+   * Bold Divider
+   * Usage: Strong visual breaks
+   * Note: Color adapts to section context (white on dark, black on light)
+   */
+  .brutalist-divider-bold {
+    @apply w-16 h-1 
+           bg-white dark:bg-black;
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+   * BACKGROUNDS & PATTERNS
+   * ───────────────────────────────────────────────────────────── */
+  
+  /**
+   * Subtle Dot Grid Background
+   * Usage: Add texture to large sections
+   */
+  .brutalist-bg-dots {
+    background-image: radial-gradient(circle, rgba(0,0,0,0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .dark .brutalist-bg-dots {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+  }
+
+  /**
+   * Radial Gradient Overlay
+   * Usage: Loading screens, hero sections
+   */
+  .brutalist-bg-radial {
+    background-image: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%);
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+   * UTILITY CLASSES
+   * ───────────────────────────────────────────────────────────── */
+  
+  /**
+   * Geometric Border Box (decorative)
+   * Usage: Visual accent elements
+   */
+  .brutalist-border-box {
+    @apply border-2 border-black dark:border-white;
+  }
+
+  /**
+   * Number Badge
+   * Usage: Card numbering, step indicators
+   * Note: Adapts to section context (light badges on dark bg, vice versa)
+   */
+  .brutalist-number-badge {
+    @apply text-xs 
+           font-mono 
+           text-white/30 dark:text-black/30 
+           group-hover:text-white/50 dark:group-hover:text-black/50 
+           transition-colors;
+  }
+
+  /**
+   * Arrow Prefix
+   * Usage: Directional emphasis on text
+   */
+  .brutalist-arrow::before {
+    content: '→ ';
+    @apply mr-2;
+  }
+}

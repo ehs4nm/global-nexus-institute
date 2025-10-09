@@ -66,8 +66,8 @@ export const HeroSection = () => {
           initial="hidden"
           animate="visible"
         >
-          <div className="border-2 border-white bg-white text-black px-4 py-2 inline-block">
-            <span className="font-mono text-xs uppercase tracking-widest font-bold">
+          <div className="brutalist-card-inverted px-4 py-2 inline-block">
+            <span className="brutalist-label font-bold text-white dark:text-black">
               {hero.tagline}
             </span>
           </div>
@@ -78,7 +78,7 @@ export const HeroSection = () => {
           initial="hidden"
           animate="visible"
         >
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[0.95] text-white mb-6">
+          <h1 className="brutalist-heading xl:text-8xl text-white dark:text-black mb-6">
             <span 
               ref={textRef}
               className="block"
@@ -90,19 +90,19 @@ export const HeroSection = () => {
           </h1>
           
           {/* Subtitle with border emphasis */}
-          <div className="inline-block border-2 border-white bg-black px-6 py-3 mt-4">
-            <p className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
+          <div className="brutalist-border-box inline-block bg-black dark:bg-white px-6 py-3 mt-4">
+            <p className="brutalist-card-title lg:text-4xl text-white dark:text-black">
               {hero.subtitle}
             </p>
           </div>
           
           {/* Decorative elements */}
           <div className="flex items-center justify-center gap-4 mt-12">
-            <div className="h-1 w-16 bg-white" />
-            <span className="font-mono text-xs uppercase tracking-widest text-white">
+            <div className="brutalist-divider-bold" />
+            <span className="brutalist-label text-white dark:text-black">
               Global Nexus Institute
             </span>
-            <div className="h-1 w-16 bg-white" />
+            <div className="brutalist-divider-bold" />
           </div>
         </motion.div>
       </div>

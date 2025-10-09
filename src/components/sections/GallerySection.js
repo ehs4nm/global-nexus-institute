@@ -10,29 +10,23 @@ export const GallerySection = () => {
   return (
     <section
       id="gallery"
-      className="relative min-h-screen py-16 sm:py-20 md:py-24 bg-white dark:bg-black text-black dark:text-white border-t-2 border-black dark:border-white"
+      className="brutalist-section text-black dark:text-white"
     >
       {/* Dot pattern background */}
-      <div 
-        className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none"
-        style={{
-          backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)',
-          backgroundSize: '24px 24px'
-        }}
-      />
+      <div className="brutalist-bg-dots absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" />
       
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+      <div className="brutalist-container relative">
         {/* Section Header */}
         <div className="mb-12 sm:mb-16">
           <div className="inline-block mb-6">
-            <div className="h-1 w-16 bg-black dark:bg-white mb-4" />
-            <span className="font-mono text-xs uppercase tracking-widest">Explore Our Work</span>
+            <div className="brutalist-divider-bold mb-4" />
+            <span className="brutalist-label">Explore Our Work</span>
           </div>
           
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[0.95] mb-6">
+          <h2 className="brutalist-heading mb-6">
             {gallery.title}
           </h2>
-          <p className="text-base sm:text-lg max-w-3xl">
+          <p className="brutalist-body max-w-3xl">
             {gallery.subtitle}
           </p>
         </div>
@@ -43,10 +37,10 @@ export const GallerySection = () => {
               <Link
                 key={panel.id}
                 to={`/insights/${panel.slug}`}
-                className="group relative border-2 border-black dark:border-white overflow-hidden transition-all duration-300 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]"
+                className="brutalist-card group overflow-hidden"
               >
                 {/* Number badge */}
-                <div className="absolute top-0 right-0 bg-black dark:bg-white text-white dark:text-black font-mono text-xs sm:text-sm font-bold px-3 py-1 border-l-2 border-b-2 border-black dark:border-white z-10">
+                <div className="absolute top-0 right-0 bg-black dark:bg-white text-white dark:text-black brutalist-label font-bold px-3 py-1 brutalist-border-box border-t-0 border-r-0 z-10">
                   {String(index + 1).padStart(2, '0')}
                 </div>
                 
@@ -59,11 +53,11 @@ export const GallerySection = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                 </div>
                 
-                <div className="bg-white dark:bg-black p-4 sm:p-6 border-t-2 border-black dark:border-white">
-                  <h3 className="font-display text-xl sm:text-2xl font-bold mb-2">
+                <div className="bg-white dark:bg-black p-4 sm:p-6 brutalist-border-box border-l-0 border-r-0 border-b-0">
+                  <h3 className="brutalist-card-title text-xl sm:text-2xl mb-2">
                     {panel.label}
                   </h3>
-                  <p className="text-sm sm:text-base leading-relaxed">
+                  <p className="brutalist-body">
                     {panel.pageContent.subtitle}
                   </p>
                   
@@ -82,7 +76,7 @@ export const GallerySection = () => {
               <Link
                 key={panel.id}
                 to={`/insights/${panel.slug}`}
-                className="group relative overflow-hidden flex flex-col transition-all duration-700 ease-out border-2 border-black dark:border-white"
+                className="brutalist-border-box group relative overflow-hidden flex flex-col transition-all duration-700 ease-out"
                 style={{
                   flex: hoveredId === panel.id ? '8' : '1',
                   marginLeft: index > 0 ? '-2px' : '0'
@@ -91,7 +85,7 @@ export const GallerySection = () => {
                 onMouseLeave={() => setHoveredId(null)}
               >
                 {/* Number badge */}
-                <div className="absolute top-4 right-4 bg-black dark:bg-white text-white dark:text-black font-mono text-sm font-bold px-3 py-2 border-2 border-black dark:border-white z-10">
+                <div className="absolute top-4 right-4 bg-black dark:bg-white text-white dark:text-black brutalist-label font-bold px-3 py-2 brutalist-border-box z-10">
                   {String(index + 1).padStart(2, '0')}
                 </div>
                 
@@ -104,9 +98,9 @@ export const GallerySection = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                 </div>
 
-                <div className="bg-white dark:bg-black text-black dark:text-white p-4 flex-1 relative overflow-hidden border-t-2 border-black dark:border-white">
+                <div className="bg-white dark:bg-black text-black dark:text-white p-4 flex-1 relative overflow-hidden brutalist-border-box border-l-0 border-r-0 border-b-0">
                   <div
-                    className="font-display text-xl sm:text-2xl font-bold transition-opacity duration-300"
+                    className="brutalist-card-title text-xl sm:text-2xl transition-opacity duration-300"
                     style={{
                       opacity: hoveredId === null || hoveredId === panel.id ? 1 : 0
                     }}
@@ -115,7 +109,7 @@ export const GallerySection = () => {
                   </div>
                   
                   <div
-                    className="text-sm mt-2 transition-all duration-500 leading-relaxed"
+                    className="brutalist-body text-sm mt-2 transition-all duration-500"
                     style={{
                       opacity: hoveredId === panel.id ? 1 : 0,
                       maxHeight: hoveredId === panel.id ? '200px' : '0',
@@ -139,9 +133,9 @@ export const GallerySection = () => {
         </div>
         
         {/* Bottom Divider */}
-        <div className="relative pt-8 mt-16 border-t-2 border-black dark:border-white">
+        <div className="relative pt-8 mt-16 brutalist-border-box border-t-2 border-b-0 border-x-0">
           <div className="text-center">
-            <span className="inline-block bg-white dark:bg-black px-6 font-mono text-xs uppercase tracking-widest -mt-3">
+            <span className="inline-block bg-white dark:bg-black px-6 brutalist-label -mt-3">
               Signals from the Nexus
             </span>
           </div>

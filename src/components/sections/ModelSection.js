@@ -4,21 +4,21 @@ export const ModelSection = () => {
   return (
     <section
       id="model"
-      className="min-h-screen py-20 sm:py-24 md:py-32 bg-black text-white flex items-center"
+      className="brutalist-section-inverted flex items-center"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+      <div className="brutalist-container">
         
         {/* Header */}
         <div className="max-w-4xl mb-16 sm:mb-20">
           <div className="space-y-6">
-            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
+            <h2 className="brutalist-heading">
               From research to<br />real-world impact.
             </h2>
             
-            <div className="w-16 h-1 bg-white"></div>
+            <div className="brutalist-divider-bold"></div>
           </div>
 
-          <p className="mt-8 text-xl sm:text-2xl text-gray-300 leading-relaxed">
+          <p className="mt-8 brutalist-subheading">
             GNI operates through four interconnected pillars that turn insight into action.
           </p>
         </div>
@@ -53,22 +53,22 @@ export const ModelSection = () => {
           ].map((pillar, idx) => (
             <article
               key={idx}
-              className="group relative p-8 border-2 border-white/20 hover:border-white transition-all duration-300 bg-black"
+              className="brutalist-card-minimal group p-8 text-white dark:text-black"
             >
               {/* Number indicator */}
-              <div className="absolute top-4 right-4 text-xs font-mono text-white/30 group-hover:text-white/50 transition-colors">
+              <div className="absolute top-4 right-4 brutalist-number-badge">
                 {pillar.number}
               </div>
 
               <div className="space-y-6">
-                <h3 className="font-display text-2xl sm:text-3xl font-bold leading-tight">
+                <h3 className="brutalist-card-title">
                   {pillar.title}
                 </h3>
 
-                <p className="text-base sm:text-lg text-gray-400">
+                <p className="brutalist-body text-gray-400 dark:text-gray-600">
                   {pillar.description}
                   {pillar.highlight && (
-                    <span className="block mt-1 text-white font-medium">
+                    <span className="block mt-1 font-medium">
                       {pillar.highlight}
                     </span>
                   )}
@@ -76,7 +76,7 @@ export const ModelSection = () => {
 
                 {/* Bottom accent line */}
                 <div className="pt-4">
-                  <div className="w-0 h-0.5 bg-white transition-all duration-500 group-hover:w-full"></div>
+                  <div className="brutalist-accent-line"></div>
                 </div>
               </div>
             </article>
@@ -85,11 +85,11 @@ export const ModelSection = () => {
 
         {/* Bottom decorative element */}
         <div className="mt-16 flex items-center gap-4">
-          <div className="h-px flex-1 bg-white/10"></div>
-          <p className="text-sm font-mono text-gray-500 tracking-wide">
+          <div className="brutalist-divider flex-1"></div>
+          <p className="brutalist-label">
             Four pillars. One integrated approach.
           </p>
-          <div className="h-px flex-1 bg-white/10"></div>
+          <div className="brutalist-divider flex-1"></div>
         </div>
       </div>
     </section>

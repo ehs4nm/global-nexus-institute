@@ -7,7 +7,7 @@ const SocialIcon = ({ href, label, children }) => (
     aria-label={label}
     target="_blank"
     rel="noopener noreferrer"
-    className="inline-flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-md bg-white/10 hover:bg-white/20 text-white touch-manipulation"
+    className="inline-flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-md text-white touch-manipulation"
   >
     {children}
   </a>
