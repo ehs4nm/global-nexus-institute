@@ -21,64 +21,64 @@ const LoadingScreen = ({ onComplete, isAppReady }) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             onComplete?.();
-        }, 2000); // Increased for better UX and animation completion
+        }, 2000);
         return () => clearTimeout(timer);
     }, [onComplete]);
 
     return (
         <div 
-            className={`fixed inset-0 z-[100] bg-black transition-opacity duration-300 flex items-center justify-center
+            className={`fixed inset-0 z-[100] flex items-center justify-center transition-opacity duration-500 
                 ${isAppReady ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
-            role="progressbar"
-            aria-valuetext="Loading"
+            style={{
+                backgroundColor: '#000',
+                backgroundImage: 'radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%)'
+            }}
         >
-            <div className="text-center gpu-accelerate">
-                <div className="overflow-hidden">
-                    <h1 className="text-5xl sm:text-7xl md:text-9xl font-black tracking-widest text-white loading-title will-change-transform">
-                        <span className="inline-block animate-slide-up">GNI</span>
-                    </h1>
-                </div>
-                
-                <div className="overflow-hidden mt-4">
-                    <div className="loading-text text-white/80 text-sm md:text-base font-light tracking-wider animate-slide-up-delayed will-change-opacity">
-                        Global Nexus Institute
-                    </div>
-                </div>
-                
-                <div className="mt-8 relative h-[2px] w-32 sm:w-48 mx-auto bg-white/20 overflow-hidden">
-                    <div className="loading-bar absolute inset-0 bg-white will-change-transform" />
+            <div className="text-center">
+                {/* GNI Title */}
+                <h1 className="text-7xl sm:text-9xl md:text-[12rem] font-extrabold text-white tracking-widest animate-fade-in-up drop-shadow-[0_0_30px_rgba(255,255,255,0.5)]">
+                    GNI
+                </h1>
+
+                {/* Subtitle */}
+                <p className="mt-3 text-white/70 text-base md:text-lg tracking-widest animate-fade-in-up delay-150">
+                    Global Nexus Institute
+                </p>
+
+                {/* Loading Bar */}
+                <div className="mt-8 relative h-[3px] w-48 sm:w-64 mx-auto bg-white/20 overflow-hidden rounded-full">
+                    <div className="absolute inset-0 bg-white animate-loading-bar" />
                 </div>
             </div>
 
             <style>{`
-                .loading-title { text-shadow: 0 0 40px rgba(255, 255, 255, 0.5); }
-                
-                @keyframes slideUp {
-                    from { transform: translateY(100%); opacity: 0; }
+                @keyframes fadeInUp {
+                    from { transform: translateY(20px); opacity: 0; }
                     to { transform: translateY(0); opacity: 1; }
                 }
 
-                @keyframes loadingBar {
+                .animate-fade-in-up {
+                    animation: fadeInUp 0.6s cubic-bezier(0.3, 0.7, 0.4, 1) forwards;
+                }
+
+                .delay-150 {
+                    animation-delay: 0.15s;
+                }
+
+                @keyframes loading-bar {
                     0% { transform: translateX(-100%); }
-                    50%, 100% { transform: translateX(100%); }
+                    50% { transform: translateX(0); }
+                    100% { transform: translateX(100%); }
                 }
 
-                .animate-slide-up {
-                    animation: slideUp 0.3s cubic-bezier(0.2, 0.7, 0.4, 1) forwards;
-                }
-
-                .animate-slide-up-delayed {
-                    animation: slideUp 0.5s cubic-bezier(0.2, 0.7, 0.4, 1) 0.2s forwards;
-                    opacity: 0;
-                }
-
-                .loading-bar {
-                    animation: loadingBar 1s ease-in-out infinite;
+                .animate-loading-bar {
+                    animation: loading-bar 1.4s ease-in-out infinite;
                 }
             `}</style>
         </div>
     );
 };
+
 
 
 // --- Main Gatsby Page Component ---
@@ -152,19 +152,6 @@ export const Head = () => (
         <meta name="description" content="GNI connects energy, geopolitics, and health into one field of actionable intelligence." />
         <meta name="theme-color" content="#000000" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* <link
-        rel="preload"
-        href="src/styles/global.css"
-        as="style"
-        onLoad={(e) => {
-            const link = e.currentTarget;
-            // stop future calls and promote to stylesheet
-            link.onload = null;
-            link.rel = 'stylesheet';
-        }}
-        /> */}
-        {/* Optional noscript fallback */}
-        {/* <noscript><link rel="stylesheet" href="src/styles/global.css" /></noscript> */}
     </>
 );
 
