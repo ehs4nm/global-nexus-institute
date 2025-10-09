@@ -15,18 +15,24 @@ export const NewsletterModal = () => {
   return (
     <div className="fixed inset-0 z-[200]" role="dialog" aria-modal="true" aria-labelledby="newsletter-title">
       <div 
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm" 
+        className="absolute inset-0 bg-black/80" 
         onClick={close} 
         onKeyDown={(e) => e.key === 'Escape' && close()}
         tabIndex={-1} 
         role="button"
         aria-label="Close newsletter modal"
       />
-      <div className="relative z-10 flex items-center justify-center min-h-full p-8">
-        <div className="w-full max-w-3xl bg-white dark:bg-zinc-900 shadow-2xl">
-          <div className="px-12 pt-12 flex items-end justify-end">
-            <button onClick={close} aria-label="Close" className="p-2 rounded hover:bg-black/5 dark:hover:bg-white/10">
-              <svg viewBox="0 0 24 24" className="w-10 h-12" fill="currentColor"><path d="M6.225 4.811L4.811 6.225 10.586 12l-5.775 5.775 1.414 1.414L12 13.414l5.775 5.775 1.414-1.414L13.414 12l5.775-5.775-1.414-1.414L12 10.586z"/></svg>
+      <div className="relative z-10 flex items-center justify-center min-h-full p-4 sm:p-8">
+        <div className="w-full max-w-4xl bg-white dark:bg-black border-2 border-black dark:border-white">
+          <div className="px-6 sm:px-12 pt-6 sm:pt-12 flex items-center justify-end">
+            <button 
+              onClick={close} 
+              aria-label="Close" 
+              className="w-12 h-12 inline-flex items-center justify-center border-2 border-black dark:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all duration-300"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="square" strokeLinejoin="miter" d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
           </div>
           <NewsletterForm onSubmit={onSubmit} />

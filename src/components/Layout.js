@@ -15,7 +15,7 @@ export const Layout = ({ children }) => {
           <Header />
           <FullscreenMenu />
           <PersonDrawer />
-          <main id="top" className="relative w-full overflow-x-hidden">
+          <main id="top" className="relative w-full overflow-x-hidden dark:bg-black">
             {children}
           </main>
           <Footer />

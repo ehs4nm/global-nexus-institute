@@ -46,55 +46,65 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <section className="grid place-items-center hero-grid relative dark:bg-black w-full sm:w-[95vw] min-h-[70vh] sm:min-h-[80vh] md:h-[80vh] mx-auto mt-[115px] sm:mt-[120px] md:mt-[160px] overflow-hidden">
+    <section className="grid place-items-center relative  w-full min-h-[80vh] sm:min-h-[90vh] md:min-h-screen mt-[140px] overflow-hidden mx-auto max-w-[100vw] sm:max-w-[95vw]">
       <video
-        className="absolute inset-0 w-full h-full object-cover object-center gpu-accelerate"
+        className="absolute inset-0 w-full h-[80vh] object-cover object-center gpu-accelerate"
         autoPlay muted loop playsInline poster={hero.posterSrc}
         preload="metadata"
       >
         <source src={hero.videoSrc} type="video/mp4" />
       </video>
 
-      {/* Overlay with rounded corners matching the video */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80"></div>
+      {/* Strong overlay for brutalist contrast */}
+      <div className="absolute inset-0"></div>
 
-      <div className="relative z-10 px-4 max-w-5xl text-center w-full">
+      <div className="relative z-10 px-6 sm:px-8 max-w-7xl text-center w-full">
+        {/* Top label */}
         <motion.div
-          className="relative z-10 max-w-6xl mx-auto px-2 sm:px-6 text-center will-change-opacity"
-          variants={containerVariants}
+          className="inline-block mb-8"
+          variants={itemVariants}
           initial="hidden"
-          animate="visible" // Changed from 'whileInView'
-          >
-          {/* The rest of the content remains exactly the same
-          <motion.div className="flex items-center justify-center gap-4 mb-6" variants={itemVariants}>
-            <img src="/assets/favicon_io/android-chrome-512x512.png" alt="logo" className='w-32 h-32 rounded-xl' />
-          </motion.div> */}
-
-          <motion.h2
-            className="heading-1 text-3xl tracking-tight leading-[1.05] text-white mb-6 sm:mb-8"
-            variants={itemVariants}
-            style={{ textShadow: '0 2px 15px rgba(0,0,0,0.5)' }}
-          >
-
-          </motion.h2>
+          animate="visible"
+        >
+          <div className="border-2 border-white bg-white text-black px-4 py-2 inline-block">
+            <span className="font-mono text-xs uppercase tracking-widest font-bold">
+              {hero.tagline}
+            </span>
+          </div>
         </motion.div>
         
-        <div className="mb-4 sm:mb-6">
-          <p className='text-white text-base sm:text-lg md:text-4xl font-bold opacity-90'>{hero.tagline}</p>
-        </div>
-        <h1 className="heading-1 font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] text-white mb-6 sm:mb-8">
-          <span 
-            ref={textRef}
-            className="block"
-          >
-            {hero.title.split(' ').map((word, i) => (
-              <span key={i} className="inline-block mr-1 sm:mr-2">{word}</span>
-            ))}
-          </span>
-          <span className="block text-accent-400 text-2xl sm:text-3xl md:text-5xl">{hero.subtitle}</span>
-        </h1>
-
-        {/* rest of component unchanged */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[0.95] text-white mb-6">
+            <span 
+              ref={textRef}
+              className="block"
+            >
+              {hero.title.split(' ').map((word, i) => (
+                <span key={i} className="inline-block mr-2 sm:mr-3">{word}</span>
+              ))}
+            </span>
+          </h1>
+          
+          {/* Subtitle with border emphasis */}
+          <div className="inline-block border-2 border-white bg-black px-6 py-3 mt-4">
+            <p className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
+              {hero.subtitle}
+            </p>
+          </div>
+          
+          {/* Decorative elements */}
+          <div className="flex items-center justify-center gap-4 mt-12">
+            <div className="h-1 w-16 bg-white" />
+            <span className="font-mono text-xs uppercase tracking-widest text-white">
+              Global Nexus Institute
+            </span>
+            <div className="h-1 w-16 bg-white" />
+          </div>
+        </motion.div>
       </div>
     </section>
   );

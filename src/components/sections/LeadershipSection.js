@@ -8,32 +8,83 @@ export const LeadershipSection = () => {
   const leadershipData = content.leadership;
 
   return (
-    <section id="leadership" className="min-h-[70vh] py-12 sm:py-16 md:py-20 border-black/10 dark:border-white/[0.06] flex items-center text-gray-800 dark:text-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <header className="max-w-3xl mb-8 sm:mb-10">
-          <h2 className="heading-1 font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">Leadership</h2>
-          <p className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-700 dark:text-white/80 leading-relaxed">Led by global experts in health policy, energy strategy, and geopolitics — backed by advisors from leading institutions.</p>
-        </header>
+    <section 
+      id="leadership" 
+      className="min-h-[70vh] py-20 sm:py-24 md:py-32 bg-white dark:bg-black text-black dark:text-white flex items-center"
+    >
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03] pointer-events-none">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
+          backgroundSize: '48px 48px'
+        }}></div>
+      </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-          {leadershipData.map((p) => (
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+        
+        {/* Header */}
+        <div className="max-w-4xl mb-16 sm:mb-20">
+          <div className="space-y-6">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
+              Leadership
+            </h2>
+            
+            <div className="w-16 h-1 bg-black dark:bg-white"></div>
+          </div>
+
+          <p className="mt-8 text-xl sm:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed">
+            Led by global experts in health policy, energy strategy, and geopolitics — backed by advisors from leading institutions.
+          </p>
+        </div>
+
+        {/* Leadership Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {leadershipData.map((p, idx) => (
             <button
               key={p.name}
               onClick={() => openPerson(p)}
-              className="group text-left p-4 sm:p-6 rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-white/[0.02] hover:border-accent-500/50 transition focus:outline-none focus:ring-2 focus:ring-accent-500 min-h-[280px] sm:min-h-[320px]"
+              className="group text-left border-2 border-black/20 dark:border-white/20 hover:border-black dark:hover:border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-black bg-white dark:bg-black"
             >
-              <div className="rounded-xl bg-accent-500/30 aspect-square overflow-hidden">
-                <img 
-                  src={p.img} 
-                  alt={p.name} 
-                  className="w-full h-full object-cover rounded-xl"
+              {/* Image Container */}
+              <div className="relative aspect-square overflow-hidden bg-gray-100 dark:bg-gray-900">
+                <img
+                  src={p.img}
+                  alt={p.name}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
+                
+                {/* Number overlay */}
+                <div className="absolute top-4 right-4 text-xs font-mono text-white bg-black/80 dark:bg-white/80 dark:text-black px-2 py-1 backdrop-blur-sm">
+                  {String(idx + 1).padStart(2, '0')}
+                </div>
               </div>
-              <h3 className="mt-3 sm:mt-4 font-display text-lg sm:text-xl font-semibold">{p.name}</h3>
-              <p className="text-sm sm:text-base text-gray-600 dark:text-white/70">{p.title}</p>
-              <div className="mt-6 h-1 w-16 bg-accent-500 group-hover:w-24 transition-all"></div>
+
+              {/* Text Content */}
+              <div className="p-6 space-y-2">
+                <h3 className="font-display text-xl sm:text-2xl font-bold leading-tight">
+                  {p.name}
+                </h3>
+                
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-snug">
+                  {p.title}
+                </p>
+
+                {/* Bottom accent line */}
+                <div className="pt-4">
+                  <div className="w-0 h-0.5 bg-black dark:bg-white transition-all duration-500 group-hover:w-full"></div>
+                </div>
+              </div>
             </button>
           ))}
+        </div>
+
+        {/* Bottom decorative element */}
+        <div className="mt-16 sm:mt-20 flex items-center gap-4">
+          <div className="h-px flex-1 bg-black/10 dark:bg-white/10"></div>
+          <p className="text-sm font-mono text-gray-500 dark:text-gray-400 tracking-wide">
+            → Expertise across continents and disciplines
+          </p>
+          <div className="h-px flex-1 bg-black/10 dark:bg-white/10"></div>
         </div>
       </div>
     </section>

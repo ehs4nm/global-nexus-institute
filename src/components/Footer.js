@@ -2,29 +2,81 @@ import React from 'react';
 
 export const Footer = () => {
   const year = new Date().getFullYear();
-
+  
   return (
-    <footer className=" border-black/10 dark:border-white/[0.06] py-10 text-gray-300 dark:text-white dark:bg-white bg-black">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div>
-            <div className="flex items-center gap-3">
-            <div className="h-8 w-8 rounded image-cover">
-                <img src="/assets/favicon_io/android-chrome-512x512.png" alt="Global Nexus Institute" className="rounded" />
+    <footer className="border-t-2 border-black dark:border-white bg-black dark:bg-white text-white dark:text-black py-16 sm:py-20">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03] pointer-events-none">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
+          backgroundSize: '48px 48px'
+        }}></div>
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        {/* Main Content */}
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-16">
+          
+          {/* Brand Section */}
+          <div className="space-y-6 max-w-md">
+            <div className="flex items-center gap-4">
+              <div className="h-12 w-12 border-2 border-white dark:border-black overflow-hidden flex-shrink-0">
+                <img 
+                  src="/assets/favicon_io/android-chrome-512x512.png" 
+                  alt="Global Nexus Institute" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <span className="font-display text-2xl sm:text-3xl font-bold leading-tight">
+                Global Nexus<br />Institute
+              </span>
             </div>
-              <span className="font-display">Global Nexus Institute</span>
-            </div>
-            <p className="mt-3 text-sm text-gray-600 dark:text-white/60">Foresight for a connected world.</p>
+            
+            <div className="w-16 h-1 bg-white dark:bg-black"></div>
+            
+            <p className="text-base sm:text-lg text-gray-300 dark:text-gray-700 font-medium">
+              Foresight for a connected world.
+            </p>
           </div>
-          <nav className="text-sm uppercase tracking-wide text-gray-200 dark:text-white/70">
-            <a href="#mission" className="mr-4 hover:text-accent-400">Mission</a>
-            <a href="#model" className="mr-4 hover:text-accent-400">Model</a>
-            <a href="#initiatives" className="mr-4 hover:text-accent-400">Initiatives</a>
-            <a href="#leadership" className="mr-4 hover:text-accent-400">Leadership</a>
-            <a href="#contact" className="hover:text-accent-400">Contact</a>
+
+          {/* Navigation */}
+          <nav className="flex-1 lg:text-right">
+            <div className="space-y-3">
+              {[
+                { href: '#mission', label: 'Mission' },
+                { href: '#model', label: 'Model' },
+                { href: '#initiatives', label: 'Initiatives' },
+                { href: '#leadership', label: 'Leadership' },
+                { href: '#contact', label: 'Contact' }
+              ].map((link, idx) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="group block text-lg sm:text-xl font-display font-bold hover:translate-x-2 lg:hover:translate-x-0 lg:hover:-translate-x-2 transition-transform duration-300"
+                >
+                  <span className="inline-flex items-center gap-2">
+                    <span className="w-0 h-0.5 bg-white dark:bg-black transition-all duration-300 group-hover:w-8"></span>
+                    <span>{link.label}</span>
+                  </span>
+                </a>
+              ))}
+            </div>
           </nav>
         </div>
-        <p className="mt-6 text-xs text-gray-500 dark:text-white/40">© <span>{year}</span> Global Nexus Institute. All rights reserved.</p>
+
+        {/* Bottom Bar */}
+        <div className="mt-16 pt-8 border-t-2 border-white/20 dark:border-black/20">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <p className="text-xs sm:text-sm font-mono text-gray-400 dark:text-gray-600 tracking-wider">
+              © {year} GLOBAL NEXUS INSTITUTE
+            </p>
+            
+            <p className="text-xs sm:text-sm font-mono text-gray-500 dark:text-gray-500">
+              ALL RIGHTS RESERVED
+            </p>
+          </div>
+        </div>
       </div>
     </footer>
   );

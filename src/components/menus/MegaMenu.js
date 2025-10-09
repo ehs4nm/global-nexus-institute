@@ -41,7 +41,7 @@ export const MegaMenu = ({ id, label, items = [], isOpen, onOpen, onClose }) => 
       onBlurCapture={onRootBlurCapture}
     >
       <button
-        className="px-3 py-2 hover:text-accent-400"
+        className="px-4 py-2 text-sm font-mono uppercase hover:bg-black dark:hover:bg-white hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors duration-200"
         aria-haspopup="true"
         aria-expanded={open}
         aria-controls={menuId}
@@ -99,7 +99,7 @@ export const MegaMenu = ({ id, label, items = [], isOpen, onOpen, onClose }) => 
           className={`mx-auto max-w-7xl overflow-hidden ${open ? 'opacity-100' : 'opacity-0'} transition-opacity duration-200 pointer-events-auto`}
         >
           <div
-            className={`bg-white/90 dark:bg-black/90 text-black shadow-2xl border-t border-black/10 overflow-hidden rounded-xl`}
+            className={`bg-white dark:bg-black dark:text-white text-black shadow-2xl border-t border-black/10 dark:border-white/10 overflow-hidden rounded-xl`}
             style={{
               maxHeight: open ? '80vh' : '0px',
               transition: 'max-height 250ms ease, transform 200ms ease',
@@ -109,9 +109,9 @@ export const MegaMenu = ({ id, label, items = [], isOpen, onOpen, onClose }) => 
             <div className="px-6 py-8 grid grid-cols-1 md:grid-cols-4 gap-8">
               <div>
                 <h4 className="text-xl uppercase tracking-wide text-black">{label}</h4>
-                <p className="mt-2 text-sm text-black">Explore {label.toLowerCase()} highlights</p>
+                <p className="mt-2 text-sm dark:text-white text-black">Explore <strong className='font-extrabold'>{label.toLowerCase()}</strong> highlights</p>
               </div>
-              <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-6 dark:text-white">
                 {items.map((it) => (
                   <a key={it.href} href={it.href} className="group/item block" role="menuitem" tabIndex={open ? 0 : -1} aria-label={it.title}>
                     <div className="aspect-[4/3] w-full overflow-hidden rounded-lg bg-white/5 border border-white/10">
