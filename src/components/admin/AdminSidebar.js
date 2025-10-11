@@ -2,7 +2,9 @@ import React from 'react';
 
 const TABS = [
   { id: 'hero', label: 'Hero Section', icon: '🎬' },
+  { id: 'newsTicker', label: 'News Ticker', icon: '📰' },
   { id: 'mission', label: 'Mission', icon: '🎯' },
+  { id: 'aboutUs', label: 'About Us', icon: '📋' },
   { id: 'initiatives', label: 'Initiatives', icon: '🚀' },
   { id: 'gallery', label: 'Gallery', icon: '🖼️' },
   { id: 'leadership', label: 'Leadership', icon: '👥' },

@@ -1,29 +1,15 @@
 import React from 'react';
+import { useContent } from '../../hooks/useContent';
 
-const principles = [
-  {
-    number: '01',
-    title: 'Integrated Analysis',
-    description: 'Connecting energy, geopolitics, and health into unified foresight.'
-  },
-  {
-    number: '02',
-    title: 'Systems Thinking',
-    description: 'Understanding cascading effects across interconnected domains.'
-  },
-  {
-    number: '03',
-    title: 'Actionable Intelligence',
-    description: 'Translating complex data into strategic guidance for decision-makers.'
-  },
-  {
-    number: '04',
-    title: 'Global Impact',
-    description: 'Building resilient systems for an interconnected world.'
+export const AboutUsSectionWithContext = () => {
+  const { content } = useContent();
+  const aboutUsContent = content.aboutUs;
+  
+  // Return null if content is not loaded yet
+  if (!aboutUsContent) {
+    return null;
   }
-];
-
-export const AboutUsSection = () => {
+  
   return (
     <section id="about" className="brutalist-section text-gray-900 dark:text-white">
       {/* Subtle dot pattern background */}
@@ -34,26 +20,26 @@ export const AboutUsSection = () => {
         <div className="mb-12 sm:mb-16 md:mb-20">
           <div className="inline-block mb-6">
             <div className="brutalist-divider-bold mb-4" />
-            <span className="brutalist-label">Who We Are</span>
+            <span className="brutalist-label">{aboutUsContent.sectionLabel}</span>
           </div>
           
           <h2 className="brutalist-heading mb-8">
-            About Us
+            {aboutUsContent.mainTitle}
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
             <div>
-              <p className="brutalist-card-title mb-6">
-                Energy shocks fuel conflict. Conflict spreads disease. Health crises destabilize economies.
+              <p className="brutalist-card-title brutalist-label mb-6">
+                {aboutUsContent.primaryDescription}
               </p>
               <p className="brutalist-body">
-                Yet global policy and research remain siloed. The Global Nexus Institute (GNI) exists to break those silos — integrating energy, geopolitics, and health into a single field of foresight and action.
+                {aboutUsContent.secondaryDescription}
               </p>
             </div>
             <div className="relative">
               <div className="brutalist-card-inverted p-6 sm:p-8">
                 <p className="brutalist-body font-bold">
-                  We transform complexity into clarity, connecting global challenges into actionable intelligence for leaders who shape our future.
+                  {aboutUsContent.missionStatement}
                 </p>
               </div>
             </div>
@@ -62,12 +48,12 @@ export const AboutUsSection = () => {
 
         {/* Principles Grid */}
         <div className="mb-16">
-          <h3 className="brutalist-card-title mb-8 sm:mb-12">Our Principles</h3>
+          <h3 className="brutalist-card-title mb-8 sm:mb-12">{aboutUsContent.principlesTitle}</h3>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {principles.map((principle, index) => (
+            {aboutUsContent.principles && Array.isArray(aboutUsContent.principles) ? aboutUsContent.principles.map((principle, index) => (
               <div 
-                key={index}
+                key={principle.id}
                 className="brutalist-card group overflow-hidden"
               >
                 {/* Number Badge Overlay */}
@@ -87,7 +73,11 @@ export const AboutUsSection = () => {
                   <div className="h-1 w-8 bg-black dark:bg-white transition-all duration-300 group-hover:w-16" />
                 </div>
               </div>
-            ))}
+            )) : (
+              <div className="col-span-full text-center brutalist-body text-gray-500">
+                No principles data found. Please check your content structure.
+              </div>
+            )}
           </div>
         </div>
 
@@ -95,7 +85,7 @@ export const AboutUsSection = () => {
         <div className="relative pt-8 brutalist-border-box border-t-2 border-b-0 border-x-0">
           <div className="text-center">
             <span className="inline-block bg-white dark:bg-black px-6 brutalist-label -mt-3">
-              A connected world demands connected intelligence
+              {aboutUsContent.bottomMessage}
             </span>
           </div>
         </div>

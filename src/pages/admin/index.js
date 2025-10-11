@@ -3,7 +3,9 @@ import contentData from '../../data/content.json';
 import AdminHeader from '../../components/admin/AdminHeader';
 import AdminSidebar from '../../components/admin/AdminSidebar';
 import HeroEditor from '../../components/admin/editors/HeroEditor';
+import NewsTickerEditor from '../../components/admin/editors/NewsTickerEditor';
 import MissionEditor from '../../components/admin/editors/MissionEditor';
+import AboutUsEditor from '../../components/admin/editors/AboutUsEditor';
 import InitiativesEditor from '../../components/admin/editors/InitiativesEditor';
 import GalleryEditor from '../../components/admin/editors/GalleryEditor';
 import LeadershipEditor from '../../components/admin/editors/LeadershipEditor';
@@ -89,8 +91,14 @@ const AdminPage = () => {
               {activeTab === 'hero' && (
                 <HeroEditor content={content.hero} updateContent={updateContent} />
               )}
+              {activeTab === 'newsTicker' && (
+                <NewsTickerEditor />
+              )}
               {activeTab === 'mission' && (
                 <MissionEditor content={content.mission} updateContent={updateContent} />
+              )}
+              {activeTab === 'aboutUs' && (
+                <AboutUsEditor content={content.aboutUs} updateContent={updateContent} />
               )}
               {activeTab === 'initiatives' && (
                 <InitiativesEditor content={content.initiatives} updateContent={updateContent} />

@@ -162,6 +162,45 @@
       }
     ]
   },
+  "aboutUs": {
+    "sectionLabel": "Who We Are",
+    "mainTitle": "About Us",
+    "primaryDescription": "Energy shocks fuel conflict. Conflict spreads disease. Health crises destabilize economies.",
+    "secondaryDescription": "Yet global policy and research remain siloed. The Global Nexus Institute (GNI) exists to break those silos — integrating energy, geopolitics, and health into a single field of foresight and action.",
+    "missionStatement": "We transform complexity into clarity, connecting global challenges into actionable intelligence for leaders who shape our future.",
+    "principlesTitle": "Our Principles",
+    "principles": [
+      {
+        "id": 1,
+        "number": "01",
+        "title": "Integrated Analysis",
+        "description": "Connecting energy, geopolitics, and health into unified foresight."
+      },
+      {
+        "id": 2,
+        "number": "02",
+        "title": "Systems Thinking",
+        "description": "Understanding cascading effects across interconnected domains."
+      },
+      {
+        "id": 3,
+        "number": "03",
+        "title": "Actionable Intelligence",
+        "description": "Translating complex data into strategic guidance for decision-makers."
+      },
+      {
+        "id": 4,
+        "number": "04",
+        "title": "Global Impact",
+        "description": "Building resilient systems for an interconnected world."
+      }
+    ],
+    "bottomMessage": "A connected world demands connected intelligence",
+    "images": {
+      "backgroundImage": null,
+      "principlesImage": null
+    }
+  },
   "siteMetadata": {
     "title": "Global Nexus Institute — Foresight for a Connected World",
     "description": "GNI connects energy, geopolitics, and health into one field of actionable intelligence."

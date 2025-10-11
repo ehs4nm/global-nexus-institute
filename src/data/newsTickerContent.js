@@ -1,0 +1,6 @@
+export const defaultNewsTickerContent = {
+  text: "🌍 Global Nexus Institute: Connecting energy, geopolitics, and health through actionable intelligence • Latest insights on renewable energy transitions and their geopolitical implications • New research findings on the intersection of climate policy and global health outcomes • Strategic analysis: How energy security shapes international relations • Breaking: Advanced modeling reveals key patterns in global supply chain resilience • Expert perspectives on sustainable development in emerging markets • Critical updates on technology transfer and innovation ecosystems • In-depth analysis: The role of data science in policy making • Current focus: Building bridges between academic research and practical implementation • Latest publications now available: Energy diplomacy in the 21st century • Upcoming events: International conference on integrated systems thinking •",
+  speed: 60, // pixels per second
+  enabled: true,
+  lastUpdated: new Date().toISOString()
+};

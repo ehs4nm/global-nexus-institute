@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Layout } from '../components/Layout';
+import { ContentProvider } from '../contexts/ContentContext';
 import { HeroSection } from '../components/sections/HeroSection';
+import { NewsTickerSection } from '../components/sections/NewsTickerSection';
 import { SloganSection } from '../components/sections/SloganSection';
 import { MissionSection } from '../components/sections/MissionSection';
 import { ModelSection } from '../components/sections/ModelSection';
@@ -8,7 +10,7 @@ import { InitiativesSection } from '../components/sections/InitiativesSection';
 import { GallerySection } from '../components/sections/GallerySection';
 import { LeadershipSection } from '../components/sections/LeadershipSection';
 import { ContactSection } from '../components/sections/ContactSection';
-import { AboutUsSection } from '../components/sections/AboutUsSection';     
+import { AboutUsSectionWithContext } from '../components/sections/AboutUsSectionWithContext';
 
 /**
  * A minimal, high-performance loading animation component.
@@ -149,17 +151,20 @@ const IndexPage = () => {
             )}
             
             <div className={`transition-opacity duration-1000 will-change-opacity ${isAppReady ? 'opacity-100' : 'opacity-0'}`}>
-                <Layout>
-                    <HeroSection />
-                    <SloganSection />
-                    <GallerySection />
-                    <ModelSection />
-                    <MissionSection />
-                    <AboutUsSection />
-                    <InitiativesSection />
-                    <LeadershipSection />
-                    <ContactSection />
-                </Layout>
+                <ContentProvider>
+                    <Layout>
+                        <HeroSection />
+                        <SloganSection />
+                        <GallerySection />
+                        <ModelSection />
+                        <MissionSection />
+                        <AboutUsSectionWithContext />
+                        <InitiativesSection />
+                        <LeadershipSection />
+                        <NewsTickerSection />
+                        <ContactSection />
+                    </Layout>
+                </ContentProvider>
             </div>
         </>
     );
