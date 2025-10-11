@@ -3,8 +3,8 @@
     "tagline": "Foresight for a Connected World",
     "title": "Seeing the world's crises",
     "subtitle": "— before they collide.",
-    "videoSrc": "/assets/videos/video-6.mp4",
-    "posterSrc": "/assets/images/1.jpg"
+    "videoSrc": "assets/videos/video-6.mp4",
+    "posterSrc": "assets/images/1.jpg"
   },
   "mission": {
     "title": "Crises do not stand alone.",
@@ -55,19 +55,19 @@
   "leadership": [
     {
       "name": "Favoud Ahmad",
-      "img": "/assets/leaders/foad-ahmed.jpg",
+      "img": "assets/leaders/foad-ahmed.jpg",
       "title": "CEO",
       "bio": "Favoud leads GNI with a builder's mindset, integrating industry pragmatism with systems thinking. He drives high-clarity strategy, convenes cross-sector alliances, and turns foresight into execution."
     },
     {
       "name": "Dr. Saied Froghi",
-      "img": "/assets/leaders/saied-froghi.jpg",
+      "img": "assets/leaders/saied-froghi.jpg",
       "title": "Director of Global Health Policy",
       "bio": "Dr. Froghi brings clinical insight and policy depth to the nexus of public health, crisis response, and equitable system design."
     },
     {
       "name": "Advisor — TBA",
-      "img": "/assets/leaders/reza-azami.jpg",
+      "img": "assets/leaders/reza-azami.jpg",
       "title": "Strategic Advisor",
       "bio": "We are assembling a council of senior advisors across energy, finance, security, and public health to guide our mission and amplify global impact."
     }
@@ -79,12 +79,12 @@
       {
         "id": "energy-systems",
         "label": "Energy Systems",
-        "img": "/assets/images/2.jpg",
+        "img": "assets/images/2.jpg",
         "slug": "energy-systems",
         "pageContent": {
           "title": "Energy Systems",
           "subtitle": "Understanding global energy transitions and their cascading effects",
-          "heroImage": "/assets/images/2.jpg",
+          "heroImage": "assets/images/2.jpg",
           "sections": [
             {
               "heading": "Overview",
@@ -100,12 +100,12 @@
       {
         "id": "geopolitics",
         "label": "Geopolitics",
-        "img": "/assets/images/3.jpg",
+        "img": "assets/images/3.jpg",
         "slug": "geopolitics",
         "pageContent": {
           "title": "Geopolitics",
           "subtitle": "Mapping the intersection of power, resources, and global stability",
-          "heroImage": "/assets/images/3.jpg",
+          "heroImage": "assets/images/3.jpg",
           "sections": [
             {
               "heading": "Strategic Analysis",
@@ -121,12 +121,12 @@
       {
         "id": "public-health",
         "label": "Public Health",
-        "img": "/assets/images/4.jpg",
+        "img": "assets/images/4.jpg",
         "slug": "public-health",
         "pageContent": {
           "title": "Public Health",
           "subtitle": "Connecting health outcomes to energy and geopolitical factors",
-          "heroImage": "/assets/images/4.jpg",
+          "heroImage": "assets/images/4.jpg",
           "sections": [
             {
               "heading": "Nexus Approach",
@@ -142,12 +142,12 @@
       {
         "id": "resilience",
         "label": "Resilience",
-        "img": "/assets/images/8.jpg",
+        "img": "assets/images/8.jpg",
         "slug": "resilience",
         "pageContent": {
           "title": "Resilience",
           "subtitle": "Building adaptive capacity in an interconnected world",
-          "heroImage": "/assets/images/8.jpg",
+          "heroImage": "assets/images/8.jpg",
           "sections": [
             {
               "heading": "Systems Thinking",

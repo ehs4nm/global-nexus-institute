@@ -85,7 +85,7 @@ const IndexPage = () => {
     const [isAppReady, setIsAppReady] = useState(false);
     const [isLoaderFinished, setIsLoaderFinished] = useState(false);
 
-    // Track when the logo animation has completed (LoaderTree calls onComplete)
+    // Track when the logo animation has completed (LoadingScreen calls onComplete)
     const [isLogoDone, setIsLogoDone] = useState(false);
     // Track when the browser has finished loading all resources
     const [hasWindowLoaded, setHasWindowLoaded] = useState(false);
@@ -93,25 +93,49 @@ const IndexPage = () => {
     // Listen for the window load event (or immediate if already complete)
     useEffect(() => {
         if (typeof window === 'undefined') return;
+        
+        // Check if already loaded
         if (document.readyState === 'complete') {
+            console.log('Document already loaded');
             setHasWindowLoaded(true);
             return;
         }
-        const onLoad = () => setHasWindowLoaded(true);
+        
+        const onLoad = () => {
+            console.log('Window load event fired');
+            setHasWindowLoaded(true);
+        };
+        
         window.addEventListener('load', onLoad, { once: true });
-        return () => window.removeEventListener('load', onLoad);
+        
+        // Fallback: if window doesn't load within 5 seconds, proceed anyway
+        const fallbackTimer = setTimeout(() => {
+            console.log('Fallback: Force setting window as loaded');
+            setHasWindowLoaded(true);
+        }, 5000);
+        
+        return () => {
+            window.removeEventListener('load', onLoad);
+            clearTimeout(fallbackTimer);
+        };
     }, []);
 
-    // LoaderTree tells us its animation finished
+    // LoadingScreen tells us its animation finished
     const handleLoadingComplete = () => {
+        console.log('Loading animation completed');
         setIsLogoDone(true);
     };
 
     // When both the logo has shown and the window has fully loaded, reveal the app
     useEffect(() => {
+        console.log('State check:', { isLogoDone, hasWindowLoaded });
         if (isLogoDone && hasWindowLoaded) {
+            console.log('Both conditions met, showing app');
             setIsAppReady(true);
-            const t = setTimeout(() => setIsLoaderFinished(true), 300); // match fade-out duration
+            const t = setTimeout(() => {
+                console.log('Hiding loader');
+                setIsLoaderFinished(true);
+            }, 500); // increased timeout to match fade-out duration
             return () => clearTimeout(t);
         }
     }, [isLogoDone, hasWindowLoaded]);

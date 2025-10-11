@@ -5,7 +5,7 @@ const LeadershipEditor = ({ content, updateContent }) => {
   const addLeader = () => {
     const newLeader = {
       name: 'New Leader',
-      img: '/assets/leaders/placeholder.jpg',
+      img: 'assets/leaders/placeholder.jpg',
       title: 'Position',
       bio: 'Bio description...',
     };
@@ -77,7 +77,7 @@ const LeadershipEditor = ({ content, updateContent }) => {
                 value={leader.img}
                 onChange={(e) => updateLeader(index, 'img', e.target.value)}
                 className="w-full px-3 py-2 text-sm border border-gray-300 rounded focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white"
-                placeholder="/assets/leaders/name.jpg"
+                placeholder="assets/leaders/name.jpg"
               />
             </div>
             <div>

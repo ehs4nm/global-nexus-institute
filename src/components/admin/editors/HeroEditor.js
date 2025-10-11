@@ -29,14 +29,14 @@ const HeroEditor = ({ content, updateContent }) => (
       label="Video Source"
       value={content.videoSrc}
       onChange={(e) => updateContent('hero.videoSrc', e.target.value)}
-      placeholder="/assets/videos/video.mp4"
+      placeholder="assets/videos/video.mp4"
     />
 
     <FormInput
       label="Poster Image"
       value={content.posterSrc}
       onChange={(e) => updateContent('hero.posterSrc', e.target.value)}
-      placeholder="/assets/images/poster.jpg"
+      placeholder="assets/images/poster.jpg"
     />
   </div>
 );

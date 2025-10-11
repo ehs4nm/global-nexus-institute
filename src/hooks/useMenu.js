@@ -51,13 +51,13 @@ export const MenuProvider = ({ children }) => {
       }
       // Fallback to default menu items if none saved
       const defaultItems = [
-        { id: 'mission', label: 'Mission', type: 'hash', href: '#mission', image: '/assets/menu/mission.jpg', showInDesktop: true },
-        { id: 'model', label: 'Model', type: 'hash', href: '#model', image: '/assets/menu/model.jpg', showInDesktop: true },
-        { id: 'initiatives', label: 'Initiatives', type: 'hash', href: '#initiatives', image: '/assets/menu/initiatives.jpg', showInDesktop: true },
-        { id: 'leadership', label: 'Leadership', type: 'hash', href: '#leadership', image: '/assets/menu/leadership.jpg', showInDesktop: true },
-        { id: 'contact', label: 'Contact', type: 'hash', href: '#contact', image: '/assets/menu/contact.jpg', showInDesktop: true },
-        { id: 'who', label: 'Who We Are', type: 'route', href: '/who-we-are', image: '/assets/menu/who.jpg', showInDesktop: true },
-        { id: 'what', label: 'What We Do', type: 'route', href: '/what-we-do', image: '/assets/menu/what.jpg', showInDesktop: true },
+        { id: 'mission', label: 'Mission', type: 'hash', href: '#mission', image: 'assets/menu/mission.jpg', showInDesktop: true },
+        { id: 'model', label: 'Model', type: 'hash', href: '#model', image: 'assets/menu/model.jpg', showInDesktop: true },
+        { id: 'initiatives', label: 'Initiatives', type: 'hash', href: '#initiatives', image: 'assets/menu/initiatives.jpg', showInDesktop: true },
+        { id: 'leadership', label: 'Leadership', type: 'hash', href: '#leadership', image: 'assets/menu/leadership.jpg', showInDesktop: true },
+        { id: 'contact', label: 'Contact', type: 'hash', href: '#contact', image: 'assets/menu/contact.jpg', showInDesktop: true },
+        { id: 'who', label: 'Who We Are', type: 'route', href: '/who-we-are', image: 'assets/menu/who.jpg', showInDesktop: true },
+        { id: 'what', label: 'What We Do', type: 'route', href: '/what-we-do', image: 'assets/menu/what.jpg', showInDesktop: true },
       ];
       setMenuItems(defaultItems);
       localStorage.setItem('gni_menu_items', JSON.stringify(defaultItems));

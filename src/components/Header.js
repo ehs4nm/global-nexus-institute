@@ -5,15 +5,15 @@ import { TopBar } from './TopBar';
 import { MegaMenu } from './menus/MegaMenu';
 
 const WHAT_WE_DO = [
-  { href: '/what-we-do/analysis', title: 'Analysis', image: '/assets/images/1.jpg' },
-  { href: '/what-we-do/advisory', title: 'Advisory', image: '/assets/images/2.jpg' },
-  { href: '/what-we-do/research', title: 'Research', image: '/assets/images/3.jpg' },
+  { href: '/what-we-do/analysis', title: 'Analysis', image: 'assets/images/1.jpg' },
+  { href: '/what-we-do/advisory', title: 'Advisory', image: 'assets/images/2.jpg' },
+  { href: '/what-we-do/research', title: 'Research', image: 'assets/images/3.jpg' },
 ];
 
 const WHO_WE_ARE = [
-  { href: '/who-we-are/team', title: 'Team', image: '/assets/images/6.jpg' },
-  { href: '/who-we-are/partners', title: 'Partners', image: '/assets/images/4.jpg' },
-  { href: '/who-we-are/careers', title: 'Careers', image: '/assets/images/5.jpg' },
+  { href: '/who-we-are/team', title: 'Team', image: 'assets/images/6.jpg' },
+  { href: '/who-we-are/partners', title: 'Partners', image: 'assets/images/4.jpg' },
+  { href: '/who-we-are/careers', title: 'Careers', image: 'assets/images/5.jpg' },
 ];
 
 export const Header = () => {
@@ -39,7 +39,7 @@ export const Header = () => {
             <a href="/" className="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white focus:ring-offset-2">
               <div className="h-10 w-10 border-2 border-black dark:border-white overflow-hidden flex-shrink-0">
                 <img 
-                  src="/assets/favicon_io/android-chrome-512x512.png" 
+                  src="assets/favicon_io/android-chrome-512x512.png" 
                   alt="Global Nexus Institute" 
                   className="w-full h-full object-cover"
                 />
@@ -122,7 +122,7 @@ export const Header = () => {
           <a href="/" className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white min-w-0 flex-1 overflow-hidden">
             <div className="h-8 w-8 border-2 border-black dark:border-white overflow-hidden flex-shrink-0">
               <img 
-                src="/assets/favicon_io/android-chrome-512x512.png" 
+                src="assets/favicon_io/android-chrome-512x512.png" 
                 alt="Global Nexus Institute" 
                 className="w-full h-full object-cover"
               />
