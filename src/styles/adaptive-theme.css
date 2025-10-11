@@ -1,0 +1,227 @@
+/* ================================================================
+ * ADAPTIVE THEME SYSTEM
+ * ================================================================
+ * 
+ * This file creates "smart" classes that automatically switch
+ * between brutalist and refined designs based on .refined-mode
+ * 
+ * Usage:
+ *   <div className="adaptive-card">
+ *     This will be brutalist by default, refined when .refined-mode is active
+ *   </div>
+ * 
+ * ================================================================ */
+
+@layer components {
+  /* ─────────────────────────────────────────────────────────────
+   * ADAPTIVE CARDS - Switch automatically
+   * ───────────────────────────────────────────────────────────── */
+  
+  /**
+   * Adaptive Card - Brutalist by default, refined when .refined-mode active
+   */
+  .adaptive-card {
+    @apply relative
+           border-2 border-black dark:border-white
+           bg-white dark:bg-black
+           transition-all duration-300;
+  }
+
+  .adaptive-card:hover {
+    @apply shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]
+           dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)];
+  }
+
+  /* When refined-mode is active */
+  .refined-mode .adaptive-card {
+    @apply rounded-xl
+           border-0;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    transition: all 0.5s ease-out;
+  }
+
+  .refined-mode .adaptive-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.12);
+  }
+
+  .dark.refined-mode .adaptive-card {
+    background: #141414;
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+   * ADAPTIVE TYPOGRAPHY
+   * ───────────────────────────────────────────────────────────── */
+  
+  /**
+   * Adaptive Heading - Automatically adjusts based on mode
+   */
+  .adaptive-heading {
+    @apply font-title-bold
+           text-4xl sm:text-5xl md:text-6xl lg:text-7xl
+           font-black
+           leading-[0.95]
+           tracking-tight;
+  }
+
+  .refined-mode .adaptive-heading {
+    @apply font-bold
+           leading-[1.1]
+           tracking-[-0.02em];
+    color: var(--refined-text-primary, #1a1a1a);
+  }
+
+  /**
+   * Adaptive Card Title
+   */
+  .adaptive-card-title {
+    @apply font-title
+           text-xl sm:text-2xl md:text-3xl
+           font-bold
+           leading-tight;
+  }
+
+  .refined-mode .adaptive-card-title {
+    @apply font-semibold
+           leading-snug
+           tracking-normal;
+    color: var(--refined-text-primary, #1a1a1a);
+  }
+
+  /**
+   * Adaptive Label
+   */
+  .adaptive-label {
+    @apply font-mono
+           uppercase
+           tracking-widest
+           text-xs
+           text-gray-400 dark:text-gray-500;
+  }
+
+  .refined-mode .adaptive-label {
+    @apply tracking-wide
+           font-medium;
+    color: var(--refined-text-tertiary, #737373);
+  }
+
+  /**
+   * Adaptive Body Text
+   */
+  .adaptive-body {
+    @apply text-sm sm:text-base
+           leading-relaxed;
+  }
+
+  .refined-mode .adaptive-body {
+    line-height: 1.75;
+    color: var(--refined-text-secondary, #525252);
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+   * ADAPTIVE SECTIONS
+   * ───────────────────────────────────────────────────────────── */
+  
+  .adaptive-section {
+    @apply relative
+           min-h-screen
+           py-16 sm:py-20 md:py-24
+           bg-white dark:bg-black
+           border-t-2 border-black dark:border-white;
+  }
+
+  .refined-mode .adaptive-section {
+    @apply border-t-0
+           py-20 sm:py-24 md:py-32
+           transition-colors duration-700;
+    background-color: var(--refined-bg-primary, #ffffff);
+  }
+
+  .dark.refined-mode .adaptive-section {
+    background-color: #0a0a0a;
+  }
+
+  /**
+   * Adaptive Container
+   */
+  .adaptive-container {
+    @apply mx-auto
+           max-w-7xl
+           px-4 sm:px-6 lg:px-8
+           w-full;
+  }
+
+  .refined-mode .adaptive-container {
+    @apply px-6 sm:px-8 lg:px-12;
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+   * ADAPTIVE DIVIDERS
+   * ───────────────────────────────────────────────────────────── */
+  
+  .adaptive-divider-bold {
+    @apply w-16 h-1
+           bg-white dark:bg-black;
+  }
+
+  .refined-mode .adaptive-divider-bold {
+    @apply rounded-full;
+    width: 4rem;
+    background: linear-gradient(90deg, #2563eb, transparent);
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+   * ADAPTIVE BACKGROUNDS
+   * ───────────────────────────────────────────────────────────── */
+  
+  .adaptive-bg-dots {
+    background-image: radial-gradient(circle, rgba(0,0,0,0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .dark .adaptive-bg-dots {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+  }
+
+  .refined-mode .adaptive-bg-dots {
+    background-image: radial-gradient(circle, rgb(0 0 0 / 0.02) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .dark.refined-mode .adaptive-bg-dots {
+    background-image: radial-gradient(circle, rgb(255 255 255 / 0.02) 1px, transparent 1px);
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+   * ADAPTIVE HOVER EFFECTS
+   * ───────────────────────────────────────────────────────────── */
+  
+  .adaptive-hover-lift {
+    @apply transition-all duration-300;
+  }
+
+  .refined-mode .adaptive-hover-lift {
+    @apply transition-all duration-500;
+  }
+
+  .refined-mode .adaptive-hover-lift:hover {
+    transform: translateY(-6px);
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+   * SMOOTH TRANSITIONS FOR THEME SWITCHING
+   * ───────────────────────────────────────────────────────────── */
+  
+  /* Smoothly transition all adaptive elements when theme changes */
+  .adaptive-card,
+  .adaptive-heading,
+  .adaptive-card-title,
+  .adaptive-label,
+  .adaptive-body,
+  .adaptive-section,
+  .adaptive-divider-bold {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+  }
+}

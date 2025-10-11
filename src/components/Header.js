@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
+import { useDesignTheme } from '../hooks/useDesignTheme';
 import { useMenu } from '../hooks/useMenu';
 import { TopBar } from './TopBar';
 import { MegaMenu } from './menus/MegaMenu';
@@ -18,6 +19,7 @@ const WHO_WE_ARE = [
 
 export const Header = () => {
   const { isDark, toggleTheme } = useTheme();
+  const { isRefined, toggleDesignTheme } = useDesignTheme();
   const { setMenuOpen, menuItems } = useMenu();
 
   // Track which mega menu is open to ensure mutual exclusivity
@@ -88,6 +90,42 @@ export const Header = () => {
             </nav>
             
             <div className="flex items-center gap-2 flex-shrink-0">
+              {/* Design Theme Toggle Button */}
+              <button
+                aria-pressed={isRefined}
+                title={isRefined ? "Switch to Brutalist" : "Switch to Refined"}
+                onClick={toggleDesignTheme}
+                className="hidden md:inline-flex items-center justify-center w-10 h-10 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white focus:ring-offset-2 touch-manipulation"
+              >
+                {/* Brutalist icon (sharp square) shown in brutalist mode */}
+                <svg
+                  className={`w-5 h-5 ${isRefined ? "hidden" : ""}`}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <rect x="3" y="3" width="18" height="18" />
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="12" y1="3" x2="12" y2="21" />
+                </svg>
+                {/* Refined icon (soft rounded) shown in refined mode */}
+                <svg
+                  className={`w-5 h-5 ${isRefined ? "" : "hidden"}`}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 6v12" />
+                  <path d="M6 12h12" />
+                </svg>
+              </button>
+              
+              {/* Dark Mode Toggle Button */}
               <button
                 aria-pressed={isDark}
                 title="Toggle theme"

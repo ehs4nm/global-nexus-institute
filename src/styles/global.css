@@ -2,9 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Refined Design System */
 @import './refined-system.css';
+
+/* Import Adaptive Theme System */
+@import './adaptive-theme.css';
+
 /* ================================================================
- * GNI BRUTALIST DESIGN SYSTEM LAYER
+* GNI BRUTALIST DESIGN SYSTEM LAYER
  * ================================================================
  * 
  * This layer encapsulates the entire Brutalist aesthetic.
