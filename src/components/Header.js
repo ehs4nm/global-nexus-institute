@@ -90,14 +90,12 @@ export const Header = () => {
             </nav>
             
             <div className="flex items-center gap-2 flex-shrink-0">
-              {/* Design Theme Toggle Button */}
-              <button
+              {/* <button
                 aria-pressed={isRefined}
                 title={isRefined ? "Switch to Brutalist" : "Switch to Refined"}
                 onClick={toggleDesignTheme}
                 className="hidden md:inline-flex items-center justify-center w-10 h-10 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white focus:ring-offset-2 touch-manipulation"
               >
-                {/* Brutalist icon (sharp square) shown in brutalist mode */}
                 <svg
                   className={`w-5 h-5 ${isRefined ? "hidden" : ""}`}
                   xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +108,6 @@ export const Header = () => {
                   <line x1="3" y1="12" x2="21" y2="12" />
                   <line x1="12" y1="3" x2="12" y2="21" />
                 </svg>
-                {/* Refined icon (soft rounded) shown in refined mode */}
                 <svg
                   className={`w-5 h-5 ${isRefined ? "" : "hidden"}`}
                   xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +120,7 @@ export const Header = () => {
                   <path d="M12 6v12" />
                   <path d="M6 12h12" />
                 </svg>
-              </button>
+              </button> */}
               
               {/* Dark Mode Toggle Button */}
               <button

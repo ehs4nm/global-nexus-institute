@@ -95,7 +95,7 @@ export const GallerySection = () => {
                     alt={panel.label}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-orange/30 to-transparent"></div>
                 </div>
 
                 <div className="bg-white dark:bg-black text-black dark:text-white p-4 flex-1 relative overflow-hidden brutalist-border-box border-l-0 border-r-0 border-b-0">

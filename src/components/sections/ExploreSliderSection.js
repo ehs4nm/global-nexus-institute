@@ -4,18 +4,23 @@ export const ExploreSliderSection = () => {
   return (
     <section 
       id="explore" 
-      className="relative min-h-[60vh] py-20 sm:py-24 md:py-32 flex items-center bg-white dark:bg-black"
+      className="relative min-h-[60vh] py-20 sm:py-24 md:py-32 flex items-center bg-black dark:bg-white"
     >
       {/* Subtle background pattern */}
       <div className="brutalist-bg-dots absolute inset-0 opacity-[0.02] dark:opacity-[0.03]" />
 
+
       <div className="brutalist-container relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <div className="col-span-full inline-flex items-center justify-center brutalist-border-box p-1 mb-6 bg-white dark:bg-black">
+          <img src="/assets/images/golden-map.jpg" alt="Global Chokepoints Initiative" className="w-full max-h-[50vh] object-cover" />
+        </div>
           
           {/* Left Column - Text Content */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <h2 className="brutalist-heading text-black dark:text-white">
+              <h2 className="brutalist-heading text-white dark:text-black">
                 Crises do not<br />stand alone.
               </h2>
               
@@ -23,11 +28,11 @@ export const ExploreSliderSection = () => {
             </div>
 
             <div className="space-y-6">
-              <p className="brutalist-card-title text-gray-900 dark:text-gray-100">
+              <p className="brutalist-card-title text-gray-100 dark:text-gray-900">
                 Energy shocks fuel conflict. Conflict spreads disease. Health crises destabilize economies. Yet global policy and research remain siloed.
               </p>
               
-              <p className="brutalist-body text-lg sm:text-xl text-gray-600 dark:text-gray-400">
+              <p className="brutalist-body text-lg sm:text-xl text-gray-300 dark:text-gray-900">
                 The Global Nexus Institute (GNI) exists to break those silos — integrating energy, geopolitics, and health into a single field of foresight and action.
               </p>
             </div>
@@ -49,8 +54,8 @@ export const ExploreSliderSection = () => {
                     className={`
                       group relative p-6 sm:p-8
                       ${item.accent 
-                        ? 'brutalist-card-inverted' 
-                        : 'brutalist-card'
+                        ? 'brutalist-card text-black dark:text-white border-white dark:border-black'
+                        : 'brutalist-card-inverted text-white dark:text-black border-white dark:border-black' 
                       }
                     `}
                   >
