@@ -6,7 +6,10 @@
     "develop": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "sync-admin": "node scripts/manual-sync.js",
+    "build-with-sync": "node scripts/manual-sync.js && gatsby build",
+    "pre-build": "echo '⚠️  Remember to sync your admin data before building! Run: npm run sync-admin'"
   },
   "dependencies": {
     "d3": "^7.9.0",
