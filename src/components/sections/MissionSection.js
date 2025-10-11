@@ -5,18 +5,18 @@ export const MissionSection = () => {
   const { content } = useContent();
   const mission = content.mission;
   return (
-    <section id="mission" className="brutalist-section text-black dark:text-white">
+    <section id="mission" className="brutalist-section text-black dark:text-white flex items-center min-h-screen"> {/* Added flex and centering */}
       {/* Dot pattern background */}
       <div className="brutalist-bg-dots absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" />
       
-      <div className="brutalist-container relative">
+      <div className="brutalist-container relative w-full py-8"> {/* Added w-full and vertical padding */}
         {/* Section Header */}
         <div className="inline-block mb-6">
           <div className="brutalist-divider-bold mb-4" />
           <span className="brutalist-label">Our Mission</span>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"> {/* Changed to items-center */}
           <div>
             <h2 className="brutalist-heading mb-8">
               {mission.title}
@@ -39,7 +39,7 @@ export const MissionSection = () => {
                       index === 3 ? 'brutalist-card-inverted' : 'brutalist-card'
                     }`}
                   >
-                    <p className="brutalist-label mb-3">
+                    <p className="brutalist-label mb-3 brutalist-arrow">
                       {card.label}
                     </p>
                     <p className="brutalist-card-title text-lg sm:text-xl md:text-2xl">

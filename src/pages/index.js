@@ -9,7 +9,6 @@ import { GallerySection } from '../components/sections/GallerySection';
 import { LeadershipSection } from '../components/sections/LeadershipSection';
 import { ContactSection } from '../components/sections/ContactSection';
 import { AboutUsSection } from '../components/sections/AboutUsSection';     
-import { ExploreSliderSection } from '../components/sections/ExploreSliderSection';
 
 /**
  * A minimal, high-performance loading animation component.
