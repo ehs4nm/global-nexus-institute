@@ -1,0 +1,517 @@
+/* ================================================================
+ * GNI REFINED DESIGN SYSTEM
+ * ================================================================
+ * 
+ * A softer, more approachable alternative to the brutalist system.
+ * Key principles:
+ *   - Rounded corners for friendliness
+ *   - Soft shadows instead of harsh borders
+ *   - Increased whitespace and breathing room
+ *   - Warm neutrals instead of pure black/white
+ *   - Smooth transitions and micro-interactions
+ *   - Better typography hierarchy with readability
+ * 
+ * To use: Import this after global.css and use 'refined-' classes
+ * 
+ * ================================================================ */
+
+@layer components {
+  /* ─────────────────────────────────────────────────────────────
+   * COLOR TOKENS - Warm Neutrals
+   * ───────────────────────────────────────────────────────────── */
+  
+  :root {
+    /* Light mode colors */
+    --refined-bg-primary: #ffffff;
+    --refined-bg-secondary: #fafafa;
+    --refined-bg-tertiary: #f5f5f5;
+    --refined-text-primary: #1a1a1a;
+    --refined-text-secondary: #525252;
+    --refined-text-tertiary: #737373;
+    --refined-border-light: #e5e5e5;
+    --refined-border-medium: #d4d4d4;
+    --refined-accent: #2563eb;
+    --refined-accent-soft: #dbeafe;
+    
+    /* Shadows */
+    --refined-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --refined-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    --refined-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+    --refined-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+    --refined-shadow-hover: 0 25px 50px -12px rgb(0 0 0 / 0.12);
+  }
+
+  .dark {
+    /* Dark mode colors */
+    --refined-bg-primary: #0a0a0a;
+    --refined-bg-secondary: #141414;
+    --refined-bg-tertiary: #1a1a1a;
+    --refined-text-primary: #fafafa;
+    --refined-text-secondary: #a3a3a3;
+    --refined-text-tertiary: #737373;
+    --refined-border-light: #262626;
+    --refined-border-medium: #404040;
+    --refined-accent: #3b82f6;
+    --refined-accent-soft: #1e3a8a;
+    
+    /* Shadows (more subtle in dark mode) */
+    --refined-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --refined-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    --refined-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+    --refined-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.5);
+    --refined-shadow-hover: 0 25px 50px -12px rgb(0 0 0 / 0.7);
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+   * CORE CARD PATTERNS - Soft & Inviting
+   * ───────────────────────────────────────────────────────────── */
+  
+  /**
+   * Refined Card - Primary content cards
+   * Features: Soft rounded corners, subtle shadows, smooth transitions
+   */
+  .refined-card {
+    @apply relative
+           rounded-xl
+           bg-white dark:bg-[var(--refined-bg-secondary)]
+           transition-all duration-500 ease-out;
+    box-shadow: var(--refined-shadow-md);
+  }
+
+  .refined-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--refined-shadow-hover);
+  }
+
+  /**
+   * Refined Card Inverted - Accent cards
+   * More subtle than brutalist inverted, uses soft background
+   */
+  .refined-card-inverted {
+    @apply relative
+           rounded-xl
+           bg-gradient-to-br from-[var(--refined-bg-tertiary)] to-[var(--refined-bg-secondary)]
+           dark:from-[var(--refined-bg-tertiary)] dark:to-[var(--refined-bg-secondary)]
+           transition-all duration-500 ease-out;
+    box-shadow: var(--refined-shadow-lg);
+    border: 1px solid var(--refined-border-light);
+  }
+
+  .refined-card-inverted:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--refined-shadow-xl);
+    border-color: var(--refined-border-medium);
+  }
+
+  /**
+   * Refined Card Glass - Modern frosted glass effect
+   * For overlays and special sections
+   */
+  .refined-card-glass {
+    @apply relative
+           rounded-2xl
+           backdrop-blur-xl
+           bg-white/80 dark:bg-black/60
+           transition-all duration-500;
+    box-shadow: var(--refined-shadow-xl),
+                inset 0 1px 0 0 rgb(255 255 255 / 0.1);
+    border: 1px solid rgb(255 255 255 / 0.2);
+  }
+
+  .refined-card-glass:hover {
+    background: rgb(255 255 255 / 0.9);
+  }
+
+  .dark .refined-card-glass:hover {
+    background: rgb(0 0 0 / 0.7);
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+   * TYPOGRAPHY SYSTEM - Improved Readability
+   * ───────────────────────────────────────────────────────────── */
+  
+  /**
+   * Refined Display Heading - Softer, more inviting
+   * Better line height and letter spacing for readability
+   */
+  .refined-heading {
+    @apply font-title-bold
+           text-4xl sm:text-5xl md:text-6xl lg:text-7xl
+           font-bold
+           leading-[1.1]
+           tracking-[-0.02em];
+    color: var(--refined-text-primary);
+  }
+
+  /**
+   * Refined Section Title - Medium-sized headings
+   */
+  .refined-section-title {
+    @apply font-title
+           text-3xl sm:text-4xl md:text-5xl
+           font-semibold
+           leading-tight
+           tracking-[-0.01em];
+    color: var(--refined-text-primary);
+  }
+
+  /**
+   * Refined Card Title - For cards and smaller sections
+   */
+  .refined-card-title {
+    @apply font-title
+           text-xl sm:text-2xl md:text-3xl
+           font-semibold
+           leading-snug
+           tracking-normal;
+    color: var(--refined-text-primary);
+  }
+
+  /**
+   * Refined Label - Softer than brutalist
+   * Less aggressive uppercase, better contrast
+   */
+  .refined-label {
+    @apply font-mono
+           text-xs
+           font-medium
+           uppercase
+           tracking-wide
+           leading-relaxed;
+    color: var(--refined-text-tertiary);
+  }
+
+  /**
+   * Refined Body Text - Maximum readability
+   * Improved line height and color contrast
+   */
+  .refined-body {
+    @apply text-base
+           leading-relaxed
+           tracking-normal;
+    line-height: 1.75;
+    color: var(--refined-text-secondary);
+  }
+
+  /**
+   * Refined Large Text - For introductions
+   * Softer than subheading, better hierarchy
+   */
+  .refined-intro {
+    @apply text-lg sm:text-xl md:text-2xl
+           leading-relaxed
+           font-normal;
+    line-height: 1.6;
+    color: var(--refined-text-secondary);
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+   * SECTION LAYOUTS - More Breathing Room
+   * ───────────────────────────────────────────────────────────── */
+  
+  /**
+   * Refined Section - Standard content section
+   * More generous padding, softer background transitions
+   */
+  .refined-section {
+    @apply relative
+           min-h-screen
+           py-20 sm:py-24 md:py-32
+           transition-colors duration-700;
+    background-color: var(--refined-bg-primary);
+  }
+
+  /**
+   * Refined Section Alternate - For contrast
+   * Uses subtle background difference
+   */
+  .refined-section-alt {
+    @apply relative
+           min-h-screen
+           py-20 sm:py-24 md:py-32
+           transition-colors duration-700;
+    background-color: var(--refined-bg-secondary);
+  }
+
+  /**
+   * Refined Container - Consistent width with padding
+   */
+  .refined-container {
+    @apply mx-auto
+           max-w-7xl
+           px-6 sm:px-8 lg:px-12
+           w-full;
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+   * INTERACTIVE ELEMENTS - Smooth Micro-interactions
+   * ───────────────────────────────────────────────────────────── */
+  
+  /**
+   * Refined Button - Primary action button
+   */
+  .refined-button {
+    @apply relative
+           inline-flex items-center justify-center
+           px-6 py-3
+           rounded-lg
+           font-medium
+           text-base
+           transition-all duration-300
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+    background: var(--refined-text-primary);
+    color: var(--refined-bg-primary);
+    box-shadow: var(--refined-shadow-md);
+  }
+
+  .refined-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--refined-shadow-lg);
+  }
+
+  .refined-button:active {
+    transform: translateY(0);
+    box-shadow: var(--refined-shadow-sm);
+  }
+
+  /**
+   * Refined Button Secondary - Subtle variant
+   */
+  .refined-button-secondary {
+    @apply relative
+           inline-flex items-center justify-center
+           px-6 py-3
+           rounded-lg
+           font-medium
+           text-base
+           transition-all duration-300
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+    background: transparent;
+    border: 1.5px solid var(--refined-border-medium);
+    color: var(--refined-text-primary);
+  }
+
+  .refined-button-secondary:hover {
+    background: var(--refined-bg-tertiary);
+    border-color: var(--refined-text-primary);
+  }
+
+  /**
+   * Refined Link - Text links with smooth underline
+   */
+  .refined-link {
+    @apply relative
+           inline-flex items-center gap-2
+           font-medium
+           transition-colors duration-300;
+    color: var(--refined-text-primary);
+  }
+
+  .refined-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0
+           w-0 h-0.5
+           transition-all duration-500;
+    background: var(--refined-accent);
+  }
+
+  .refined-link:hover::after {
+    @apply w-full;
+  }
+
+  /**
+   * Refined Hover Lift - For clickable cards
+   */
+  .refined-hover-lift {
+    @apply transition-all duration-500;
+  }
+
+  .refined-hover-lift:hover {
+    transform: translateY(-6px);
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+   * DIVIDERS & BORDERS - Subtle Separation
+   * ───────────────────────────────────────────────────────────── */
+  
+  /**
+   * Refined Divider - Subtle line separator
+   */
+  .refined-divider {
+    @apply h-px
+           transition-colors duration-300;
+    background: var(--refined-border-light);
+  }
+
+  /**
+   * Refined Accent Line - Decorative element
+   */
+  .refined-accent-line {
+    @apply h-1
+           rounded-full
+           transition-all duration-500;
+    width: 4rem;
+    background: linear-gradient(90deg, var(--refined-accent), transparent);
+  }
+
+  .group:hover .refined-accent-line {
+    width: 6rem;
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+   * BACKGROUNDS & PATTERNS - Gentle Textures
+   * ───────────────────────────────────────────────────────────── */
+  
+  /**
+   * Refined Gradient Background - Soft, organic
+   */
+  .refined-bg-gradient {
+    background: radial-gradient(
+      ellipse 80% 50% at 50% 0%,
+      rgb(var(--refined-accent) / 0.03),
+      transparent
+    );
+  }
+
+  /**
+   * Refined Mesh Gradient - Modern, subtle
+   */
+  .refined-bg-mesh {
+    background-image: 
+      radial-gradient(at 40% 20%, rgb(139 92 246 / 0.03) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgb(59 130 246 / 0.03) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, rgb(236 72 153 / 0.02) 0px, transparent 50%);
+  }
+
+  /**
+   * Refined Dot Pattern - More subtle than brutalist
+   */
+  .refined-bg-dots {
+    background-image: radial-gradient(circle, rgb(0 0 0 / 0.02) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .dark .refined-bg-dots {
+    background-image: radial-gradient(circle, rgb(255 255 255 / 0.02) 1px, transparent 1px);
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+   * UTILITY CLASSES - Helpful additions
+   * ───────────────────────────────────────────────────────────── */
+  
+  /**
+   * Refined Focus Ring - Accessible and beautiful
+   */
+  .refined-focus-ring {
+    @apply focus:outline-none
+           focus:ring-2
+           focus:ring-offset-4
+           transition-shadow duration-300;
+    focus-ring-color: var(--refined-accent);
+  }
+
+  /**
+   * Refined Badge - Status indicators, tags
+   */
+  .refined-badge {
+    @apply inline-flex items-center
+           px-3 py-1
+           rounded-full
+           text-xs
+           font-medium
+           transition-colors duration-300;
+    background: var(--refined-bg-tertiary);
+    color: var(--refined-text-secondary);
+    border: 1px solid var(--refined-border-light);
+  }
+
+  /**
+   * Refined Number Badge - For steps, counts
+   */
+  .refined-number-badge {
+    @apply inline-flex items-center justify-center
+           w-10 h-10
+           rounded-full
+           font-mono
+           text-sm
+           font-semibold
+           transition-all duration-300;
+    background: var(--refined-bg-tertiary);
+    color: var(--refined-text-primary);
+    border: 1.5px solid var(--refined-border-light);
+  }
+
+  .group:hover .refined-number-badge {
+    background: var(--refined-text-primary);
+    color: var(--refined-bg-primary);
+    border-color: var(--refined-text-primary);
+    transform: scale(1.1);
+  }
+
+  /**
+   * Refined Arrow - Directional indicator
+   */
+  .refined-arrow {
+    @apply inline-flex items-center gap-2
+           transition-transform duration-300;
+  }
+
+  .refined-arrow::after {
+    content: '→';
+    @apply inline-block
+           transition-transform duration-300;
+  }
+
+  .refined-arrow:hover::after {
+    transform: translateX(4px);
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+   * ANIMATIONS - Smooth & Natural
+   * ───────────────────────────────────────────────────────────── */
+  
+  @keyframes refined-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes refined-slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes refined-scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .refined-animate-fade-in {
+    animation: refined-fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .refined-animate-slide-in {
+    animation: refined-slide-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .refined-animate-scale-in {
+    animation: refined-scale-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
