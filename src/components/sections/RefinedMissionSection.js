@@ -1,21 +1,6 @@
 import React from 'react';
 import { useContent } from '../../hooks/useContent';
 
-/**
- * REFINED MISSION SECTION
- * 
- * This is the "after" version - refined, friendly, and beautiful
- * Compare with MissionSection.js to see the transformation
- * 
- * Key changes from brutalist version:
- * 1. Softer shadows instead of harsh borders
- * 2. Rounded corners (xl = 12px)
- * 3. More breathing room with generous padding
- * 4. Warm neutral colors (#1a1a1a instead of #000)
- * 5. Improved typography hierarchy
- * 6. Smooth micro-interactions
- */
-
 export const MissionSection = () => {
   const { content } = useContent();
   const mission = content.mission;
