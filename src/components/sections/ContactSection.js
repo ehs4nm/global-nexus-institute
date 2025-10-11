@@ -4,7 +4,7 @@ export const ContactSection = () => {
   return (
     <section 
       id="contact" 
-      className="min-h-[60vh] py-20 sm:py-24 md:py-32 dark:bg-black text-black dark:text-white flex items-center relative"
+      className="min-h-[60vh] py-20 sm:py-24 md:py-32 dark:bg-black text-black dark:text-white flex items-center relative border-t-4 border-black"
     >
       {/* Subtle background pattern */}
       <div className="brutalist-bg-dots absolute inset-0 opacity-[0.02] dark:opacity-[0.03] pointer-events-none" />
@@ -15,13 +15,13 @@ export const ContactSection = () => {
         <div className="text-center mb-12 sm:mb-16">
           <div className="space-y-6">
             <h2 className="brutalist-heading">
-              Join the Nexus.
+              Join the Nexus
             </h2>
             
             <div className="brutalist-divider-bold mx-auto"></div>
           </div>
 
-          <p className="mt-8 brutalist-subheading max-w-2xl mx-auto">
+          <p className="mt-8 brutalist-subheading max-w-2xl mx-auto text-black">
             Shape the future of global foresight. Partner with GNI to build resilient, informed, and equitable systems.
           </p>
         </div>

@@ -46,7 +46,7 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <section className="grid place-items-center relative  w-full min-h-[80vh] sm:min-h-[90vh] md:min-h-screen mt-[140px] overflow-hidden mx-auto max-w-[100vw] sm:max-w-[95vw]">
+    <section className="grid place-items-center relative  w-full min-h-[80vh] sm:min-h-[90vh] mt-[140px] overflow-hidden mx-auto max-w-[100vw] sm:max-w-[95vw]">
       
       <video
         className="absolute inset-0 w-full h-[80vh] object-cover object-center gpu-accelerate"

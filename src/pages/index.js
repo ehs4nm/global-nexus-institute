@@ -154,10 +154,9 @@ const IndexPage = () => {
                     <HeroSection />
                     <SloganSection />
                     <GallerySection />
-                    <MissionSection />
                     <ModelSection />
+                    <MissionSection />
                     <AboutUsSection />
-                    <ExploreSliderSection />
                     <InitiativesSection />
                     <LeadershipSection />
                     <ContactSection />

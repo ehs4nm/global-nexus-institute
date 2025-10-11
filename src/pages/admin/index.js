@@ -9,8 +9,10 @@ import GalleryEditor from '../../components/admin/editors/GalleryEditor';
 import LeadershipEditor from '../../components/admin/editors/LeadershipEditor';
 import MenuEditor from '../../components/admin/editors/MenuEditor';
 import MetadataEditor from '../../components/admin/editors/MetadataEditor';
+import ScrollEditor from '../../components/admin/editors/ScrollEditor';
 import { updateNestedState, safeJsonParse } from '../../utils/admin/helpers';
 import { MenuProvider } from '../../hooks/useMenu';
+import { ScrollModeProvider } from '../../hooks/useScrollMode';
 
 const AdminPage = () => {
   const [activeTab, setActiveTab] = useState('hero');
@@ -69,8 +71,9 @@ const AdminPage = () => {
   }
 
   return (
-    <MenuProvider>
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <ScrollModeProvider>
+      <MenuProvider>
+        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
         <AdminHeader
           onSave={handleSave}
           onExport={handleExport}
@@ -101,6 +104,9 @@ const AdminPage = () => {
               {activeTab === 'menu' && (
                 <MenuEditor />
               )}
+              {activeTab === 'scroll' && (
+                <ScrollEditor />
+              )}
               {activeTab === 'metadata' && (
                 <MetadataEditor content={content.siteMetadata} updateContent={updateContent} />
               )}
@@ -108,7 +114,8 @@ const AdminPage = () => {
           </div>
         </div>
       </div>
-    </MenuProvider>
+      </MenuProvider>
+    </ScrollModeProvider>
   );
 };
 

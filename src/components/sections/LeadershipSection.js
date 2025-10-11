@@ -10,7 +10,7 @@ export const LeadershipSection = () => {
   return (
     <section 
       id="leadership" 
-      className="min-h-screen py-20 sm:py-24 md:py-32 bg-white dark:bg-black text-black dark:text-white relative"
+      className="min-h-screen py-20 sm:py-24 md:py-32 bg-white dark:bg-black text-black dark:text-white relative border-t-4 border-black"
     >
       {/* Subtle background pattern */}
       <div className="brutalist-bg-dots absolute inset-0 opacity-[0.02] dark:opacity-[0.03] pointer-events-none" />
@@ -47,7 +47,7 @@ export const LeadershipSection = () => {
                 className="group w-full text-left focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white focus:ring-offset-4 focus:ring-offset-white dark:focus:ring-offset-black"
               >
                 {/* Alternating asymmetric cards */}
-                <div className={`brutalist-card overflow-hidden h-[35vh] ${
+                <div className={`brutalist-card overflow-hidden h-[30vh] ${
                   isEven 
                     ? 'flex flex-col md:flex-row' 
                     : 'flex flex-col md:flex-row-reverse'
