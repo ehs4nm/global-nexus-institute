@@ -4,7 +4,7 @@ export const ContactSection = () => {
   return (
     <section 
       id="contact" 
-      className="min-h-[60vh] py-20 sm:py-24 md:py-32 dark:bg-black text-black dark:text-white flex items-center relative border-t-4 border-black"
+      className="min-h-[60vh] py-20 sm:py-24 md:py-32 dark:bg-black text-black dark:text-white flex items-center relative"
     >
       {/* Subtle background pattern */}
       <div className="brutalist-bg-dots absolute inset-0 opacity-[0.02] dark:opacity-[0.03] pointer-events-none" />
