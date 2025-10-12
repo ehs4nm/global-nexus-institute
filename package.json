@@ -4,11 +4,12 @@
   "version": "0.1.0",
   "scripts": {
     "develop": "gatsby develop",
-    "build": "gatsby build",
+    "build": "NODE_ENV=production gatsby build",
+    "build:dev": "NODE_ENV=development gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "sync-admin": "node scripts/manual-sync.js",
-    "build-with-sync": "node scripts/manual-sync.js && gatsby build",
+    "build-with-sync": "node scripts/manual-sync.js && NODE_ENV=production gatsby build",
     "sync-admin-data": "node scripts/sync-admin-data.js",
     "pre-build": "echo '⚠️  Remember to sync your admin data before building! Run: npm run sync-admin'"
   },

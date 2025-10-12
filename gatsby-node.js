@@ -1,5 +1,17 @@
 const path = require('path');
 const fs = require('fs');
+const webpack = require('webpack');
+
+// Remove admin pages in production build
+exports.onCreatePage = async ({ page, actions }) => {
+  const { deletePage } = actions;
+  
+  // Delete admin pages in production
+  if (process.env.NODE_ENV === 'production' && page.path.startsWith('/admin')) {
+    deletePage(page);
+    console.log('🚫 Removed admin route in production build:', page.path);
+  }
+};
 
 exports.createPages = async ({ actions }) => {
   const { createPage } = actions;
@@ -33,5 +45,24 @@ exports.createPages = async ({ actions }) => {
         },
       });
     });
+  }
+};
+
+// Exclude admin components from production bundle
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  if (stage === 'build-javascript' && process.env.NODE_ENV === 'production') {
+    actions.setWebpackConfig({
+      plugins: [
+        new webpack.IgnorePlugin({
+          resourceRegExp: /src[\/\\]components[\/\\]admin/,
+          contextRegExp: /src/,
+        }),
+        new webpack.IgnorePlugin({
+          resourceRegExp: /src[\/\\]utils[\/\\]admin/,
+          contextRegExp: /src/,
+        }),
+      ],
+    });
+    console.log('🚫 Excluded admin components from production bundle');
   }
 };
