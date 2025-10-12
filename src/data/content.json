@@ -7,19 +7,18 @@
     { "id": "contact", "label": "Contact", "type": "hash", "href": "#contact", "image": "assets/menu/contact.jpg", "showInDesktop": true }
   ],
   "hero": {
-    "tagline": "Foresight for a Connected World",
-    "title": "Seeing the world's crises",
-    "subtitle": "— before they collide.",
+    "tagline": "Foresight and Action for a Connected World",
+    "title": "Anticipating the World’s Crises",
+    "subtitle": "— before they collide and cascade.",
     "videoSrc": "/assets/videos/video-6.mp4",
     "posterSrc": "/assets/images/1.jpg"
   },
   "mission": {
-    "title": "Crises do not stand alone.",
+    "title": "Crises Don’t Stand Alone.",
     "paragraphs": [
-      "Energy shocks fuel conflict. Conflict spreads disease. Health crises destabilize economies. Yet global policy and research remain siloed.",
-      "The Global Nexus Institute (GNI) exists to break those silos — integrating energy, geopolitics, and health into a single field of foresight and action."
-    ],
-    "cards": [
+      "Energy shocks fuel conflict. Conflict spreads disease. Health crises destabilize economies. Yet global response remains fragmented.",
+      "The Global Nexus Institute (GNI) connects these dots — integrating energy, geopolitics, and health into a unified framework for resilience and equity."],
+          "cards": [
       {
         "label": "Energy → Conflict",
         "title": "Chain Reaction"
@@ -37,49 +36,56 @@
         "title": "Nexus"
       }
     ],
-    "caption": "A connected world demands connected intelligence."
+    "caption": "A connected world demands connected intelligence — and collective action.",
+    "image": "assets/images/system_links.jpg"
   },
   "initiatives": {
-    "title": "Turning foresight into global impact.",
-    "subtitle": "Two examples that make our mission tangible.",
+    "title": "Turning Foresight into Collective Impact.",
+    "subtitle": "Two flagship programs translating foresight into measurable change.",
     "projects": [
       {
-        "icon": "/assets/images/satellite.jpg",
-        "title": "Global Chokepoints Initiative",
-        "description": "Mapping critical energy, trade, and health bottlenecks — and modeling how disruptions cascade across systems.",
+        "icon": "assets/images/satellite.jpg",
+        "title": "Global Chokepoints",
+        "description": "Mapping global chokepoints in energy, trade, and health — using data modeling to predict how disruptions spread and how resilience can be built.",
         "linkText": "Discuss the project",
         "linkHref": "#contact"
       },
       {
-        "icon": "/assets/images/fracture.jpg",
+        "icon": "assets/images/fracture.jpg",
         "title": "Energy Transition Health Index (ETHI)",
-        "description": "Ranking countries on the health impact of their energy transitions — from air quality to equity.",
+        "description": "Developing an index that measures how national energy transitions affect public health, equity, and air quality.",
         "linkText": "Explore ETHI",
         "linkHref": "#contact"
       }
     ]
   },
-  "leadership": [
-    {
-      "name": "Favoud Ahmad",
-      "img": "/assets/leaders/foad-ahmed.jpg",
-      "title": "CEO",
-      "bio": "Favoud leads GNI with a builder's mindset, integrating industry pragmatism with systems thinking. He drives high-clarity strategy, convenes cross-sector alliances, and turns foresight into execution."
-    },
-    {
-      "name": "Dr. Saied Froghi",
-      "img": "/assets/leaders/saied-froghi.jpg",
-      "title": "Director of Global Health Policy",
-      "bio": "Dr. Froghi brings clinical insight and policy depth to the nexus of public health, crisis response, and equitable system design."
-    },
-    {
-      "name": "Advisor — TBA",
-      "img": "/assets/leaders/reza-azami.jpg",
-      "title": "Strategic Advisor",
-      "bio": "We are assembling a council of senior advisors across energy, finance, security, and public health to guide our mission and amplify global impact."
-    }
-  ],
-  "gallery": {
+  "leadership": {
+    "title": "Leadership",
+    "people": [
+      {
+        "name": "Favoud Ahmad",
+        "role": "Founder & Executive Director",
+        "title": "CEO",
+        "bio": "Favoud Ahmad has led cross-border initiatives bridging energy, trade, and development. His work bridges institutional foresight with ground-level action, guiding partnerships with governments, NGOs, and research institutions.",
+        "image": "assets/leaders/favoud-portrait.jpg"
+      },
+      {
+        "name": "Dr. Saied Froghi",
+        "role": "Director of Health Foresight",
+        "title": "Director of Global Health Policy",
+        "bio": "Dr. Froghi is a physician and researcher with expertise in public health systems. He leads GNI’s health foresight agenda, aligning medical research with energy and policy data to prevent cross-system crises.",
+        "image": "assets/leaders/froghi-portrait.jpg"
+      },
+      {
+        "name": "Advisory Council",
+        "role": "Global Advisors",
+        "title": "Strategic Advisor",
+        "bio": "GNI is establishing a council of senior advisors spanning energy, finance, security, and health — bringing interdisciplinary insight to global resilience.",
+        "image": "assets/leaders/advisors.jpg"
+      }
+    ]
+  },
+    "gallery": {
     "title": "Signals from the Nexus.",
     "subtitle": "Hover to reveal the full frame. We expand the viewport — not the image — to show the whole picture.",
     "items": [
@@ -174,17 +180,16 @@
     "description": "GNI connects energy, geopolitics, and health into one field of actionable intelligence."
   },
   "aboutUs": {
-    "title": "About Global Nexus Institute",
-    "subtitle": "Connecting energy, geopolitics, and health through actionable intelligence",
+    "title": "About the Global Nexus Institute",
+    "subtitle": "Bridging energy, geopolitics, and health for sustainable global stability.",
     "description": "GNI is a research institute that bridges the gap between academic insights and practical policy implementation. We focus on the critical intersections of energy security, geopolitical stability, and global health outcomes.",
-    "mission": "Our mission is to provide decision-makers with the intelligence they need to navigate complex global challenges through integrated systems thinking.",
-    "vision": "We envision a world where energy, geopolitical, and health systems work in harmony to support sustainable development and human flourishing.",
+    "mission": "Our mission is to equip leaders and institutions with integrated intelligence to navigate complex global risks.",
+    "vision": "We envision systems that anticipate shocks, adapt quickly, and promote sustainable well-being for all.",
     "values": [
-      "Evidence-based analysis",
-      "Systems thinking approach", 
-      "Practical implementation",
-      "Global perspective",
-      "Sustainable solutions"
+      "Collaborative foresight",
+      "Scientific rigor",
+      "Equity and inclusion",
+      "Transparency and accountability"
     ],
     "lastUpdated": "2025",
     "sectionLabel": "Who We Are",
@@ -222,7 +227,7 @@
     ]
   },
   "newsTicker": {
-    "text": "🚀 UPDATED NEWS TICKER FROM ADMIN PANEL! This is the LATEST content that should appear in production • Breaking: New research on global energy transitions • Latest insights on climate-health nexus • Strategic analysis on supply chain resilience • Expert perspectives on sustainable development •",
+    "text": "GNI launches the Energy Transition Health Index (ETHI) 2025 — a global benchmark connecting energy policy and public health.",
     "speed": 75,
     "enabled": true,
     "lastUpdated": "2025-01-11T16:30:00.000Z"

@@ -63,6 +63,7 @@ export const ContentProvider = ({ children }) => {
     initiativesContent: content.initiatives || {},
     leadershipContent: content.leadership || {},
     galleryContent: content.gallery || {},
+    pagesContent: content.pages || {},
     
     // Full content object
     content,
