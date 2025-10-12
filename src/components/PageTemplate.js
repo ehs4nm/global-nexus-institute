@@ -151,7 +151,7 @@ const ListSection = ({ section, isInverted = false }) => {
 
           <div className="space-y-8">
             {items.map((item, index) => (
-              <article key={index} className="brutalist-card-minimal p-8 dark:bg-white/70 bg-black/70">
+              <article key={index} className="brutalist-card-minimal p-8 dark:bg-white bg-black">
                 <div className="flex flex-col lg:flex-row lg:items-start gap-8">
                   <div className="lg:w-2/3">
                     <div className="flex items-start justify-between mb-6">
