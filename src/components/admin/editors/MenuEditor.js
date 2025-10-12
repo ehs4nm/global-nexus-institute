@@ -133,7 +133,7 @@ const MenuEditor = () => {
             label="Background Image URL"
             value={newItem.image}
             onChange={(e) => setNewItem(prev => ({ ...prev, image: e.target.value }))}
-            placeholder="assets/images/menu-bg.jpg"
+            placeholder="/assets/images/menu-bg.jpg"
           />
 
           <div className="flex items-center">

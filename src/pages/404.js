@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { Layout } from '../components/Layout';
 
 const NotFoundPage = () => {
@@ -16,7 +17,7 @@ const NotFoundPage = () => {
         
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           {/* 404 Number Badge */}
-          <div className="inline-block mb-8 sm:mb-12">
+          <div className="inline-block mb-8 sm:mb-12 pt-16">
             <div className="relative">
               <div className="absolute top-0 right-0 bg-black dark:bg-white text-white dark:text-black font-mono text-xs sm:text-sm font-bold px-3 py-1 border-l-2 border-b-2 border-black dark:border-white">
                 404
@@ -33,17 +34,41 @@ const NotFoundPage = () => {
             <br />
             FOUND
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-            Page not found
+          
+          {/* Error Description */}
+          <p className="font-body text-lg sm:text-xl md:text-2xl leading-relaxed mb-12 sm:mb-16 max-w-2xl mx-auto">
+            The page you're looking for has been misplaced, deleted, or never existed in the first place.
           </p>
-          <a
-            href="/"
-            className="inline-flex items-center px-4 py-2 border ransparent text-base font-medium rounded-md text-white bg-accent-500 hover:bg-accent-600"
-          >
-            Go back home
-          </a>
+          
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+            <Link 
+              to="/"
+              className="group relative border-2 border-black dark:border-white px-8 py-4 font-bold uppercase tracking-wider transition-all duration-300 hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black"
+            >
+              RETURN HOME
+              <div className="h-1 w-8 bg-black dark:bg-white mt-2 transition-all duration-300 group-hover:w-16 mx-auto" />
+            </Link>
+            
+            <button 
+              onClick={() => window.history.back()}
+              className="group relative border-2 border-black dark:border-white px-8 py-4 font-bold uppercase tracking-wider transition-all duration-300 hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black"
+            >
+              GO BACK
+              <div className="h-1 w-8 bg-black dark:bg-white mt-2 transition-all duration-300 group-hover:w-16 mx-auto" />
+            </button>
+          </div>
+          
+          {/* Bottom Divider */}
+          <div className="relative pt-16 mt-16 border-t-2 border-black dark:border-white">
+            <div className="text-center">
+              <span className="inline-block bg-white dark:bg-black px-6 font-mono text-xs uppercase tracking-widest -mt-3">
+                ERROR CODE: 404
+              </span>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </Layout>
   );
 };

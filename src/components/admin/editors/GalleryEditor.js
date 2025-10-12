@@ -153,7 +153,7 @@ const GalleryEditor = ({ content, updateContent }) => {
                 value={item.img}
                 onChange={(e) => updateGalleryItem(itemIndex, 'img', e.target.value)}
                 className="w-full px-3 py-2 text-sm border border-gray-300 rounded focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white"
-                placeholder="assets/images/gallery-item.jpg"
+                placeholder="/assets/images/gallery-item.jpg"
               />
             </div>
 
@@ -186,7 +186,7 @@ const GalleryEditor = ({ content, updateContent }) => {
                     value={item.pageContent.heroImage}
                     onChange={(e) => updateGalleryItem(itemIndex, 'pageContent.heroImage', e.target.value)}
                     className="w-full px-3 py-2 text-sm border border-gray-300 rounded focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white"
-                    placeholder="assets/images/hero.jpg"
+                    placeholder="/assets/images/hero.jpg"
                   />
                 </div>
               </div>

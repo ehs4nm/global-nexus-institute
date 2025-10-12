@@ -1,10 +1,10 @@
 {
   "menuItems": [
-    { "id": "mission", "label": "Mission", "type": "hash", "href": "#mission", "image": "assets/menu/mission.jpg", "showInDesktop": true },
-    { "id": "model", "label": "Model", "type": "hash", "href": "#model", "image": "assets/menu/model.jpg", "showInDesktop": true },
-    { "id": "initiatives", "label": "Initiatives", "type": "hash", "href": "#initiatives", "image": "assets/menu/initiatives.jpg", "showInDesktop": true },
-    { "id": "leadership", "label": "Leadership", "type": "hash", "href": "#leadership", "image": "assets/menu/leadership.jpg", "showInDesktop": true },
-    { "id": "contact", "label": "Contact", "type": "hash", "href": "#contact", "image": "assets/menu/contact.jpg", "showInDesktop": true }
+    { "id": "mission", "label": "Mission", "type": "hash", "href": "#mission", "image": "/assets/menu/mission.jpg", "showInDesktop": true },
+    { "id": "model", "label": "Model", "type": "hash", "href": "#model", "image": "/assets/menu/model.jpg", "showInDesktop": true },
+    { "id": "initiatives", "label": "Initiatives", "type": "hash", "href": "#initiatives", "image": "/assets/menu/initiatives.jpg", "showInDesktop": true },
+    { "id": "leadership", "label": "Leadership", "type": "hash", "href": "#leadership", "image": "/assets/menu/leadership.jpg", "showInDesktop": true },
+    { "id": "contact", "label": "Contact", "type": "hash", "href": "#contact", "image": "/assets/menu/contact.jpg", "showInDesktop": true }
   ],
   "hero": {
     "tagline": "Foresight and Action for a Connected World",
@@ -37,21 +37,21 @@
       }
     ],
     "caption": "A connected world demands connected intelligence — and collective action.",
-    "image": "assets/images/system_links.jpg"
+    "image": "/assets/images/system_links.jpg"
   },
   "initiatives": {
     "title": "Turning Foresight into Collective Impact.",
     "subtitle": "Two flagship programs translating foresight into measurable change.",
     "projects": [
       {
-        "icon": "assets/images/satellite.jpg",
+        "icon": "/assets/images/satellite.jpg",
         "title": "Global Chokepoints",
         "description": "Mapping global chokepoints in energy, trade, and health — using data modeling to predict how disruptions spread and how resilience can be built.",
         "linkText": "Discuss the project",
         "linkHref": "#contact"
       },
       {
-        "icon": "assets/images/fracture.jpg",
+        "icon": "/assets/images/fracture.jpg",
         "title": "Energy Transition Health Index (ETHI)",
         "description": "Developing an index that measures how national energy transitions affect public health, equity, and air quality.",
         "linkText": "Explore ETHI",
@@ -67,21 +67,21 @@
         "role": "Founder & Executive Director",
         "title": "CEO",
         "bio": "Favoud Ahmad has led cross-border initiatives bridging energy, trade, and development. His work bridges institutional foresight with ground-level action, guiding partnerships with governments, NGOs, and research institutions.",
-        "image": "assets/leaders/favoud-portrait.jpg"
+        "image": "/assets/leaders/favoud-portrait.jpg"
       },
       {
         "name": "Dr. Saied Froghi",
         "role": "Director of Health Foresight",
         "title": "Director of Global Health Policy",
         "bio": "Dr. Froghi is a physician and researcher with expertise in public health systems. He leads GNI’s health foresight agenda, aligning medical research with energy and policy data to prevent cross-system crises.",
-        "image": "assets/leaders/froghi-portrait.jpg"
+        "image": "/assets/leaders/froghi-portrait.jpg"
       },
       {
         "name": "Advisory Council",
         "role": "Global Advisors",
         "title": "Strategic Advisor",
         "bio": "GNI is establishing a council of senior advisors spanning energy, finance, security, and health — bringing interdisciplinary insight to global resilience.",
-        "image": "assets/leaders/advisors.jpg"
+        "image": "/assets/leaders/advisors.jpg"
       }
     ]
   },
@@ -92,12 +92,12 @@
       {
         "id": "energy-systems",
         "label": "Energy Systems",
-        "img": "assets/images/globe-hand.jpg",
+        "img": "/assets/images/globe-hand.jpg",
         "slug": "energy-systems",
         "pageContent": {
           "title": "Energy Systems",
           "subtitle": "Understanding global energy transitions and their cascading effects",
-          "heroImage": "assets/images/globe-hand.jpg",
+          "heroImage": "/assets/images/globe-hand.jpg",
           "sections": [
             {
               "heading": "Overview",

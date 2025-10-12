@@ -33,7 +33,7 @@ export const Header = () => {
             <a href="/" className="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white focus:ring-offset-2">
               <div className="h-10 w-10 border-2 border-black dark:border-white overflow-hidden flex-shrink-0">
                 <img 
-                  src="assets/favicon_io/android-chrome-512x512.png" 
+                  src="/assets/favicon_io/android-chrome-512x512.png" 
                   alt="Global Nexus Institute" 
                   className="w-full h-full object-cover"
                 />
@@ -117,7 +117,7 @@ export const Header = () => {
           <a href="/" className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white min-w-0 flex-1 overflow-hidden">
             <div className="h-8 w-8 border-2 border-black dark:border-white overflow-hidden flex-shrink-0">
               <img 
-                src="assets/favicon_io/android-chrome-512x512.png" 
+                src="/assets/favicon_io/android-chrome-512x512.png" 
                 alt="Global Nexus Institute" 
                 className="w-full h-full object-cover"
               />

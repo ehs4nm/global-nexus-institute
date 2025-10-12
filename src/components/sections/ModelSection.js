@@ -9,7 +9,7 @@ export const ModelSection = () => {
       {/* Background Pillar Image (visible only on lg and up) */}
       {/* <div className="hidden lg:block absolute inset-y-0 right-0 w-1/4 opacity-10">
         <img
-          src="assets/images/pillar.png"
+          src="/assets/images/pillar.png"
           alt="Decorative pillar"
           className="w-full h-full object-cover object-right mix-blend-lighten pointer-events-none select-none"
         />
