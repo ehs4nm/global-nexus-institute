@@ -1,4 +1,4 @@
-import React, { useRef, useState, useCallback, useMemo } from 'react';
+import React, { useRef, useState, useCallback, useMemo, useEffect } from 'react';
 
 export const MegaMenu = ({ id, label, items = [], isOpen, onOpen, onClose }) => {
   const isControlled = typeof isOpen === 'boolean';
@@ -6,16 +6,74 @@ export const MegaMenu = ({ id, label, items = [], isOpen, onOpen, onClose }) => 
   const open = isControlled ? isOpen : uncontrolledOpen;
 
   const hoverAreaRef = useRef(null);
+  const closeTimeoutRef = useRef(null);
   const menuId = useMemo(() => (id ? `${id}-megamenu` : `${label.replace(/\s+/g, '-').toLowerCase()}-megamenu`), [id, label]);
 
   const openMenu = useCallback(() => {
+    // Clear any pending close timeout
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
     if (onOpen) return onOpen();
     setUncontrolledOpen(true);
   }, [onOpen]);
+  
   const closeMenu = useCallback(() => {
     if (onClose) return onClose();
     setUncontrolledOpen(false);
   }, [onClose]);
+  
+  const scheduleClose = useCallback(() => {
+    // Clear any existing timeout
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+    }
+    // Schedule close with a small delay to allow mouse to reach dropdown
+    closeTimeoutRef.current = setTimeout(() => {
+      closeMenu();
+      closeTimeoutRef.current = null;
+    }, 150); // 150ms delay
+  }, [closeMenu]);
+
+  // Track mouse over entire menu system including dropdown
+  useEffect(() => {
+    if (!open) return;
+
+    const menuElement = document.getElementById(menuId);
+    if (!menuElement) return;
+
+    const handleMenuMouseEnter = () => openMenu();
+    const handleMenuMouseLeave = (e) => {
+      // Only close if mouse is truly leaving the menu area
+      const related = e.relatedTarget;
+      if (related && (
+        hoverAreaRef.current?.contains(related) ||
+        related.closest(`#${menuId}`) ||
+        related.closest('[role="menuitem"]')
+      )) {
+        return;
+      }
+      scheduleClose();
+    };
+
+    menuElement.addEventListener('mouseenter', handleMenuMouseEnter);
+    menuElement.addEventListener('mouseleave', handleMenuMouseLeave);
+    
+    return () => {
+      menuElement.removeEventListener('mouseenter', handleMenuMouseEnter);
+      menuElement.removeEventListener('mouseleave', handleMenuMouseLeave);
+    };
+  }, [open, menuId, openMenu, scheduleClose]);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
 
   // Keyboard support: focus opens, Esc closes
   const onButtonKeyDown = (e) => {
@@ -48,12 +106,6 @@ export const MegaMenu = ({ id, label, items = [], isOpen, onOpen, onClose }) => 
         onMouseEnter={openMenu}
         onFocus={openMenu}
         onKeyDown={onButtonKeyDown}
-        onMouseLeave={(e) => {
-          // If moving into the panel area, keep it open
-          const related = e.relatedTarget;
-          if (hoverAreaRef.current && related && hoverAreaRef.current.contains(related)) return;
-          closeMenu();
-        }}
       >
         {label}
         <span className="ml-1 inline-block transition-transform duration-150" aria-hidden>
@@ -61,12 +113,18 @@ export const MegaMenu = ({ id, label, items = [], isOpen, onOpen, onClose }) => 
         </span>
       </button>
 
+      {/* Invisible bridge to prevent gaps between button and dropdown */}
+      {open && (
+        <div
+          className="absolute left-0 right-0 top-full h-2 z-50"
+          role="presentation"
+        />
+      )}
+
       {/* Backdrop under the submenu to block clicks */}
       {open && (
         <div
           className="fixed left-0 right-0 top-[124px] bottom-0 z-40 bg-black/60 dark:bg-black/80"
-          onMouseEnter={openMenu}
-          onMouseLeave={closeMenu}
           onClick={closeMenu}
           onKeyDown={(e) => e.key === 'Escape' && closeMenu()}
           role="presentation"
@@ -79,8 +137,6 @@ export const MegaMenu = ({ id, label, items = [], isOpen, onOpen, onClose }) => 
         role="menu"
         aria-label={label}
         className="fixed left-0 right-0 top-[124px] z-50 w-screen pointer-events-none"
-        onMouseEnter={openMenu}
-        onMouseLeave={closeMenu}
         onKeyDown={(e) => {
           if (e.key === 'Escape') closeMenu();
           if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
@@ -97,6 +153,17 @@ export const MegaMenu = ({ id, label, items = [], isOpen, onOpen, onClose }) => 
       >
         <div
           className={`w-full overflow-hidden ${open ? 'opacity-100' : 'opacity-0'} transition-opacity duration-150 pointer-events-auto`}
+          onMouseEnter={openMenu}
+          onMouseLeave={(e) => {
+            const related = e.relatedTarget;
+            if (related && (
+              hoverAreaRef.current?.contains(related) ||
+              related.closest(`#${menuId}`)
+            )) {
+              return;
+            }
+            scheduleClose();
+          }}
         >
           <div
             className={`bg-white dark:bg-black dark:text-white text-black border-t-2 border-b-2 border-black dark:border-white overflow-hidden`}

@@ -18,7 +18,7 @@
     "paragraphs": [
       "Energy shocks fuel conflict. Conflict spreads disease. Health crises destabilize economies. Yet global response remains fragmented.",
       "The Global Nexus Institute (GNI) connects these dots — integrating energy, geopolitics, and health into a unified framework for resilience and equity."],
-          "cards": [
+    "cards": [
       {
         "label": "Energy → Conflict",
         "title": "Chain Reaction"
@@ -59,33 +59,30 @@
       }
     ]
   },
-  "leadership": {
-    "title": "Leadership",
-    "people": [
-      {
-        "name": "Favoud Ahmad",
-        "role": "Founder & Executive Director",
-        "title": "CEO",
-        "bio": "Favoud Ahmad has led cross-border initiatives bridging energy, trade, and development. His work bridges institutional foresight with ground-level action, guiding partnerships with governments, NGOs, and research institutions.",
-        "image": "/assets/leaders/favoud-portrait.jpg"
-      },
-      {
-        "name": "Dr. Saied Froghi",
-        "role": "Director of Health Foresight",
-        "title": "Director of Global Health Policy",
-        "bio": "Dr. Froghi is a physician and researcher with expertise in public health systems. He leads GNI’s health foresight agenda, aligning medical research with energy and policy data to prevent cross-system crises.",
-        "image": "/assets/leaders/froghi-portrait.jpg"
-      },
-      {
-        "name": "Advisory Council",
-        "role": "Global Advisors",
-        "title": "Strategic Advisor",
-        "bio": "GNI is establishing a council of senior advisors spanning energy, finance, security, and health — bringing interdisciplinary insight to global resilience.",
-        "image": "/assets/leaders/advisors.jpg"
-      }
-    ]
-  },
-    "gallery": {
+  "leadership": [
+    {
+      "name": "Favoud Ahmad",
+      "role": "Founder & Executive Director",
+      "title": "CEO",
+      "bio": "Favoud leads GNI with a builder's mindset, integrating industry pragmatism with systems thinking. He drives high-clarity strategy, convenes cross-sector alliances, and turns foresight into execution.",
+      "img": "/assets/leaders/foad-ahmed.jpg"
+    },
+    {
+      "name": "Dr. Saied Froghi",
+      "role": "Director of Health Foresight",
+      "title": "Director of Global Health Policy",
+      "bio": "Dr. Froghi brings clinical insight and policy depth to the nexus of public health, crisis response, and equitable system design.",
+      "img": "/assets/leaders/saied-froghi.jpg"
+    },
+    {
+      "name": "Advisory Council",
+      "role": "Global Advisors",
+      "title": "Strategic Advisor",
+      "bio": "We are assembling a council of senior advisors across energy, finance, security, and public health to guide our mission and amplify global impact.",
+      "img": "/assets/leaders/reza-azami.jpg"
+    }
+  ],
+  "gallery": {
     "title": "Signals from the Nexus",
     "subtitle": "Hover to reveal the full frame. We expand the viewport — not the image — to show the whole picture.",
     "items": [
@@ -231,5 +228,333 @@
     "speed": 75,
     "enabled": true,
     "lastUpdated": "2025-01-11T16:30:00.000Z"
+  },
+  "menu": {
+    "items": [
+      { 
+        "id": "mission", 
+        "label": "Mission", 
+        "type": "hash", 
+        "href": "#mission", 
+        "image": "/assets/menu/mission.jpg", 
+        "showInDesktop": true 
+      },
+      { 
+        "id": "model", 
+        "label": "Model", 
+        "type": "hash", 
+        "href": "#model", 
+        "image": "/assets/menu/model.jpg", 
+        "showInDesktop": true 
+      },
+      { 
+        "id": "initiatives", 
+        "label": "Initiatives", 
+        "type": "hash", 
+        "href": "#initiatives", 
+        "image": "/assets/menu/initiatives.jpg", 
+        "showInDesktop": true 
+      },
+      { 
+        "id": "leadership", 
+        "label": "Leadership", 
+        "type": "hash", 
+        "href": "#leadership", 
+        "image": "/assets/menu/leadership.jpg", 
+        "showInDesktop": true 
+      },
+      { 
+        "id": "contact", 
+        "label": "Contact", 
+        "type": "hash", 
+        "href": "#contact", 
+        "image": "/assets/menu/contact.jpg", 
+        "showInDesktop": true 
+      }
+    ]
+  },
+  "navigation": {
+    "whoWeAre": [
+      { "href": "/who-we-are/team", "title": "Team", "image": "/assets/images/6.jpg" },
+      { "href": "/who-we-are/partners", "title": "Partners", "image": "/assets/images/4.jpg" },
+      { "href": "/who-we-are/careers", "title": "Careers", "image": "/assets/images/5.jpg" }
+    ],
+    "whatWeDo": [
+      { "href": "/what-we-do/analysis", "title": "Analysis", "image": "/assets/images/1.jpg" },
+      { "href": "/what-we-do/advisory", "title": "Advisory", "image": "/assets/images/2.jpg" },
+      { "href": "/what-we-do/research", "title": "Research", "image": "/assets/images/3.jpg" }
+    ]
+  },
+  "pages": {
+    "partners": {
+      "title": "Partners",
+      "subtitle": "Building global alliances for systemic change",
+      "heroImage": "/assets/images/4.jpg",
+      "description": "The Global Nexus Institute works with leading organizations across sectors to amplify our impact and create lasting change in how the world approaches interconnected crises.",
+      "sections": [
+        {
+          "title": "Strategic Partnerships",
+          "content": "We collaborate with research institutions, policy organizations, and industry leaders who share our vision of integrated analysis across energy, geopolitics, and health domains.",
+          "partners": [
+            {
+              "name": "Energy Policy Institute",
+              "type": "Research Partner",
+              "description": "Joint research on energy transition pathways and their health implications across emerging markets.",
+              "logo": "/assets/partners/epi-logo.svg"
+            },
+            {
+              "name": "Global Health Security Consortium",
+              "type": "Strategic Alliance",
+              "description": "Collaborative frameworks for pandemic preparedness and geopolitical risk assessment.",
+              "logo": "/assets/partners/ghsc-logo.svg"
+            },
+            {
+              "name": "International Crisis Group",
+              "type": "Advisory Partner",
+              "description": "Intelligence sharing on conflict zones and their impact on energy and health infrastructure.",
+              "logo": "/assets/partners/icg-logo.svg"
+            }
+          ]
+        }
+      ]
+    },
+    "team": {
+      "title": "Team",
+      "subtitle": "Diverse expertise for complex challenges",
+      "heroImage": "/assets/images/6.jpg",
+      "description": "Our team combines deep sector expertise with systems thinking, bringing together professionals from energy, geopolitics, public health, and strategic analysis.",
+      "sections": [
+        {
+          "title": "Core Team",
+          "content": "Interdisciplinary professionals who drive our research, analysis, and strategic initiatives.",
+          "members": [
+            {
+              "name": "Favoud Ahmad",
+              "title": "CEO & Founder",
+              "image": "/assets/leaders/foad-ahmed.jpg",
+              "bio": "Favoud leads GNI with a builder's mindset, integrating industry pragmatism with systems thinking. He drives high-clarity strategy, convenes cross-sector alliances, and turns foresight into execution.",
+              "expertise": ["Strategic Leadership", "Systems Integration", "Crisis Management"]
+            },
+            {
+              "name": "Dr. Saied Froghi",
+              "title": "Director of Global Health Policy",
+              "image": "/assets/leaders/saied-froghi.jpg",
+              "bio": "Dr. Froghi brings clinical insight and policy depth to the nexus of public health, crisis response, and equitable system design.",
+              "expertise": ["Public Health Policy", "Crisis Response", "Health Systems"]
+            },
+            {
+              "name": "Dr. Elena Rodriguez",
+              "title": "Senior Energy Analyst",
+              "image": "/assets/team/elena-rodriguez.jpg",
+              "bio": "Former IEA analyst specializing in energy security and transition pathways across developing economies.",
+              "expertise": ["Energy Security", "Renewable Transitions", "Policy Analysis"]
+            },
+            {
+              "name": "Marcus Chen",
+              "title": "Geopolitical Risk Strategist",
+              "image": "/assets/team/marcus-chen.jpg",
+              "bio": "Intelligence analyst with 15 years experience tracking resource conflicts and supply chain vulnerabilities.",
+              "expertise": ["Geopolitical Analysis", "Risk Assessment", "Strategic Intelligence"]
+            }
+          ]
+        }
+      ]
+    },
+    "careers": {
+      "title": "Careers",
+      "subtitle": "Join the next generation of systems thinkers",
+      "heroImage": "/assets/images/5.jpg",
+      "description": "We're building a team of exceptional analysts, researchers, and strategists who think across domains and thrive in complexity.",
+      "sections": [
+        {
+          "title": "Current Opportunities",
+          "content": "We're actively seeking talented individuals who can contribute to our mission of integrated analysis and actionable intelligence.",
+          "positions": [
+            {
+              "title": "Senior Research Analyst - Energy Systems",
+              "type": "Full-time",
+              "location": "Remote/Flexible",
+              "department": "Research",
+              "description": "Lead quantitative analysis of energy transition pathways and their cascading effects on health and geopolitical stability.",
+              "requirements": [
+                "PhD in Energy Economics, Policy, or related field",
+                "5+ years experience in energy systems modeling",
+                "Strong analytical and communication skills",
+                "Experience with interdisciplinary research"
+              ]
+            },
+            {
+              "title": "Geopolitical Intelligence Officer",
+              "type": "Full-time",
+              "location": "Washington DC/Remote",
+              "department": "Analysis",
+              "description": "Monitor and analyze geopolitical developments affecting global energy and health security.",
+              "requirements": [
+                "MA in International Relations or Political Science",
+                "3+ years in intelligence or risk analysis",
+                "Regional expertise in emerging markets",
+                "Security clearance preferred"
+              ]
+            },
+            {
+              "title": "Health Policy Research Fellow",
+              "type": "Fellowship",
+              "location": "Remote",
+              "department": "Research",
+              "description": "12-month fellowship focusing on the intersection of energy policy and public health outcomes.",
+              "requirements": [
+                "Recent PhD in Public Health, Medicine, or Policy",
+                "Interest in interdisciplinary research",
+                "Strong quantitative analysis skills",
+                "Published research experience"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Why GNI?",
+          "content": "Join a mission-driven organization at the forefront of systems thinking and global impact.",
+          "benefits": [
+            {
+              "title": "Intellectual Challenge",
+              "description": "Work on complex, multidisciplinary problems that matter for global stability and human welfare."
+            },
+            {
+              "title": "Global Impact",
+              "description": "Your research and analysis directly informs policy decisions and strategic planning worldwide."
+            },
+            {
+              "title": "Collaborative Environment",
+              "description": "Work alongside leading experts from diverse fields in a supportive, learning-focused culture."
+            },
+            {
+              "title": "Professional Growth",
+              "description": "Develop unique expertise in nexus thinking and systems analysis with opportunities for leadership."
+            }
+          ]
+        }
+      ]
+    },
+    "research": {
+      "title": "Research",
+      "subtitle": "Advancing the science of interconnected systems",
+      "heroImage": "/assets/images/3.jpg",
+      "description": "Our research program develops new methodologies for understanding how energy, geopolitical, and health systems interact and influence each other.",
+      "sections": [
+        {
+          "title": "Core Research Areas",
+          "content": "We focus on foundational research that advances the field of nexus analysis and systems thinking.",
+          "areas": [
+            {
+              "title": "Cascading Crisis Modeling",
+              "description": "Mathematical models that predict how shocks propagate across energy, political, and health systems.",
+              "methods": ["System Dynamics", "Network Analysis", "Monte Carlo Simulation"]
+            },
+            {
+              "title": "Energy-Health Nexus",
+              "description": "Quantifying the health impacts of different energy transition pathways and policies.",
+              "methods": ["Epidemiological Modeling", "Air Quality Assessment", "Health Economic Analysis"]
+            },
+            {
+              "title": "Geopolitical Risk Quantification",
+              "description": "Developing metrics and indices to measure political stability risks to critical infrastructure.",
+              "methods": ["Risk Modeling", "Scenario Analysis", "Expert Elicitation"]
+            }
+          ]
+        },
+        {
+          "title": "Current Projects",
+          "content": "Active research initiatives that demonstrate our integrated approach to global challenges.",
+          "projects": [
+            {
+              "title": "Global Chokepoints Initiative",
+              "status": "Ongoing",
+              "timeline": "2024-2026",
+              "description": "Comprehensive mapping and modeling of critical infrastructure vulnerabilities worldwide.",
+              "partners": ["Energy Policy Institute", "Crisis Analytics Group"]
+            },
+            {
+              "title": "Energy Transition Health Index (ETHI)",
+              "status": "Phase II",
+              "timeline": "2023-2025",
+              "description": "Annual ranking of countries based on the health impacts of their energy transition strategies.",
+              "partners": ["Global Health Security Consortium", "WHO Regional Offices"]
+            },
+            {
+              "title": "Pandemic Preparedness & Energy Security",
+              "status": "Planning",
+              "timeline": "2025-2027",
+              "description": "Analysis of how energy system disruptions affect pandemic response capabilities.",
+              "partners": ["Johns Hopkins Bloomberg School", "International Crisis Group"]
+            }
+          ]
+        }
+      ]
+    },
+    "analysis": {
+      "title": "Analysis",
+      "subtitle": "Real-time intelligence for decision makers",
+      "heroImage": "/assets/images/1.jpg",
+      "description": "Our analysis team provides timely, integrated assessments of emerging crises and their potential cascading effects across energy, geopolitical, and health domains.",
+      "sections": [
+        {
+          "title": "Analytical Services",
+          "content": "We deliver actionable intelligence through multiple formats tailored to different decision-making needs.",
+          "services": [
+            {
+              "title": "Crisis Alerts",
+              "description": "Rapid-response analysis of emerging situations with potential for system-wide impacts.",
+              "frequency": "As needed",
+              "format": "Brief (2-4 pages)"
+            },
+            {
+              "title": "Weekly Intelligence Brief",
+              "description": "Comprehensive overview of developing risks across our three core domains.",
+              "frequency": "Weekly",
+              "format": "Report (8-12 pages)"
+            },
+            {
+              "title": "Quarterly Outlook",
+              "description": "Deep-dive analysis of major trends and their interconnected implications.",
+              "frequency": "Quarterly",
+              "format": "Report (25-40 pages)"
+            },
+            {
+              "title": "Custom Analysis",
+              "description": "Bespoke analytical products tailored to specific client needs and decision contexts.",
+              "frequency": "On demand",
+              "format": "Variable"
+            }
+          ]
+        },
+        {
+          "title": "Recent Analysis",
+          "content": "Examples of our integrated approach to current global challenges.",
+          "reports": [
+            {
+              "title": "Ukraine Crisis: Energy-Health-Security Nexus",
+              "date": "March 2024",
+              "type": "Special Report",
+              "summary": "Comprehensive analysis of how the conflict affects global energy markets, health systems, and geopolitical stability.",
+              "topics": ["Energy Security", "Refugee Health", "Supply Chains"]
+            },
+            {
+              "title": "Middle East Tensions: Oil Infrastructure Vulnerability",
+              "date": "January 2024",
+              "type": "Risk Assessment",
+              "summary": "Evaluation of potential disruptions to global oil supply and their cascading health and political effects.",
+              "topics": ["Critical Infrastructure", "Regional Conflict", "Economic Impact"]
+            },
+            {
+              "title": "Climate COP Outcomes: Policy Integration Gaps",
+              "date": "December 2023",
+              "type": "Policy Analysis",
+              "summary": "Assessment of how climate policy coordination affects energy transitions and public health outcomes.",
+              "topics": ["Climate Policy", "Energy Transition", "Health Co-benefits"]
+            }
+          ]
+        }
+      ]
+    }
   }
 }

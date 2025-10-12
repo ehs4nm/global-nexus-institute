@@ -36,7 +36,7 @@ const LoadingScreen = ({ onComplete, isAppReady }) => {
         >
             <div className="text-center">
                 {/* GNI Title - Bold brutalist typography */}
-                <h1 className="text-7xl sm:text-9xl md:text-[12rem] font-extrabold text-white tracking-tighter leading-none animate-fade-in-up">
+                <h1 className="brutalist-heading text-7xl sm:text-9xl md:text-[12rem] font-extrabold text-white leading-none animate-fade-in-up">
                     GNI
                 </h1>
 

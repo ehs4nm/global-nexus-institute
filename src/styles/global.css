@@ -225,6 +225,13 @@
            group-hover:w-full;
   }
 
+  .brutalist-accent-line-black {
+    @apply w-0 h-0.5 
+           bg-black dark:bg-white 
+           transition-all duration-500 
+           group-hover:w-full;
+  }
+
   /**
    * Divider Line
    * Usage: Horizontal rules, section separators
