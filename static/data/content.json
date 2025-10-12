@@ -1,17 +1,23 @@
 {
+  "menuItems": [
+    { "id": "mission", "label": "Mission", "type": "hash", "href": "/#mission", "image": "/assets/menu/mission.jpg", "showInDesktop": true },
+    { "id": "model", "label": "Model", "type": "hash", "href": "/#model", "image": "/assets/menu/model.jpg", "showInDesktop": true },
+    { "id": "initiatives", "label": "Initiatives", "type": "hash", "href": "/#initiatives", "image": "/assets/menu/initiatives.jpg", "showInDesktop": true },
+    { "id": "leadership", "label": "Leadership", "type": "hash", "href": "/#leadership", "image": "/assets/menu/leadership.jpg", "showInDesktop": true },
+    { "id": "contact", "label": "Contact", "type": "hash", "href": "/#contact", "image": "/assets/menu/contact.jpg", "showInDesktop": true }
+  ],
   "hero": {
-    "tagline": "Foresight for a Connected World",
-    "title": "Seeing the world's crises",
-    "subtitle": "— before they collide.",
+    "tagline": "Foresight and Action for a Connected World",
+    "title": "Anticipating the World’s Crises",
+    "subtitle": "— before they collide and cascade.",
     "videoSrc": "/assets/videos/video-6.mp4",
     "posterSrc": "/assets/images/1.jpg"
   },
   "mission": {
-    "title": "Crises do not stand alone",
+    "title": "Crises Don’t Stand Alone",
     "paragraphs": [
-      "Energy shocks fuel conflict. Conflict spreads disease. Health crises destabilize economies. Yet global policy and research remain siloed.",
-      "The Global Nexus Institute (GNI) exists to break those silos — integrating energy, geopolitics, and health into a single field of foresight and action."
-    ],
+      "Energy shocks fuel conflict. Conflict spreads disease. Health crises destabilize economies. Yet global response remains fragmented.",
+      "The Global Nexus Institute (GNI) connects these dots — integrating energy, geopolitics, and health into a unified framework for resilience and equity."],
     "cards": [
       {
         "label": "Energy → Conflict",
@@ -30,23 +36,24 @@
         "title": "Nexus"
       }
     ],
-    "caption": "A connected world demands connected intelligence."
+    "caption": "A connected world demands connected intelligence — and collective action.",
+    "image": "/assets/images/system_links.jpg"
   },
   "initiatives": {
-    "title": "Turning foresight into global impact",
-    "subtitle": "Two examples that make our mission tangible",
+    "title": "Turning Foresight into Collective Impact.",
+    "subtitle": "Two flagship programs translating foresight into measurable change.",
     "projects": [
       {
         "icon": "/assets/images/satellite.jpg",
-        "title": "Global Chokepoints Initiative",
-        "description": "Mapping critical energy, trade, and health bottlenecks — and modeling how disruptions cascade across systems.",
+        "title": "Global Chokepoints",
+        "description": "Mapping global chokepoints in energy, trade, and health — using data modeling to predict how disruptions spread and how resilience can be built.",
         "linkText": "Discuss the project",
         "linkHref": "#contact"
       },
       {
         "icon": "/assets/images/fracture.jpg",
         "title": "Energy Transition Health Index (ETHI)",
-        "description": "Ranking countries on the health impact of their energy transitions — from air quality to equity.",
+        "description": "Developing an index that measures how national energy transitions affect public health, equity, and air quality.",
         "linkText": "Explore ETHI",
         "linkHref": "#contact"
       }
@@ -55,21 +62,24 @@
   "leadership": [
     {
       "name": "Favoud Ahmad",
-      "img": "/assets/leaders/foad-ahmed.jpg",
+      "role": "Founder & Executive Director",
       "title": "CEO",
-      "bio": "Favoud leads GNI with a builder's mindset, integrating industry pragmatism with systems thinking. He drives high-clarity strategy, convenes cross-sector alliances, and turns foresight into execution."
+      "bio": "Favoud leads GNI with a builder's mindset, integrating industry pragmatism with systems thinking. He drives high-clarity strategy, convenes cross-sector alliances, and turns foresight into execution.",
+      "img": "/assets/leaders/foad-ahmed.jpg"
     },
     {
       "name": "Dr. Saied Froghi",
-      "img": "/assets/leaders/saied-froghi.jpg",
+      "role": "Director of Health Foresight",
       "title": "Director of Global Health Policy",
-      "bio": "Dr. Froghi brings clinical insight and policy depth to the nexus of public health, crisis response, and equitable system design."
+      "bio": "Dr. Froghi brings clinical insight and policy depth to the nexus of public health, crisis response, and equitable system design.",
+      "img": "/assets/leaders/saied-froghi.jpg"
     },
     {
-      "name": "Advisor — TBA",
-      "img": "/assets/leaders/reza-azami.jpg",
+      "name": "Advisory Council",
+      "role": "Global Advisors",
       "title": "Strategic Advisor",
-      "bio": "We are assembling a council of senior advisors across energy, finance, security, and public health to guide our mission and amplify global impact."
+      "bio": "We are assembling a council of senior advisors across energy, finance, security, and public health to guide our mission and amplify global impact.",
+      "img": "/assets/leaders/reza-azami.jpg"
     }
   ],
   "gallery": {
@@ -167,6 +177,18 @@
     "description": "GNI connects energy, geopolitics, and health into one field of actionable intelligence."
   },
   "aboutUs": {
+    "title": "About the Global Nexus Institute",
+    "subtitle": "Bridging energy, geopolitics, and health for sustainable global stability.",
+    "description": "GNI is a research institute that bridges the gap between academic insights and practical policy implementation. We focus on the critical intersections of energy security, geopolitical stability, and global health outcomes.",
+    "mission": "Our mission is to equip leaders and institutions with integrated intelligence to navigate complex global risks.",
+    "vision": "We envision systems that anticipate shocks, adapt quickly, and promote sustainable well-being for all.",
+    "values": [
+      "Collaborative foresight",
+      "Scientific rigor",
+      "Equity and inclusion",
+      "Transparency and accountability"
+    ],
+    "lastUpdated": "2025",
     "sectionLabel": "Who We Are",
     "mainTitle": "About Us",
     "primaryDescription": "Energy shocks fuel conflict. Conflict spreads disease. Health crises destabilize economies.",
@@ -213,7 +235,7 @@
         "id": "mission", 
         "label": "Mission", 
         "type": "hash", 
-        "href": "#mission", 
+        "href": "/#mission", 
         "image": "/assets/menu/mission.jpg", 
         "showInDesktop": true 
       },
@@ -221,7 +243,7 @@
         "id": "model", 
         "label": "Model", 
         "type": "hash", 
-        "href": "#model", 
+        "href": "/#model", 
         "image": "/assets/menu/model.jpg", 
         "showInDesktop": true 
       },
@@ -229,7 +251,7 @@
         "id": "initiatives", 
         "label": "Initiatives", 
         "type": "hash", 
-        "href": "#initiatives", 
+        "href": "/#initiatives", 
         "image": "/assets/menu/initiatives.jpg", 
         "showInDesktop": true 
       },
@@ -237,7 +259,7 @@
         "id": "leadership", 
         "label": "Leadership", 
         "type": "hash", 
-        "href": "#leadership", 
+        "href": "/#leadership", 
         "image": "/assets/menu/leadership.jpg", 
         "showInDesktop": true 
       },
@@ -245,7 +267,7 @@
         "id": "contact", 
         "label": "Contact", 
         "type": "hash", 
-        "href": "#contact", 
+        "href": "/#contact", 
         "image": "/assets/menu/contact.jpg", 
         "showInDesktop": true 
       }
@@ -466,8 +488,58 @@
               "partners": ["Johns Hopkins Bloomberg School", "International Crisis Group"]
             }
           ]
+        },
+        {
+          "title": "Research Philosophy",
+          "subtitle": "→ The principles that guide our approach to understanding complex systems",
+          "principles": [
+            {
+              "title": "Systems-First Thinking",
+              "description": "We start with the assumption that energy, geopolitical, and health domains are fundamentally interconnected, not separate systems that occasionally interact."
+            },
+            {
+              "title": "Empirical Rigor",
+              "description": "Every model, every prediction, every insight must be grounded in verifiable data and tested against real-world outcomes to ensure reliability."
+            },
+            {
+              "title": "Practical Relevance",
+              "description": "Research that can't inform real decisions isn't valuable. We focus on questions that matter to policymakers, business leaders, and crisis responders."
+            },
+            {
+              "title": "Open Innovation",
+              "description": "The world's challenges are too complex for any single institution. We collaborate openly and share knowledge to accelerate progress across the field."
+            }
+          ]
+        },
+        {
+          "title": "Publications & Collaboration",
+          "subtitle": "→ Our research outputs and opportunities for academic collaboration",
+          "content": "Research partnerships: research@globalnexusinstitute.org",
+          "description": "Interested in collaborative research or data sharing? Let's explore opportunities to advance nexus science together.",
+          "outputs": [
+            {
+              "title": "Peer-Reviewed Articles",
+              "description": "Published in leading journals across energy policy, international relations, and public health domains."
+            },
+            {
+              "title": "Working Papers",
+              "description": "Preliminary findings and methodological innovations shared with the global research community."
+            },
+            {
+              "title": "Policy Briefs",
+              "description": "Research-based recommendations for government officials and international organizations."
+            },
+            {
+              "title": "Data & Models",
+              "description": "Open-source datasets and modeling tools to advance nexus research across institutions."
+            }
+          ]
         }
-      ]
+      ],
+      "pageMetadata": {
+        "title": "Research — Global Nexus Institute",
+        "description": "Advancing the science of interconnected systems through rigorous research across energy, geopolitics, and health domains."
+      }
     },
     "analysis": {
       "title": "Analysis",
@@ -529,6 +601,70 @@
               "type": "Policy Analysis",
               "summary": "Assessment of how climate policy coordination affects energy transitions and public health outcomes.",
               "topics": ["Climate Policy", "Energy Transition", "Health Co-benefits"]
+            }
+          ]
+        }
+      ]
+    },
+    "advisory": {
+      "title": "Advisory",
+      "subtitle": "Strategic guidance for complex decisions",
+      "heroImage": "/assets/images/2.jpg",
+      "description": "Our advisory services help leaders navigate the interconnected challenges of energy transitions, geopolitical risks, and health crises through integrated analysis and strategic planning.",
+      "sections": [
+        {
+          "title": "Advisory Services",
+          "content": "We provide strategic counsel to governments, corporations, and international organizations facing complex nexus challenges.",
+          "services": [
+            {
+              "title": "Strategic Planning",
+              "description": "Long-term planning that accounts for energy-geopolitical-health interdependencies.",
+              "timeframe": "6-12 months",
+              "format": "Workshops & Reports"
+            },
+            {
+              "title": "Risk Assessment",
+              "description": "Comprehensive evaluation of cascading risks across energy, political, and health domains.",
+              "timeframe": "2-4 months",
+              "format": "Assessment Reports"
+            },
+            {
+              "title": "Crisis Response",
+              "description": "Rapid advisory support during emerging crises with multi-domain implications.",
+              "timeframe": "Real-time",
+              "format": "Briefings & Calls"
+            },
+            {
+              "title": "Policy Development",
+              "description": "Support for developing integrated policies that address nexus challenges.",
+              "timeframe": "3-8 months",
+              "format": "Policy Frameworks"
+            }
+          ]
+        },
+        {
+          "title": "Client Sectors",
+          "content": "We work with diverse organizations that recognize the interconnected nature of global challenges.",
+          "clients": [
+            {
+              "sector": "Government Agencies",
+              "description": "National security councils, health ministries, and energy departments seeking integrated approaches.",
+              "focus": "Policy Integration"
+            },
+            {
+              "sector": "International Organizations",
+              "description": "UN agencies, World Bank, and regional bodies addressing cross-cutting global challenges.",
+              "focus": "Multilateral Coordination"
+            },
+            {
+              "sector": "Multinational Corporations",
+              "description": "Energy companies, healthcare firms, and global enterprises managing systemic risks.",
+              "focus": "Strategic Risk Management"
+            },
+            {
+              "sector": "NGOs & Think Tanks",
+              "description": "Research institutions and advocacy organizations working on interconnected global issues.",
+              "focus": "Research & Advocacy Strategy"
             }
           ]
         }

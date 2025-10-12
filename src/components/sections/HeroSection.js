@@ -69,7 +69,7 @@ export const HeroSection = () => {
       >
         <source src={hero.videoSrc} type="video/mp4" />
       </video>
-      <div className="absolute inset-0 z-50"></div>
+      <div className="absolute inset-0 z-1"></div>
 
       {/* Strong overlay for brutalist contrast */}
 

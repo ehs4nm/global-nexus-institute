@@ -1,10 +1,10 @@
 {
   "menuItems": [
-    { "id": "mission", "label": "Mission", "type": "hash", "href": "#mission", "image": "/assets/menu/mission.jpg", "showInDesktop": true },
-    { "id": "model", "label": "Model", "type": "hash", "href": "#model", "image": "/assets/menu/model.jpg", "showInDesktop": true },
-    { "id": "initiatives", "label": "Initiatives", "type": "hash", "href": "#initiatives", "image": "/assets/menu/initiatives.jpg", "showInDesktop": true },
-    { "id": "leadership", "label": "Leadership", "type": "hash", "href": "#leadership", "image": "/assets/menu/leadership.jpg", "showInDesktop": true },
-    { "id": "contact", "label": "Contact", "type": "hash", "href": "#contact", "image": "/assets/menu/contact.jpg", "showInDesktop": true }
+    { "id": "mission", "label": "Mission", "type": "hash", "href": "/#mission", "image": "/assets/menu/mission.jpg", "showInDesktop": true },
+    { "id": "model", "label": "Model", "type": "hash", "href": "/#model", "image": "/assets/menu/model.jpg", "showInDesktop": true },
+    { "id": "initiatives", "label": "Initiatives", "type": "hash", "href": "/#initiatives", "image": "/assets/menu/initiatives.jpg", "showInDesktop": true },
+    { "id": "leadership", "label": "Leadership", "type": "hash", "href": "/#leadership", "image": "/assets/menu/leadership.jpg", "showInDesktop": true },
+    { "id": "contact", "label": "Contact", "type": "hash", "href": "/#contact", "image": "/assets/menu/contact.jpg", "showInDesktop": true }
   ],
   "hero": {
     "tagline": "Foresight and Action for a Connected World",
@@ -235,7 +235,7 @@
         "id": "mission", 
         "label": "Mission", 
         "type": "hash", 
-        "href": "#mission", 
+        "href": "/#mission", 
         "image": "/assets/menu/mission.jpg", 
         "showInDesktop": true 
       },
@@ -243,7 +243,7 @@
         "id": "model", 
         "label": "Model", 
         "type": "hash", 
-        "href": "#model", 
+        "href": "/#model", 
         "image": "/assets/menu/model.jpg", 
         "showInDesktop": true 
       },
@@ -251,7 +251,7 @@
         "id": "initiatives", 
         "label": "Initiatives", 
         "type": "hash", 
-        "href": "#initiatives", 
+        "href": "/#initiatives", 
         "image": "/assets/menu/initiatives.jpg", 
         "showInDesktop": true 
       },
@@ -259,7 +259,7 @@
         "id": "leadership", 
         "label": "Leadership", 
         "type": "hash", 
-        "href": "#leadership", 
+        "href": "/#leadership", 
         "image": "/assets/menu/leadership.jpg", 
         "showInDesktop": true 
       },
@@ -267,7 +267,7 @@
         "id": "contact", 
         "label": "Contact", 
         "type": "hash", 
-        "href": "#contact", 
+        "href": "/#contact", 
         "image": "/assets/menu/contact.jpg", 
         "showInDesktop": true 
       }
@@ -488,8 +488,58 @@
               "partners": ["Johns Hopkins Bloomberg School", "International Crisis Group"]
             }
           ]
+        },
+        {
+          "title": "Research Philosophy",
+          "subtitle": "→ The principles that guide our approach to understanding complex systems",
+          "principles": [
+            {
+              "title": "Systems-First Thinking",
+              "description": "We start with the assumption that energy, geopolitical, and health domains are fundamentally interconnected, not separate systems that occasionally interact."
+            },
+            {
+              "title": "Empirical Rigor",
+              "description": "Every model, every prediction, every insight must be grounded in verifiable data and tested against real-world outcomes to ensure reliability."
+            },
+            {
+              "title": "Practical Relevance",
+              "description": "Research that can't inform real decisions isn't valuable. We focus on questions that matter to policymakers, business leaders, and crisis responders."
+            },
+            {
+              "title": "Open Innovation",
+              "description": "The world's challenges are too complex for any single institution. We collaborate openly and share knowledge to accelerate progress across the field."
+            }
+          ]
+        },
+        {
+          "title": "Publications & Collaboration",
+          "subtitle": "→ Our research outputs and opportunities for academic collaboration",
+          "content": "Research partnerships: research@globalnexusinstitute.org",
+          "description": "Interested in collaborative research or data sharing? Let's explore opportunities to advance nexus science together.",
+          "outputs": [
+            {
+              "title": "Peer-Reviewed Articles",
+              "description": "Published in leading journals across energy policy, international relations, and public health domains."
+            },
+            {
+              "title": "Working Papers",
+              "description": "Preliminary findings and methodological innovations shared with the global research community."
+            },
+            {
+              "title": "Policy Briefs",
+              "description": "Research-based recommendations for government officials and international organizations."
+            },
+            {
+              "title": "Data & Models",
+              "description": "Open-source datasets and modeling tools to advance nexus research across institutions."
+            }
+          ]
         }
-      ]
+      ],
+      "pageMetadata": {
+        "title": "Research — Global Nexus Institute",
+        "description": "Advancing the science of interconnected systems through rigorous research across energy, geopolitics, and health domains."
+      }
     },
     "analysis": {
       "title": "Analysis",
@@ -551,6 +601,70 @@
               "type": "Policy Analysis",
               "summary": "Assessment of how climate policy coordination affects energy transitions and public health outcomes.",
               "topics": ["Climate Policy", "Energy Transition", "Health Co-benefits"]
+            }
+          ]
+        }
+      ]
+    },
+    "advisory": {
+      "title": "Advisory",
+      "subtitle": "Strategic guidance for complex decisions",
+      "heroImage": "/assets/images/2.jpg",
+      "description": "Our advisory services help leaders navigate the interconnected challenges of energy transitions, geopolitical risks, and health crises through integrated analysis and strategic planning.",
+      "sections": [
+        {
+          "title": "Advisory Services",
+          "content": "We provide strategic counsel to governments, corporations, and international organizations facing complex nexus challenges.",
+          "services": [
+            {
+              "title": "Strategic Planning",
+              "description": "Long-term planning that accounts for energy-geopolitical-health interdependencies.",
+              "timeframe": "6-12 months",
+              "format": "Workshops & Reports"
+            },
+            {
+              "title": "Risk Assessment",
+              "description": "Comprehensive evaluation of cascading risks across energy, political, and health domains.",
+              "timeframe": "2-4 months",
+              "format": "Assessment Reports"
+            },
+            {
+              "title": "Crisis Response",
+              "description": "Rapid advisory support during emerging crises with multi-domain implications.",
+              "timeframe": "Real-time",
+              "format": "Briefings & Calls"
+            },
+            {
+              "title": "Policy Development",
+              "description": "Support for developing integrated policies that address nexus challenges.",
+              "timeframe": "3-8 months",
+              "format": "Policy Frameworks"
+            }
+          ]
+        },
+        {
+          "title": "Client Sectors",
+          "content": "We work with diverse organizations that recognize the interconnected nature of global challenges.",
+          "clients": [
+            {
+              "sector": "Government Agencies",
+              "description": "National security councils, health ministries, and energy departments seeking integrated approaches.",
+              "focus": "Policy Integration"
+            },
+            {
+              "sector": "International Organizations",
+              "description": "UN agencies, World Bank, and regional bodies addressing cross-cutting global challenges.",
+              "focus": "Multilateral Coordination"
+            },
+            {
+              "sector": "Multinational Corporations",
+              "description": "Energy companies, healthcare firms, and global enterprises managing systemic risks.",
+              "focus": "Strategic Risk Management"
+            },
+            {
+              "sector": "NGOs & Think Tanks",
+              "description": "Research institutions and advocacy organizations working on interconnected global issues.",
+              "focus": "Research & Advocacy Strategy"
             }
           ]
         }
