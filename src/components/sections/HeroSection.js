@@ -49,7 +49,7 @@ export const HeroSection = () => {
   // Safety check - ensure we have content and hero data
   if (isLoading || !content || !content.hero) {
     return (
-      <section className="grid place-items-center relative w-full min-h-[80vh] sm:min-h-[90vh] mt-[140px] overflow-hidden mx-auto max-w-[100vw] sm:max-w-[95vw] bg-black">
+      <section className="grid place-items-center relative w-full min-h-[80vh] sm:min-h-[90vh] md:mt-[140px] sm:mt-[100px] overflow-hidden mx-auto max-w-[100vw] sm:max-w-[95vw] bg-black">
         <div className="relative z-10 px-6 sm:px-8 max-w-7xl text-center w-full">
           <div className="brutalist-label text-white">Loading...</div>
         </div>
@@ -93,7 +93,7 @@ export const HeroSection = () => {
           initial="hidden"
           animate="visible"
         >
-          <h1 className="brutalist-heading xl:text-6xl text-white dark:text-black mb-6 bg-black/60 dark:bg-white/60 pt-2 pb-4">
+          <h1 className="brutalist-heading xl:text-6xl text-white dark:text-black mb-6 bg-black/60 dark:bg-white/60 pt-2 pb-4 tracking-wide">
             <span 
               ref={textRef}
               className="block"

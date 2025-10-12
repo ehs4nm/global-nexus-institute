@@ -2,7 +2,7 @@ import React from 'react';
 
 export const SloganSection = () => {
   return (
-    <section id="slogan" className="brutalist-section text-white dark:text-black bg-black dark:bg-white flex h-[60vh]">
+    <section id="slogan" className="brutalist-section text-white dark:text-black bg-black dark:bg-white flex md:h-[60vh]">
       {/* Dot pattern background */}
       <div className="brutalist-bg-dots absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" />
       
