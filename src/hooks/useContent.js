@@ -1,23 +1,75 @@
 import { useState, useEffect } from 'react';
-import contentData from '../data/content.json';
 
 export const useContent = () => {
-  const [content, setContent] = useState(contentData);
+  const [content, setContent] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const savedContent = localStorage.getItem('gni_content');
-      if (savedContent) {
-        try {
-          setContent(JSON.parse(savedContent));
-        } catch (error) {
-          console.error('Error loading saved content:', error);
+    const loadContent = async () => {
+      try {
+        // Load from the static data directory
+        const response = await fetch('/data/content.json');
+        if (!response.ok) {
+          throw new Error(`Failed to load content: ${response.status}`);
         }
+        const contentData = await response.json();
+        setContent(contentData);
+      } catch (error) {
+        console.error('Error loading content data:', error);
+        setError(error);
+        
+        // Set minimal fallback content to prevent crashes
+        setContent({
+          hero: { 
+            tagline: 'Global Nexus Institute',
+            title: 'Loading...',
+            subtitle: 'Please wait',
+            videoSrc: '',
+            posterSrc: ''
+          },
+          mission: {
+            title: 'Loading...',
+            paragraphs: ['Loading content...'],
+            cards: [],
+            caption: ''
+          },
+          initiatives: {
+            title: 'Loading...',
+            subtitle: '',
+            projects: []
+          },
+          leadership: [],
+          gallery: {
+            title: 'Loading...',
+            subtitle: '',
+            items: []
+          },
+          aboutUs: {
+            sectionLabel: 'Loading...',
+            mainTitle: 'Loading...',
+            primaryDescription: '',
+            secondaryDescription: '',
+            missionStatement: '',
+            principlesTitle: '',
+            bottomMessage: '',
+            principles: []
+          },
+          menu: {
+            items: []
+          },
+          navigation: {
+            whoWeAre: [],
+            whatWeDo: []
+          }
+        });
+      } finally {
+        setIsLoading(false);
       }
-      setIsLoading(false);
-    }
+    };
+    
+    loadContent();
   }, []);
 
-  return { content, isLoading };
+  return { content, isLoading, error };
 };

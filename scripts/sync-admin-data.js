@@ -10,7 +10,8 @@ const path = require('path');
  */
 
 async function syncAdminData() {
-  const contentPath = path.resolve(__dirname, '../src/data/content.json');
+  const contentPath = path.resolve(__dirname, '../static/data/content.json');
+  const menuPath = path.resolve(__dirname, '../static/data/menu.json');
   
   console.log('🚀 Starting admin data sync...');
   
@@ -33,10 +34,11 @@ async function syncAdminData() {
     
     // Extract localStorage data
     console.log('📦 Extracting admin data from localStorage...');
-    const adminData = await page.evaluate(() => {
+    const { contentData, menuData } = await page.evaluate(() => {
       const gniData = localStorage.getItem('gni_content');
       const aboutUsData = localStorage.getItem('aboutUsContent');
       const newsTickerData = localStorage.getItem('newsTickerContent');
+      const menuData = localStorage.getItem('gni_menu_items');
       
       let combinedData = {};
       
@@ -54,10 +56,33 @@ async function syncAdminData() {
         combinedData.newsTicker = JSON.parse(newsTickerData);
       }
       
-      return Object.keys(combinedData).length > 0 ? combinedData : null;
+      // Extract menu data
+      let parsedMenuData = null;
+      if (menuData) {
+        try {
+          parsedMenuData = JSON.parse(menuData);
+        } catch (e) {
+          console.warn('Failed to parse menu data:', e);
+        }
+      }
+      
+      return {
+        contentData: Object.keys(combinedData).length > 0 ? combinedData : null,
+        menuData: parsedMenuData
+      };
     });
     
-    if (adminData) {
+    // Ensure static/data directory exists
+    const dataDir = path.dirname(contentPath);
+    if (!fs.existsSync(dataDir)) {
+      fs.mkdirSync(dataDir, { recursive: true });
+      console.log(`📁 Created directory: ${dataDir}`);
+    }
+    
+    let hasUpdates = false;
+    
+    // Handle content data
+    if (contentData) {
       // Read existing content.json to preserve other data
       let existingContent = {};
       if (fs.existsSync(contentPath)) {
@@ -72,14 +97,14 @@ async function syncAdminData() {
       // Merge admin data with existing content
       const updatedContent = {
         ...existingContent,
-        ...adminData
+        ...contentData
       };
       
       // Backup original file
       const backupPath = contentPath + '.backup.' + Date.now();
       if (fs.existsSync(contentPath)) {
         fs.copyFileSync(contentPath, backupPath);
-        console.log(`📋 Backup created: ${backupPath}`);
+        console.log(`📋 Content backup created: ${backupPath}`);
       }
       
       // Write updated content
@@ -87,15 +112,36 @@ async function syncAdminData() {
       console.log('✅ Content.json updated with admin data!');
       console.log(`📁 Updated: ${contentPath}`);
       
-      if (adminData.aboutUs) {
+      if (contentData.aboutUs) {
         console.log('   ✓ About Us content updated');
       }
-      if (adminData.newsTicker) {
+      if (contentData.newsTicker) {
         console.log('   ✓ News Ticker content updated');
       }
-    } else {
+      hasUpdates = true;
+    }
+    
+    // Handle menu data
+    if (menuData) {
+      // Backup original menu file if it exists
+      const menuBackupPath = menuPath + '.backup.' + Date.now();
+      if (fs.existsSync(menuPath)) {
+        fs.copyFileSync(menuPath, menuBackupPath);
+        console.log(`📋 Menu backup created: ${menuBackupPath}`);
+      }
+      
+      // Write menu data
+      fs.writeFileSync(menuPath, JSON.stringify(menuData, null, 2));
+      console.log('✅ Menu.json updated with admin data!');
+      console.log(`📁 Updated: ${menuPath}`);
+      console.log(`   ✓ ${menuData.length || 0} menu items updated`);
+      hasUpdates = true;
+    }
+    
+    if (!hasUpdates) {
       console.log('⚠️  No admin data found in localStorage');
       console.log('   Make sure you have made changes in the admin panel first');
+      console.log('   Looking for keys: gni_content, aboutUsContent, newsTickerContent, gni_menu_items');
     }
     
   } catch (error) {

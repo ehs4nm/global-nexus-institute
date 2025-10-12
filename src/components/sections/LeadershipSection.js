@@ -4,8 +4,38 @@ import { useContent } from '../../hooks/useContent';
 
 export const LeadershipSection = () => {
   const { openPerson } = useMenu();
-  const { content } = useContent();
-  const leadershipData = content.leadership;
+  const { content, isLoading } = useContent();
+  
+  // Safety check - ensure we have content and leadership data
+  if (isLoading || !content) {
+    return (
+      <section 
+        id="leadership" 
+        className="min-h-screen py-20 sm:py-24 md:py-32 bg-white dark:bg-black text-black dark:text-white relative border-t-4 border-black"
+      >
+        <div className="brutalist-container relative flex items-center justify-center min-h-[50vh]">
+          <div className="brutalist-label">Loading leadership data...</div>
+        </div>
+      </section>
+    );
+  }
+  
+  const leadershipData = content.leadership || [];
+  
+  // Safety check - ensure leadershipData is an array
+  if (!Array.isArray(leadershipData)) {
+    console.warn('Leadership data is not an array:', leadershipData);
+    return (
+      <section 
+        id="leadership" 
+        className="min-h-screen py-20 sm:py-24 md:py-32 bg-white dark:bg-black text-black dark:text-white relative border-t-4 border-black"
+      >
+        <div className="brutalist-container relative flex items-center justify-center min-h-[50vh]">
+          <div className="brutalist-label">Error loading leadership data</div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section 

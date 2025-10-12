@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Layout } from '../components/Layout';
 import { ContentProvider } from '../contexts/ContentContext';
 import { HeroSection } from '../components/sections/HeroSection';
-import { NewsTickerSection } from '../components/sections/NewsTickerSection';
+import { ModelSection } from '../components/sections/ModelSection';
 import { SloganSection } from '../components/sections/SloganSection';
 import { MissionSection } from '../components/sections/MissionSection';
-import { ModelSection } from '../components/sections/ModelSection';
-import { InitiativesSection } from '../components/sections/InitiativesSection';
 import { GallerySection } from '../components/sections/GallerySection';
-import { LeadershipSection } from '../components/sections/LeadershipSection';
 import { ContactSection } from '../components/sections/ContactSection';
+import { NewsTickerSection } from '../components/sections/NewsTickerSection';
+import { LeadershipSection } from '../components/sections/LeadershipSection';
+import { InitiativesSection } from '../components/sections/InitiativesSection';
 import { AboutUsSectionWithContext } from '../components/sections/AboutUsSectionWithContext';
 
 /**
@@ -79,8 +79,6 @@ const LoadingScreen = ({ onComplete, isAppReady }) => {
     );
 };
 
-
-
 // --- Main Gatsby Page Component ---
 const IndexPage = () => {
     const [isAppReady, setIsAppReady] = useState(false);
@@ -97,13 +95,11 @@ const IndexPage = () => {
         
         // Check if already loaded
         if (document.readyState === 'complete') {
-            console.log('Document already loaded');
             setHasWindowLoaded(true);
             return;
         }
         
         const onLoad = () => {
-            console.log('Window load event fired');
             setHasWindowLoaded(true);
         };
         
@@ -123,18 +119,14 @@ const IndexPage = () => {
 
     // LoadingScreen tells us its animation finished
     const handleLoadingComplete = () => {
-        console.log('Loading animation completed');
         setIsLogoDone(true);
     };
 
     // When both the logo has shown and the window has fully loaded, reveal the app
     useEffect(() => {
-        console.log('State check:', { isLogoDone, hasWindowLoaded });
         if (isLogoDone && hasWindowLoaded) {
-            console.log('Both conditions met, showing app');
             setIsAppReady(true);
             const t = setTimeout(() => {
-                console.log('Hiding loader');
                 setIsLoaderFinished(true);
             }, 500); // increased timeout to match fade-out duration
             return () => clearTimeout(t);

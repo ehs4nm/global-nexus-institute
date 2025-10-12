@@ -3,12 +3,13 @@ import { useContent } from '../../hooks/useContent';
 
 export const AboutUsSectionWithContext = () => {
   const { content } = useContent();
-  const aboutUsContent = content.aboutUs;
   
   // Return null if content is not loaded yet
-  if (!aboutUsContent) {
+  if (!content || !content.aboutUs) {
     return null;
   }
+  
+  const aboutUsContent = content.aboutUs;
   
   return (
     <section id="about" className="brutalist-section text-gray-900 dark:text-white">

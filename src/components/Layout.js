@@ -8,6 +8,8 @@ import { NewsletterModal } from './NewsletterModal';
 import { MenuProvider } from '../hooks/useMenu';
 import { ScrollModeProvider, useScrollMode } from '../hooks/useScrollMode';
 import FullscreenScroll from './FullscreenScroll';
+import { ContentProvider } from '../contexts/ContentContext';
+// import CacheRefresh from './CacheRefresh';
 
 // Inner layout component that uses scroll mode context
 const LayoutContent = ({ children }) => {
@@ -37,6 +39,7 @@ const LayoutContent = ({ children }) => {
             </div>
           </div>
         </FullscreenScroll>
+        {/* <CacheRefresh /> */}
       </div>
     );
   }
@@ -52,18 +55,21 @@ const LayoutContent = ({ children }) => {
       </main>
       <Footer />
       <NewsletterModal />
+      {/* <CacheRefresh /> */}
     </div>
   );
 };
 
 export const Layout = ({ children }) => {
   return (
-    <NewsletterProvider>
-      <MenuProvider>
-        <ScrollModeProvider>
-          <LayoutContent>{children}</LayoutContent>
-        </ScrollModeProvider>
-      </MenuProvider>
-    </NewsletterProvider>
+    <ContentProvider>
+      <NewsletterProvider>
+        <MenuProvider>
+          <ScrollModeProvider>
+            <LayoutContent>{children}</LayoutContent>
+          </ScrollModeProvider>
+        </MenuProvider>
+      </NewsletterProvider>
+    </ContentProvider>
   );
 };

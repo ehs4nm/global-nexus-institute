@@ -1,11 +1,4 @@
 {
-  "menuItems": [
-    { "id": "mission", "label": "Mission", "type": "hash", "href": "#mission", "image": "assets/menu/mission.jpg", "showInDesktop": true },
-    { "id": "model", "label": "Model", "type": "hash", "href": "#model", "image": "assets/menu/model.jpg", "showInDesktop": true },
-    { "id": "initiatives", "label": "Initiatives", "type": "hash", "href": "#initiatives", "image": "assets/menu/initiatives.jpg", "showInDesktop": true },
-    { "id": "leadership", "label": "Leadership", "type": "hash", "href": "#leadership", "image": "assets/menu/leadership.jpg", "showInDesktop": true },
-    { "id": "contact", "label": "Contact", "type": "hash", "href": "#contact", "image": "assets/menu/contact.jpg", "showInDesktop": true }
-  ],
   "hero": {
     "tagline": "Foresight for a Connected World",
     "title": "Seeing the world's crises",
@@ -174,19 +167,6 @@
     "description": "GNI connects energy, geopolitics, and health into one field of actionable intelligence."
   },
   "aboutUs": {
-    "title": "About Global Nexus Institute",
-    "subtitle": "Connecting energy, geopolitics, and health through actionable intelligence",
-    "description": "GNI is a research institute that bridges the gap between academic insights and practical policy implementation. We focus on the critical intersections of energy security, geopolitical stability, and global health outcomes.",
-    "mission": "Our mission is to provide decision-makers with the intelligence they need to navigate complex global challenges through integrated systems thinking.",
-    "vision": "We envision a world where energy, geopolitical, and health systems work in harmony to support sustainable development and human flourishing.",
-    "values": [
-      "Evidence-based analysis",
-      "Systems thinking approach", 
-      "Practical implementation",
-      "Global perspective",
-      "Sustainable solutions"
-    ],
-    "lastUpdated": "2025",
     "sectionLabel": "Who We Are",
     "mainTitle": "About Us",
     "primaryDescription": "Energy shocks fuel conflict. Conflict spreads disease. Health crises destabilize economies.",
@@ -226,5 +206,61 @@
     "speed": 75,
     "enabled": true,
     "lastUpdated": "2025-01-11T16:30:00.000Z"
+  },
+  "menu": {
+    "items": [
+      { 
+        "id": "mission", 
+        "label": "Mission", 
+        "type": "hash", 
+        "href": "#mission", 
+        "image": "assets/menu/mission.jpg", 
+        "showInDesktop": true 
+      },
+      { 
+        "id": "model", 
+        "label": "Model", 
+        "type": "hash", 
+        "href": "#model", 
+        "image": "assets/menu/model.jpg", 
+        "showInDesktop": true 
+      },
+      { 
+        "id": "initiatives", 
+        "label": "Initiatives", 
+        "type": "hash", 
+        "href": "#initiatives", 
+        "image": "assets/menu/initiatives.jpg", 
+        "showInDesktop": true 
+      },
+      { 
+        "id": "leadership", 
+        "label": "Leadership", 
+        "type": "hash", 
+        "href": "#leadership", 
+        "image": "assets/menu/leadership.jpg", 
+        "showInDesktop": true 
+      },
+      { 
+        "id": "contact", 
+        "label": "Contact", 
+        "type": "hash", 
+        "href": "#contact", 
+        "image": "assets/menu/contact.jpg", 
+        "showInDesktop": true 
+      }
+    ]
+  },
+  "navigation": {
+    "whoWeAre": [
+      { "href": "/who-we-are/team", "title": "Team", "image": "assets/images/6.jpg" },
+      { "href": "/who-we-are/partners", "title": "Partners", "image": "assets/images/4.jpg" },
+      { "href": "/who-we-are/careers", "title": "Careers", "image": "assets/images/5.jpg" }
+    ],
+    "whatWeDo": [
+      { "href": "/what-we-do/analysis", "title": "Analysis", "image": "assets/images/1.jpg" },
+      { "href": "/what-we-do/advisory", "title": "Advisory", "image": "assets/images/2.jpg" },
+      { "href": "/what-we-do/research", "title": "Research", "image": "assets/images/3.jpg" }
+    ]
   }
 }

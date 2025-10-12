@@ -29,21 +29,35 @@ const itemVariants = {
 
 export const HeroSection = () => {
   const textRef = useRef(null);
-  const { content } = useContent();
-  const hero = content.hero;
+  const { content, isLoading } = useContent();
 
   useEffect(() => {
-    const words = textRef.current.querySelectorAll('span');
+    if (textRef.current && content && content.hero) {
+      const words = textRef.current.querySelectorAll('span');
 
-    gsap.set(words, { y: 30, opacity: 0 });
-    gsap.to(words, {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      stagger: 0.15,
-      ease: "power3.out",
-    });
-  }, []);
+      gsap.set(words, { y: 30, opacity: 0 });
+      gsap.to(words, {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.15,
+        ease: "power3.out",
+      });
+    }
+  }, [content]);
+  
+  // Safety check - ensure we have content and hero data
+  if (isLoading || !content || !content.hero) {
+    return (
+      <section className="grid place-items-center relative w-full min-h-[80vh] sm:min-h-[90vh] mt-[140px] overflow-hidden mx-auto max-w-[100vw] sm:max-w-[95vw] bg-black">
+        <div className="relative z-10 px-6 sm:px-8 max-w-7xl text-center w-full">
+          <div className="brutalist-label text-white">Loading...</div>
+        </div>
+      </section>
+    );
+  }
+  
+  const hero = content.hero;
 
   return (
     <section className="grid place-items-center relative  w-full min-h-[80vh] sm:min-h-[90vh] mt-[140px] overflow-hidden mx-auto max-w-[100vw] sm:max-w-[95vw]">

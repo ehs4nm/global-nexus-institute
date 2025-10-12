@@ -2,7 +2,19 @@ import React from 'react';
 import { useContent } from '../../hooks/useContent';
 
 export const MissionSection = () => {
-  const { content } = useContent();
+  const { content, isLoading } = useContent();
+  
+  // Safety check - ensure we have content and mission data
+  if (isLoading || !content || !content.mission) {
+    return (
+      <section id="mission" className="brutalist-section text-black dark:text-white flex items-center min-h-screen">
+        <div className="brutalist-container relative w-full py-8 flex items-center justify-center">
+          <div className="brutalist-label">Loading mission data...</div>
+        </div>
+      </section>
+    );
+  }
+  
   const mission = content.mission;
   return (
     <section id="mission" className="brutalist-section text-black dark:text-white flex items-center min-h-screen"> {/* Added flex and centering */}

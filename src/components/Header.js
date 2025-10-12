@@ -5,22 +5,14 @@ import { useMenu } from '../hooks/useMenu';
 import { TopBar } from './TopBar';
 import { MegaMenu } from './menus/MegaMenu';
 
-const WHAT_WE_DO = [
-  { href: '/what-we-do/analysis', title: 'Analysis', image: 'assets/images/1.jpg' },
-  { href: '/what-we-do/advisory', title: 'Advisory', image: 'assets/images/2.jpg' },
-  { href: '/what-we-do/research', title: 'Research', image: 'assets/images/3.jpg' },
-];
-
-const WHO_WE_ARE = [
-  { href: '/who-we-are/team', title: 'Team', image: 'assets/images/6.jpg' },
-  { href: '/who-we-are/partners', title: 'Partners', image: 'assets/images/4.jpg' },
-  { href: '/who-we-are/careers', title: 'Careers', image: 'assets/images/5.jpg' },
-];
-
 export const Header = () => {
   const { isDark, toggleTheme } = useTheme();
   const { isRefined, toggleDesignTheme } = useDesignTheme();
-  const { setMenuOpen, menuItems } = useMenu();
+  const { setMenuOpen, menuItems, navigation } = useMenu();
+  
+  // Get navigation items from content
+  const whatWeDo = navigation?.whatWeDo || [];
+  const whoWeAre = navigation?.whoWeAre || [];
 
   // Track which mega menu is open to ensure mutual exclusivity
   const [activeMega, setActiveMega] = useState(null); // values: 'who-we-are' | 'what-we-do' | null
@@ -74,7 +66,7 @@ export const Header = () => {
               <MegaMenu
                 id={whoWeAreId}
                 label="Who We Are"
-                items={WHO_WE_ARE}
+                items={whoWeAre}
                 isOpen={activeMega === whoWeAreId}
                 onOpen={() => setActiveMega(whoWeAreId)}
                 onClose={() => setActiveMega(null)}
@@ -82,7 +74,7 @@ export const Header = () => {
               <MegaMenu
                 id={whatWeDoId}
                 label="What We Do"
-                items={WHAT_WE_DO}
+                items={whatWeDo}
                 isOpen={activeMega === whatWeDoId}
                 onOpen={() => setActiveMega(whatWeDoId)}
                 onClose={() => setActiveMega(null)}

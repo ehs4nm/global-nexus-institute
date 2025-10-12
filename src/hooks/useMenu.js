@@ -1,15 +1,20 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { useContent } from './useContent';
 
 const MenuContext = createContext(null);
 
 export const MenuProvider = ({ children }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  // menuBg will now hold a background image URL for the fullscreen menu
   const [menuBg, setMenuBg] = useState("");
   const [person, setPerson] = useState(null);
   const [isDrawerOpen, setDrawerOpen] = useState(false);
-  // admin-managed menu items
-  const [menuItems, setMenuItems] = useState([]);
+
+  // Get content from unified content hook
+  const { content, isLoading, error } = useContent();
+
+  // Derive menu data from unified content structure
+  const menuItems = content?.menu?.items || [];
+  const navigation = content?.navigation || { whoWeAre: [], whatWeDo: [] };
 
   // Lock body scroll when menu is open
   useEffect(() => {
@@ -34,47 +39,26 @@ export const MenuProvider = ({ children }) => {
     setDrawerOpen(true);
   };
 
-  // Load menu items from localStorage
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('gni_menu_items');
-      if (saved) {
-        try {
-          const parsedItems = JSON.parse(saved);
-          if (Array.isArray(parsedItems)) {
-            setMenuItems(parsedItems);
-            return;
-          }
-        } catch (e) {
-          console.warn('Failed to parse saved menu items:', e);
-        }
-      }
-      // Fallback to default menu items if none saved
-      const defaultItems = [
-        { id: 'mission', label: 'Mission', type: 'hash', href: '#mission', image: 'assets/menu/mission.jpg', showInDesktop: true },
-        { id: 'model', label: 'Model', type: 'hash', href: '#model', image: 'assets/menu/model.jpg', showInDesktop: true },
-        { id: 'initiatives', label: 'Initiatives', type: 'hash', href: '#initiatives', image: 'assets/menu/initiatives.jpg', showInDesktop: true },
-        { id: 'leadership', label: 'Leadership', type: 'hash', href: '#leadership', image: 'assets/menu/leadership.jpg', showInDesktop: true },
-        { id: 'contact', label: 'Contact', type: 'hash', href: '#contact', image: 'assets/menu/contact.jpg', showInDesktop: true },
-        { id: 'who', label: 'Who We Are', type: 'route', href: '/who-we-are', image: 'assets/menu/who.jpg', showInDesktop: true },
-        { id: 'what', label: 'What We Do', type: 'route', href: '/what-we-do', image: 'assets/menu/what.jpg', showInDesktop: true },
-      ];
-      setMenuItems(defaultItems);
-      localStorage.setItem('gni_menu_items', JSON.stringify(defaultItems));
-    }
-  }, []);
-
   const value = {
+    // Menu state
     isMenuOpen,
     setMenuOpen,
     menuBg,
     setMenuBg,
+    
+    // Menu and navigation data from unified content.json
     menuItems,
-    setMenuItems,
+    navigation,
+    
+    // Person drawer
     person,
     isDrawerOpen,
     setDrawerOpen,
     openPerson,
+    
+    // Loading states
+    isLoading,
+    error,
   };
 
   return <MenuContext.Provider value={value}>{children}</MenuContext.Provider>;

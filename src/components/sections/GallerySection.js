@@ -3,9 +3,21 @@ import { Link } from 'gatsby';
 import { useContent } from '../../hooks/useContent';
 
 export const GallerySection = () => {
-  const { content } = useContent();
-  const gallery = content.gallery;
+  const { content, isLoading } = useContent();
   const [hoveredId, setHoveredId] = useState(null);
+  
+  // Safety check - ensure we have content and gallery data
+  if (isLoading || !content || !content.gallery) {
+    return (
+      <section id="gallery" className="min-h-screen py-20 sm:py-24 md:py-32 bg-white dark:bg-black text-black dark:text-white relative">
+        <div className="brutalist-container relative flex items-center justify-center min-h-[50vh]">
+          <div className="brutalist-label">Loading gallery data...</div>
+        </div>
+      </section>
+    );
+  }
+  
+  const gallery = content.gallery;
 
   return (
     <section

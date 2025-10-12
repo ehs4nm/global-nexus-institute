@@ -2,7 +2,19 @@ import React from 'react';
 import { useContent } from '../../hooks/useContent';
 
 export const MissionSection = () => {
-  const { content } = useContent();
+  const { content, isLoading } = useContent();
+  
+  // Safety check - ensure we have content and mission data
+  if (isLoading || !content || !content.mission) {
+    return (
+      <section id="mission" className="refined-section">
+        <div className="refined-container relative flex items-center justify-center min-h-[50vh]">
+          <div className="refined-label">Loading mission data...</div>
+        </div>
+      </section>
+    );
+  }
+  
   const mission = content.mission;
   
   return (

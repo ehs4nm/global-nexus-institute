@@ -2,7 +2,19 @@ import React from 'react';
 import { useContent } from '../../hooks/useContent';
 
 export const InitiativesSection = () => {
-  const { content } = useContent();
+  const { content, isLoading } = useContent();
+  
+  // Safety check - ensure we have content and initiatives data
+  if (isLoading || !content || !content.initiatives) {
+    return (
+      <section id="initiatives" className="brutalist-section text-black dark:text-white">
+        <div className="brutalist-container relative flex items-center justify-center min-h-[50vh]">
+          <div className="brutalist-label">Loading initiatives data...</div>
+        </div>
+      </section>
+    );
+  }
+  
   const initiatives = content.initiatives;
   return (
     <section id="initiatives" className="brutalist-section text-black dark:text-white">
