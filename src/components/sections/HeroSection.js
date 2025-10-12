@@ -93,10 +93,10 @@ export const HeroSection = () => {
           initial="hidden"
           animate="visible"
         >
-          <h1 className="brutalist-heading xl:text-8xl text-white dark:text-black mb-6">
+          <h1 className="brutalist-heading xl:text-6xl text-white dark:text-black mb-6 bg-black/60 dark:bg-white/60 pt-2 pb-4">
             <span 
               ref={textRef}
-              className="block bg-black/20 dark:bg-white/20"
+              className="block"
             >
               {hero.title.split(' ').map((word, i) => (
                 <span key={i} className="inline-block mr-2 sm:mr-3">{word}</span>

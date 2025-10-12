@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   darkMode: 'class',
   content: [
@@ -21,13 +24,15 @@ module.exports = {
         }
       },
       fontFamily: {
-        // Semantic font naming for better maintainability
-        'title': ['"Playfair Display SC"', 'serif'], // For main titles
-        'title-bold': ['"Anton SC"', 'sans-serif'], // For bold/impact titles
-        'body': ['"Nixie One"', 'sans-serif'], // For paragraphs and body text
+        // Title fonts
+        'title': ['"Notable"', 'sans-serif'], // Primary title font
+        'title-alt': ['"Bellefair"', 'serif'], // Alternative title font
+        // Paragraph fonts
+        'body': ['"Alumni Sans Pinstripe"', 'sans-serif'], // Primary paragraph font
+        'body-alt': ['"Mulish"', 'sans-serif'], // Alternative paragraph font
         // Fallbacks for compatibility
-        'sans': ['"Nixie One"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        'serif': ['"Playfair Display SC"', 'Georgia', 'serif']
+        'sans': ['"Alumni Sans Pinstripe"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'serif': ['"Bellefair"', 'Georgia', 'serif']
       },
       boxShadow: {
         glow: '0 0 0 1px rgba(59,130,246,0.4), 0 0 24px rgba(59,130,246,0.35)'

@@ -51,7 +51,6 @@ export const LeadershipSection = () => {
         <div className="mb-20 sm:mb-28 md:mb-32 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-16">
           <div className="space-y-6 lg:max-w-2xl">
             <div className="inline-block">
-              <div className="brutalist-label mb-4">SECTION 03</div>
               <h2 className="brutalist-heading">
                 Leadership
               </h2>
@@ -77,7 +76,7 @@ export const LeadershipSection = () => {
                 className="group w-full text-left focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white focus:ring-offset-4 focus:ring-offset-white dark:focus:ring-offset-black"
               >
                 {/* Alternating asymmetric cards */}
-                <div className={`brutalist-card overflow-hidden h-[30vh] ${
+                <div className={`brutalist-card overflow-hidden h-[40vh] ${
                   isEven 
                     ? 'flex flex-col md:flex-row' 
                     : 'flex flex-col md:flex-row-reverse'
@@ -93,15 +92,6 @@ export const LeadershipSection = () => {
                     
                     {/* Bold diagonal overlay on hover */}
                     <div className="absolute inset-0 bg-black/0 dark:bg-white/0 group-hover:bg-black/10 dark:group-hover:bg-white/10 transition-all duration-500" />
-                    
-                    {/* Large number badge - floating */}
-                    <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6">
-                      <div className="border-2 border-white dark:border-black bg-black dark:bg-white px-3 py-2 sm:px-4 sm:py-3">
-                        <span className="font-mono text-2xl sm:text-4xl lg:text-5xl font-black text-white dark:text-black leading-none">
-                          {String(idx + 1).padStart(2, '0')}
-                        </span>
-                      </div>
-                    </div>
                   </div>
 
                   {/* Content Section */}
@@ -109,6 +99,14 @@ export const LeadershipSection = () => {
                     <div className="space-y-6">
                       {/* Title with bold treatment */}
                       <div className="space-y-3">
+                        {/* Large number badge - floating */}
+                        <div className="absolute bottom-2 right-2 sm:bottom-2 sm:right-2">
+                          <div className="border-2 border-white dark:border-black bg-black dark:bg-white px-3 py-2 sm:px-4 sm:py-3">
+                            <span className="font-mono text-2xl sm:text-4xl lg:text-4xl font-black text-white dark:text-black leading-none">
+                              {String(idx + 1).padStart(2, '0')}
+                            </span>
+                          </div>
+                        </div>
                         <div className="brutalist-label">
                           {person.title}
                         </div>

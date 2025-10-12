@@ -11,9 +11,10 @@ module.exports = {
       resolve: "gatsby-plugin-google-fonts",  
       options: {
         fonts: [
-          "Playfair Display SC:400,700", // Titles
-          "Alan Sans:400", // Paragraphs
-          "Anton SC:400" // Bold titles
+          "Notable:400,700", // Title font
+          "Bellefair:400,700", // Title font alternative
+          "Alumni Sans Pinstripe:400,700", // Paragraph font
+          "Mulish:400,500,600,700" // Paragraph font alternative
         ],
         display: "swap", // Font loading optimization
         preconnect: true // Preconnect for better performance

@@ -20,7 +20,7 @@ export const ModelSection = () => {
         <div className="max-w-4xl mb-16 sm:mb-20 relative z-10">
           <div className="space-y-6">
             <h2 className="brutalist-heading">
-              From research to<br />real-world impact.
+              From research to<br />real-world impact
             </h2>
             <div className="brutalist-divider-bold"></div>
           </div>

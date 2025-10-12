@@ -21,7 +21,7 @@ export const ContactSection = () => {
             <div className="brutalist-divider-bold mx-auto"></div>
           </div>
 
-          <p className="mt-8 brutalist-subheading max-w-2xl mx-auto text-black">
+          <p className="mt-8 brutalist-subheading max-w-3xl mx-auto text-black">
             Shape the future of global foresight. Partner with GNI to build resilient, informed, and equitable systems.
           </p>
         </div>

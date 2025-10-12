@@ -7,7 +7,7 @@
     "posterSrc": "/assets/images/1.jpg"
   },
   "mission": {
-    "title": "Crises do not stand alone.",
+    "title": "Crises do not stand alone",
     "paragraphs": [
       "Energy shocks fuel conflict. Conflict spreads disease. Health crises destabilize economies. Yet global policy and research remain siloed.",
       "The Global Nexus Institute (GNI) exists to break those silos — integrating energy, geopolitics, and health into a single field of foresight and action."
@@ -33,8 +33,8 @@
     "caption": "A connected world demands connected intelligence."
   },
   "initiatives": {
-    "title": "Turning foresight into global impact.",
-    "subtitle": "Two examples that make our mission tangible.",
+    "title": "Turning foresight into global impact",
+    "subtitle": "Two examples that make our mission tangible",
     "projects": [
       {
         "icon": "/assets/images/satellite.jpg",
@@ -73,7 +73,7 @@
     }
   ],
   "gallery": {
-    "title": "Signals from the Nexus.",
+    "title": "Signals from the Nexus",
     "subtitle": "Hover to reveal the full frame. We expand the viewport — not the image — to show the whole picture.",
     "items": [
       {
