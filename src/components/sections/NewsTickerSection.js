@@ -66,7 +66,7 @@ const NewsTickerSection = () => {
   }
 
   return (
-    <section className="bg-black border-y border-neutral-800 overflow-hidden relative" style={{ height: '15vh' }}>
+    <section className="bg-black border-y border-neutral-800 overflow-hidden relative" style={{ height: '5vh' }}>
       <div 
         ref={tickerRef}
         className="h-full flex items-center relative"
@@ -90,7 +90,7 @@ const NewsTickerSection = () => {
           ref={textRef}
           className="absolute whitespace-nowrap will-change-transform"
           style={{
-            fontSize: 'clamp(1.5rem, 4vw, 3rem)',
+            fontSize: 'clamp(.5rem, 4vw, 1rem)',
             fontWeight: '700',
             letterSpacing: '0.05em',
             color: '#ffffff',
