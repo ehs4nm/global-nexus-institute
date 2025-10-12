@@ -16,53 +16,120 @@ export const useContent = () => {
 
 // Content Provider Component
 export const ContentProvider = ({ children }) => {
-  // Initialize content state with localStorage data or defaults
-  const [aboutUsContent, setAboutUsContent] = useState(() => {
-    try {
-      const savedContent = localStorage.getItem('aboutUsContent');
-      return savedContent ? JSON.parse(savedContent) : defaultAboutUsContent;
-    } catch (error) {
-      console.warn('Error loading saved content from localStorage:', error);
-      return defaultAboutUsContent;
-    }
-  });
-
-  const [newsTickerContent, setNewsTickerContent] = useState(() => {
-    try {
-      const savedContent = localStorage.getItem('newsTickerContent');
-      return savedContent ? JSON.parse(savedContent) : defaultNewsTickerContent;
-    } catch (error) {
-      console.warn('Error loading news ticker content from localStorage:', error);
-      return defaultNewsTickerContent;
-    }
-  });
+  // Initialize content state with defaults first
+  const [aboutUsContent, setAboutUsContent] = useState(defaultAboutUsContent);
+  const [newsTickerContent, setNewsTickerContent] = useState(defaultNewsTickerContent);
 
   // Loading state for async operations
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   
   // Error state
   const [error, setError] = useState(null);
 
-  // Save content to localStorage whenever it changes
-  useEffect(() => {
+  // Fetch fresh content from backend/admin data
+  const fetchContentFromBackend = async () => {
     try {
-      localStorage.setItem('aboutUsContent', JSON.stringify(aboutUsContent));
+      setIsLoading(true);
       setError(null);
+
+      // Add cache-busting timestamp
+      const timestamp = new Date().getTime();
+      const response = await fetch(`/src/data/content.json?_t=${timestamp}`, {
+        method: 'GET',
+        headers: {
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'Pragma': 'no-cache',
+          'Expires': '0'
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch content: ${response.status}`);
+      }
+
+      const backendData = await response.json();
+      
+      // Update aboutUs content if available
+      if (backendData.aboutUs) {
+        setAboutUsContent(backendData.aboutUs);
+      }
+      
+      // Update news ticker content if available, otherwise try localStorage
+      if (backendData.newsTicker) {
+        setNewsTickerContent(backendData.newsTicker);
+      } else {
+        // Fallback: check if admin panel saved data in localStorage
+        try {
+          const gniContent = localStorage.getItem('gni_content');
+          if (gniContent) {
+            const parsedContent = JSON.parse(gniContent);
+            if (parsedContent.newsTicker) {
+              setNewsTickerContent(parsedContent.newsTicker);
+            }
+          } else {
+            // Check individual localStorage keys
+            const savedNewsTickerContent = localStorage.getItem('newsTickerContent');
+            if (savedNewsTickerContent) {
+              setNewsTickerContent(JSON.parse(savedNewsTickerContent));
+            }
+          }
+        } catch (localStorageError) {
+          console.warn('Error reading from localStorage:', localStorageError);
+        }
+      }
     } catch (error) {
-      console.error('Error saving content to localStorage:', error);
-      setError('Failed to save content');
+      console.error('Error fetching content from backend:', error);
+      setError(error.message);
+      
+      // Fallback to localStorage on network error
+      try {
+        const gniContent = localStorage.getItem('gni_content');
+        if (gniContent) {
+          const parsedContent = JSON.parse(gniContent);
+          if (parsedContent.aboutUs) setAboutUsContent(parsedContent.aboutUs);
+          if (parsedContent.newsTicker) setNewsTickerContent(parsedContent.newsTicker);
+        }
+      } catch (fallbackError) {
+        console.warn('Fallback to localStorage failed:', fallbackError);
+      }
+    } finally {
+      setIsLoading(false);
     }
-  }, [aboutUsContent]);
+  };
+
+  // Fetch content on component mount
+  useEffect(() => {
+    fetchContentFromBackend();
+  }, []);
+
+  // Save content to localStorage whenever it changes (backup only)
+  useEffect(() => {
+    if (!isLoading) { // Only save after initial load
+      try {
+        localStorage.setItem('aboutUsContent', JSON.stringify(aboutUsContent));
+        // Also save in the format expected by sync script
+        const gniContent = JSON.parse(localStorage.getItem('gni_content') || '{}');
+        gniContent.aboutUs = aboutUsContent;
+        localStorage.setItem('gni_content', JSON.stringify(gniContent));
+      } catch (error) {
+        console.error('Error saving content to localStorage:', error);
+      }
+    }
+  }, [aboutUsContent, isLoading]);
 
   useEffect(() => {
-    try {
-      localStorage.setItem('newsTickerContent', JSON.stringify(newsTickerContent));
-      setError(null);
-    } catch (error) {
-      console.error('Error saving news ticker content to localStorage:', error);
-      setError('Failed to save news ticker content');
+    if (!isLoading) { // Only save after initial load
+      try {
+        localStorage.setItem('newsTickerContent', JSON.stringify(newsTickerContent));
+        // Also save in the format expected by sync script
+        const gniContent = JSON.parse(localStorage.getItem('gni_content') || '{}');
+        gniContent.newsTicker = newsTickerContent;
+        localStorage.setItem('gni_content', JSON.stringify(gniContent));
+      } catch (error) {
+        console.error('Error saving news ticker content to localStorage:', error);
+      }
     }
-  }, [newsTickerContent]);
+  }, [newsTickerContent, isLoading]);
 
   // Update About Us content
   const updateAboutUsContent = async (newContent) => {
@@ -147,6 +214,11 @@ export const ContentProvider = ({ children }) => {
     }
   };
 
+    // Refresh content from backend
+  const refreshContent = async () => {
+    await fetchContentFromBackend();
+  };
+
   // Export/Import functions for content management
   const exportContent = () => {
     const contentToExport = {
@@ -204,6 +276,9 @@ export const ContentProvider = ({ children }) => {
     // Import/Export functions
     exportContent,
     importContent,
+    
+    // Refresh function
+    refreshContent,
     
     // Clear error function
     clearError: () => setError(null)

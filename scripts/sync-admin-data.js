@@ -34,11 +34,47 @@ async function syncAdminData() {
     // Extract localStorage data
     console.log('📦 Extracting admin data from localStorage...');
     const adminData = await page.evaluate(() => {
-      const data = localStorage.getItem('gni_content');
-      return data ? JSON.parse(data) : null;
+      const gniData = localStorage.getItem('gni_content');
+      const aboutUsData = localStorage.getItem('aboutUsContent');
+      const newsTickerData = localStorage.getItem('newsTickerContent');
+      
+      let combinedData = {};
+      
+      // Try to get data from gni_content first
+      if (gniData) {
+        combinedData = JSON.parse(gniData);
+      }
+      
+      // Merge with individual localStorage items if they exist
+      if (aboutUsData) {
+        combinedData.aboutUs = JSON.parse(aboutUsData);
+      }
+      
+      if (newsTickerData) {
+        combinedData.newsTicker = JSON.parse(newsTickerData);
+      }
+      
+      return Object.keys(combinedData).length > 0 ? combinedData : null;
     });
     
     if (adminData) {
+      // Read existing content.json to preserve other data
+      let existingContent = {};
+      if (fs.existsSync(contentPath)) {
+        try {
+          const existingContentStr = fs.readFileSync(contentPath, 'utf8');
+          existingContent = JSON.parse(existingContentStr);
+        } catch (error) {
+          console.warn('⚠️  Could not read existing content.json, creating new one');
+        }
+      }
+      
+      // Merge admin data with existing content
+      const updatedContent = {
+        ...existingContent,
+        ...adminData
+      };
+      
       // Backup original file
       const backupPath = contentPath + '.backup.' + Date.now();
       if (fs.existsSync(contentPath)) {
@@ -46,10 +82,17 @@ async function syncAdminData() {
         console.log(`📋 Backup created: ${backupPath}`);
       }
       
-      // Write new content
-      fs.writeFileSync(contentPath, JSON.stringify(adminData, null, 2));
+      // Write updated content
+      fs.writeFileSync(contentPath, JSON.stringify(updatedContent, null, 2));
       console.log('✅ Content.json updated with admin data!');
       console.log(`📁 Updated: ${contentPath}`);
+      
+      if (adminData.aboutUs) {
+        console.log('   ✓ About Us content updated');
+      }
+      if (adminData.newsTicker) {
+        console.log('   ✓ News Ticker content updated');
+      }
     } else {
       console.log('⚠️  No admin data found in localStorage');
       console.log('   Make sure you have made changes in the admin panel first');

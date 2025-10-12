@@ -9,6 +9,7 @@
     "clean": "gatsby clean",
     "sync-admin": "node scripts/manual-sync.js",
     "build-with-sync": "node scripts/manual-sync.js && gatsby build",
+    "sync-admin-data": "node scripts/sync-admin-data.js",
     "pre-build": "echo '⚠️  Remember to sync your admin data before building! Run: npm run sync-admin'"
   },
   "dependencies": {
