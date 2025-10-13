@@ -86,23 +86,11 @@ export const ContactSection = () => {
           </p>
         </div>
 
-        {/* Status Message */}
-        {status.message && (
-          <div 
-            className={`mb-6 p-4 brutalist-border-box text-center font-mono text-sm ${
-              status.type === 'success' 
-                ? 'bg-white dark:bg-black text-black dark:text-white' 
-                : 'bg-white dark:bg-black text-red-600 dark:text-red-400'
-            }`}
-          >
-            {status.message}
-          </div>
-        )}
 
         {/* Contact Form */}
         <form 
           className="space-y-6" 
-          onSubmit={handleSubmit}
+          // onSubmit={handleSubmit}
           netlify
         >
           {/* Input Fields */}
@@ -112,9 +100,9 @@ export const ContactSection = () => {
                 type="text"
                 name="name"
                 placeholder="Name"
-                value={formData.name}
-                onChange={handleChange}
-                disabled={isSubmitting}
+                // value={formData.name}
+                // onChange={handleChange}
+                // disabled={isSubmitting}
                 required
                 className="w-full px-6 py-4 brutalist-border-box focus:outline-none focus:border-black dark:focus:border-white transition-colors placeholder-gray-400 dark:placeholder-gray-500 text-black dark:text-white text-base font-mono disabled:opacity-50 disabled:cursor-not-allowed"
               />
@@ -125,9 +113,9 @@ export const ContactSection = () => {
                 type="email"
                 name="email"
                 placeholder="Email"
-                value={formData.email}
-                onChange={handleChange}
-                disabled={isSubmitting}
+                // value={formData.email}
+                // onChange={handleChange}
+                // disabled={isSubmitting}
                 required
                 className="w-full px-6 py-4 brutalist-border-box focus:outline-none focus:border-black dark:focus:border-white transition-colors placeholder-gray-400 dark:placeholder-gray-500 text-black dark:text-white text-base font-mono disabled:opacity-50 disabled:cursor-not-allowed"
               />
@@ -140,10 +128,10 @@ export const ContactSection = () => {
               name="message"
               placeholder="Message (optional)"
               rows="4"
-              value={formData.message}
-              onChange={handleChange}
-              disabled={isSubmitting}
-              maxLength={1000}
+              // value={formData.message}
+              // onChange={handleChange}
+              // disabled={isSubmitting}
+              // maxLength={1000}
               className="w-full px-6 py-4 brutalist-border-box focus:outline-none focus:border-black dark:focus:border-white transition-colors placeholder-gray-400 dark:placeholder-gray-500 text-black dark:text-white text-base font-mono resize-none disabled:opacity-50 disabled:cursor-not-allowed"
             ></textarea>
           </div>
@@ -151,11 +139,11 @@ export const ContactSection = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            disabled={isSubmitting}
+            // disabled={isSubmitting}
             className="group relative w-full sm:w-auto px-12 py-4 brutalist-card font-bold text-base sm:text-lg transition-all duration-300 hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <span className="relative z-10 brutalist-label tracking-wider text-black dark:text-white">
-              {isSubmitting ? 'SENDING...' : 'CONTACT OUR TEAM →'}
+              {/* {isSubmitting ? 'SENDING...' : 'CONTACT OUR TEAM →'} */}
             </span>
             
             {/* Hover effect */}
