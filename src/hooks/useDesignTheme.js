@@ -6,9 +6,11 @@ import { useState, useEffect } from 'react';
  */
 export const useDesignTheme = () => {
   const [isRefined, setIsRefined] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
 
   // Load theme preference from localStorage on mount
   useEffect(() => {
+    setHasMounted(true);
     if (typeof window !== 'undefined') {
       const savedTheme = localStorage.getItem('gni_design_theme');
       if (savedTheme === 'refined') {
@@ -20,6 +22,7 @@ export const useDesignTheme = () => {
 
   // Toggle between brutalist and refined
   const toggleDesignTheme = () => {
+    if (!hasMounted) return;
     setIsRefined((prev) => {
       const newValue = !prev;
       
@@ -39,6 +42,7 @@ export const useDesignTheme = () => {
 
   // Set specific theme
   const setDesignTheme = (theme) => {
+    if (!hasMounted) return;
     const shouldBeRefined = theme === 'refined';
     setIsRefined(shouldBeRefined);
     
@@ -58,5 +62,6 @@ export const useDesignTheme = () => {
     toggleDesignTheme,
     setDesignTheme,
     currentTheme: isRefined ? 'refined' : 'brutalist',
+    hasMounted,
   };
 };

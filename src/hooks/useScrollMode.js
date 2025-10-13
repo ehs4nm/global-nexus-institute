@@ -5,9 +5,11 @@ const ScrollModeContext = createContext();
 export const ScrollModeProvider = ({ children }) => {
   const [isFullscreenMode, setIsFullscreenMode] = useState(false);
   const [currentSection, setCurrentSection] = useState(0);
+  const [hasMounted, setHasMounted] = useState(false);
 
   // Load scroll mode setting from localStorage
   useEffect(() => {
+    setHasMounted(true);
     if (typeof window !== 'undefined') {
       const savedMode = localStorage.getItem('gni_scroll_mode');
       if (savedMode !== null) {

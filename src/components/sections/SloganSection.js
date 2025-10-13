@@ -12,19 +12,19 @@ export const SloganSection = () => {
           {/* Section Header */}
           <div className="inline-block mb-6">
             <div className="brutalist-divider-bold mb-4" />
-            <span className="brutalist-label">How We Work</span>
+            <span className="brutalist-label text-[1.5rem]">How We Work</span>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="lg:col-span-5">
-              <h2 className="brutalist-heading">
+              <h2 className="brutalist-heading text-[3rem] md:text-[3rem] lg:text-[4rem]">
                 HOW WE WORK
               </h2>
               
               {/* Decorative border box */}
-              <div className="mt-8 brutalist-border-box p-6">
-                <div className="brutalist-divider-bold mb-4" />
-                <p className="brutalist-label">
+              <div className="md:mt-8 brutalist-border-box p-6">
+                <div className="brutalist-divider-bold  md:mb-4" />
+                <p className="brutalist-label text-xs md:text-base">
                   Strategy • Policy • Delivery
                 </p>
               </div>
@@ -37,7 +37,7 @@ export const SloganSection = () => {
               
               <div className="space-y-6">
                 <p className="brutalist-body">
-                  We help governments and leaders get things done. We do it by advising on strategy, policy and delivery, unlocking the power of technology across all three.
+                  We help governments and leaders get things done. We do it by advising on strategy, policy and delivery, Harnessing data and systems analysis to inform smarter decisions.
                 </p>
                 
                 <p className="brutalist-body">

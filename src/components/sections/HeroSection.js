@@ -3,56 +3,51 @@ import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { useContent } from '../../hooks/useContent';
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
+const letterVariants = {
+  hidden: { y: 100, opacity: 0 },
+  visible: (i) => ({
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.6,
-      ease: [0.6, -0.05, 0.01, 0.99],
+      delay: i * 0.05,
+      duration: 0.8,
+      ease: [0.6, 0.01, 0.05, 0.95],
+    },
+  }),
+};
+
+const wordVariants = {
+  hidden: { y: 100, opacity: 0 },
+  visible: (i) => ({
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.8,
+      ease: [0.6, 0.01, 0.05, 0.95],
+    },
+  }),
+};
+
+const lineVariants = {
+  hidden: { scaleX: 0 },
+  visible: {
+    scaleX: 1,
+    transition: {
+      delay: 0.8,
+      duration: 1.2,
+      ease: [0.6, 0.01, 0.05, 0.95],
     },
   },
 };
 
-
 export const HeroSection = () => {
-  const textRef = useRef(null);
   const { content, isLoading } = useContent();
 
-  useEffect(() => {
-    if (textRef.current && content && content.hero) {
-      const words = textRef.current.querySelectorAll('span');
-
-      gsap.set(words, { y: 30, opacity: 0 });
-      gsap.to(words, {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        stagger: 0.15,
-        ease: "power3.out",
-      });
-    }
-  }, [content]);
-  
-  // Safety check - ensure we have content and hero data
   if (isLoading || !content || !content.hero) {
     return (
-      <section className="grid place-items-center relative w-full min-h-[80vh] sm:min-h-[90vh] md:mt-[140px] sm:mt-[100px] overflow-hidden mx-auto max-w-[100vw] sm:max-w-[95vw]">
-        <div className="relative z-10 px-6 sm:px-8 max-w-7xl text-center w-full">
-          <div className="brutalist-label text-white">Loading...</div>
-        </div>
+      <section className="relative w-full h-screen flex items-center justify-center bg-black dark:bg-white overflow-hidden">
+        <div className="brutalist-label text-white dark:text-black">Loading...</div>
       </section>
     );
   }
@@ -60,67 +55,118 @@ export const HeroSection = () => {
   const hero = content.hero;
 
   return (
-    <section className="brutalist-section grid place-items-center relative  w-full ">
-      
-      <video
-        className="min-h-[80vh] sm:min-h-[80vh] mt-[120px] overflow-hidden mx-auto max-w-[100vw] sm:max-w-[95vw] absolute inset-0 w-full h-[80vh] object-cover object-center gpu-accelerate"
-        autoPlay muted loop playsInline poster={hero.posterSrc}
-        preload="metadata"
-      >
-        <source src={hero.videoSrc} type="video/mp4" />
-      </video>
-      <div className="absolute inset-0 z-1"></div>
-
-      {/* Strong overlay for brutalist contrast */}
-
-      <div className="relative z-10 px-6 sm:px-8 max-w-7xl text-center w-full">
-        {/* Top label */}
-        <motion.div
-          className="inline-block mb-8"
-          variants={itemVariants}
-          initial="hidden"
-          animate="visible"
+    <section className="relative w-full h-screen overflow-hidden bg-black dark:bg-white">
+      {/* Background Video with Strong Overlay */}
+      <div className="absolute inset-0">
+        <video
+          className="w-full h-full object-cover mt-[110px]"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={hero.posterSrc}
+          preload="metadata"
         >
-          <div className="brutalist-card-inverted px-4 py-2 inline-block">
-            <span className="brutalist-label font-bold text-white dark:text-black">
-              {hero.tagline}
-            </span>
-          </div>
-        </motion.div>
+          <source src={hero.videoSrc} type="video/mp4" />
+        </video>
+        {/* Heavy dark overlay for contrast */}
+        <div className="absolute inset-0 bg-black/80 dark:bg-white/80" />
+      </div>
+
+      {/* Main Content - Centered */}
+      <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
         
+        {/* Massive Tagline */}
+        <div className="w-full max-w-[95vw] lg:max-w-7xl">
+          <motion.h1 
+            className="font-title-alt font-bold leading-[1.2] text-white dark:text-black text-[3rem] md:text-[6rem] lg:text-[7rem] break-words"
+            initial="hidden"
+            animate="visible"
+          >
+            {hero.tagline.split(' ').map((word, wordIndex) => (
+              <motion.span
+                key={wordIndex}
+                custom={wordIndex}
+                variants={wordVariants}
+                className="inline-block mr-2 sm:mr-4"
+              >
+                {word.split('').map((char, charIndex) => (
+                  <motion.span
+                    key={charIndex}
+                    custom={wordIndex * 10 + charIndex}
+                    variants={letterVariants}
+                    className="inline-block"
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </motion.span>
+            ))}
+          </motion.h1>
+
+          {/* Thick Divider Line */}
+          <motion.div
+            className="w-full h-1 sm:h-2 bg-white dark:bg-black mt-8 sm:mt-12 origin-left"
+            variants={lineVariants}
+            initial="hidden"
+            animate="visible"
+          />
+
+          {/* Subtitle/Title in Border Box */}
+          <motion.div
+            className="mt-8 sm:mt-12 inline-block"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.5, duration: 0.8 }}
+          >
+            <div className="border-4 border-white dark:border-black px-6 py-4 sm:px-8 sm:py-6">
+              <p className="font-title-alt text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white dark:text-black leading-tight">
+                {hero.subtitle}
+              </p>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Bottom Label */}
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
+          className="hidden md:block absolute bottom-8 sm:bottom-12 left-0 right-0 flex items-center justify-center gap-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2, duration: 1 }}
         >
-          <h1 className="brutalist-heading xl:text-6xl text-white dark:text-black mb-6 bg-black/60 dark:bg-white/60 pt-2 pb-4 tracking-wide">
-            <span 
-              ref={textRef}
-              className="block"
-            >
-              {hero.title.split(' ').map((word, i) => (
-                <span key={i} className="inline-block mr-2 sm:mr-3">{word}</span>
-              ))}
-            </span>
-          </h1>
-          
-          {/* Subtitle with border emphasis */}
-          <div className="brutalist-border-box inline-block bg-black dark:bg-white px-6 py-3 mt-4">
-            <p className="brutalist-card-title lg:text-4xl text-white dark:text-black">
-              {hero.subtitle}
-            </p>
-          </div>
-          
-          {/* Decorative elements */}
-          <div className="flex items-center justify-center gap-4 mt-12">
-            <div className="brutalist-divider-bold" />
-            <span className="brutalist-label text-white dark:text-black">
-              Global Nexus Institute
-            </span>
-            <div className="brutalist-divider-bold" />
-          </div>
+          <div className="w-12 sm:w-20 h-0.5 bg-white dark:bg-black" />
+          <span className="font-body-alt uppercase tracking-[0.3em] text-xs sm:text-sm font-semibold text-white/60 dark:text-black/60">
+            Global Nexus Institute
+          </span>
+          <div className="w-12 sm:w-20 h-0.5 bg-white dark:bg-black" />
         </motion.div>
       </div>
+
+      {/* Decorative Corner Brackets */}
+      <motion.div
+        className="absolute top-6 left-6 sm:top-12 sm:left-12 w-12 h-12 sm:w-16 sm:h-16 border-t-4 border-l-4 border-white dark:border-black"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 0.6, scale: 1 }}
+        transition={{ delay: 2.2, duration: 0.6 }}
+      />
+      <motion.div
+        className="absolute top-6 right-6 sm:top-12 sm:right-12 w-12 h-12 sm:w-16 sm:h-16 border-t-4 border-r-4 border-white dark:border-black"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 0.6, scale: 1 }}
+        transition={{ delay: 2.2, duration: 0.6 }}
+      />
+      <motion.div
+        className="absolute bottom-6 left-6 sm:bottom-12 sm:left-12 w-12 h-12 sm:w-16 sm:h-16 border-b-4 border-l-4 border-white dark:border-black"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 0.6, scale: 1 }}
+        transition={{ delay: 2.2, duration: 0.6 }}
+      />
+      <motion.div
+        className="absolute bottom-6 right-6 sm:bottom-12 sm:right-12 w-12 h-12 sm:w-16 sm:h-16 border-b-4 border-r-4 border-white dark:border-black"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 0.6, scale: 1 }}
+        transition={{ delay: 2.2, duration: 0.6 }}
+      />
     </section>
   );
 };
