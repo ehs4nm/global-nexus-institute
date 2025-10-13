@@ -16,6 +16,8 @@
   "dependencies": {
     "@babel/parser": "^7.28.4",
     "@babel/traverse": "^7.28.4",
+    "@neondatabase/serverless": "^1.0.2",
+    "@netlify/neon": "^0.1.0",
     "d3": "^7.9.0",
     "framer-motion": "^12.23.22",
     "fs-extra": "^11.3.2",

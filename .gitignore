@@ -4,3 +4,12 @@ public
 .cache
 *.mp4
 # static/assets
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+
+# Netlify
+.netlify
