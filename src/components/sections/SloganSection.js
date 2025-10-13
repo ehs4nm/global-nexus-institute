@@ -2,7 +2,7 @@ import React from 'react';
 
 export const SloganSection = () => {
   return (
-    <section id="slogan" className="brutalist-section text-white dark:text-black bg-black dark:bg-white flex md:h-[60vh]">
+    <section id="slogan" className="brutalist-section-inverted text-black dark:text-white flex md:h-[60vh]">
       {/* Dot pattern background */}
       <div className="brutalist-bg-dots absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" />
       
@@ -57,7 +57,7 @@ export const SloganSection = () => {
           </div>
           
           {/* Bottom Divider */}
-          <div className="relative pt-8 mt-16 brutalist-border-box border-t-2 border-b-0 border-x-0 border-white dark:border-black">
+          <div className="relative pt-8 mt-16 brutalist-border-box-inverted border-t-2 border-b-0 border-x-0 border-white dark:border-black">
             <div className="text-center">
               <span className="inline-block bg-black dark:bg-white px-6 brutalist-label -mt-3">
                 Focused on Impact, Not Profits

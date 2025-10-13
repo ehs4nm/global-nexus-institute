@@ -10,6 +10,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        'theme-bg': 'var(--color-bg)',
+        'theme-text': 'var(--color-text)',
+        'custom-mode': 'var(--color-text)',
         accent: {
           50: '#ecfeff',
           100: '#cffafe',

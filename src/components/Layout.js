@@ -28,7 +28,7 @@ const LayoutContent = ({ children }) => {
         
         <FullscreenScroll>
           {sections.map((section, index) => (
-            <div key={index} className="relative w-full overflow-y-auto dark:bg-black" style={{ minHeight: '100vh' }}>
+            <div key={index} className="relative w-full overflow-y-auto" style={{ minHeight: '100vh' }}>
               {section}
             </div>
           ))}
@@ -50,7 +50,7 @@ const LayoutContent = ({ children }) => {
       <Header />
       <FullscreenMenu />
       <PersonDrawer />
-      <main id="top" className="relative w-full overflow-x-hidden dark:bg-black">
+      <main id="top" className="relative w-full overflow-x-hidden">
         {children}
       </main>
       <Footer />

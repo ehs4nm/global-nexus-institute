@@ -4,7 +4,7 @@ export const Footer = () => {
   const year = new Date().getFullYear();
   
   return (
-    <footer className="border-t-2 border-black dark:border-white bg-black dark:bg-white text-white dark:text-black py-16 sm:py-20">
+    <footer className="bg-white dark:bg-black text-black dark:text-white py-16 sm:py-20">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03] pointer-events-none">
         <div className="absolute inset-0" style={{
@@ -19,23 +19,23 @@ export const Footer = () => {
         <div className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-16">
           
           {/* Brand Section */}
-          <div className="space-y-6 max-w-md">
+          <div className="max-w-md">
             <div className="flex items-center gap-4">
               <div className="h-12 w-12 border-2 border-white dark:border-black overflow-hidden flex-shrink-0">
                 <img 
                   src="/assets/favicon_io/android-chrome-512x512.png" 
                   alt="Global Nexus Institute" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-xl"
                 />
               </div>
               <span className="font-display text-2xl sm:text-3xl font-bold leading-tight">
-                Global Nexus<br />Institute
+                Global Nexus Institute
               </span>
             </div>
             
             <div className="w-16 h-1 bg-white dark:bg-black"></div>
             
-            <p className="text-base sm:text-lg text-gray-300 dark:text-gray-700 font-medium">
+            <p className="text-3xl font-medium">
               Foresight for a connected world.
             </p>
           </div>
@@ -66,7 +66,7 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t-2 border-white/20 dark:border-black/20">
+        <div className="mt-16 pt-8 border-t-2">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <p className="text-xs sm:text-sm font-mono text-gray-400 dark:text-gray-600 tracking-wider">
               © {year} GLOBAL NEXUS INSTITUTE

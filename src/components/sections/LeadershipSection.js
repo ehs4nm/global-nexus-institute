@@ -40,7 +40,7 @@ export const LeadershipSection = () => {
   return (
     <section 
       id="leadership" 
-      className="min-h-screen py-20 sm:py-24 md:py-32 bg-white dark:bg-black text-black dark:text-white relative border-t-4 border-black"
+      className="brutalist-section-inverted min-h-screen py-20 sm:py-24 md:py-32 bg-white dark:bg-black text-black dark:text-white relative border-t-4 border-black"
     >
       {/* Subtle background pattern */}
       <div className="brutalist-bg-dots absolute inset-0 opacity-[0.02] dark:opacity-[0.03] pointer-events-none" />
@@ -59,13 +59,17 @@ export const LeadershipSection = () => {
             <div className="brutalist-divider-bold"></div>
           </div>
 
-          <p className="brutalist-body lg:max-w-md text-gray-600 dark:text-gray-400 lg:pb-2">
-            Led by global experts in health policy, energy strategy, and geopolitics — backed by advisors from leading institutions.
-          </p>
+          <div className="relative">
+            <div className="brutalist-card text-black dark:text-white p-6 sm:p-8">
+              <p className="brutalist-body font-bold text-3xl">
+                Led by global experts in health policy, energy strategy, and geopolitics — backed by advisors from leading institutions.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Bold Asymmetric Leadership Layout */}
-        <div className="space-y-8 sm:space-y-12">
+        <div className=" space-y-8 sm:space-y-12">
           {leadershipData.map((person, idx) => {
             const isEven = idx % 2 === 0;
             
@@ -76,7 +80,7 @@ export const LeadershipSection = () => {
                 className="group w-full text-left focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white focus:ring-offset-4 focus:ring-offset-white dark:focus:ring-offset-black"
               >
                 {/* Alternating asymmetric cards */}
-                <div className={`brutalist-card overflow-hidden h-[40vh] ${
+                <div className={`brutalist-card text-black dark:text-white p-2 sm:p-1 overflow-hidden h-[40vh] ${
                   isEven 
                     ? 'flex flex-col md:flex-row' 
                     : 'flex flex-col md:flex-row-reverse'
@@ -102,7 +106,7 @@ export const LeadershipSection = () => {
                         {/* Large number badge - floating */}
                         <div className="absolute bottom-2 right-2 sm:bottom-2 sm:right-2">
                           <div className="border-2 border-white dark:border-black bg-black dark:bg-white px-3 py-2 sm:px-4 sm:py-3">
-                            <span className="font-mono text-2xl sm:text-4xl lg:text-4xl font-black text-white dark:text-black leading-none">
+                            <span className="font-mono text-xl font-black text-white dark:text-black leading-none">
                               {String(idx + 1).padStart(2, '0')}
                             </span>
                           </div>
@@ -117,10 +121,10 @@ export const LeadershipSection = () => {
                       </div>
 
                       {/* Divider */}
-                      <div className="w-full h-px bg-black/10 dark:bg-white/10 group-hover:bg-black dark:group-hover:bg-white transition-all duration-500" />
+                      <div className="w-full h-px bg-white dark:bg-black group-hover:bg-black dark:group-hover:bg-white transition-all duration-500" />
                       
                       {/* Bio */}
-                      <p className="brutalist-body text-gray-600 dark:text-gray-400 leading-relaxed">
+                      <p className="brutalist-body text-2xl leading-relaxed">
                         {person.bio}
                       </p>
 

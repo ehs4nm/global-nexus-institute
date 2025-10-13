@@ -3,10 +3,107 @@
 @tailwind utilities;
 
 /* Import Refined Design System */
-@import './refined-system.css';
+/* @import './refined-system.css'; */
 
 /* Import Adaptive Theme System */
-@import './adaptive-theme.css';
+/* @import './adaptive-theme.css'; */
+
+/* ================================================================
+ * SIMPLE COLOR THEME SYSTEM
+ * ================================================================
+ * 
+ * To change colors, simply modify the values in :root and .dark
+ * No component changes needed!
+ * 
+ * ================================================================ */
+
+:root {
+  /* Primary colors - CHANGE THESE TO UPDATE YOUR THEME */
+  --color-primary: #1a2332;     /* Main color (used for text, borders) */
+  --color-secondary: #f5f3ef;   /* Background color */
+  
+  /* These are automatically calculated based on above */
+  --color-text: var(--color-primary);
+  --color-bg: var(--color-secondary);
+  --color-border: var(--color-primary);
+  --color-shadow: var(--color-primary);
+}
+
+.dark {
+  /* Dark mode colors - CHANGE THESE FOR DARK MODE */
+  --color-primary: #f5f3ef;     /* Main color (used for text, borders) */
+  --color-secondary: #1a2332;   /* Background color */
+  
+  /* Darker versions for dark mode - automatically darkened */
+  --color-primary-dark: color-mix(in srgb, #f5f3ef 80%, #000000);
+  --color-secondary-dark: color-mix(in srgb, #1a2332 95%, #000000);
+  
+  /* These are automatically calculated based on above */
+  --color-text: var(--color-primary);
+  --color-bg: var(--color-secondary-dark);
+  --color-border: var(--color-primary-dark);
+  --color-shadow: var(--color-primary-dark);
+}
+
+/* ================================================================
+ * EXAMPLE ALTERNATIVE THEMES (uncomment one to try)
+ * ================================================================ */
+
+/* Default Black & White Theme */
+/*
+:root {
+  --color-primary: #000000;
+  --color-secondary: #FFFFFF;
+}
+.dark {
+  --color-primary: #FFFFFF;
+  --color-secondary: #000000;
+  --color-primary-dark: color-mix(in srgb, #FFFFFF 80%, #000000);
+  --color-secondary-dark: color-mix(in srgb, #000000 95%, #000000);
+}
+*/
+
+/* Forest Green Theme */
+/*
+:root {
+  --color-primary: #1b4332;
+  --color-secondary: #f1faee;
+}
+.dark {
+  --color-primary: #d8f3dc;
+  --color-secondary: #1b4332;
+  --color-primary-dark: color-mix(in srgb, #d8f3dc 80%, #000000);
+  --color-secondary-dark: color-mix(in srgb, #1b4332 95%, #000000);
+}
+*/
+
+/* Deep Purple Theme */
+/*
+:root {
+  --color-primary: #3d2e4f;
+  --color-secondary: #fef9ff;
+}
+.dark {
+  --color-primary: #e8def8;
+  --color-secondary: #2d1f3d;
+  --color-primary-dark: color-mix(in srgb, #e8def8 80%, #000000);
+  --color-secondary-dark: color-mix(in srgb, #2d1f3d 95%, #000000);
+}
+*/
+
+/* Rust & Sand Theme */
+/*
+:root {
+  --color-primary: #6b2d0f;
+  --color-secondary: #fdf8f3;
+}
+.dark {
+  --color-primary: #f4d5c6;
+  --color-secondary: #3d1a0a;
+  --color-primary-dark: color-mix(in srgb, #f4d5c6 80%, #000000);
+  --color-secondary-dark: color-mix(in srgb, #3d1a0a 95%, #000000);
+}
+*/
 
 /* ================================================================
 * GNI BRUTALIST DESIGN SYSTEM LAYER
@@ -56,7 +153,7 @@
   }
 
   .brutalist-card-inverted:hover {
-    @apply shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] 
+    @apply shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] 
            dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)];
   }
 
@@ -310,3 +407,285 @@
     @apply mr-2;
   }
 }
+
+/* ================================================================
+ * AUTOMATIC CLASS OVERRIDES
+ * These override Tailwind classes without changing your components
+ * Must be placed AFTER @layer components to have higher specificity
+ * ================================================================ */
+
+/* Override bg-black and bg-white with highest specificity */
+.bg-black,
+:is(.bg-black) {
+  background-color: var(--color-primary) !important;
+}
+
+.bg-white,
+:is(.bg-white) {
+  background-color: var(--color-secondary) !important;
+}
+
+/* Target Tailwind's dark mode compilation */
+:is(.dark .bg-black),
+:is(.dark *).bg-black,
+.dark .bg-black {
+  background-color: var(--color-primary) !important;
+}
+
+:is(.dark .bg-white),
+:is(.dark *).bg-white,
+.dark .bg-white {
+  background-color: var(--color-secondary-dark) !important;
+}
+
+/* Override text-black and text-white */
+.text-black,
+:is(.text-black) {
+  color: var(--color-primary) !important;
+}
+
+.text-white,
+:is(.text-white) {
+  color: var(--color-secondary) !important;
+}
+
+/* Target Tailwind's dark mode compilation */
+:is(.dark .text-black),
+:is(.dark *).text-black,
+.dark .text-black {
+  color: var(--color-primary) !important;
+}
+
+:is(.dark .text-white),
+:is(.dark *).text-white,
+.dark .text-white {
+  color: var(--color-secondary) !important;
+}
+
+/* Override border-black and border-white */
+.border-black,
+:is(.border-black) {
+  border-color: var(--color-primary) !important;
+}
+
+.border-white,
+:is(.border-white) {
+  border-color: var(--color-secondary) !important;
+}
+
+/* Target Tailwind's dark mode compilation */
+:is(.dark .border-black),
+:is(.dark *).border-black,
+.dark .border-black {
+  border-color: var(--color-border) !important;
+}
+
+:is(.dark .border-white),
+:is(.dark *).border-white,
+.dark .border-white {
+  border-color: var(--color-secondary) !important;
+}
+
+/* ================================================================
+ * BRUTALIST CARD OVERRIDES
+ * ================================================================ */
+
+.brutalist-card,
+:is(.brutalist-card) {
+  border-color: var(--color-primary) !important;
+  background-color: var(--color-secondary) !important;
+}
+
+.brutalist-card:hover,
+:is(.brutalist-card):hover {
+  box-shadow: 8px 8px 0px 0px var(--color-shadow) !important;
+}
+
+/* Dark mode for brutalist-card */
+:is(.dark .brutalist-card),
+:is(.dark *).brutalist-card,
+.dark .brutalist-card {
+  border-color: var(--color-border) !important;
+  background-color: var(--color-secondary-dark) !important;
+}
+
+:is(.dark .brutalist-card):hover,
+:is(.dark *).brutalist-card:hover,
+.dark .brutalist-card:hover {
+  box-shadow: 8px 8px 0px 0px var(--color-shadow) !important;
+}
+
+.brutalist-card-inverted,
+:is(.brutalist-card-inverted) {
+  border-color: var(--color-primary) !important;
+  background-color: var(--color-primary) !important;
+  color: var(--color-secondary) !important;
+}
+
+.brutalist-card-inverted:hover,
+:is(.brutalist-card-inverted):hover {
+  box-shadow: 8px 8px 0px 0px var(--color-shadow) !important;
+}
+
+/* Dark mode for brutalist-card-inverted */
+:is(.dark .brutalist-card-inverted),
+:is(.dark *).brutalist-card-inverted,
+.dark .brutalist-card-inverted {
+  border-color: var(--color-border) !important;
+  background-color: var(--color-primary) !important;
+  color: var(--color-secondary-dark) !important;
+}
+
+:is(.dark .brutalist-card-inverted):hover,
+:is(.dark *).brutalist-card-inverted:hover,
+.dark .brutalist-card-inverted:hover {
+  box-shadow: 8px 8px 0px 0px var(--color-shadow) !important;
+}
+
+.brutalist-card-minimal,
+:is(.brutalist-card-minimal) {
+  background-color: var(--color-primary) !important;
+}
+
+/* Dark mode for brutalist-card-minimal */
+:is(.dark .brutalist-card-minimal),
+:is(.dark *).brutalist-card-minimal,
+.dark .brutalist-card-minimal {
+  background-color: var(--color-primary) !important;
+}
+
+/* ================================================================
+ * SECTION OVERRIDES
+ * ================================================================ */
+
+.brutalist-section,
+:is(.brutalist-section) {
+  background-color: var(--color-secondary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+/* Override Tailwind's dark mode compilation for sections */
+:is(.dark .brutalist-section),
+:is(.dark *).brutalist-section,
+.dark .brutalist-section {
+  background-color: var(--color-secondary-dark) !important;
+  border-color: var(--color-border) !important;
+}
+
+.brutalist-section-inverted,
+:is(.brutalist-section-inverted) {
+  background-color: var(--color-primary) !important;
+  color: var(--color-secondary) !important;
+  border-color: var(--color-secondary) !important;
+}
+
+:is(.dark .brutalist-section-inverted),
+:is(.dark *).brutalist-section-inverted,
+.dark .brutalist-section-inverted {
+  background-color: var(--color-primary) !important;
+  color: var(--color-secondary) !important;
+  border-color: var(--color-secondary) !important;
+}
+
+/* ================================================================
+ * UTILITY OVERRIDES
+ * ================================================================ */
+
+.brutalist-divider-bold,
+:is(.brutalist-divider-bold) {
+  background-color: var(--color-primary) !important;
+}
+
+/* Dark mode for divider-bold */
+:is(.dark .brutalist-divider-bold),
+:is(.dark *).brutalist-divider-bold,
+.dark .brutalist-divider-bold {
+  background-color: var(--color-border) !important;
+}
+
+.brutalist-border-box,
+:is(.brutalist-border-box) {
+  border-color: var(--color-primary) !important;
+}
+
+/* Dark mode for border-box */
+:is(.dark .brutalist-border-box),
+:is(.dark *).brutalist-border-box,
+.dark .brutalist-border-box {
+  border-color: var(--color-border) !important;
+}
+
+/* Background patterns */
+.brutalist-bg-dots,
+:is(.brutalist-bg-dots) {
+  background-image: radial-gradient(circle, color-mix(in srgb, var(--color-primary) 5%, transparent) 1px, transparent 1px) !important;
+}
+
+/* Dark mode for bg-dots */
+:is(.dark .brutalist-bg-dots),
+:is(.dark *).brutalist-bg-dots,
+.dark .brutalist-bg-dots {
+  background-image: radial-gradient(circle, color-mix(in srgb, var(--color-primary) 5%, transparent) 1px, transparent 1px) !important;
+}
+
+/* Hover lines and accents */
+.brutalist-hover-line::after,
+:is(.brutalist-hover-line)::after {
+  background-color: var(--color-primary) !important;
+}
+
+/* Dark mode for hover-line */
+:is(.dark .brutalist-hover-line)::after,
+:is(.dark *).brutalist-hover-line::after,
+.dark .brutalist-hover-line::after {
+  background-color: var(--color-primary) !important;
+}
+
+.brutalist-accent-line,
+:is(.brutalist-accent-line) {
+  background-color: var(--color-secondary) !important;
+}
+
+/* Dark mode for accent-line */
+:is(.dark .brutalist-accent-line),
+:is(.dark *).brutalist-accent-line,
+.dark .brutalist-accent-line {
+  background-color: var(--color-secondary) !important;
+}
+
+.brutalist-accent-line-black,
+:is(.brutalist-accent-line-black) {
+  background-color: var(--color-primary) !important;
+}
+
+/* Dark mode for accent-line-black */
+:is(.dark .brutalist-accent-line-black),
+:is(.dark *).brutalist-accent-line-black,
+.dark .brutalist-accent-line-black {
+  background-color: var(--color-primary) !important;
+}
+
+.brutalist-divider,
+:is(.brutalist-divider) {
+  background-color: color-mix(in srgb, var(--color-primary) 10%, transparent) !important;
+}
+
+/* Dark mode for divider */
+:is(.dark .brutalist-divider),
+:is(.dark *).brutalist-divider,
+.dark .brutalist-divider {
+  background-color: color-mix(in srgb, var(--color-primary) 10%, transparent) !important;
+}
+
+/* ================================================================
+ * HOW TO USE THIS FILE
+ * ================================================================
+ * 
+ * 1. This is your main CSS file - no need to import anything else
+ * 2. To change colors, edit --color-primary and --color-secondary
+ *    in the :root and .dark sections at the top
+ * 3. Dark mode automatically uses darker versions of your colors
+ * 4. Uncomment any example theme to try different color schemes
+ * 5. No component code changes needed!
+ * 
+ * ================================================================ */

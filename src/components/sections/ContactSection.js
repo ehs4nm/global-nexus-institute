@@ -4,7 +4,7 @@ export const ContactSection = () => {
   return (
     <section 
       id="contact" 
-      className="min-h-[60vh] py-20 sm:py-24 md:py-32 dark:bg-black text-black dark:text-white flex items-center relative"
+      className="brutalist-section-inverted border-0 min-h-[60vh] py-20 sm:py-24 md:py-32 text-black dark:text-white flex items-center relative"
     >
       {/* Subtle background pattern */}
       <div className="brutalist-bg-dots absolute inset-0 opacity-[0.02] dark:opacity-[0.03] pointer-events-none" />
@@ -21,7 +21,7 @@ export const ContactSection = () => {
             <div className="brutalist-divider-bold mx-auto"></div>
           </div>
 
-          <p className="mt-8 brutalist-subheading max-w-3xl mx-auto text-black">
+          <p className="mt-8 brutalist-subheading max-w-3xl mx-auto">
             Shape the future of global foresight. Partner with GNI to build resilient, informed, and equitable systems.
           </p>
         </div>
@@ -38,7 +38,7 @@ export const ContactSection = () => {
                 type="text"
                 name="name"
                 placeholder="Name"
-                className="w-full px-6 py-4 brutalist-border-box bg-white dark:bg-black focus:outline-none focus:border-black dark:focus:border-white transition-colors placeholder-gray-400 dark:placeholder-gray-500 text-black dark:text-white text-base font-mono"
+                className="w-full px-6 py-4 brutalist-border-box focus:outline-none focus:border-black dark:focus:border-white transition-colors placeholder-gray-400 dark:placeholder-gray-500 text-black dark:text-white text-base font-mono"
               />
             </div>
 
@@ -47,7 +47,7 @@ export const ContactSection = () => {
                 type="email"
                 name="email"
                 placeholder="Email"
-                className="w-full px-6 py-4 brutalist-border-box bg-white dark:bg-black focus:outline-none focus:border-black dark:focus:border-white transition-colors placeholder-gray-400 dark:placeholder-gray-500 text-black dark:text-white text-base font-mono"
+                className="w-full px-6 py-4 brutalist-border-box focus:outline-none focus:border-black dark:focus:border-white transition-colors placeholder-gray-400 dark:placeholder-gray-500 text-black dark:text-white text-base font-mono"
               />
             </div>
           </div>
@@ -58,16 +58,16 @@ export const ContactSection = () => {
               name="message"
               placeholder="Message (optional)"
               rows="4"
-              className="w-full px-6 py-4 brutalist-border-box bg-white dark:bg-black focus:outline-none focus:border-black dark:focus:border-white transition-colors placeholder-gray-400 dark:placeholder-gray-500 text-black dark:text-white text-base font-mono resize-none"
+              className="w-full px-6 py-4 brutalist-border-box focus:outline-none focus:border-black dark:focus:border-white transition-colors placeholder-gray-400 dark:placeholder-gray-500 text-black dark:text-white text-base font-mono resize-none"
             ></textarea>
           </div>
 
           {/* Submit Button */}
           <button
             type="submit"
-            className="group relative w-full sm:w-auto px-12 py-4 brutalist-card-inverted font-bold text-base sm:text-lg transition-all duration-300 hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white overflow-hidden"
+            className="group relative w-full sm:w-auto px-12 py-4 brutalist-card font-bold text-base sm:text-lg transition-all duration-300 hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white overflow-hidden"
           >
-            <span className="relative z-10 brutalist-label tracking-wider">
+            <span className="relative z-10 brutalist-label tracking-wider text-black dark:text-white">
               CONTACT OUR TEAM →
             </span>
             

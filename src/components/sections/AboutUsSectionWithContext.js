@@ -12,7 +12,7 @@ export const AboutUsSectionWithContext = () => {
   const aboutUsContent = content.aboutUs;
   
   return (
-    <section id="about" className="brutalist-section text-gray-900 dark:text-white">
+    <section id="about" className="brutalist-section-inverted text-gray-900 dark:text-white">
       {/* Subtle dot pattern background */}
       <div className="brutalist-bg-dots absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" />
       
@@ -38,8 +38,8 @@ export const AboutUsSectionWithContext = () => {
               </p>
             </div>
             <div className="relative">
-              <div className="brutalist-card-inverted p-6 sm:p-8">
-                <p className="brutalist-body font-bold">
+              <div className="brutalist-card text-black dark:text-white p-6 sm:p-8">
+                <p className="brutalist-body font-bold text-3xl">
                   {aboutUsContent.missionStatement}
                 </p>
               </div>
@@ -55,7 +55,7 @@ export const AboutUsSectionWithContext = () => {
             {aboutUsContent.principles && Array.isArray(aboutUsContent.principles) ? aboutUsContent.principles.map((principle, index) => (
               <div 
                 key={principle.id}
-                className="brutalist-card group overflow-hidden"
+                className="brutalist-card text-black dark:text-white group overflow-hidden"
               >
                 {/* Number Badge Overlay */}
                 <div className="absolute top-0 right-0 bg-black dark:bg-white text-white dark:text-black brutalist-label font-bold px-3 py-1 brutalist-border-box border-t-0 border-r-0">
@@ -85,7 +85,7 @@ export const AboutUsSectionWithContext = () => {
         {/* Bottom Divider with Text */}
         <div className="relative pt-8 brutalist-border-box border-t-2 border-b-0 border-x-0">
           <div className="text-center">
-            <span className="inline-block bg-white dark:bg-black px-6 brutalist-label -mt-3">
+            <span className="inline-block  px-6 brutalist-label -mt-3">
               {aboutUsContent.bottomMessage}
             </span>
           </div>

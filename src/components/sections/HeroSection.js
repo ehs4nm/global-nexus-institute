@@ -49,7 +49,7 @@ export const HeroSection = () => {
   // Safety check - ensure we have content and hero data
   if (isLoading || !content || !content.hero) {
     return (
-      <section className="grid place-items-center relative w-full min-h-[80vh] sm:min-h-[90vh] md:mt-[140px] sm:mt-[100px] overflow-hidden mx-auto max-w-[100vw] sm:max-w-[95vw] bg-black">
+      <section className="grid place-items-center relative w-full min-h-[80vh] sm:min-h-[90vh] md:mt-[140px] sm:mt-[100px] overflow-hidden mx-auto max-w-[100vw] sm:max-w-[95vw]">
         <div className="relative z-10 px-6 sm:px-8 max-w-7xl text-center w-full">
           <div className="brutalist-label text-white">Loading...</div>
         </div>
@@ -60,10 +60,10 @@ export const HeroSection = () => {
   const hero = content.hero;
 
   return (
-    <section className="grid place-items-center relative  w-full min-h-[80vh] sm:min-h-[90vh] mt-[140px] overflow-hidden mx-auto max-w-[100vw] sm:max-w-[95vw]">
+    <section className="brutalist-section grid place-items-center relative  w-full ">
       
       <video
-        className="absolute inset-0 w-full h-[80vh] object-cover object-center gpu-accelerate"
+        className="min-h-[80vh] sm:min-h-[80vh] mt-[120px] overflow-hidden mx-auto max-w-[100vw] sm:max-w-[95vw] absolute inset-0 w-full h-[80vh] object-cover object-center gpu-accelerate"
         autoPlay muted loop playsInline poster={hero.posterSrc}
         preload="metadata"
       >

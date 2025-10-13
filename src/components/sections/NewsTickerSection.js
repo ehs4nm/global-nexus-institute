@@ -66,7 +66,7 @@ const NewsTickerSection = () => {
   }
 
   return (
-    <section className="bg-black border-y border-neutral-800 overflow-hidden relative" style={{ height: '5vh' }}>
+    <section className="brutalist-card text-black dark:text-white border-y border-neutral-800 overflow-hidden relative" style={{ height: '5vh' }}>
       <div 
         ref={tickerRef}
         className="h-full flex items-center relative"
@@ -93,7 +93,6 @@ const NewsTickerSection = () => {
             fontSize: 'clamp(.5rem, 4vw, 1rem)',
             fontWeight: '700',
             letterSpacing: '0.05em',
-            color: '#ffffff',
             textShadow: '0 0 20px rgba(255, 255, 255, 0.2)',
             fontFamily: 'monospace'
           }}
@@ -101,9 +100,7 @@ const NewsTickerSection = () => {
           {newsTickerContent.text}
         </div>
         
-        {/* Gradient edges for fade effect */}
-        <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-black to-transparent pointer-events-none z-10" />
-        <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-black to-transparent pointer-events-none z-10" />
+
       </div>
       
       {/* Optional: Add a subtle bottom border animation */}

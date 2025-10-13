@@ -121,7 +121,7 @@ export const GallerySection = () => {
                   </div>
                   
                   <div
-                    className="brutalist-body text-sm mt-2 transition-all duration-500"
+                    className="brutalist-body text-2xl mt-2 transition-all duration-500"
                     style={{
                       opacity: hoveredId === panel.id ? 1 : 0,
                       maxHeight: hoveredId === panel.id ? '200px' : '0',
