@@ -28,8 +28,10 @@ export const ContactSection = () => {
 
         {/* Contact Form */}
         <form 
-          className="space-y-6" 
+          name="contact-form"
+          method="POST"
           data-netlify="true"
+          className="space-y-6" 
         >
           {/* Input Fields */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -65,13 +67,13 @@ export const ContactSection = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="group relative w-full sm:w-auto px-12 py-4 brutalist-card font-bold text-base sm:text-lg transition-all duration-300 hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white overflow-hidden"
+            className="group relative w-full sm:w-auto px-12 py-4 font-bold text-base sm:text-lg transition-all duration-300 overflow-hidden bg-white dark:bg-black hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
           >
             <span className="relative z-10 brutalist-label tracking-wider">
               CONTACT OUR TEAM →
             </span>
             
-            <div className="absolute inset-0 bg-white dark:bg-black transform translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+            <div className="absolute inset-0 bg-black dark:bg-white transform translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
           </button>
         </form>
 
