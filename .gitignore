@@ -2,7 +2,7 @@ node_modules
 .DS_Store
 public
 .cache
-*.mp4
+# *.mp4
 # static/assets
 
 # Environment variables
