@@ -80,7 +80,7 @@ export const PersonDrawer = () => {
                       <span className="font-mono text-xs uppercase tracking-widest">Biography</span>
                     </div>
                     
-                    <p className="text-base sm:text-lg leading-relaxed whitespace-pre-line">
+                    <p className="text-base sm:text-lg lg:text-3xl leading-relaxed whitespace-pre-line">
                       {person?.bio || bioFallback}
                     </p>
                   </div>

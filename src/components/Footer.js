@@ -21,23 +21,25 @@ export const Footer = () => {
           {/* Brand Section */}
           <div className="max-w-md">
             <div className="flex items-center gap-4">
-              <div className="h-12 w-12 border-2 border-white dark:border-black overflow-hidden flex-shrink-0">
+              <div className="h-32 w-32 border-2 border-white dark:border-black overflow-hidden flex-shrink-0">
                 <img 
-                  src="/assets/favicon_io/android-chrome-512x512.png" 
+                  src="/assets/favicon_io/android-chrome-192x192.png" 
                   alt="Global Nexus Institute" 
                   className="w-full h-full object-cover rounded-xl"
                 />
               </div>
-              <span className="font-display text-2xl sm:text-3xl font-bold leading-tight">
-                Global Nexus Institute
-              </span>
+              <div>
+                <span className="font-display text-2xl sm:text-3xl font-bold leading-tight">
+                  Global Nexus Institute
+                </span>
+                <p className="text-3xl font-medium">
+                  Foresight for a connected world.
+                </p>
+              </div>
             </div>
             
             <div className="w-16 h-1 bg-white dark:bg-black"></div>
             
-            <p className="text-3xl font-medium">
-              Foresight for a connected world.
-            </p>
           </div>
 
           {/* Navigation */}
