@@ -9,7 +9,7 @@ const HeroSection = ({ data }) => (
     <div className="brutalist-container">
       <div className="max-w-6xl">
         <div className="my-16">
-          <div className="brutalist-number-badge inline-block mb-6 text-black dark:text-white">01</div>
+          {/* <div className="brutalist-number-badge inline-block mb-6 text-black dark:text-white">01</div> */}
           <h1 className="brutalist-heading dark:text-white">{data.title}</h1>
           <p className="mt-4 brutalist-subheading text-xl text-black/80 dark:text-white/80">
             {data.subtitle}
@@ -57,7 +57,7 @@ const GridSection = ({ section, isInverted = false }) => {
       <div className="brutalist-container">
         <div className="max-w-6xl">
           <div className="mb-16">
-            <h2 className="brutalist-heading text-4xl lg:text-5xl">
+            <h2 className=" brutalist-heading text-4xl lg:text-5xl text-black dark:text-white">
               {section.title}
             </h2>
             <div className="brutalist-divider-bold" />
@@ -142,7 +142,7 @@ const ListSection = ({ section, isInverted = false }) => {
       <div className="brutalist-container">
         <div className="max-w-6xl">
           <div className="mb-16">
-            <h2 className="brutalist-heading text-4xl lg:text-5xl">
+            <h2 className=" brutalist-heading text-4xl lg:text-5xl text-white dark:text-black">
               {section.title}
             </h2>
             <div className="mt-6 brutalist-divider-bold" />
@@ -252,7 +252,7 @@ const BenefitsSection = ({ section, isInverted = false }) => {
       <div className="brutalist-container">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-16">
-            <h2 className="brutalist-heading text-4xl lg:text-5xl mb-6">{section.title}</h2>
+            <h2 className=" brutalist-heading text-4xl lg:text-5xl text-black dark:text-white mb-6">{section.title}</h2>
             {section.subtitle && (
               <p className="brutalist-subheading mb-12 max-w-2xl mx-auto text-black/80 dark:text-white/80">
                 {section.subtitle}
@@ -322,7 +322,7 @@ const PageTemplateContent = ({ pageKey }) => {
               <div className="brutalist-container">
                 <div className="max-w-4xl mx-auto text-center">
                   <div className="mb-12">
-                    <h2 className="brutalist-heading text-4xl lg:text-5xl mb-6 dark:text-black text-white">{section.title}</h2>
+                    <h2 className=" brutalist-heading text-4xl lg:text-5xl text-black dark:text-white mb-6 dark:text-black text-white">{section.title}</h2>
                     {section.subtitle && (
                       <p className="brutalist-subheading mb-8 max-w-2xl mx-auto text-white dark:text-black">
                         {section.subtitle}
@@ -366,7 +366,7 @@ const PageTemplateContent = ({ pageKey }) => {
             <div className="brutalist-container">
               <div className="max-w-6xl">
                 <div className="mb-16">
-                  <h2 className="brutalist-heading text-4xl lg:text-5xl text-black/80 dark:text-white/80">
+                  <h2 className=" brutalist-heading text-4xl lg:text-5xl text-black dark:text-white text-black/80 dark:text-white/80">
                     {section.title}
                   </h2>
                   <div className="mt-6 brutalist-divider-bold" />

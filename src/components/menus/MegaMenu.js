@@ -44,10 +44,11 @@ export const MegaMenu = ({ id, label, items = [], isOpen, onOpen, onClose }) => 
     if (!menuElement) return;
 
     const handleMenuMouseEnter = () => openMenu();
+
     const handleMenuMouseLeave = (e) => {
-      // Only close if mouse is truly leaving the menu area
       const related = e.relatedTarget;
-      if (related && (
+      // Change this line
+      if (related instanceof Node && (
         hoverAreaRef.current?.contains(related) ||
         related.closest(`#${menuId}`) ||
         related.closest('[role="menuitem"]')
@@ -104,6 +105,16 @@ export const MegaMenu = ({ id, label, items = [], isOpen, onOpen, onClose }) => 
         aria-expanded={open}
         aria-controls={menuId}
         onMouseEnter={openMenu}
+        onMouseLeave={(e) => {
+          const related = e.relatedTarget;
+          if (related instanceof Node && (
+            hoverAreaRef.current?.contains(related) ||
+            related.closest(`#${menuId}`)
+          )) {
+              return;
+            }
+            scheduleClose();
+        }}
         onFocus={openMenu}
         onKeyDown={onButtonKeyDown}
       >
