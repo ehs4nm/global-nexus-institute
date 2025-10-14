@@ -10,7 +10,9 @@ const HeroSection = ({ data }) => (
       <div className="max-w-6xl">
         <div className="my-16">
           {/* <div className="brutalist-number-badge inline-block mb-6 text-black dark:text-white">01</div> */}
-          <h1 className="brutalist-heading dark:text-white">{data.title}</h1>
+
+          <h1 className="brutalist-heading dark:text-white text-5xl mt-32">{data.title}</h1>
+          <h2 className="brutalist-heading dark:text-white text-3xl mt-32">{data.stitle}</h2>
           <p className="mt-4 brutalist-subheading text-xl text-black/80 dark:text-white/80">
             {data.subtitle}
           </p>

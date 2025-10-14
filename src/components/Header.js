@@ -15,12 +15,14 @@ export const Header = () => {
   // Get navigation items from content
   const whatWeDo = navigation?.whatWeDo || [];
   const whoWeAre = navigation?.whoWeAre || [];
+  const pillars = navigation?.pillars || [];
 
   // Track which mega menu is open to ensure mutual exclusivity
   const [activeMega, setActiveMega] = useState(null); // values: 'who-we-are' | 'what-we-do' | null
 
   const whoWeAreId = useMemo(() => 'who-we-are', []);
   const whatWeDoId = useMemo(() => 'what-we-do', []);
+  const pillarId = useMemo(() => 'pillar', []);
 
   return (
     <header className={`fixed inset-x-0 top-0 z-40 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
@@ -66,6 +68,14 @@ export const Header = () => {
               })}
               
               <MegaMenu
+                id={pillarId}
+                label="Pillars"
+                items={pillars}
+                isOpen={activeMega === pillarId}
+                onOpen={() => setActiveMega(pillarId)}
+                onClose={() => setActiveMega(null)}
+              />  
+              <MegaMenu
                 id={whoWeAreId}
                 label="Who We Are"
                 items={whoWeAre}
@@ -81,6 +91,7 @@ export const Header = () => {
                 onOpen={() => setActiveMega(whatWeDoId)}
                 onClose={() => setActiveMega(null)}
               />
+              
             </nav>
             
             <div className="flex items-center gap-2 flex-shrink-0">

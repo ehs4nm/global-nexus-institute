@@ -1,11 +1,4 @@
 {
-  "menuItems": [
-    { "id": "mission", "label": "Mission", "type": "hash", "href": "/#mission", "image": "/assets/menu/mission.jpg", "showInDesktop": true },
-    { "id": "model", "label": "Model", "type": "hash", "href": "/#model", "image": "/assets/menu/model.jpg", "showInDesktop": true },
-    { "id": "initiatives", "label": "Initiatives", "type": "hash", "href": "/#initiatives", "image": "/assets/menu/initiatives.jpg", "showInDesktop": true },
-    { "id": "leadership", "label": "Leadership", "type": "hash", "href": "/#leadership", "image": "/assets/menu/leadership.jpg", "showInDesktop": true },
-    { "id": "contact", "label": "Contact", "type": "hash", "href": "/#contact", "image": "/assets/menu/contact.jpg", "showInDesktop": true }
-  ],
   "hero": {
     "tagline": "Foresight and Action for an Intelegent Connected World",
     "title": "Foresight. Strategy. Delivery.",
@@ -150,7 +143,8 @@
         "img": "/assets/images/orb-turbin.png",
         "slug": "research-clusters",
         "pageContent": {
-          "title": "Nexus Research Clusters — <What We Study>",
+          "title": "Nexus Research Clusters",
+          "sTitle": "<What We Study>",
           "subtitle": "These clusters generate cross-domain insights that form the foundation of GNI’s advisory outputs.",
           "description": "Dynamic, interdisciplinary teams addressing intersectional challenges such as:",
           "heroImage": "/assets/images/orb-turbin.png",
@@ -176,7 +170,8 @@
         "img": "/assets/images/chess.png",
         "slug": "geospatial-data",
         "pageContent": {
-          "title": "Geospatial & Data Intelligence Unit (GDIU) — <Where & When>",
+          "title": "Geospatial & Data Intelligence Unit (GDIU)",
+          "sTitle": "<Where & When>",
           "subtitle": "The technical and analytical engine of GNI",
           "description": "The technical and analytical engine of GNI, producing:",
           "heroImage": "/assets/images/chess.png",
@@ -202,7 +197,8 @@
         "img": "/assets/images/heart-hand.png",
         "slug": "actionable",
         "pageContent": {
-          "title": "Actionable Intelligence & Scenarios — <So What?>",
+          "title": "Actionable Intelligence & Scenarios",
+          "sTitle": "<So What?>",
           "subtitle": "Where insight meets decision",
           "description": "The insights we generate are delivered through a range of outputs that connect foresight to action.",
           "heroImage": "/assets/images/heart-hand.png",
@@ -228,7 +224,8 @@
         "img": "/assets/images/orb-rising.png",
         "slug": "strategic-alliances",
         "pageContent": {
-          "title": "Strategic Alliances & Communications — <Who & How>",
+          "title": "Strategic Alliances & Communications",
+          "sTitle": "<Who & How>",
           "subtitle": "Building adaptive capacity in an interconnected world for now",
           "description": "",
           "heroImage": "/assets/images/orb-rising.png",
@@ -326,14 +323,6 @@
         "showInDesktop": true 
       },
       { 
-        "id": "initiatives", 
-        "label": "Initiatives", 
-        "type": "hash", 
-        "href": "/#initiatives", 
-        "image": "/assets/menu/initiatives.jpg", 
-        "showInDesktop": true 
-      },
-      { 
         "id": "leadership", 
         "label": "Leadership", 
         "type": "hash", 
@@ -352,6 +341,12 @@
     ]
   },
   "navigation": {
+    "pillars": [
+      { "href": "/pillars/research-clusters", "title": "Research Clusters", "image": "/assets/images/orb-turbin.png" },
+      { "href": "/pillars/geospatial-data-intelligence", "title": "Geospatial Data Intelligence", "image": "/assets/images/chess.png" },
+      { "href": "/pillars/actionable-intelligence", "title": "Actionable Intelligence", "image": "/assets/images/heart-hand.png" },
+      { "href": "/pillars/strategic-alliances", "title": "Strategic Alliances", "image": "/assets/images/orb-rising.png" }
+    ],
     "whoWeAre": [
       { "href": "/who-we-are/team", "title": "Team", "image": "/assets/images/6.jpg" },
       { "href": "/who-we-are/partners", "title": "Partners", "image": "/assets/images/4.jpg" },
@@ -364,9 +359,118 @@
     ]
   },
   "pages": {
+    "geospatial-data": {
+      "title": "Geospatial & Data Intelligence Unit (GDIU)",
+      "sTitle": "<Where & When>",
+      "subtitle": "The technical and analytical engine of GNI",
+      "description": "The technical and analytical engine of GNI, producing:",
+      "heroImage": "/assets/images/chess.png",
+      "sections": [
+        {
+          "title": "Strategic Partnerships",
+          "content": "We collaborate with research institutions, policy organizations, and industry leaders who share our vision of integrated analysis across energy, geopolitics, and health domains.",
+          "partners": [
+            {
+              "heading": "Live risk maps of conflicts, energy chokepoints, and outbreaks",
+              "content": ""
+            },
+            {
+              "heading": "AI-driven forecasting dashboards for systemic stress testing",
+              "content": ""
+            },
+            {
+              "heading": "Resource-flow models linking supply disruptions to social and health outcomes",
+              "content": ""
+            }
+          ]
+        }
+      ]
+    },
+    "actionable": {
+      "title": "Actionable Intelligence & Scenarios",
+      "sTitle": "<So What?>",
+      "subtitle": "Where insight meets decision",
+      "description": "The insights we generate are delivered through a range of outputs that connect foresight to action.",
+      "heroImage": "/assets/images/heart-hand.png",
+      "sections": [
+        {
+          "title": "Actionable Intelligence & Scenarios  <So What?>",
+          "content": "The insights we generate are delivered through a range of outputs that connect foresight to action.",
+          "partners":[
+            {
+              "heading": "48-hour rapid-response briefs on emerging global crises",
+              "content": ""
+            },
+            {
+              "heading": "Quarterly horizon-scanning reports for policy and corporate planning",
+              "content": ""
+            },
+            {
+              "heading": "Confidential wargaming and simulation exercises for clients",
+              "content": ""
+            }
+          ]
+        }
+      ]
+    },
+    "strategic-alliances": {
+      "title": "Strategic Alliances & Communications",
+      "sTitle": "<Who & How>",
+      "subtitle": "Building adaptive capacity in an interconnected world for now",
+      "description": "",
+      "heroImage": "/assets/images/orb-rising.png",
+      "sections": [
+        {
+          "title": "Strategic Partnerships",
+          "content": "We collaborate with research institutions, policy organizations, and industry leaders who share our vision of integrated analysis across energy, geopolitics, and health domains.",
+          "partners":[
+            {
+              "heading": "Global Nexus Alliance",
+              "content": "a membership network of governments, corporates, and NGOs."
+            },
+            {
+              "heading": "Strategic Communications",
+              "content": "— podcasts, data visualizations, and multimedia storytelling that make complex systems intelligible."
+            },
+            {
+              "heading": "Annual Global Nexus Summit",
+              "content": "— a high-level convening for cross-sector crisis foresight (a “Davos for interconnected risk”)."
+            }
+          ]
+        }
+      ]
+    },
+    "research-clusters": {
+      "title": "Nexus Research Clusters",
+      "sTitle": "<What We Study>",
+      "subtitle": "These clusters generate cross-domain insights that form the foundation of GNI’s advisory outputs.",
+      "description": "Dynamic, interdisciplinary teams addressing intersectional challenges such as:",
+      "heroImage": "/assets/images/orb-turbin.png",
+      "sections": [
+        {
+          "title": "Strategic Partnerships",
+          "content": "We collaborate with research institutions, policy organizations, and industry leaders who share our vision of integrated analysis across energy, geopolitics, and health domains.",
+          "partners":[
+            {
+              "heading": "Climate, Conflict & Contagion",
+              "content": ""
+            },
+            {
+              "heading": "Energy Transition & Health Equity",
+              "content": ""
+            },
+            {
+              "heading": "Energy Transition & Health Equity",
+              "content": "Critical Minerals & Supply Chain Stability"
+            }
+          ]
+        }
+      ]
+    },
     "partners": {
       "title": "Partners",
       "subtitle": "Building global alliances for systemic change",
+      "sTitle": "<Who We Work With>",
       "heroImage": "/assets/images/4.jpg",
       "description": "The Global Nexus Institute works with leading organizations across sectors to amplify our impact and create lasting change in how the world approaches interconnected crises.",
       "sections": [
@@ -399,6 +503,7 @@
     "team": {
       "title": "Team",
       "subtitle": "Diverse expertise for complex challenges",
+      "sTitle": "<Who We Work With>",
       "heroImage": "/assets/images/6.jpg",
       "description": "Our team combines deep sector expertise with systems thinking, bringing together professionals from energy, geopolitics, public health, and strategic analysis.",
       "sections": [
@@ -441,6 +546,7 @@
     "careers": {
       "title": "Careers",
       "subtitle": "Join the next generation of systems thinkers",
+      "sTitle": "<Want To Work With Us?>",
       "heroImage": "/assets/images/5.jpg",
       "description": "We're building a team of exceptional analysts, researchers, and strategists who think across domains and thrive in complexity.",
       "sections": [
@@ -516,6 +622,7 @@
     "research": {
       "title": "Research",
       "subtitle": "Advancing the science of interconnected systems",
+      "sTitle": "<What We Study>",
       "heroImage": "/assets/images/3.jpg",
       "description": "Our research program develops new methodologies for understanding how energy, geopolitical, and health systems interact and influence each other.",
       "sections": [
