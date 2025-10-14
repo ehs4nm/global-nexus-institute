@@ -71,14 +71,14 @@
     "image": "/assets/images/system_links.jpg"
   },
   "slogan": {
-    "upTitle": "HOW WE WORK",
-    "title": "WE WORK A LOT",
-    "inTheBox": "Strategy • Policy • Delivery",
+    "upTitle": "Turning Vision into Impact",
+    "title": "Advising Leaders Delivering Change",
+    "inTheBox": "Driving Systems-Level Change",
     "subtitle": "Here to turn bold ideas into reality",
     "body": "We help governments and leaders get things done. We do it by advising on strategy, policy and delivery, Harnessing data and systems analysis to inform smarter decisions.",
-    "body2": "As a not-for-profit, we can work in the most challenging contexts and on the most transformative projects because our focus is on leaders rather than profits.",
+    "body2": "We can work in the most challenging contexts and on the most transformative projects because our focus is on leaders rather than profits.",
     "body3": "And as a non-partisan organisation, we can bring the best of our expertise to leaders who want to translate their ambition into meaningful action for their people.",
-    "bottomMessage": "Focused on Impact, Not Profits"
+    "bottomMessage": "Empowering Leadership Through Intelligence"
   },
   "contactUs": {
     "subtitle": "Shape the future of global foresight. Partner with GNI to build resilient, informed, and equitable systems. For enquiries about partnerships, advisory engagements, or commissioned research",
@@ -101,7 +101,7 @@
         "linkHref": "#contact"
       },
       {
-        "icon": "/assets/images/fracture.jpg",
+        "icon": "/assets/images/index.jpg",
         "title": "Energy Transition Health Index (ETHI)",
         "description": "Developing an index that measures how national energy transitions affect public health, equity, and air quality.",
         "linkText": "Explore ETHI",
@@ -140,18 +140,19 @@
     ]
   },
   "gallery": {
-    "title": "Signals from the Nexus",
-    "subtitle": "Hover to reveal the full frame. We expand the viewport — not the image — to show the whole picture.",
+    "title": "4 pillars of GNI Model:",
+    "upTitle": "Structure for Impact",
+    "subtitle": "GNI operates as an integrated consultancy model, not a siloed think tank. Our work is delivered through four interconnected pillars that link insight to execution.",
     "items": [
       {
         "id": "energy-systems",
         "label": "Energy Systems",
-        "img": "/assets/images/globe-hand.jpg",
+        "img": "/assets/images/orb-turbin.png",
         "slug": "energy-systems",
         "pageContent": {
           "title": "Energy Systems",
           "subtitle": "Understanding global energy transitions and their cascading effects",
-          "heroImage": "/assets/images/globe-hand.jpg",
+          "heroImage": "/assets/images/orb-turbin.png",
           "sections": [
             {
               "heading": "Overview",
@@ -166,13 +167,13 @@
       },
       {
         "id": "geopolitics",
-        "label": "Geopolitics",
-        "img": "/assets/images/buble-concrete.jpg",
+        "label": "GEOSPATIAL & DATA",
+        "img": "/assets/images/chess.png",
         "slug": "geopolitics",
         "pageContent": {
           "title": "Geopolitics",
           "subtitle": "Mapping the intersection of power, resources, and global stability",
-          "heroImage": "/assets/images/buble-concrete.jpg",
+          "heroImage": "/assets/images/chess.png",
           "sections": [
             {
               "heading": "Strategic Analysis",
@@ -187,11 +188,11 @@
       },
       {
         "id": "public-health",
-        "label": "Public Health",
+        "label": "ACTIONABLE",
         "img": "/assets/images/standing-stone.jpg",
         "slug": "public-health",
         "pageContent": {
-          "title": "Public Health",
+          "title": "ACTIONABLE",
           "subtitle": "Connecting health outcomes to energy and geopolitical factors",
           "heroImage": "/assets/images/standing-stone.jpg",
           "sections": [
@@ -208,11 +209,11 @@
       },
       {
         "id": "resilience",
-        "label": "Resilience",
+        "label": "STRATEGIC ALLIANCES & COMMUNICATIONS",
         "img": "/assets/images/orb-rising.jpg",
         "slug": "resilience",
         "pageContent": {
-          "title": "Resilience",
+          "title": "STRATEGIC ALLIANCES & COMMUNICATIONS",
           "subtitle": "Building adaptive capacity in an interconnected world for now",
           "heroImage": "/assets/images/orb-rising.jpg",
           "sections": [

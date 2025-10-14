@@ -29,10 +29,10 @@ module.exports = {
       fontFamily: {
         // Title fonts
         'title': ['"Notable"', 'sans-serif'], // Primary title font
-        'title-alt': ['"Bellefair"', 'serif'], // Alternative title font
+        'title-alt': ['"Mulish"', 'serif'], // Alternative title font
         // Paragraph fonts
         'body': ['"Alumni Sans Pinstripe"', 'sans-serif'], // Primary paragraph font
-        'body-alt': ['"Mulish"', 'sans-serif'], // Alternative paragraph font
+        'body-alt': ['"Bellefair"', 'sans-serif'], // Alternative paragraph font
         // Fallbacks for compatibility
         'sans': ['"Alumni Sans Pinstripe"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         'serif': ['"Bellefair"', 'Georgia', 'serif']

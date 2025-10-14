@@ -49,13 +49,13 @@ export const InitiativesSection = () => {
               </div>
               
               {/* Icon in a bordered box */}
-              <div className="inline-flex items-center justify-center brutalist-border-box p-4 mb-6">
-                <img src={project.icon} alt={project.title} className="w-32 h-32"/>
+              <div className="inline-flex items-center justify-center">
+                <img src={project.icon} alt={project.title} className="w-48 h-48  brutalist-border-box mb-6"/>
+                <h3 className="brutalist-card-title mb-4 pl-4">
+                  {project.title}
+                </h3>
               </div>
               
-              <h3 className="brutalist-card-title mb-4 pr-12">
-                {project.title}
-              </h3>
               
               <p className="brutalist-body mb-6">
                 {project.description}

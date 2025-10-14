@@ -32,7 +32,7 @@ export const GallerySection = () => {
         <div className="mb-12 sm:mb-16">
           <div className="inline-block mb-6">
             <div className="brutalist-divider-bold mb-4" />
-            <span className="brutalist-label">Explore Our Work</span>
+            <span className="brutalist-label">{gallery.upTitle}</span>
           </div>
           
           <h2 className="brutalist-heading mb-6">

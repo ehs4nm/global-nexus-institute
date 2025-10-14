@@ -210,12 +210,19 @@
    * Note: Muted color for secondary information
    */
   .brutalist-label {
-    @apply font-body-alt 
-           uppercase 
+    @apply uppercase 
            tracking-widest 
            text-lg 
            font-semibold
-           text-gray-400 dark:text-gray-500;
+           text-gray-800 dark:text-gray-300;
+  }
+
+  .brutalist-label-inverted {
+    @apply uppercase 
+           tracking-widest 
+           text-lg 
+           font-semibold
+           text-white dark:text-black;
   }
 
   /**
@@ -228,6 +235,7 @@
     @apply font-body
            text-base sm:text-2xl
            font-normal
+           font-bold
            leading-relaxed;
     /* Color inherits from parent section */
   }

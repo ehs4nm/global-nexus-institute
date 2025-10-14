@@ -74,7 +74,7 @@ export const SloganSection = () => {
           {/* Bottom Divider */}
           <div className="relative pt-8 mt-16 brutalist-border-box border-t-2 border-b-0 border-x-0 border-white dark:border-black">
             <div className="text-center">
-              <span className="inline-block bg-black dark:bg-white px-6 brutalist-label -mt-3">
+              <span className="inline-block px-6 bg-black brutalist-label-inverted text-2xl -mt-3">
                 {slogan.bottomMessage}
               </span>
             </div>

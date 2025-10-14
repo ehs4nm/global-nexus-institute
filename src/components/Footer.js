@@ -4,7 +4,7 @@ export const Footer = () => {
   const year = new Date().getFullYear();
   
   return (
-    <footer className="bg-white dark:bg-black text-black dark:text-white py-16 sm:py-20">
+    <footer className="bg-black dark:bg-white text-white dark:text-black py-16 sm:py-20">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03] pointer-events-none">
         <div className="absolute inset-0" style={{
@@ -21,11 +21,11 @@ export const Footer = () => {
           {/* Brand Section */}
           <div className="max-w-md">
             <div className="flex items-center gap-4">
-              <div className="h-32 w-32 border-2 border-white dark:border-black overflow-hidden flex-shrink-0">
+              <div className="h-32 w-32 overflow-hidden flex-shrink-0 rounded-3xl">
                 <img 
-                  src="/assets/favicon_io/android-chrome-192x192.png" 
+                  src="/assets/images/gni.png" 
                   alt="Global Nexus Institute" 
-                  className="w-full h-full object-cover rounded-xl"
+                  className="w-full h-full object-cover "
                 />
               </div>
               <div>
@@ -38,7 +38,7 @@ export const Footer = () => {
               </div>
             </div>
             
-            <div className="w-16 h-1 bg-white dark:bg-black"></div>
+            {/* <div className="w-16 h-1 bg-white dark:bg-black"></div> */}
             
           </div>
 
