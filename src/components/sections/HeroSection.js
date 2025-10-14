@@ -74,7 +74,7 @@ export const HeroSection = () => {
   const hero = content.hero;
 
   return (
-    <section className="relative w-full h-screen mt-[130px] overflow-hidden bg-black dark:bg-white">
+    <section className="relative w-full h-[88vh] md:h-[86vh] mt-[100px] md:mt-[130px] overflow-hidden bg-black dark:bg-white">
       {/* Subtle Dot Pattern Background */}
       <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.02]" 
            style={{
@@ -82,142 +82,6 @@ export const HeroSection = () => {
              backgroundSize: '30px 30px'
            }} 
       />
-
-      {/* Neural Network / Integration Lines - Brutalist Style */}
-      <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
-        {/* Horizontal connection lines - representing integration */}
-        <motion.line
-          x1="0" y1="20%" x2="50%" y2="20%"
-          stroke="white"
-          strokeWidth="2"
-          className="dark:stroke-black opacity-30"
-          variants={chaosLineVariants}
-          initial="hidden"
-          animate="visible"
-        />
-        <motion.line
-          x1="50%" y1="20%" x2="100%" y2="20%"
-          stroke="white"
-          strokeWidth="2"
-          strokeDasharray="8 4"
-          className="dark:stroke-black opacity-20"
-          variants={chaosLineVariants}
-          initial="hidden"
-          animate="visible"
-          style={{ transitionDelay: '0.2s' }}
-        />
-        
-        {/* Vertical divider - center split */}
-        <motion.line
-          x1="50%" y1="0" x2="50%" y2="100%"
-          stroke="white"
-          strokeWidth="1"
-          strokeDasharray="12 8"
-          className="dark:stroke-black opacity-15"
-          variants={chaosLineVariants}
-          initial="hidden"
-          animate="visible"
-          style={{ transitionDelay: '0.4s' }}
-        />
-
-        {/* Cross connections - AI meets Health concept */}
-        <motion.line
-          x1="20%" y1="30%" x2="80%" y2="70%"
-          stroke="white"
-          strokeWidth="1.5"
-          className="dark:stroke-black opacity-25"
-          variants={chaosLineVariants}
-          initial="hidden"
-          animate="visible"
-          style={{ transitionDelay: '0.6s' }}
-        />
-        <motion.line
-          x1="80%" y1="30%" x2="20%" y2="70%"
-          stroke="white"
-          strokeWidth="1.5"
-          className="dark:stroke-black opacity-25"
-          variants={chaosLineVariants}
-          initial="hidden"
-          animate="visible"
-          style={{ transitionDelay: '0.8s' }}
-        />
-
-        {/* Bottom grid lines - foundation */}
-        <motion.line
-          x1="0" y1="80%" x2="100%" y2="80%"
-          stroke="white"
-          strokeWidth="2"
-          className="dark:stroke-black opacity-20"
-          variants={chaosLineVariants}
-          initial="hidden"
-          animate="visible"
-          style={{ transitionDelay: '1s' }}
-        />
-
-        {/* Neural nodes - connection points */}
-        <motion.circle
-          cx="20%" cy="30%" r="4"
-          fill="white"
-          className="dark:fill-black opacity-40"
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.4 }}
-          transition={{ delay: 1.2, duration: 0.5 }}
-        />
-        <motion.circle
-          cx="50%" cy="20%" r="5"
-          fill="white"
-          className="dark:fill-black opacity-50"
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.5 }}
-          transition={{ delay: 1.3, duration: 0.5 }}
-        />
-        <motion.circle
-          cx="80%" cy="30%" r="4"
-          fill="white"
-          className="dark:fill-black opacity-40"
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.4 }}
-          transition={{ delay: 1.4, duration: 0.5 }}
-        />
-        <motion.circle
-          cx="20%" cy="70%" r="4"
-          fill="white"
-          className="dark:fill-black opacity-40"
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.4 }}
-          transition={{ delay: 1.5, duration: 0.5 }}
-        />
-        <motion.circle
-          cx="80%" cy="70%" r="4"
-          fill="white"
-          className="dark:fill-black opacity-40"
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.4 }}
-          transition={{ delay: 1.6, duration: 0.5 }}
-        />
-
-        {/* Corner brackets - brutalist framing */}
-        <motion.polyline
-          points="5,5 5,50 50,50"
-          stroke="white"
-          strokeWidth="2"
-          fill="none"
-          className="dark:stroke-black opacity-30"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 0.3 }}
-          transition={{ delay: 1.7, duration: 0.8 }}
-        />
-        <motion.polyline
-          points="95%,5 95%,50 calc(95% - 45px),50"
-          stroke="white"
-          strokeWidth="2"
-          fill="none"
-          className="dark:stroke-black opacity-30"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 0.3 }}
-          transition={{ delay: 1.8, duration: 0.8 }}
-        />
-      </svg>
 
       <div className="relative z-10 h-full flex flex-col lg:flex-row">
         {/* LEFT SIDE - TEXT CONTENT */}
@@ -232,22 +96,15 @@ export const HeroSection = () => {
           />
 
           {/* Main Tagline with Bizarre Styling */}
-          <div className="relative">
+          <div className="relative ml-4">
             <motion.div
-              className={`font-title-alt font-black leading-[0.85] text-white dark:text-black mb-8 ${
+              className={`font-title-alt font-black leading-[0.85] text-white dark:text-black mt-10 md:mt-16 mb-4 ${
                 glitchActive ? 'animate-pulse' : ''
               }`}
               initial="hidden"
               animate="visible"
             >
-              {/* Arrow prefix */}
-              <motion.span 
-                className="block text-4xl sm:text-5xl lg:text-7xl mb-2 font-mono text-right"
-                variants={glitchVariants}
-                custom={0}
-              >
-                →
-              </motion.span>
+
               
               {hero.tagline.split(' ').map((word, wordIndex) => (
                 <motion.div
@@ -260,7 +117,7 @@ export const HeroSection = () => {
                   }}
                 >
                   <span 
-                    className="inline-block text-5xl sm:text-6xl lg:text-[7rem] xl:text-[8rem] tracking-tighter"
+                    className="inline-block text-4xl sm:text-5xl lg:text-[6rem] tracking-tighter"
                     style={{
                       textShadow: glitchActive ? '3px 3px 0 rgba(255,255,255,0.3)' : 'none',
                       transform: glitchActive ? 'skew(-2deg)' : 'none'
@@ -307,7 +164,7 @@ export const HeroSection = () => {
 
           {/* Bottom Label with Mono Font */}
           <motion.div
-            className="mt-auto mb-8 flex items-center gap-4"
+            className="mt-auto mb-24 ml-4 flex items-center gap-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2.8, duration: 1 }}
