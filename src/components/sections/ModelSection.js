@@ -1,62 +1,48 @@
 import React from 'react';
+import { useContent } from '../../hooks/useContent';
 
 export const ModelSection = () => {
+
+    const { content, isLoading } = useContent();
+    
+    // Safety check - ensure we have content and pillars data
+    if (isLoading || !content || !content.pillars) {
+      return (
+        <section id="pillars" className="brutalist-section text-black dark:text-white flex items-center min-h-screen">
+          <div className="brutalist-container relative w-full py-8 flex items-center justify-center">
+            <div className="brutalist-label">Loading pillars data...</div>
+          </div>
+        </section>
+      );
+    }
+    
+    const pillars = content.pillars || {};
+    const cards = pillars.cards || [];
+
+
   return (
     <section
       id="model"
       className="relative brutalist-section-inverted flex items-center overflow-hidden"
     >
-      {/* Background Pillar Image (visible only on lg and up) */}
-      {/* <div className="hidden lg:block absolute inset-y-0 right-0 w-1/4 opacity-10">
-        <img
-          src="/assets/images/pillar.png"
-          alt="Decorative pillar"
-          className="w-full h-full object-cover object-right mix-blend-lighten pointer-events-none select-none"
-        />
-      </div> */}
-
       <div className="relative brutalist-container">
         {/* Header */}
         <div className="max-w-4xl mb-16 sm:mb-20 relative z-10">
           <div className="space-y-6">
             <h2 className="brutalist-heading">
-              From research to<br />real-world impact
+              {pillars.title}
+              
             </h2>
             <div className="brutalist-divider-bold"></div>
           </div>
           <p className="mt-8 brutalist-subheading">
-            GNI operates through four interconnected pillars that turn insight into action.
+            {pillars.subtitle}
           </p>
         </div>
 
         {/* Pillars Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
-          {[
-            {
-              title: 'Research Clusters',
-              description: 'Understanding the',
-              highlight: 'what',
-              number: '01'
-            },
-            {
-              title: 'Geospatial & Data Intelligence',
-              description: 'Mapping the',
-              highlight: 'where & when',
-              number: '02'
-            },
-            {
-              title: 'Actionable Intelligence',
-              description: 'Translating insight into decisions.',
-              highlight: null,
-              number: '03'
-            },
-            {
-              title: 'Alliances & Communications',
-              description: 'Amplifying global influence.',
-              highlight: null,
-              number: '04'
-            }
-          ].map((pillar, idx) => (
+          {cards.map((pillar, idx) => (
             <article
               key={idx}
               className="brutalist-card-minimal group p-8 text-white dark:text-black relative"
@@ -80,6 +66,7 @@ export const ModelSection = () => {
               </div>
             </article>
           ))}
+        
         </div>
 
         {/* Bottom Decorative Line */}

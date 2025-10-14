@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import { useDesignTheme } from '../hooks/useDesignTheme';
 import { useMenu } from '../hooks/useMenu';
+import { useScrollHeader } from '../hooks/useScrollHeader';
 import { TopBar } from './TopBar';
 import { MegaMenu } from './menus/MegaMenu';
 
@@ -9,6 +10,7 @@ export const Header = () => {
   const { isDark, toggleTheme } = useTheme();
   const { isRefined, toggleDesignTheme } = useDesignTheme();
   const { setMenuOpen, menuItems, navigation } = useMenu();
+  const isVisible = useScrollHeader();
   
   // Get navigation items from content
   const whatWeDo = navigation?.whatWeDo || [];
@@ -21,7 +23,7 @@ export const Header = () => {
   const whatWeDoId = useMemo(() => 'what-we-do', []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40">
+    <header className={`fixed inset-x-0 top-0 z-40 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       {/* Top black bar */}
       <TopBar />
 

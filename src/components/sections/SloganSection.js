@@ -1,8 +1,23 @@
 import React from 'react';
+import { useContent } from '../../hooks/useContent';
 
 export const SloganSection = () => {
+  const { content, isLoading } = useContent();
+  
+  if (isLoading || !content || !content.slogan) {
+    return (
+      <section id="slogan" className="refined-section">
+        <div className="refined-container relative flex items-center justify-center min-h-[50vh]">
+          <div className="refined-label">Loading slogan data...</div>
+        </div>
+      </section>
+    );
+  }
+  
+  const slogan = content.slogan;
+  
   return (
-    <section id="slogan" className="brutalist-section-inverted text-black dark:text-white flex md:h-[60vh]">
+    <section id="slogan" className="brutalist-section text-black dark:text-white flex md:h-[60vh]">
       {/* Dot pattern background */}
       <div className="brutalist-bg-dots absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" />
       
@@ -12,40 +27,40 @@ export const SloganSection = () => {
           {/* Section Header */}
           <div className="inline-block mb-6">
             <div className="brutalist-divider-bold mb-4" />
-            <span className="brutalist-label text-[1.5rem]">How We Work</span>
+            <span className="brutalist-label text-[1.5rem]">{slogan.upTitle}</span>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="lg:col-span-5">
               <h2 className="brutalist-heading text-[3rem] md:text-[3rem] lg:text-[4rem]">
-                HOW WE WORK
+                {slogan.title}
               </h2>
               
               {/* Decorative border box */}
               <div className="md:mt-8 brutalist-border-box p-6">
                 <div className="brutalist-divider-bold  md:mb-4" />
                 <p className="brutalist-label text-xs md:text-base">
-                  Strategy • Policy • Delivery
+                  {slogan.inTheBox}
                 </p>
               </div>
             </div>
             
             <div className="lg:col-span-7">
               <h3 className="brutalist-card-title md:text-5xl mb-8">
-                Here to turn bold ideas into reality
+                {slogan.subtitle}
               </h3>
               
               <div className="space-y-6">
                 <p className="brutalist-body">
-                  We help governments and leaders get things done. We do it by advising on strategy, policy and delivery, Harnessing data and systems analysis to inform smarter decisions.
+                  {slogan.body}
                 </p>
                 
                 <p className="brutalist-body">
-                  As a not-for-profit, we can work in the most challenging contexts and on the most transformative projects because our focus is on leaders rather than profits.
+                  {slogan.body2}
                 </p>
                 
                 <p className="brutalist-body">
-                  And as a non-partisan organisation, we can bring the best of our expertise to leaders who want to translate their ambition into meaningful action for their people.
+                  {slogan.body3}
                 </p>
                 
                 {/* Decorative line */}
@@ -57,10 +72,10 @@ export const SloganSection = () => {
           </div>
           
           {/* Bottom Divider */}
-          <div className="relative pt-8 mt-16 brutalist-border-box-inverted border-t-2 border-b-0 border-x-0 border-white dark:border-black">
+          <div className="relative pt-8 mt-16 brutalist-border-box border-t-2 border-b-0 border-x-0 border-white dark:border-black">
             <div className="text-center">
               <span className="inline-block bg-black dark:bg-white px-6 brutalist-label -mt-3">
-                Focused on Impact, Not Profits
+                {slogan.bottomMessage}
               </span>
             </div>
           </div>

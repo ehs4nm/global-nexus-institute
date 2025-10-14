@@ -25,7 +25,7 @@ export const InitiativesSection = () => {
         {/* Section Header */}
         <div className="inline-block mb-6">
           <div className="brutalist-divider-bold mb-4" />
-          <span className="brutalist-label">Our Initiatives</span>
+          <span className="brutalist-label">{initiatives.lable}</span>
         </div>
         
         <header className="max-w-4xl mb-12 sm:mb-16">
@@ -80,7 +80,7 @@ export const InitiativesSection = () => {
         <div className="relative pt-8 mt-16 brutalist-border-box border-t-2 border-b-0 border-x-0">
           <div className="text-center">
             <span className="inline-block bg-white dark:bg-black px-6 brutalist-label -mt-3">
-              Turning Foresight Into Global Impact
+              {initiatives.bottom}
             </span>
           </div>
         </div>

@@ -1,10 +1,20 @@
 import React from 'react';
+import { useContent } from '../../hooks/useContent';
 
 export const ContactSection = () => {
+  const { content } = useContent();
+  
+  // Return null if content is not loaded yet
+  if (!content || !content.contactUs) {
+    return null;
+  }
+
+  const contactUsContent = content.contactUs;
+  
   return (
     <section 
       id="contact" 
-      className="brutalist-section-inverted min-h-[60vh] py-20 sm:py-24 md:py-32 dark:bg-black text-black dark:text-white flex items-center relative"
+      className="brutalist-section min-h-[60vh] py-20 sm:py-24 md:py-32 dark:bg-black text-black dark:text-white flex items-center relative"
     >
       {/* Subtle background pattern */}
       <div className="brutalist-bg-dots absolute inset-0 opacity-[0.02] dark:opacity-[0.03] pointer-events-none" />
@@ -15,14 +25,18 @@ export const ContactSection = () => {
         <div className="text-center mb-12 sm:mb-16">
           <div className="space-y-6">
             <h2 className="brutalist-heading">
-              Join the Nexus
+            {contactUsContent.slogan}
             </h2>
             
             <div className="brutalist-divider-bold mx-auto"></div>
           </div>
 
           <p className="mt-8 brutalist-subheading max-w-3xl mx-auto ">
-            Shape the future of global foresight. Partner with GNI to build resilient, informed, and equitable systems.
+            {contactUsContent.subtitle}
+          </p>
+
+          <p className="mt-4 brutalist-subheading text-3xl max-w-3xl mx-auto ">
+            {contactUsContent.contactEmail}
           </p>
         </div>
 
@@ -70,21 +84,12 @@ export const ContactSection = () => {
             className="group relative w-full sm:w-auto px-12 py-4 font-bold text-base sm:text-lg transition-all duration-300 overflow-hidden bg-white dark:bg-black hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
           >
             <span className="relative z-10 brutalist-label tracking-wider">
-              CONTACT OUR TEAM →
+            {contactUsContent.btnTitle}
             </span>
             
             <div className="absolute inset-0 bg-black dark:bg-white transform translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
           </button>
         </form>
-
-        {/* Bottom decorative element */}
-        <div className="mt-16 sm:mt-20 flex items-center gap-4">
-          <div className="brutalist-divider flex-1"></div>
-          <p className="brutalist-label brutalist-arrow">
-            Let’s connect
-          </p>
-          <div className="brutalist-divider flex-1"></div>
-        </div>
       </div>
     </section>
   );

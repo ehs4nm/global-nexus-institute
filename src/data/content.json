@@ -9,12 +9,43 @@
   "hero": {
     "tagline": "Foresight and Action for an Intelegent Connected World",
     "title": "Foresight. Strategy. Delivery.",
-    "subtitle": "— before they collide and cascade.",
+    "subtitle": "— crises of this century do not occur in isolation",
     "videoSrc": "/assets/videos/video-6.mp4",
     "posterSrc": "/assets/images/1.jpg"
   },
+  "pillars": {
+    "title": "From research to real-world impact",
+    "subtitle": "GNI operates through four interconnected pillars that turn insight into action.",
+    "cards": [
+      {
+        "title": "Research Clusters",
+        "description": "Understanding the",
+        "highlight": "what",
+        "number": "01"
+      },
+      {
+        "title": "Geospatial & Data Intelligence",
+        "description": "Mapping the",
+        "highlight": "where & when",
+        "number": "02"
+      },
+      {
+        "title": "Actionable Intelligence",
+        "description": "Translating insight into decisions.",
+        "highlight": null,
+        "number": "03"
+      },
+      {
+        "title": "Alliances & Communications",
+        "description": "Amplifying global influence.",
+        "highlight": null,
+        "number": "04"
+      }
+    ]
+  },
   "mission": {
     "title": "Crises Don’t Stand Alone",
+    "bottom": "Breaking Silos Through Integration",
     "paragraphs": [
       "Energy shocks fuel conflict. Conflict spreads disease. Health crises destabilize economies. Yet global response remains fragmented.",
       "The Global Nexus Institute (GNI) connects these dots — integrating energy, geopolitics, and health into a unified framework for resilience and equity."],
@@ -39,8 +70,27 @@
     "caption": "A connected world demands connected intelligence — and collective action.",
     "image": "/assets/images/system_links.jpg"
   },
+  "slogan": {
+    "upTitle": "HOW WE WORK",
+    "title": "WE WORK A LOT",
+    "inTheBox": "Strategy • Policy • Delivery",
+    "subtitle": "Here to turn bold ideas into reality",
+    "body": "We help governments and leaders get things done. We do it by advising on strategy, policy and delivery, Harnessing data and systems analysis to inform smarter decisions.",
+    "body2": "As a not-for-profit, we can work in the most challenging contexts and on the most transformative projects because our focus is on leaders rather than profits.",
+    "body3": "And as a non-partisan organisation, we can bring the best of our expertise to leaders who want to translate their ambition into meaningful action for their people.",
+    "bottomMessage": "Focused on Impact, Not Profits"
+  },
+  "contactUs": {
+    "subtitle": "Shape the future of global foresight. Partner with GNI to build resilient, informed, and equitable systems. For enquiries about partnerships, advisory engagements, or commissioned research",
+    "contactEmail": "Contact: info@globalnexusinstitute.org",
+    "slogan": "Join the Nexus",
+    "btnTitle": "CONTACT OUR TEAM →",
+    "bottomMessage": "Let’s connect"
+  },
   "initiatives": {
     "title": "Turning Foresight into Collective Impact.",
+    "label": "Our Initiatives",
+    "bottom": "Turning Foresight Into Global Impact",
     "subtitle": "Two flagship programs translating foresight into measurable change.",
     "projects": [
       {
@@ -59,29 +109,36 @@
       }
     ]
   },
-  "leadership": [
-    {
-      "name": "Favoud Ahmad",
-      "role": "Founder & Executive Director",
-      "title": "CEO",
-      "bio": "Favoud leads GNI with a builder's mindset, integrating industry pragmatism with systems thinking. He drives high-clarity strategy, convenes cross-sector alliances, and turns foresight into execution.",
-      "img": "/assets/leaders/foad-ahmed.jpg"
-    },
-    {
-      "name": "Dr. Saied Froghi",
-      "role": "Director of Health Foresight",
-      "title": "Director of Global Health Policy",
-      "bio": "Dr. Froghi brings clinical insight and policy depth to the nexus of public health, crisis response, and equitable system design.",
-      "img": "/assets/leaders/saied-froghi.jpg"
-    },
-    {
-      "name": "Advisory Council",
-      "role": "Global Advisors",
-      "title": "Strategic Advisor",
-      "bio": "We are assembling a council of senior advisors across energy, finance, security, and public health to guide our mission and amplify global impact.",
-      "img": "/assets/leaders/reza-azami.jpg"
-    }
-  ],
+  "leadership": {
+    "title": "Leadership",
+    "memebers": "12+",
+    "subTitle": "Led by global experts in health policy, energy strategy, and geopolitics — backed by advisors from leading institutions.",
+    "label": "Our Leadership",
+    "bottom": "Leadership",
+    "leaders": [
+      {
+        "name": "Favoud Ahmad",
+        "role": "Founder & Executive Director",
+        "title": "CEO",
+        "bio": "Favoud leads GNI with a builder's mindset, integrating industry pragmatism with systems thinking. He drives high-clarity strategy, convenes cross-sector alliances, and turns foresight into execution.",
+        "img": "/assets/leaders/foad-ahmed.jpg"
+      },
+      {
+        "name": "Dr. Saied Froghi",
+        "role": "Director of Health Foresight",
+        "title": "Director of Global Health Policy",
+        "bio": "Dr. Froghi brings clinical insight and policy depth to the nexus of public health, crisis response, and equitable system design.",
+        "img": "/assets/leaders/saied-froghi.jpg"
+      },
+      {
+        "name": "Advisory Council",
+        "role": "Global Advisors",
+        "title": "Strategic Advisor",
+        "bio": "We are assembling a council of senior advisors across energy, finance, security, and public health to guide our mission and amplify global impact.",
+        "img": "/assets/leaders/reza-azami.jpg"
+      }
+    ]
+  },
   "gallery": {
     "title": "Signals from the Nexus",
     "subtitle": "Hover to reveal the full frame. We expand the viewport — not the image — to show the whole picture.",

@@ -66,7 +66,7 @@ const NewsTickerSection = () => {
   }
 
   return (
-    <section className="brutalist-card text-black dark:text-white border-y border-neutral-800 overflow-hidden relative" style={{ height: '5vh' }}>
+    <section className="brutalist-card-inverted text-black dark:text-white overflow-hidden relative border-0" style={{ height: '5vh' }}>
       <div 
         ref={tickerRef}
         className="h-full flex items-center relative"

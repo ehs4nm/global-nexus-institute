@@ -11,7 +11,7 @@ export const LeadershipSection = () => {
     return (
       <section 
         id="leadership" 
-        className="min-h-screen py-20 sm:py-24 md:py-32 bg-white dark:bg-black text-black dark:text-white relative border-t-4 border-black"
+        className="min-h-screen py-20 sm:py-24 md:py-32  text-black dark:text-white relative"
       >
         <div className="brutalist-container relative flex items-center justify-center min-h-[50vh]">
           <div className="brutalist-label">Loading leadership data...</div>
@@ -20,15 +20,16 @@ export const LeadershipSection = () => {
     );
   }
   
-  const leadershipData = content.leadership || [];
+  const leadershipData = content.leadership || {};
+  const leaders = leadershipData.leaders || [];
   
-  // Safety check - ensure leadershipData is an array
-  if (!Array.isArray(leadershipData)) {
-    console.warn('Leadership data is not an array:', leadershipData);
+  // Safety check - ensure we have leadership data structure
+  if (!leadershipData.title || !Array.isArray(leaders)) {
+    console.warn('Invalid leadership data structure:', leadershipData);
     return (
       <section 
         id="leadership" 
-        className="min-h-screen py-20 sm:py-24 md:py-32 bg-white dark:bg-black text-black dark:text-white relative border-t-4 border-black"
+        className="min-h-screen py-20 sm:py-24 md:py-32  text-black dark:text-white relative"
       >
         <div className="brutalist-container relative flex items-center justify-center min-h-[50vh]">
           <div className="brutalist-label">Error loading leadership data</div>
@@ -40,7 +41,7 @@ export const LeadershipSection = () => {
   return (
     <section 
       id="leadership" 
-      className="brutalist-section-inverted min-h-screen py-20 sm:py-24 md:py-32 bg-white dark:bg-black text-black dark:text-white relative border-t-4 border-black"
+      className="brutalist-section min-h-screen py-20 sm:py-24 md:py-32  text-black dark:text-white relative border-0"
     >
       {/* Subtle background pattern */}
       <div className="brutalist-bg-dots absolute inset-0 opacity-[0.02] dark:opacity-[0.03] pointer-events-none" />
@@ -52,7 +53,7 @@ export const LeadershipSection = () => {
           <div className="space-y-6 lg:max-w-2xl">
             <div className="inline-block">
               <h2 className="brutalist-heading">
-                Leadership
+                {leadershipData.title}
               </h2>
             </div>
             
@@ -62,7 +63,7 @@ export const LeadershipSection = () => {
           <div className="relative">
             <div className="brutalist-card text-black dark:text-white p-6 sm:p-8">
               <p className="brutalist-body font-bold text-3xl">
-                Led by global experts in health policy, energy strategy, and geopolitics — backed by advisors from leading institutions.
+                {leadershipData.subTitle}
               </p>
             </div>
           </div>
@@ -70,7 +71,7 @@ export const LeadershipSection = () => {
 
         {/* Bold Asymmetric Leadership Layout */}
         <div className=" space-y-8 sm:space-y-12">
-          {leadershipData.map((person, idx) => {
+          {leaders.map((person, idx) => {
             const isEven = idx % 2 === 0;
             
             return (
@@ -121,7 +122,7 @@ export const LeadershipSection = () => {
                       </div>
 
                       {/* Divider */}
-                      <div className="w-full h-px bg-white dark:bg-black group-hover:bg-black dark:group-hover:bg-white transition-all duration-500" />
+                      <div className="w-full h-px  group-hover:bg-black dark:group-hover:bg-white transition-all duration-500" />
                       
                       {/* Bio */}
                       <p className="brutalist-body text-2xl leading-relaxed">
@@ -147,13 +148,13 @@ export const LeadershipSection = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12">
             <div>
               <div className="font-mono text-4xl sm:text-5xl font-black mb-2">
-                {leadershipData.length}
+                {leaders.length}
               </div>
               <div className="brutalist-label">LEADERSHIP MEMBERS</div>
             </div>
             <div>
               <div className="font-mono text-4xl sm:text-5xl font-black mb-2">
-                12+
+                {leadershipData.memebers || '0'}
               </div>
               <div className="brutalist-label">DISCIPLINES COVERED</div>
             </div>

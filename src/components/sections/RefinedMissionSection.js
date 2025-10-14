@@ -86,7 +86,7 @@ export const MissionSection = () => {
           <div className="flex justify-center -mt-3">
             <div className="bg-white dark:bg-[#0a0a0a] px-8">
               <span className="refined-label">
-                Breaking Silos Through Integration
+                {mission.bottom}
               </span>
             </div>
           </div>

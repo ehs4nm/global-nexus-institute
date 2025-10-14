@@ -78,7 +78,7 @@ export const MissionSection = () => {
         <div className="relative pt-8 mt-16 brutalist-border-box border-t-2 border-b-0 border-x-0">
           <div className="text-center">
             <span className="inline-block bg-white dark:bg-black px-6 brutalist-label -mt-3">
-              Breaking Silos Through Integration
+              {mission.bottom}
             </span>
           </div>
         </div>
