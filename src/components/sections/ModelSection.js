@@ -35,7 +35,7 @@ export const ModelSection = () => {
             </h2>
             <div className="brutalist-divider-bold"></div>
           </div>
-          <p className="mt-8 brutalist-subheading">
+          <p className="mt-8 brutalist-subheading text-white dark:text-black">
             {pillars.subtitle}
           </p>
         </div>

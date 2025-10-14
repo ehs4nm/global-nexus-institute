@@ -199,13 +199,13 @@
       {
         "id": "actionable",
         "label": "ACTIONABLE",
-        "img": "/assets/images/standing-stone.jpg",
+        "img": "/assets/images/heart-hand.png",
         "slug": "actionable",
         "pageContent": {
           "title": "Actionable Intelligence & Scenarios — <So What?>",
           "subtitle": "Where insight meets decision",
           "description": "The insights we generate are delivered through a range of outputs that connect foresight to action.",
-          "heroImage": "/assets/images/standing-stone.jpg",
+          "heroImage": "/assets/images/heart-hand.png",
           "sections": [
             {
               "heading": "48-hour rapid-response briefs on emerging global crises",
@@ -225,13 +225,13 @@
       {
         "id": "strategic-alliances",
         "label": "STRATEGIC ALLIANCES",
-        "img": "/assets/images/orb-rising.jpg",
+        "img": "/assets/images/orb-rising.png",
         "slug": "strategic-alliances",
         "pageContent": {
           "title": "Strategic Alliances & Communications — <Who & How>",
           "subtitle": "Building adaptive capacity in an interconnected world for now",
           "description": "",
-          "heroImage": "/assets/images/orb-rising.jpg",
+          "heroImage": "/assets/images/orb-rising.png",
           "sections": [
             {
               "heading": "Global Nexus Alliance",

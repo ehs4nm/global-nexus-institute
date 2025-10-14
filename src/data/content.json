@@ -145,85 +145,105 @@
     "subtitle": "GNI operates as an integrated consultancy model, not a siloed think tank. Our work is delivered through four interconnected pillars that link insight to execution.",
     "items": [
       {
-        "id": "energy-systems",
-        "label": "Energy Systems",
+        "id": "research-clusters",
+        "label": "RESEARCH CLUSTERS",
         "img": "/assets/images/orb-turbin.png",
-        "slug": "energy-systems",
+        "slug": "research-clusters",
         "pageContent": {
-          "title": "Energy Systems",
-          "subtitle": "Understanding global energy transitions and their cascading effects",
+          "title": "Nexus Research Clusters — <What We Study>",
+          "subtitle": "These clusters generate cross-domain insights that form the foundation of GNI’s advisory outputs.",
+          "description": "Dynamic, interdisciplinary teams addressing intersectional challenges such as:",
           "heroImage": "/assets/images/orb-turbin.png",
           "sections": [
             {
-              "heading": "Overview",
-              "content": "Energy systems form the backbone of modern civilization. Our research tracks the complex interplay between energy security, geopolitical stability, and public health outcomes."
+              "heading": "Climate, Conflict & Contagion",
+              "content": ""
             },
             {
-              "heading": "Key Focus Areas",
-              "content": "We analyze energy transition pathways, renewable energy deployment, fossil fuel dependencies, and the health implications of energy choices across different regions."
+              "heading": "Energy Transition & Health Equity",
+              "content": ""
+            },
+            {
+              "heading": "Energy Transition & Health Equity",
+              "content": "Critical Minerals & Supply Chain Stability"
             }
           ]
         }
       },
       {
-        "id": "geopolitics",
+        "id": "geospatial-data",
         "label": "GEOSPATIAL & DATA",
         "img": "/assets/images/chess.png",
-        "slug": "geopolitics",
+        "slug": "geospatial-data",
         "pageContent": {
-          "title": "Geopolitics",
-          "subtitle": "Mapping the intersection of power, resources, and global stability",
+          "title": "Geospatial & Data Intelligence Unit (GDIU) — <Where & When>",
+          "subtitle": "The technical and analytical engine of GNI",
+          "description": "The technical and analytical engine of GNI, producing:",
           "heroImage": "/assets/images/chess.png",
           "sections": [
             {
-              "heading": "Strategic Analysis",
-              "content": "Geopolitical dynamics shape access to resources, health infrastructure, and crisis response capabilities. We provide foresight on emerging hotspots and systemic risks."
+              "heading": "Live risk maps of conflicts, energy chokepoints, and outbreaks",
+              "content": ""
             },
             {
-              "heading": "Regional Insights",
-              "content": "Our analysis covers energy corridors, supply chain vulnerabilities, and the geopolitical dimensions of health security and pandemic preparedness."
+              "heading": "AI-driven forecasting dashboards for systemic stress testing",
+              "content": ""
+            },
+            {
+              "heading": "Resource-flow models linking supply disruptions to social and health outcomes",
+              "content": ""
             }
           ]
         }
       },
       {
-        "id": "public-health",
+        "id": "actionable",
         "label": "ACTIONABLE",
-        "img": "/assets/images/standing-stone.jpg",
-        "slug": "public-health",
+        "img": "/assets/images/heart-hand.png",
+        "slug": "actionable",
         "pageContent": {
-          "title": "ACTIONABLE",
-          "subtitle": "Connecting health outcomes to energy and geopolitical factors",
-          "heroImage": "/assets/images/standing-stone.jpg",
+          "title": "Actionable Intelligence & Scenarios — <So What?>",
+          "subtitle": "Where insight meets decision",
+          "description": "The insights we generate are delivered through a range of outputs that connect foresight to action.",
+          "heroImage": "/assets/images/heart-hand.png",
           "sections": [
             {
-              "heading": "Nexus Approach",
-              "content": "Public health doesn't exist in isolation. Energy transitions affect air quality. Conflicts disrupt healthcare. Economic shocks limit health investments. We connect the dots."
+              "heading": "48-hour rapid-response briefs on emerging global crises",
+              "content": ""
             },
             {
-              "heading": "Research Areas",
-              "content": "Our work spans climate health impacts, pandemic preparedness, health system resilience, and the social determinants shaped by energy and geopolitical forces."
+              "heading": "Quarterly horizon-scanning reports for policy and corporate planning",
+              "content": ""
+            },
+            {
+              "heading": "Confidential wargaming and simulation exercises for clients",
+              "content": ""
             }
           ]
         }
       },
       {
-        "id": "resilience",
-        "label": "STRATEGIC ALLIANCES & COMMUNICATIONS",
-        "img": "/assets/images/orb-rising.jpg",
-        "slug": "resilience",
+        "id": "strategic-alliances",
+        "label": "STRATEGIC ALLIANCES",
+        "img": "/assets/images/orb-rising.png",
+        "slug": "strategic-alliances",
         "pageContent": {
-          "title": "STRATEGIC ALLIANCES & COMMUNICATIONS",
+          "title": "Strategic Alliances & Communications — <Who & How>",
           "subtitle": "Building adaptive capacity in an interconnected world for now",
-          "heroImage": "/assets/images/orb-rising.jpg",
+          "description": "",
+          "heroImage": "/assets/images/orb-rising.png",
           "sections": [
             {
-              "heading": "Systems Thinking",
-              "content": "Resilience requires understanding how shocks propagate across energy, political, and health systems. We identify vulnerabilities and design interventions."
+              "heading": "Global Nexus Alliance",
+              "content": "a membership network of governments, corporates, and NGOs."
             },
             {
-              "heading": "Practical Solutions",
-              "content": "From diversified energy portfolios to robust health infrastructure, we help decision-makers build systems that can withstand and adapt to cascading crises."
+              "heading": "Strategic Communications",
+              "content": "— podcasts, data visualizations, and multimedia storytelling that make complex systems intelligible."
+            },
+            {
+              "heading": "Annual Global Nexus Summit",
+              "content": "— a high-level convening for cross-sector crisis foresight (a “Davos for interconnected risk”)."
             }
           ]
         }
