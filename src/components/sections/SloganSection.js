@@ -35,6 +35,9 @@ export const SloganSection = () => {
               <h2 className="brutalist-heading text-[3rem] md:text-[3rem] lg:text-[4rem]">
                 {slogan.title}
               </h2>
+              <h3 className="brutalist-heading text-[3rem] md:text-[3rem] lg:text-[4rem] text-secondary">
+                {slogan.secondTitle}
+              </h3>
               
               {/* Decorative border box */}
               <div className="md:mt-8 brutalist-border-box p-6">

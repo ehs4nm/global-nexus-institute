@@ -7,35 +7,76 @@
     "posterSrc": "/assets/images/1.jpg"
   },
   "pillars": {
-    "title": "From research to real-world impact",
-    "subtitle": "GNI operates through four interconnected pillars that turn insight into action.",
+    "title": "Integrated Intelligence Framework",
+    "subtitle": "Our methodology is built on a systemic, system-aware approach that transforms complexity into actionable insight.",
     "cards": [
       {
-        "title": "Research Clusters",
-        "description": "Understanding the",
-        "highlight": "what",
+        "title": "Vision",
+        "description": "A world where decisions about energy, health, and geopolitics are made as one interconnected system—ensuring sustainability, security, and human well-being reinforce each other.",
         "number": "01"
       },
       {
-        "title": "Geospatial & Data Intelligence",
-        "description": "Mapping the",
-        "highlight": "where & when",
+        "title": "Mission",
+        "description": "To deliver pioneering, data-driven intelligence at the intersection of energy, geopolitics, and public health, empowering leaders to make decisions that are informed, timely, and systemically aware.",
         "number": "02"
       },
       {
-        "title": "Actionable Intelligence",
-        "description": "Translating insight into decisions.",
-        "highlight": null,
+        "title": "Core Values",
+        "description": "Our foundation rests on Integrity, Non-Partisanship, Impact, Collaboration, and Adaptability. These principles guide every action and analysis.",
         "number": "03"
       },
       {
-        "title": "Alliances & Communications",
-        "description": "Amplifying global influence.",
-        "highlight": null,
+        "title": "Strategy & Objectives",
+        "description": "Focusing on illuminating interconnections, developing predictive foresight, fostering collaboration, and empowering decision-makers with actionable intelligence.",
         "number": "04"
       }
-    ]
+    ],
+    "details": {
+      "vision": "A world where decisions about energy, health, and geopolitics are made as one interconnected system — where sustainability, security, and human well-being reinforce rather than undermine each other. We envision a global ecosystem of leaders and institutions capable of anticipating risks, shaping transitions, and ensuring that progress in one domain strengthens resilience in all.",
+      "mission": "To deliver pioneering, data-driven intelligence at the intersection of energy, geopolitics, and public health — turning complex global dynamics into actionable insights. We bridge the gap between research and strategy, empowering leaders in government, industry, and civil society to make decisions that are informed, timely, and systemically aware. Our mission is to transform analysis into impact.",
+      "objectives": [
+        "Illuminate Interconnections: Reveal causal pathways linking energy systems, resource dependencies, conflict dynamics, and health outcomes. We expose hidden patterns to enable proactive action.",
+        "Develop Predictive Foresight: Design and implement foresight systems that forecast nexus “hotspots” where shifts could trigger geopolitical or health consequences, guiding strategic planning.",
+        "Foster Multi-Sector Collaboration: Convene a global coalition of governments, corporations, financial institutions, and NGOs to co-create actionable solutions and scale innovation across sectors.",
+        "Empower Decision-Makers: Translate complex data into decision-ready intelligence, providing clear, timely, and operational insights through dashboards, reports, and executive briefings."
+      ],
+      "coreValues": [
+        "Integrity in Analysis – Every insight is grounded in transparency, rigor, and evidence.",
+        "Non-Partisanship – We are trusted by leaders across political and institutional divides.",
+        "Impact over Ideology – Our focus is measurable outcomes, not theoretical debates.",
+        "Collaboration and Inclusion – We thrive on partnerships that cross disciplines and sectors.",
+        "Adaptability and Innovation – We evolve with the challenges we study, constantly refining our methods and models."
+      ],
+      "principles": [
+        "Systemic Thinking: Every project integrates political, environmental, and health dimensions of energy transitions.",
+        "Evidence-Based Advisory: All recommendations are data-backed, peer-reviewed, and outcome-oriented.",
+        "Agile Delivery: We combine consultancy precision with startup agility — delivering value iteratively.",
+        "Ethical Intelligence: We uphold strict standards on data ethics, confidentiality, and societal responsibility."
+      ],
+      "kpis": {
+        "Strategic KPIs": [
+          "Policy Impact Index – Number and quality of governmental or institutional policies influenced by our intelligence outputs.",
+          "Cross-Sector Partnership Growth – Volume and diversity of partnerships established across public, private, and NGO domains.",
+          "Forecast Accuracy Rate – Percentage of foresight predictions validated through subsequent real-world developments.",
+          "Knowledge Dissemination Metrics – Reach and engagement across publications, events, and briefings.",
+          "Client/Partner Retention Rate – Long-term engagement ratio reflecting trust and perceived value."
+        ],
+        "Operational KPIs": [
+          "Project Delivery Efficiency – Timeliness and adherence to scope within defined resource parameters.",
+          "Data Model Performance – Accuracy, explainability, and reproducibility of analytical models.",
+          "Decision Uptake Rate – Proportion of insights that directly inform strategic or operational decisions by clients.",
+          "Innovation Index – Frequency of new methodologies, tools, or frameworks introduced annually."
+        ],
+        "Critical Success KPIs": [
+          "System Impact Score: Composite measure assessing real-world change resulting from implemented recommendations.",
+          "Early-Warning Adoption Rate: Percentage of client institutions adopting predictive tools or foresight frameworks.",
+          "Multi-Stakeholder Alignment: Level of cross-sector coordination achieved in complex project environments.",
+          "Reputation Capital: External recognition, citations, or media references as a thought leader in energy-health-geopolitical intelligence."
+        ]
+      }
+    }
   },
+
   "mission": {
     "title": "Crises Don’t Stand Alone",
     "bottom": "Breaking Silos Through Integration",
@@ -65,7 +106,8 @@
   },
   "slogan": {
     "upTitle": "Turning Vision into Impact",
-    "title": "Advising Leaders Delivering Change",
+    "title": "Advising Leaders",
+    "secondTitle": "Delivering Change",
     "inTheBox": "Driving Systems-Level Change",
     "subtitle": "Here to turn bold ideas into reality",
     "body": "We help governments and leaders get things done. We do it by advising on strategy, policy and delivery, Harnessing data and systems analysis to inform smarter decisions.",
@@ -133,7 +175,8 @@
     ]
   },
   "gallery": {
-    "title": "4 pillars of GNI Model:",
+    "title": "4 pillars ",
+    "secondTitle": "of GNI Model:",
     "upTitle": "Structure for Impact",
     "subtitle": "GNI operates as an integrated consultancy model, not a siloed think tank. Our work is delivered through four interconnected pillars that link insight to execution.",
     "items": [

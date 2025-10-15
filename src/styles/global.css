@@ -270,6 +270,14 @@
            border-t-2 border-black dark:border-white;
   }
 
+  .bg-secondary {
+    @apply bg-indigo-900;
+  }
+
+  .text-secondary {
+    @apply text-indigo-900;
+  }
+
   /**
    * Inverted Section (Dark on Light pages)
    * Usage: Alternating sections for visual hierarchy

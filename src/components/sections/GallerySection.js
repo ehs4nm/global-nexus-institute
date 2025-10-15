@@ -36,7 +36,7 @@ export const GallerySection = () => {
           </div>
           
           <h2 className="brutalist-heading mb-6">
-            {gallery.title}
+            {gallery.title}{gallery.secondTitle}
           </h2>
           <p className="brutalist-body max-w-3xl">
             {gallery.subtitle}
@@ -52,7 +52,7 @@ export const GallerySection = () => {
                 className="brutalist-card group overflow-hidden"
               >
                 {/* Number badge */}
-                <div className="absolute top-0 right-0 bg-black dark:bg-white text-white dark:text-black brutalist-label font-bold px-3 py-1 brutalist-border-box border-t-0 border-r-0 z-10">
+                <div className="absolute top-0 right-0 bg-secondary dark:bg-white text-white dark:text-black brutalist-label font-bold px-3 py-1 brutalist-border-box border-t-0 border-r-0 z-10">
                   {String(index + 1).padStart(2, '0')}
                 </div>
                 
