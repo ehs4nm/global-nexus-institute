@@ -76,105 +76,43 @@ const content = {
   }
 };
 
-
-/**
- * Renders the integrated intelligence framework using a brutalist design with 
- * interactive list disclosure for Operating Principles and KPIs.
- */
-export const ModelSection = () => {
-    // Simulate data loading as if coming from a hook
-    const isLoading = false;
-    
-    // Safety check
-    if (isLoading || !content || !content.pillars) {
-      return (
-        <section id="pillars" className="brutalist-section text-black dark:text-white flex items-center min-h-screen">
-          <div className="brutalist-container relative w-full py-8 flex items-center justify-center">
-            <div className="brutalist-label">Loading framework data...</div>
-          </div>
-        </section>
-      );
-    }
-    
+export const ModelSection = () => {  
     const pillars = content.pillars || {};
     const cards = pillars.cards || [];
-    const details = pillars.details || {}; // New object for detailed content
+    const details = pillars.details || {};
 
-    // Helper component for rendering lists with a click-to-reveal brutalist pattern
     const BrutalistList = ({ title, items, className = "" }) => {
-        const [isExpanded, setIsExpanded] = useState(false);
-        
-        // Use the first part of the first item as a visible teaser
-        const teaser = items.length > 0 ? items[0].split(':')[0] + "..." : "Click to view details."; 
-
         return (
-            <div className={`p-6 border-4 border-current cursor-pointer hover:border-8 transition-all duration-300 ${className}`}
-                 onClick={() => setIsExpanded(!isExpanded)}
-            >
-                {/* Clickable Header */}
-                <div className="flex justify-between items-center mb-4 border-b-2 border-current pb-2">
-                    <h3 className="text-xl sm:text-3xl font-black uppercase tracking-widest leading-none">{title}</h3>
-                    {/* Brutalist + / - toggle icon */}
-                    <span className="text-3xl sm:text-4xl font-black transition-transform duration-300 transform select-none">
-                        {isExpanded ? '-' : '+'}
-                    </span>
-                </div>
-
-                {/* Content Area - show teaser or full list */}
-                {isExpanded ? (
-                    // Full List (Visible when expanded)
-                    <ul className="space-y-4 pt-2">
-                        {items.map((item, index) => (
-                            <li key={index} className="font-extrabold text-base border-l-4 border-current pl-3 hover:bg-gray-900 dark:hover:bg-gray-200 hover:text-xl transition duration-300">
-                                {item}
-                            </li>
-                        ))}
-                    </ul>
-                ) : (
-                    // Teaser when collapsed
-                    <p className="text-lg font-bold text-gray-400 dark:text-gray-600">
-                        {teaser}
-                        <span className="block text-sm font-bold pt-2 italic underline">Click to expand all {items.length} directives.</span>
-                    </p>
-                )}
+          <div className={`${className}`}>
+            <div className="flex justify-between items-center mb-4 pb-2">
+                <h3 className="text-xl sm:text-3xl font-black uppercase tracking-widest leading-none text-black dark:text-white">{title}</h3>
             </div>
+              <ul className="space-y-4 pt-2 text-black dark:text-white">
+                {items.map((item, index) => (
+                    <li key={index} className="text-base pl-3 text-xl hover:text-white hover:bg-gray-900 transition duration-300">
+                        {index + 1}. {item}
+                    </li>
+                ))}
+              </ul>
+          </div>
         );
     };
 
     // Helper component for rendering Key Performance Indicator groups
     const KPIGroup = ({ title, items }) => {
-        const [isExpanded, setIsExpanded] = useState(false);
-        const teaser = `${items.length} critical metrics defined.`;
-
         return (
-            <div className={`p-4 border-4 border-current cursor-pointer hover:border-8 transition-all duration-300 bg-gray-900 dark:bg-gray-100 text-white dark:text-black`}
-                 onClick={() => setIsExpanded(!isExpanded)}
-            >
-                 {/* Clickable Header */}
+            <div className={`brutalist-expandedable-card`}>
                 <div className="flex justify-between items-center mb-3 border-b-2 border-current pb-2">
                     <h4 className="text-xl font-black uppercase tracking-widest leading-none">{title}</h4>
-                    {/* Brutalist + / - toggle icon */}
-                    <span className="text-3xl font-black transition-transform duration-300 transform select-none">
-                        {isExpanded ? '-' : '+'}
-                    </span>
                 </div>
                 
-                {/* Content Area - show metrics when expanded */}
-                {isExpanded ? (
-                    <ul className="space-y-3 pt-2">
-                        {items.map((kpi, index) => (
-                            <li key={index} className="font-extrabold text-base hover:border-0 border-l-4 border-current pl-3 hover:bg-gray-700 dark:hover:bg-gray-300 hover:scale-[1.1] transition duration-150">
-                                {kpi}
-                            </li>
-                        ))}
-                    </ul>
-                ) : (
-                    // Teaser when collapsed
-                    <p className="text-lg font-bold text-gray-400 dark:text-gray-600">
-                        {teaser}
-                        <span className="block text-sm font-bold pt-2 italic underline">Reveal full list of metrics.</span>
-                    </p>
-                )}
+                <ul className="space-y-3 pt-2">
+                    {items.map((kpi, index) => (
+                        <li key={index} className="font-extrabold text-base hover:border-0 border-l-4 border-current pl-3 hover:bg-gray-700 dark:hover:bg-gray-300 transition duration-150">
+                            {kpi}
+                        </li>
+                    ))}
+                </ul>
             </div>
         );
     };
@@ -183,7 +121,6 @@ export const ModelSection = () => {
   return (
     <section
       id="model"
-      // Ensure high-contrast background for brutalism
       className="relative brutalist-section-inverted bg-black dark:bg-white text-white dark:text-black py-16 sm:py-24 overflow-hidden"
     >
       <div className="relative brutalist-container">
@@ -207,11 +144,11 @@ export const ModelSection = () => {
             <article
               key={idx}
               // Brutalist style: hard borders, high contrast overlay, aggressive hover scale
-              className="p-8 border-4 border-white dark:border-black bg-gray-900/50 dark:bg-gray-100/50 relative transform hover:scale-[1.1] transition duration-200"
+              className="brutalist-expandedable-card"
             >
               <div className="space-y-6">
                 {/* Bold, uppercase title */}
-                <h3 className="text-2xl font-black mb-4 uppercase">{pillar.title}</h3>
+                <h3 className="text-2xl font-black mb-4 uppercase dark:text-black">{pillar.title}</h3>
                 <p className="text-lg font-bold text-gray-300 dark:text-gray-700">
                   {pillar.description}
                 </p>
@@ -239,14 +176,14 @@ export const ModelSection = () => {
                     <BrutalistList 
                         title="Our Four Directives" 
                         items={details.principles || []} 
-                        className="bg-black text-white border-white dark:bg-white dark:text-black dark:border-black"
+                        className="brutalist-expandedable-card-inverted"
                     />
 
                     {/* Display Strategic Objectives with interactive disclosure */}
                     <BrutalistList 
                         title="Strategic Objectives (Detail)" 
                         items={details.objectives || []} 
-                        className="bg-black text-white border-white dark:bg-white dark:text-black dark:border-black"
+                        className="brutalist-expandedable-card-inverted"
                     />
                 </div>
             </div>

@@ -157,6 +157,34 @@
            dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)];
   }
 
+  .brutalist-expandedable-card {
+    @apply p-6 border-4 border-current
+    cursor-pointer transition-all
+    duration-300 
+    bg-black text-white 
+    border-white dark:bg-white 
+    /* dark:text-white dark:border-black; */
+  }
+
+  .brutalist-expandedable-card:hover {
+    @apply shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] 
+           dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)];
+  }
+
+  .brutalist-expandedable-card-inverted {
+    @apply p-6 border-4 border-current cursor-pointer transition-all duration-300 
+          bg-white text-black border-black;
+  }
+
+  /* Hover states */
+  .brutalist-expandedable-card-inverted:hover {
+    @apply shadow-[8px_8px_0px_0px_rgba(0,0,0,1)];
+  }
+
+  .dark .brutalist-expandedable-card-inverted:hover {
+    @apply shadow-[8px_8px_0px_0px_rgba(255,255,255,1)];
+  }
+
   /**
    * Minimal Brutalist Card (no hover effects)
    * Usage: Static information cards, less interactive elements
@@ -248,7 +276,7 @@
    */
   .brutalist-subheading {
     @apply font-body
-           text-lg sm:text-xl md:text-2xl 
+           text-lg sm:text-2xl md:text-3xl 
            font-normal
            leading-relaxed 
            text-gray-800 dark:text-gray-200;

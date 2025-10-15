@@ -1,20 +1,36 @@
 import React from 'react';
-import { useContent } from '../../hooks/useContent';
+
+const content = {
+  "mission": {
+    "title": "Crises Don’t Stand Alone",
+    "bottom": "Breaking Silos Through Integration",
+    "paragraphs": [
+      "Energy shocks fuel conflict. Conflict spreads disease. Health crises destabilize economies. Yet global response remains fragmented.",
+      "The Global Nexus Institute (GNI) connects these dots — integrating energy, geopolitics, and health into a unified framework for resilience and equity."],
+    "cards": [
+      {
+        "label": "Energy → Conflict",
+        "title": "Chain Reaction"
+      },
+      {
+        "label": "Conflict → Health",
+        "title": "Spillover"
+      },
+      {
+        "label": "Health → Economy",
+        "title": "Systemic Risk"
+      },
+      {
+        "label": "GNI",
+        "title": "Nexus"
+      }
+    ],
+    "caption": "A connected world demands connected intelligence — and collective action.",
+    "image": "/assets/images/system_links.jpg"
+  },
+};
 
 export const MissionSection = () => {
-  const { content, isLoading } = useContent();
-  
-  // Safety check - ensure we have content and mission data
-  if (isLoading || !content || !content.mission) {
-    return (
-      <section id="mission" className="brutalist-section text-black dark:text-white flex items-center min-h-screen">
-        <div className="brutalist-container relative w-full py-8 flex items-center justify-center">
-          <div className="brutalist-label">Loading mission data...</div>
-        </div>
-      </section>
-    );
-  }
-  
   const mission = content.mission;
   return (
     <section id="mission" className="brutalist-section text-black dark:text-white flex items-center min-h-screen"> {/* Added flex and centering */}
@@ -51,7 +67,9 @@ export const MissionSection = () => {
                       index === 3 ? 'brutalist-card-inverted' : 'brutalist-card'
                     }`}
                   >
-                    <p className="brutalist-label mb-3 brutalist-arrow">
+                    <p className={`brutalist-label mb-3 brutalist-arrow ${
+                      index === 3 ? 'text-white dark:text-black' : 'text-black dark:text-white'
+                      } `}>
                       {card.label}
                     </p>
                     <p className="brutalist-card-title text-lg sm:text-xl md:text-2xl">
@@ -59,7 +77,9 @@ export const MissionSection = () => {
                     </p>
                     
                     {/* Expanding line */}
-                    <div className="h-1 w-6 bg-black dark:bg-white transition-all duration-300 group-hover:w-12 mt-4" />
+                    <div className={`h-1 w-6 ${
+                      index === 3 ? 'bg-white dark:bg-black' : 'bg-black dark:bg-white'
+                    }  transition-all duration-300 group-hover:w-12 mt-4`} />
                   </div>
                 ))}
               </div>
@@ -77,7 +97,7 @@ export const MissionSection = () => {
         {/* Bottom Divider */}
         <div className="relative pt-8 mt-16 brutalist-border-box border-t-2 border-b-0 border-x-0">
           <div className="text-center">
-            <span className="inline-block bg-white dark:bg-black px-6 brutalist-label -mt-3">
+            <span className="inline-block bg-black dark:bg-white text-white dark:text-black px-6 brutalist-label -mt-3">
               {mission.bottom}
             </span>
           </div>

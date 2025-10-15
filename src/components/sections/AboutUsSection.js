@@ -30,7 +30,7 @@ export const AboutUsSectionWithContext = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
             <div>
-              <p className="brutalist-card-title brutalist-label mb-6">
+              <p className="brutalist-card-title brutalist-label text-white mb-6">
                 {aboutUsContent.primaryDescription}
               </p>
               <p className="brutalist-body">
@@ -38,7 +38,7 @@ export const AboutUsSectionWithContext = () => {
               </p>
             </div>
             <div className="relative">
-              <div className="brutalist-card text-black dark:text-white p-6 sm:p-8">
+              <div className="brutalist-expandedable-card-inverted p-6 sm:p-8">
                 <p className="brutalist-body font-bold text-3xl">
                   {aboutUsContent.missionStatement}
                 </p>
@@ -55,14 +55,14 @@ export const AboutUsSectionWithContext = () => {
             {aboutUsContent.principles && Array.isArray(aboutUsContent.principles) ? aboutUsContent.principles.map((principle, index) => (
               <div 
                 key={principle.id}
-                className="brutalist-card text-black dark:text-white group overflow-hidden"
+                className="brutalist-expandedable-card-inverted relative text-black dark:text-white group overflow-hidden"
               >
                 {/* Number Badge Overlay */}
                 <div className="absolute top-0 right-0 bg-black dark:bg-white text-white dark:text-black brutalist-label font-bold px-3 py-1 brutalist-border-box border-t-0 border-r-0">
                   {principle.number}
                 </div>
                 
-                <div className="p-6 sm:p-8">
+                <div className="p-2 sm:p-2">
                   <h4 className="brutalist-card-title text-xl sm:text-2xl mb-4 pr-12">
                     {principle.title}
                   </h4>
@@ -85,7 +85,7 @@ export const AboutUsSectionWithContext = () => {
         {/* Bottom Divider with Text */}
         <div className="relative pt-8 brutalist-border-box border-t-2 border-b-0 border-x-0">
           <div className="text-center">
-            <span className="inline-block  px-6 brutalist-label -mt-3">
+            <span className="inline-block text-white px-6 brutalist-label -mt-3">
               {aboutUsContent.bottomMessage}
             </span>
           </div>

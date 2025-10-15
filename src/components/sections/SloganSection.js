@@ -35,7 +35,7 @@ export const SloganSection = () => {
               <h2 className="brutalist-heading text-[3rem] md:text-[3rem] lg:text-[4rem]">
                 {slogan.title}
               </h2>
-              <h3 className="brutalist-heading text-[3rem] md:text-[3rem] lg:text-[4rem] text-secondary">
+              <h3 className="brutalist-heading text-[3rem] md:text-[3rem] lg:text-[4rem]">
                 {slogan.secondTitle}
               </h3>
               

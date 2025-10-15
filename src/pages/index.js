@@ -10,7 +10,8 @@ import { ContactSection } from '../components/sections/ContactSection';
 import { NewsTickerSection } from '../components/sections/NewsTickerSection';
 import { LeadershipSection } from '../components/sections/LeadershipSection';
 import { InitiativesSection } from '../components/sections/InitiativesSection';
-import { AboutUsSectionWithContext } from '../components/sections/AboutUsSectionWithContext';
+import { AboutUsSectionWithContext } from '../components/sections/AboutUsSection';
+import { NexusSection } from '../components/sections/NexusSection';
 
 /**
  * A minimal, high-performance loading animation component.
@@ -150,6 +151,7 @@ const IndexPage = () => {
                         <GallerySection />
                         <ModelSection />
                         <MissionSection />
+                        <NexusSection />
                         <AboutUsSectionWithContext />
                         <InitiativesSection />
                         <LeadershipSection />
