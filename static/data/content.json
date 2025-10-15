@@ -189,20 +189,20 @@
           "title": "Nexus Research Clusters",
           "sTitle": "<What We Study>",
           "subtitle": "These clusters generate cross-domain insights that form the foundation of GNI’s advisory outputs.",
-          "description": "Dynamic, interdisciplinary teams addressing intersectional challenges such as:",
+          "description": "Dynamic, interdisciplinary teams addressing intersectional challenges that shape the stability, health, and resilience of global systems.",
           "heroImage": "/assets/images/orb-turbin.png",
           "sections": [
             {
               "heading": "Climate, Conflict & Contagion",
-              "content": ""
+              "content": "The Climate, Conflict & Contagion cluster examines how environmental stressors and resource shocks amplify geopolitical instability and public health crises. Through integrated modeling and field data, the cluster analyzes the chain reactions between climate-induced migration, conflict over scarce resources, and the emergence of infectious diseases. Its mission is to generate actionable foresight — identifying potential flashpoints and designing resilience strategies that prevent local disruptions from cascading into regional or global crises."
             },
             {
               "heading": "Energy Transition & Health Equity",
-              "content": ""
+              "content": "The Energy Transition & Health Equity cluster investigates how the global shift to cleaner energy systems affects health outcomes, labor patterns, and social equity. By linking emissions data, air quality models, and energy infrastructure transitions, this team quantifies both the co-benefits and hidden costs of decarbonization. The cluster’s work informs policies and investment strategies that ensure the renewable transition improves human well-being, protects vulnerable communities, and aligns economic transformation with planetary health."
             },
             {
-              "heading": "Energy Transition & Health Equity",
-              "content": "Critical Minerals & Supply Chain Stability"
+              "heading": "Critical Minerals & Supply Chain Stability",
+              "content": "This cluster focuses on the geopolitics of critical minerals — lithium, cobalt, rare earths, and other strategic resources essential for renewable technologies and digital infrastructure. It maps the vulnerabilities of global supply chains and assesses their implications for economic security, environmental sustainability, and human rights. By integrating trade intelligence, geospatial analytics, and governance research, the cluster provides decision-makers with insights to strengthen supply resilience, anticipate disruptions, and design fairer, more transparent resource ecosystems."
             }
           ]
         }
@@ -216,20 +216,20 @@
           "title": "Geospatial & Data Intelligence Unit (GDIU)",
           "sTitle": "<Where & When>",
           "subtitle": "The technical and analytical engine of GNI",
-          "description": "The technical and analytical engine of GNI, producing:",
+          "description": "The GDIU transforms complex global signals into decision-ready intelligence — integrating spatial analytics, AI forecasting, and systemic modeling to illuminate where, when, and how crises unfold.",
           "heroImage": "/assets/images/chess.png",
           "sections": [
             {
               "heading": "Live risk maps of conflicts, energy chokepoints, and outbreaks",
-              "content": ""
+              "content": "The GDIU produces continuously updated risk maps that visualize the intersections between conflict zones, strategic energy corridors, and public health vulnerabilities. By combining satellite imagery, open-source intelligence, and real-time sensor data, these maps reveal emerging hotspots before they escalate into full-scale crises. The visual layer enables policymakers, humanitarian actors, and investors to anticipate disruptions, assess exposure, and prioritize interventions where they can have the greatest systemic impact."
             },
             {
               "heading": "AI-driven forecasting dashboards for systemic stress testing",
-              "content": ""
+              "content": "Using advanced machine learning and probabilistic modeling, GDIU’s forecasting dashboards simulate how environmental, economic, and geopolitical variables interact under stress. These tools allow users to explore multiple futures — identifying cascading failures and resilience thresholds within critical systems. The dashboards serve as both early-warning mechanisms and scenario laboratories, enabling governments and organizations to test preparedness strategies and adapt policies in near real-time."
             },
             {
               "heading": "Resource-flow models linking supply disruptions to social and health outcomes",
-              "content": ""
+              "content": "Beyond tracking commodities or logistics, GDIU models the human consequences of resource instability. Its resource-flow models trace how disruptions in energy, food, and mineral supplies propagate through markets and into communities, affecting livelihoods, migration, and public health. By merging economic data with geospatial and epidemiological insights, these models offer a holistic understanding of systemic vulnerability — connecting the material flows of the global economy to the lived realities of populations."
             }
           ]
         }
@@ -243,20 +243,20 @@
           "title": "Actionable Intelligence & Scenarios",
           "sTitle": "<So What?>",
           "subtitle": "Where insight meets decision",
-          "description": "The insights we generate are delivered through a range of outputs that connect foresight to action.",
+          "description": "The insights we generate are delivered through a range of outputs that connect foresight to action — ensuring that decision-makers are equipped not only with knowledge, but with clarity, timing, and leverage.",
           "heroImage": "/assets/images/heart-hand.png",
           "sections": [
             {
               "heading": "48-hour rapid-response briefs on emerging global crises",
-              "content": ""
+              "content": "When the world shifts, our team responds within 48 hours — producing concise, data-backed briefs that cut through uncertainty. These updates distill complex developments in geopolitics, supply chains, and public health into clear implications for leadership and response. Each brief is designed for immediate action: identifying early indicators, assessing systemic risk, and outlining strategic options before situations escalate."
             },
             {
               "heading": "Quarterly horizon-scanning reports for policy and corporate planning",
-              "content": ""
+              "content": "Every quarter, we deliver forward-looking intelligence that connects global trends to actionable strategies. Our horizon-scanning reports integrate political analysis, technological signals, and environmental data to map out emerging risks and opportunities. Whether guiding government planning cycles or corporate strategy sessions, these reports provide the long-range visibility needed to anticipate systemic change — not react to it."
             },
             {
               "heading": "Confidential wargaming and simulation exercises for clients",
-              "content": ""
+              "content": "Through structured simulation and scenario wargaming, we help leaders stress-test their assumptions and decision frameworks. These confidential exercises recreate complex, multi-actor crises — from resource shocks to geopolitical flashpoints — in controlled environments. By combining behavioral modeling, live data inputs, and expert facilitation, we enable organizations to explore strategic blind spots, evaluate trade-offs, and build adaptive capacity for high-stakes decision-making."
             }
           ]
         }
@@ -270,20 +270,20 @@
           "title": "Strategic Alliances & Communications",
           "sTitle": "<Who & How>",
           "subtitle": "Building adaptive capacity in an interconnected world for now",
-          "description": "",
+          "description": "Our impact depends on the strength of our partnerships and the clarity of our narrative. Through global alliances, thought leadership, and strategic communications, we extend the reach of our intelligence and enable collective action where it matters most.",
           "heroImage": "/assets/images/orb-rising.png",
           "sections": [
             {
               "heading": "Global Nexus Alliance",
-              "content": "a membership network of governments, corporates, and NGOs."
+              "content": "The Global Nexus Alliance is a membership network uniting governments, corporates, and NGOs around the shared goal of managing interconnected risks. It fosters collaboration through joint research initiatives, policy labs, and rapid coordination mechanisms during crises. Members gain privileged access to GNI’s analytical outputs, co-design projects that test new response models, and contribute to shaping a common global resilience agenda."
             },
             {
               "heading": "Strategic Communications",
-              "content": "— podcasts, data visualizations, and multimedia storytelling that make complex systems intelligible."
+              "content": "We make complexity actionable through powerful storytelling. Our communications team produces podcasts, data visualizations, and multimedia series that translate technical insights into clear, compelling narratives. From energy transitions to pandemic preparedness, our storytelling bridges the gap between data and understanding — helping decision-makers, the public, and partners grasp systemic interdependencies with precision and depth."
             },
             {
               "heading": "Annual Global Nexus Summit",
-              "content": "— a high-level convening for cross-sector crisis foresight (a “Davos for interconnected risk”)."
+              "content": "The Global Nexus Summit is GNI’s flagship convening — a high-level forum for leaders across sectors to anticipate, debate, and prepare for emerging global challenges. Often described as a “Davos for interconnected risk,” the Summit brings together policymakers, scientists, corporate strategists, and civil society to exchange intelligence and build foresight coalitions. Each year’s edition culminates in actionable frameworks and cross-sector commitments that feed directly into GNI’s ongoing analytical agenda."
             }
           ]
         }
@@ -415,15 +415,15 @@
           "partners": [
             {
               "heading": "Live risk maps of conflicts, energy chokepoints, and outbreaks",
-              "content": ""
+              "content": "The GDIU produces continuously updated risk maps that visualize the intersections between conflict zones, strategic energy corridors, and public health vulnerabilities. By combining satellite imagery, open-source intelligence, and real-time sensor data, these maps reveal emerging hotspots before they escalate into full-scale crises. The visual layer enables policymakers, humanitarian actors, and investors to anticipate disruptions, assess exposure, and prioritize interventions where they can have the greatest systemic impact."
             },
             {
               "heading": "AI-driven forecasting dashboards for systemic stress testing",
-              "content": ""
+              "content": "Using advanced machine learning and probabilistic modeling, GDIU’s forecasting dashboards simulate how environmental, economic, and geopolitical variables interact under stress. These tools allow users to explore multiple futures — identifying cascading failures and resilience thresholds within critical systems. The dashboards serve as both early-warning mechanisms and scenario laboratories, enabling governments and organizations to test preparedness strategies and adapt policies in near real-time."
             },
             {
               "heading": "Resource-flow models linking supply disruptions to social and health outcomes",
-              "content": ""
+              "content": "Beyond tracking commodities or logistics, GDIU models the human consequences of resource instability. Its resource-flow models trace how disruptions in energy, food, and mineral supplies propagate through markets and into communities, affecting livelihoods, migration, and public health. By merging economic data with geospatial and epidemiological insights, these models offer a holistic understanding of systemic vulnerability — connecting the material flows of the global economy to the lived realities of populations."
             }
           ]
         }
@@ -442,15 +442,15 @@
           "partners":[
             {
               "heading": "48-hour rapid-response briefs on emerging global crises",
-              "content": ""
+              "content": "When the world shifts, our team responds within 48 hours — producing concise, data-backed briefs that cut through uncertainty. These updates distill complex developments in geopolitics, supply chains, and public health into clear implications for leadership and response. Each brief is designed for immediate action: identifying early indicators, assessing systemic risk, and outlining strategic options before situations escalate."
             },
             {
               "heading": "Quarterly horizon-scanning reports for policy and corporate planning",
-              "content": ""
+              "content": "Every quarter, we deliver forward-looking intelligence that connects global trends to actionable strategies. Our horizon-scanning reports integrate political analysis, technological signals, and environmental data to map out emerging risks and opportunities. Whether guiding government planning cycles or corporate strategy sessions, these reports provide the long-range visibility needed to anticipate systemic change — not react to it."
             },
             {
               "heading": "Confidential wargaming and simulation exercises for clients",
-              "content": ""
+              "content": "Through structured simulation and scenario wargaming, we help leaders stress-test their assumptions and decision frameworks. These confidential exercises recreate complex, multi-actor crises — from resource shocks to geopolitical flashpoints — in controlled environments. By combining behavioral modeling, live data inputs, and expert facilitation, we enable organizations to explore strategic blind spots, evaluate trade-offs, and build adaptive capacity for high-stakes decision-making."
             }
           ]
         }
@@ -469,15 +469,15 @@
           "partners":[
             {
               "heading": "Global Nexus Alliance",
-              "content": "a membership network of governments, corporates, and NGOs."
+              "content": "The Global Nexus Alliance is a membership network uniting governments, corporates, and NGOs around the shared goal of managing interconnected risks. It fosters collaboration through joint research initiatives, policy labs, and rapid coordination mechanisms during crises. Members gain privileged access to GNI’s analytical outputs, co-design projects that test new response models, and contribute to shaping a common global resilience agenda."
             },
             {
               "heading": "Strategic Communications",
-              "content": "— podcasts, data visualizations, and multimedia storytelling that make complex systems intelligible."
+              "content": "We make complexity actionable through powerful storytelling. Our communications team produces podcasts, data visualizations, and multimedia series that translate technical insights into clear, compelling narratives. From energy transitions to pandemic preparedness, our storytelling bridges the gap between data and understanding — helping decision-makers, the public, and partners grasp systemic interdependencies with precision and depth."
             },
             {
               "heading": "Annual Global Nexus Summit",
-              "content": "— a high-level convening for cross-sector crisis foresight (a “Davos for interconnected risk”)."
+              "content": "The Global Nexus Summit is GNI’s flagship convening — a high-level forum for leaders across sectors to anticipate, debate, and prepare for emerging global challenges. Often described as a “Davos for interconnected risk,” the Summit brings together policymakers, scientists, corporate strategists, and civil society to exchange intelligence and build foresight coalitions. Each year’s edition culminates in actionable frameworks and cross-sector commitments that feed directly into GNI’s ongoing analytical agenda."
             }
           ]
         }
@@ -487,7 +487,7 @@
       "title": "Nexus Research Clusters",
       "sTitle": "<What We Study>",
       "subtitle": "These clusters generate cross-domain insights that form the foundation of GNI’s advisory outputs.",
-      "description": "Dynamic, interdisciplinary teams addressing intersectional challenges such as:",
+      "description": "Dynamic, interdisciplinary teams addressing intersectional challenges that shape the stability, health, and resilience of global systems.",
       "heroImage": "/assets/images/orb-turbin.png",
       "sections": [
         {
@@ -496,15 +496,15 @@
           "partners":[
             {
               "heading": "Climate, Conflict & Contagion",
-              "content": ""
+              "content": "The Climate, Conflict & Contagion cluster examines how environmental stressors and resource shocks amplify geopolitical instability and public health crises. Through integrated modeling and field data, the cluster analyzes the chain reactions between climate-induced migration, conflict over scarce resources, and the emergence of infectious diseases. Its mission is to generate actionable foresight — identifying potential flashpoints and designing resilience strategies that prevent local disruptions from cascading into regional or global crises."
             },
             {
               "heading": "Energy Transition & Health Equity",
-              "content": ""
+              "content": "The Energy Transition & Health Equity cluster investigates how the global shift to cleaner energy systems affects health outcomes, labor patterns, and social equity. By linking emissions data, air quality models, and energy infrastructure transitions, this team quantifies both the co-benefits and hidden costs of decarbonization. The cluster’s work informs policies and investment strategies that ensure the renewable transition improves human well-being, protects vulnerable communities, and aligns economic transformation with planetary health."
             },
             {
-              "heading": "Energy Transition & Health Equity",
-              "content": "Critical Minerals & Supply Chain Stability"
+              "heading": "Critical Minerals & Supply Chain Stability",
+              "content": "This cluster focuses on the geopolitics of critical minerals — lithium, cobalt, rare earths, and other strategic resources essential for renewable technologies and digital infrastructure. It maps the vulnerabilities of global supply chains and assesses their implications for economic security, environmental sustainability, and human rights. By integrating trade intelligence, geospatial analytics, and governance research, the cluster provides decision-makers with insights to strengthen supply resilience, anticipate disruptions, and design fairer, more transparent resource ecosystems."
             }
           ]
         }
@@ -547,7 +547,7 @@
       "title": "Team",
       "subtitle": "Diverse expertise for complex challenges",
       "sTitle": "<Who We Work With>",
-      "heroImage": "/assets/images/6.jpg",
+      "heroImage": "",
       "description": "Our team combines deep sector expertise with systems thinking, bringing together professionals from energy, geopolitics, public health, and strategic analysis.",
       "sections": [
         {
@@ -569,18 +569,11 @@
               "expertise": ["Public Health Policy", "Crisis Response", "Health Systems"]
             },
             {
-              "name": "Dr. Elena Rodriguez",
+              "name": "Reza Azami",
               "title": "Senior Energy Analyst",
-              "image": "/assets/team/elena-rodriguez.jpg",
+              "image": "/assets/leaders/reza-azami.jpg",
               "bio": "Former IEA analyst specializing in energy security and transition pathways across developing economies.",
               "expertise": ["Energy Security", "Renewable Transitions", "Policy Analysis"]
-            },
-            {
-              "name": "Marcus Chen",
-              "title": "Geopolitical Risk Strategist",
-              "image": "/assets/team/marcus-chen.jpg",
-              "bio": "Intelligence analyst with 15 years experience tracking resource conflicts and supply chain vulnerabilities.",
-              "expertise": ["Geopolitical Analysis", "Risk Assessment", "Strategic Intelligence"]
             }
           ]
         }
@@ -602,12 +595,12 @@
               "type": "Full-time",
               "location": "Remote/Flexible",
               "department": "Research",
-              "description": "Lead quantitative analysis of energy transition pathways and their cascading effects on health and geopolitical stability.",
+              "description": "Lead analytical research on global energy transitions, resource dependencies, and system resilience. The role combines technical modeling, policy analysis, and cross-domain collaboration to generate actionable intelligence for clients and partners.",
               "requirements": [
-                "PhD in Energy Economics, Policy, or related field",
-                "5+ years experience in energy systems modeling",
-                "Strong analytical and communication skills",
-                "Experience with interdisciplinary research"
+                "Advanced degree in Energy Economics, Systems Engineering, Environmental Science, or related field.",
+                "Strong quantitative and modeling skills, including experience with Python/R and geospatial or systems-analysis tools.",
+                "Deep understanding of global energy markets, transition pathways, and climate policy frameworks.",
+                "Ability to synthesize technical data into strategic insights for policy or industry stakeholders."
               ]
             },
             {
@@ -615,12 +608,12 @@
               "type": "Full-time",
               "location": "Washington DC/Remote",
               "department": "Analysis",
-              "description": "Monitor and analyze geopolitical developments affecting global energy and health security.",
+              "description": "Monitor, analyze, and forecast geopolitical trends that intersect with global energy, resource, and health systems. Work within GNI’s analytical engine to develop foresight products, risk assessments, and scenario analyses for decision-makers.",
               "requirements": [
-                "MA in International Relations or Political Science",
-                "3+ years in intelligence or risk analysis",
-                "Regional expertise in emerging markets",
-                "Security clearance preferred"
+                "Degree in International Relations, Political Science, Security Studies, or a related discipline.",
+                "Experience in geopolitical risk analysis, strategic intelligence, or crisis forecasting.",
+                "Strong written communication and data interpretation skills, with the ability to translate complexity into clarity.",
+                "Familiarity with regional security dynamics, multilateral governance, and global energy or health policy contexts."
               ]
             },
             {
@@ -628,12 +621,25 @@
               "type": "Fellowship",
               "location": "Remote",
               "department": "Research",
-              "description": "12-month fellowship focusing on the intersection of energy policy and public health outcomes.",
+              "description": "Support GNI’s cross-sector research on health resilience and its intersections with energy and climate transitions. Fellows contribute to data analysis, literature synthesis, and publication of policy briefs and foresight reports.",
               "requirements": [
-                "Recent PhD in Public Health, Medicine, or Policy",
-                "Interest in interdisciplinary research",
-                "Strong quantitative analysis skills",
-                "Published research experience"
+                "Graduate or post-graduate student in Public Health, Health Policy, or related field.",
+                "Interest in health security, climate impacts on health systems, and interdisciplinary research.",
+                "Strong research and analytical writing skills; ability to handle complex datasets and academic sources.",
+                "Ability to work independently and contribute to collaborative, multi-sector research projects."
+              ]
+            },
+            {
+              "title": "Data Visualization & Communications Lead",
+              "type": "Full-time",
+              "location": "Remote/Flexible",
+              "department": "Communications",
+              "description": "Design and deliver compelling data narratives that make complex systems intelligible. Work across research and analysis teams to produce interactive visualizations, infographics, and multimedia outputs for GNI’s publications and advisory reports.",
+              "requirements": [
+                "Bachelor’s or Master’s degree in Data Visualization, Design, Journalism, or a related field.",
+                "Proficiency in visualization tools such as D3.js, Tableau, or similar libraries/frameworks.",
+                "Ability to communicate complex technical information through clear and engaging visual formats.",
+                "Strong understanding of design for impact — bridging analytical rigor with accessibility and storytelling."
               ]
             }
           ]
@@ -671,48 +677,48 @@
       "sections": [
         {
           "title": "Core Research Areas",
-          "content": "We focus on foundational research that advances the field of nexus analysis and systems thinking.",
+          "content": "We focus on foundational research that advances the field of nexus analysis and systems thinking — translating complexity into clarity. Each area connects empirical science with strategic foresight, producing insights that help governments, organizations, and markets anticipate cascading risks before they materialize.",
           "areas": [
             {
               "title": "Cascading Crisis Modeling",
-              "description": "Mathematical models that predict how shocks propagate across energy, political, and health systems.",
+              "description": "We study how disruptions — from energy shocks to political unrest or public health emergencies — ripple across interconnected systems. By combining computational modeling with real-time data, we identify the hidden feedback loops that can amplify crises or, conversely, reinforce resilience.",
               "methods": ["System Dynamics", "Network Analysis", "Monte Carlo Simulation"]
             },
             {
               "title": "Energy-Health Nexus",
-              "description": "Quantifying the health impacts of different energy transition pathways and policies.",
+              "description": "Our research quantifies how energy policies and transition pathways affect human health outcomes. From air quality to healthcare accessibility, we examine how the pursuit of decarbonization can align with — or undermine — global health equity.",
               "methods": ["Epidemiological Modeling", "Air Quality Assessment", "Health Economic Analysis"]
             },
             {
               "title": "Geopolitical Risk Quantification",
-              "description": "Developing metrics and indices to measure political stability risks to critical infrastructure.",
+              "description": "We design indices and models that measure the exposure of critical infrastructure and energy systems to geopolitical instability. These risk metrics help decision-makers allocate resources, plan contingencies, and build resilience into global supply chains.",
               "methods": ["Risk Modeling", "Scenario Analysis", "Expert Elicitation"]
             }
           ]
         },
         {
           "title": "Current Projects",
-          "content": "Active research initiatives that demonstrate our integrated approach to global challenges.",
+          "content": "Our active initiatives demonstrate how integrated intelligence transforms global challenges into actionable insight. Each project merges data science, field expertise, and strategic advisory to create impact in real-world decision environments.",
           "projects": [
             {
               "title": "Global Chokepoints Initiative",
               "status": "Ongoing",
-              "timeline": "2024-2026",
-              "description": "Comprehensive mapping and modeling of critical infrastructure vulnerabilities worldwide.",
+              "timeline": "2024–2026",
+              "description": "A multi-year effort to map and model vulnerabilities across maritime, energy, and digital infrastructure corridors. By identifying the most critical global chokepoints, the project informs international policy on trade resilience and security cooperation.",
               "partners": ["Energy Policy Institute", "Crisis Analytics Group"]
             },
             {
               "title": "Energy Transition Health Index (ETHI)",
               "status": "Phase II",
-              "timeline": "2023-2025",
-              "description": "Annual ranking of countries based on the health impacts of their energy transition strategies.",
+              "timeline": "2023–2025",
+              "description": "An annual benchmarking tool ranking countries by the health outcomes of their energy transition strategies. ETHI provides a holistic view of how decarbonization policies shape public health, economic resilience, and social stability.",
               "partners": ["Global Health Security Consortium", "WHO Regional Offices"]
             },
             {
               "title": "Pandemic Preparedness & Energy Security",
               "status": "Planning",
-              "timeline": "2025-2027",
-              "description": "Analysis of how energy system disruptions affect pandemic response capabilities.",
+              "timeline": "2025–2027",
+              "description": "This study explores how disruptions in energy and logistics systems affect a nation’s ability to respond to pandemics. It aims to identify infrastructure dependencies and propose policies that strengthen both energy security and public health preparedness.",
               "partners": ["Johns Hopkins Bloomberg School", "International Crisis Group"]
             }
           ]
@@ -723,43 +729,43 @@
           "principles": [
             {
               "title": "Systems-First Thinking",
-              "description": "We start with the assumption that energy, geopolitical, and health domains are fundamentally interconnected, not separate systems that occasionally interact."
+              "description": "We approach every challenge through a systems lens — recognizing that energy, geopolitical, and health domains are deeply interdependent. This perspective allows us to detect patterns and leverage points that siloed approaches often miss."
             },
             {
               "title": "Empirical Rigor",
-              "description": "Every model, every prediction, every insight must be grounded in verifiable data and tested against real-world outcomes to ensure reliability."
+              "description": "Every model, prediction, and insight must be anchored in verifiable data. We emphasize methodological transparency, reproducibility, and continuous validation against real-world evidence."
             },
             {
               "title": "Practical Relevance",
-              "description": "Research that can't inform real decisions isn't valuable. We focus on questions that matter to policymakers, business leaders, and crisis responders."
+              "description": "We prioritize work that informs strategic decision-making. Our research questions are guided not only by intellectual curiosity but by their potential to shape real policies, investments, and crisis responses."
             },
             {
               "title": "Open Innovation",
-              "description": "The world's challenges are too complex for any single institution. We collaborate openly and share knowledge to accelerate progress across the field."
+              "description": "We believe progress accelerates through collaboration. Our research culture values shared data, cross-institutional partnerships, and interdisciplinary dialogue that expands the collective capacity to understand complex systems."
             }
           ]
         },
         {
           "title": "Publications & Collaboration",
           "subtitle": "→ Our research outputs and opportunities for academic collaboration",
-          "content": "Research partnerships: research@globalnexusinstitute.org",
-          "description": "Interested in collaborative research or data sharing? Let's explore opportunities to advance nexus science together.",
+          "content": "For research partnerships and collaboration inquiries: research@globalnexusinstitute.org",
+          "description": "We actively collaborate with academic institutions, think tanks, and private-sector research teams to advance the science of interconnected risk. By sharing methods, data, and results, we contribute to a global ecosystem of open, applied knowledge.",
           "outputs": [
             {
               "title": "Peer-Reviewed Articles",
-              "description": "Published in leading journals across energy policy, international relations, and public health domains."
+              "description": "Our research appears in leading journals across energy policy, international relations, and public health. Each publication extends the frontier of nexus science and systems-based policy analysis."
             },
             {
               "title": "Working Papers",
-              "description": "Preliminary findings and methodological innovations shared with the global research community."
+              "description": "Preliminary research findings and methodological innovations circulated to stimulate cross-sector debate and invite feedback before formal publication."
             },
             {
               "title": "Policy Briefs",
-              "description": "Research-based recommendations for government officials and international organizations."
+              "description": "Concise, decision-ready documents translating complex research into actionable insights for governments, industry, and civil society leaders."
             },
             {
               "title": "Data & Models",
-              "description": "Open-source datasets and modeling tools to advance nexus research across institutions."
+              "description": "We release open-source datasets, model architectures, and visualization tools designed to strengthen transparency and advance collaborative learning in the nexus research field."
             }
           ]
         }
@@ -773,61 +779,61 @@
       "title": "Analysis",
       "subtitle": "Real-time intelligence for decision makers",
       "heroImage": "/assets/images/1.jpg",
-      "description": "Our analysis team provides timely, integrated assessments of emerging crises and their potential cascading effects across energy, geopolitical, and health domains.",
+      "description": "Our analysis team produces timely, cross-domain intelligence designed to inform high-stakes decisions. We monitor emerging crises, model their cascading effects, and translate complex systems data into clear, actionable insights. From rapid-response briefs to in-depth strategic outlooks, our products are built for decision-makers who need clarity amid uncertainty.",
       "sections": [
         {
           "title": "Analytical Services",
-          "content": "We deliver actionable intelligence through multiple formats tailored to different decision-making needs.",
+          "content": "We deliver multi-format intelligence products that combine data-driven analysis with expert interpretation. Each format is crafted to support a different level of decision-making—from immediate situational awareness to long-term strategic foresight.",
           "services": [
             {
               "title": "Crisis Alerts",
-              "description": "Rapid-response analysis of emerging situations with potential for system-wide impacts.",
-              "frequency": "As needed",
-              "format": "Brief (2-4 pages)"
+              "description": "Rapid assessments of emerging geopolitical, energy, or health crises that pose potential system-wide risks. Each alert distills verified intelligence, early indicators, and possible cascading impacts across critical domains.",
+              "frequency": "As needed (within 24–48 hours of detection)",
+              "format": "Brief Intelligence Note (2–4 pages)"
             },
             {
               "title": "Weekly Intelligence Brief",
-              "description": "Comprehensive overview of developing risks across our three core domains.",
+              "description": "A concise yet comprehensive overview of evolving global dynamics. Each issue highlights key shifts across our three nexus domains—energy, geopolitics, and health—integrated through cross-sector trend mapping and forward-looking implications.",
               "frequency": "Weekly",
-              "format": "Report (8-12 pages)"
+              "format": "Intelligence Report (8–12 pages)"
             },
             {
               "title": "Quarterly Outlook",
-              "description": "Deep-dive analysis of major trends and their interconnected implications.",
+              "description": "In-depth analytical reviews that explore long-range developments, structural vulnerabilities, and potential strategic inflection points. The Outlook series helps organizations anticipate major transitions before they materialize.",
               "frequency": "Quarterly",
-              "format": "Report (25-40 pages)"
+              "format": "Analytical Report (25–40 pages)"
             },
             {
               "title": "Custom Analysis",
-              "description": "Bespoke analytical products tailored to specific client needs and decision contexts.",
+              "description": "Tailored intelligence solutions addressing specific client priorities, regions, or operational concerns. From scenario simulations and risk mapping to confidential policy briefs, each product is designed to fit the unique decision context.",
               "frequency": "On demand",
-              "format": "Variable"
+              "format": "Flexible (interactive dashboards, reports, or presentations)"
             }
           ]
         },
         {
           "title": "Recent Analysis",
-          "content": "Examples of our integrated approach to current global challenges.",
+          "content": "Below are examples of our integrated, cross-sector analysis—illustrating how we bridge real-world crises with strategic foresight for our clients.",
           "reports": [
             {
-              "title": "Ukraine Crisis: Energy-Health-Security Nexus",
+              "title": "Ukraine Crisis: Energy–Health–Security Nexus",
               "date": "March 2024",
               "type": "Special Report",
-              "summary": "Comprehensive analysis of how the conflict affects global energy markets, health systems, and geopolitical stability.",
-              "topics": ["Energy Security", "Refugee Health", "Supply Chains"]
+              "summary": "A comprehensive assessment of how the ongoing conflict reshaped global energy markets, stressed European health systems, and shifted geopolitical alliances. The report identifies long-term implications for supply security and humanitarian response planning.",
+              "topics": ["Energy Security", "Refugee Health", "Geopolitical Stability"]
             },
             {
               "title": "Middle East Tensions: Oil Infrastructure Vulnerability",
               "date": "January 2024",
               "type": "Risk Assessment",
-              "summary": "Evaluation of potential disruptions to global oil supply and their cascading health and political effects.",
+              "summary": "An in-depth evaluation of how escalating regional tensions could disrupt global oil supply chains. The analysis models the systemic economic and health repercussions of infrastructure attacks, sanctions, and supply bottlenecks.",
               "topics": ["Critical Infrastructure", "Regional Conflict", "Economic Impact"]
             },
             {
               "title": "Climate COP Outcomes: Policy Integration Gaps",
               "date": "December 2023",
               "type": "Policy Analysis",
-              "summary": "Assessment of how climate policy coordination affects energy transitions and public health outcomes.",
+              "summary": "An examination of global climate summit commitments through the lens of system integration. The report identifies policy misalignments that slow energy transitions and limit potential health co-benefits, offering pathways for improved coordination.",
               "topics": ["Climate Policy", "Energy Transition", "Health Co-benefits"]
             }
           ]
@@ -838,65 +844,66 @@
       "title": "Advisory",
       "subtitle": "Strategic guidance for complex decisions",
       "heroImage": "/assets/images/2.jpg",
-      "description": "Our advisory services help leaders navigate the interconnected challenges of energy transitions, geopolitical risks, and health crises through integrated analysis and strategic planning.",
+      "description": "Our advisory services empower decision-makers to anticipate disruption and act with confidence. We help clients navigate the intersection of energy transitions, geopolitical risk, and public health by combining analytical foresight with pragmatic strategy. Through scenario design, policy integration, and crisis advisory support, we translate complexity into actionable intelligence.",
       "sections": [
         {
           "title": "Advisory Services",
-          "content": "We provide strategic counsel to governments, corporations, and international organizations facing complex nexus challenges.",
+          "content": "We provide bespoke strategic counsel to governments, corporations, and international organizations operating in an increasingly interdependent world. Our approach integrates systems analysis, foresight modeling, and strategic design to help leaders align decisions with long-term global realities.",
           "services": [
             {
               "title": "Strategic Planning",
-              "description": "Long-term planning that accounts for energy-geopolitical-health interdependencies.",
-              "timeframe": "6-12 months",
-              "format": "Workshops & Reports"
+              "description": "Comprehensive planning processes that connect organizational goals with global systems foresight. We identify structural risks, emerging opportunities, and cross-sector dependencies to build adaptive strategies that remain resilient under multiple future scenarios.",
+              "timeframe": "6–12 months",
+              "format": "Executive Workshops & Strategic Reports"
             },
             {
               "title": "Risk Assessment",
-              "description": "Comprehensive evaluation of cascading risks across energy, political, and health domains.",
-              "timeframe": "2-4 months",
-              "format": "Assessment Reports"
+              "description": "Systemic evaluation of vulnerabilities across the energy–geopolitics–health nexus. We map cascading risks, model potential disruptions, and provide decision frameworks that enable clients to prioritize mitigation and build resilience into operations and policy.",
+              "timeframe": "2–4 months",
+              "format": "Comprehensive Risk Assessments & Briefings"
             },
             {
               "title": "Crisis Response",
-              "description": "Rapid advisory support during emerging crises with multi-domain implications.",
-              "timeframe": "Real-time",
-              "format": "Briefings & Calls"
+              "description": "Rapid-response advisory for emerging crises with global implications. Our analysts deliver real-time situational assessments, scenario forecasts, and coordination guidance to support critical decision-making under pressure.",
+              "timeframe": "Real-time or within 48 hours",
+              "format": "Intelligence Briefings, Secure Calls & Situation Reports"
             },
             {
               "title": "Policy Development",
-              "description": "Support for developing integrated policies that address nexus challenges.",
-              "timeframe": "3-8 months",
-              "format": "Policy Frameworks"
+              "description": "Collaborative support for creating integrated policy frameworks that address interlinked challenges across energy security, health resilience, and geopolitical stability. We assist institutions in aligning short-term action with long-term systemic impact.",
+              "timeframe": "3–8 months",
+              "format": "Policy Frameworks, Consultation Papers & Implementation Plans"
             }
           ]
         },
         {
           "title": "Client Sectors",
-          "content": "We work with diverse organizations that recognize the interconnected nature of global challenges.",
+          "content": "We work across sectors that recognize the need for systemic thinking and integrated decision-making in a rapidly evolving global environment.",
           "clients": [
             {
               "sector": "Government Agencies",
-              "description": "National security councils, health ministries, and energy departments seeking integrated approaches.",
-              "focus": "Policy Integration"
+              "description": "We advise national security councils, energy ministries, and health departments seeking to integrate foresight into policy formulation and crisis preparedness. Our work supports long-term resilience planning and coordinated inter-agency strategies.",
+              "focus": "Integrated Policy & Risk Foresight"
             },
             {
               "sector": "International Organizations",
-              "description": "UN agencies, World Bank, and regional bodies addressing cross-cutting global challenges.",
-              "focus": "Multilateral Coordination"
+              "description": "We collaborate with UN agencies, development banks, and multilateral bodies addressing transnational challenges. Our frameworks enhance coordination across sectors and regions, aligning policy goals with complex global dynamics.",
+              "focus": "Multilateral Strategy & Coordination"
             },
             {
               "sector": "Multinational Corporations",
-              "description": "Energy companies, healthcare firms, and global enterprises managing systemic risks.",
-              "focus": "Strategic Risk Management"
+              "description": "We support corporate strategy teams, sustainability offices, and risk units in understanding systemic vulnerabilities and identifying resilient pathways for investment, supply chains, and market positioning.",
+              "focus": "Strategic Risk & Opportunity Management"
             },
             {
               "sector": "NGOs & Think Tanks",
-              "description": "Research institutions and advocacy organizations working on interconnected global issues.",
-              "focus": "Research & Advocacy Strategy"
+              "description": "We partner with research and advocacy institutions to strengthen their analytical capacity, design integrated programs, and communicate complex systems insights through data-driven narratives and strategic engagement.",
+              "focus": "Research Design & Advocacy Strategy"
             }
           ]
         }
       ]
+
     }
   }
 }

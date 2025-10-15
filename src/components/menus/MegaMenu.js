@@ -184,14 +184,14 @@ export const MegaMenu = ({ id, label, items = [], isOpen, onOpen, onClose }) => 
               transform: open ? 'translateY(0)' : 'translateY(0)'
             }}
           >
-            <div className="px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+            <div className="px-8 py-12 grid grid-cols-1 md:grid-cols-5 gap-12 max-w-7xl mx-auto">
               <div>
                 <h4 className="text-2xl font-bold uppercase tracking-tight text-black dark:text-white">{label}</h4>
                 <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-400 font-mono">
                   → Explore <strong className='font-bold'>{label.toLowerCase()}</strong>
                 </p>
               </div>
-              <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-8">
+              <div className="md:col-span-4 grid grid-cols-1 sm:grid-cols-4 gap-8">
                 {items.map((it) => (
                   <a 
                     key={it.href} 

@@ -5,22 +5,22 @@ import { ContentProvider } from '../contexts/ContentContext';
 
 // Hero Section Component
 const HeroSection = ({ data }) => (
-  <section className="brutalist-section">
+  <section className="brutalist-section py-4 min-h-[20vh]">
     <div className="brutalist-container">
       <div className="max-w-6xl">
-        <div className="my-16">
+        <div className="my-2">
           {/* <div className="brutalist-number-badge inline-block mb-6 text-black dark:text-white">01</div> */}
 
           <h1 className="brutalist-heading dark:text-white text-5xl mt-32">{data.title}</h1>
-          <h2 className="brutalist-heading dark:text-white text-3xl mt-32">{data.stitle}</h2>
+          <h2 className="brutalist-heading dark:text-white text-3xl">{data.stitle}</h2>
           <p className="mt-4 brutalist-subheading text-xl text-black/80 dark:text-white/80">
             {data.subtitle}
           </p>
-          <div className="mt-6 brutalist-divider-bold" />
-          <p className="mt-6 brutalist-body max-w-3xl text-3xl text-black/80 dark:text-white">
+          <div className="mt-24 brutalist-divider-bold mt-12" />
+          <p className="mt-2 mb-4 brutalist-body max-w-3xl text-3xl text-black/80 dark:text-white">
             {data.description}
           </p>
-          {data.heroImage && <img src={data.heroImage} alt="" />}
+          {data.heroImage && <img className='w-full' src={data.heroImage} alt="" />}
         </div>
       </div>
     </div>
@@ -55,41 +55,39 @@ const GridSection = ({ section, isInverted = false }) => {
   const items = section.areas || section.members || section.partners || [];
 
   return (
-    <section className={sectionClass}>
+    <section className={`${sectionClass} border-0`}>
       <div className="brutalist-container">
         <div className="max-w-6xl">
           <div className="mb-16">
             <h2 className=" brutalist-heading text-4xl lg:text-5xl text-black dark:text-white">
               {section.title}
             </h2>
-            <div className="brutalist-divider-bold" />
+            <div className="brutalist-divider-bold mt-4" />
             <p className="mt-4 brutalist-subheading text-black/80 dark:text-white/80">{section.content}</p>
           </div>
 
-          <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className={`grid sm:grid-cols-1 ${section.title !== "Core Team" ? 'lg:grid-cols-1' : 'lg:grid-cols-3'} gap-8`}>
             {items.map((item, index) => (
               <article key={index} className="brutalist-card group p-8">
                 <div className="flex flex-col h-full">
                   <div className="brutalist-number-badge mb-6 text-black dark:text-white">
-                    {String(index + 1).padStart(2, '0')}
+                    {String(index + 1).padStart(2, '0')} 
                   </div>
                   
-                  <h3 className="brutalist-card-title mb-4 text-black dark:text-white">
-                    {item.title || item.name}
+                  <h3 className="brutalist-card-title text-xl mb-4 text-black dark:text-white">
+                    {item.heading || item.name || item.title}
                   </h3>
                   
-                  {item.image && (
-                    <img src={item.image} alt={item.name} className="w-full h-48 object-cover mb-4" />
-                  )}
+                  {item.image && (<img src={item.image} alt={item.name} className="w-full h-48 object-cover mb-4" />)}
                   
                   <p className="brutalist-body mb-6 flex-grow text-black dark:text-white">
-                    {item.description || item.bio}
+                    {item.content || item.bio || item.description}
                   </p>
                   
                   {/* Methods for research areas */}
                   {item.methods && (
                     <div className="mb-6">
-                      <p className="brutalist-label mb-3">Methods</p>
+                      <p className="brutalist-label mb-3 dark:text-black/80 text-white/80">Methods</p>
                       <div className="flex flex-wrap gap-2">
                         {item.methods.map((method, methodIndex) => (
                           <span key={methodIndex} className="brutalist-label bg-black dark:bg-white text-white dark:text-black px-3 py-1 text-xs">
@@ -103,7 +101,7 @@ const GridSection = ({ section, isInverted = false }) => {
                   {/* Expertise for team members */}
                   {item.expertise && (
                     <div className="mb-6">
-                      <p className="brutalist-label mb-3">Expertise</p>
+                      <p className="brutalist-label mb-3 dark:text-black/80 text-white/80">Expertise</p>
                       <div className="flex flex-wrap gap-2">
                         {item.expertise.map((skill, skillIndex) => (
                           <span key={skillIndex} className="brutalist-label bg-black dark:bg-white text-white dark:text-black px-3 py-1 text-xs">
@@ -144,11 +142,11 @@ const ListSection = ({ section, isInverted = false }) => {
       <div className="brutalist-container">
         <div className="max-w-6xl">
           <div className="mb-16">
-            <h2 className=" brutalist-heading text-4xl lg:text-5xl text-white dark:text-black">
+            <h2 className="brutalist-heading text-4xl lg:text-5xl">
               {section.title}
             </h2>
-            <div className="mt-6 brutalist-divider-bold" />
-            <p className="brutalist-subheading text-white dark:text-black">{section.content}</p>
+            <div className="my-6 brutalist-divider-bold" />
+            <p className="brutalist-subheading">{section.content}</p>
           </div>
 
           <div className="space-y-8">
@@ -156,18 +154,18 @@ const ListSection = ({ section, isInverted = false }) => {
               <article key={index} className="brutalist-card-minimal p-8 dark:bg-white bg-black">
                 <div className="flex flex-col lg:flex-row lg:items-start gap-8">
                   <div className="lg:w-2/3">
-                    <div className="flex items-start justify-between mb-6">
+                    <div className="flex items-center justify-start mb-6">
                       <div className="brutalist-number-badge text-white dark:text-black">
-                        {String(index + 1).padStart(2, '0')}
+                        {String(index + 1).padStart(2, '0')}:&nbsp;&nbsp;
                       </div>
                       <div className="text-right">
-                        {item.status && <span className="brutalist-label">{item.status}</span>}
-                        {item.type && <span className="brutalist-label">{item.type}</span>}
-                        {item.date && <span className="brutalist-label">{item.date}</span>}
-                        {item.timeframe && <span className="brutalist-label">{item.timeframe}</span>}
-                        {item.format && <span className="brutalist-label">{item.format}</span>}
-                        {item.focus && <span className="brutalist-label">{item.focus}</span>}
-                        {item.sector && <span className="brutalist-label">{item.sector}</span>}
+                        {item.status && <span className="brutalist-label text-white dark:text-black">{item.status}</span>}
+                        {item.type && <span className="brutalist-label text-white dark:text-black">{item.type}</span>}
+                        {item.date && <span className="brutalist-label text-white dark:text-black">{item.date}</span>}
+                        {item.timeframe && <span className="brutalist-label text-white dark:text-black">{item.timeframe}</span>}
+                        {item.format && <span className="brutalist-label text-white dark:text-black">{item.format}</span>}
+                        {item.focus && <span className="brutalist-label text-white dark:text-black">{item.focus}</span>}
+                        {item.sector && <span className="brutalist-label text-white dark:text-black">{item.sector}</span>}
                         {item.timeline && (
                           <div className="text-sm brutalist-body mt-1 text-white dark:text-black">
                             {item.timeline}
@@ -193,7 +191,7 @@ const ListSection = ({ section, isInverted = false }) => {
                     {/* Partners */}
                     {item.partners && (
                       <div className="mb-4">
-                        <p className="brutalist-label mb-3">Partners</p>
+                        <p className="brutalist-label mb-3 dark:text-black/80 text-white/80">Partners</p>
                         <ul className="space-y-1">
                           {item.partners.map((partner, partnerIndex) => (
                             <li key={partnerIndex} className="brutalist-body text-2xl flex items-start">
@@ -208,10 +206,10 @@ const ListSection = ({ section, isInverted = false }) => {
                     {/* Requirements */}
                     {item.requirements && (
                       <div className="mb-4">
-                        <p className="brutalist-label mb-3">Requirements</p>
+                        <p className="brutalist-label mb-3 dark:text-black/80 text-white/80">Requirements</p>
                         <ul className="space-y-1 text-white dark:text-black">
                           {item.requirements.map((req, reqIndex) => (
-                            <li key={reqIndex} className="brutalist-body text-sm flex items-start">
+                            <li key={reqIndex} className="brutalist-body text-sm flex items-start hover:text-2xl transition-all duration-300">
                               <span className="mr-3 font-mono">•</span>
                               <span>{req}</span>
                             </li>
@@ -223,7 +221,7 @@ const ListSection = ({ section, isInverted = false }) => {
                     {/* Topics */}
                     {item.topics && (
                       <div className="mb-4">
-                        <p className="brutalist-label mb-3">Topics</p>
+                        <p className="brutalist-label mb-3 dark:text-black/80 text-white/80">Topics</p>
                         <div className="flex flex-wrap gap-2">
                           {item.topics.map((topic, topicIndex) => (
                             <span key={topicIndex} className="brutalist-label bg-white dark:bg-black text-black dark:text-white px-3 py-1 text-xs">
@@ -254,7 +252,7 @@ const BenefitsSection = ({ section, isInverted = false }) => {
       <div className="brutalist-container">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-16">
-            <h2 className=" brutalist-heading text-4xl lg:text-5xl text-black dark:text-white mb-6">{section.title}</h2>
+            <h2 className=" brutalist-heading text-4xl lg:text-5xl mb-6">{section.title}</h2>
             {section.subtitle && (
               <p className="brutalist-subheading mb-12 max-w-2xl mx-auto text-black/80 dark:text-white/80">
                 {section.subtitle}
@@ -337,7 +335,7 @@ const PageTemplateContent = ({ pageKey }) => {
                     <div className="grid sm:grid-cols-2 gap-8 mb-8">
                       {section.outputs.map((output, outputIndex) => (
                         <div key={outputIndex}>
-                          <h4 className="brutalist-label mb-3">{output.title}</h4>
+                          <h4 className="brutalist-label mb-3 dark:text-black/80 text-white/80">{output.title}</h4>
                           <p className="brutalist-body text-2xl mb-4">
                             {output.description}
                           </p>
@@ -372,7 +370,7 @@ const PageTemplateContent = ({ pageKey }) => {
                     {section.title}
                   </h2>
                   <div className="mt-6 brutalist-divider-bold" />
-                  <p className="mt-8 brutalist-subheading text-black/80 dark:text-white/80">{section.content}</p>
+                  <p className="mt-8 brutalist-subheading">{section.content}</p>
                 </div>
               </div>
             </div>
